@@ -1,0 +1,33 @@
+Moodle(externo):
+-Creacion aplicaciones externas al Moodle
+http://docs.moodle.org/dev/Creating_a_web_service_client
+-Moodle de prueba
+http://demo.moodle.net/
+-Foros Moodle
+    1) python library webservice:
+    https://moodle.org/mod/forum/discuss.php?d=184666
+    2) REST-based web services API for Moodle
+    https://moodle.org/mod/forum/discuss.php?d=33521
+    3) web service shortname
+    https://moodle.org/mod/forum/discuss.php?d=197187
+
+Instalar Apache, PHP, MySQL y phpMyAdmin en Ubuntu
+http://edrperez.wordpress.com/2011/07/18/instalar-apache-php-mysql-y-phpmyadmin-en-ubuntu-11-04/
+http://www.webvigo.com/blog/instalar-apache2-php5-y-mysql-en-ubuntu-11-10/
+
+Instalar Moodle
+http://docs.moodle.org/all/es/Instalaci%C3%B3n_de_moodle
+http://docs.moodle.org/22/en/Installing_Moodle_on_Debian_based_distributions
+
+Uso de Moodle
+http://docs.moodle.org/24/en/Manual_enrolment
+
+MI Moodle
+http://adry3000.dyndns.org/moodle/
+
+Repositorio en github:
+https://github.com/javibgm/MoodlePython.git
+
+Librerias python:
+http://docs.python.org/2/library/urllib2.html#module-urllib2
+http://docs.python.org/2/tutorial/inputoutput.html

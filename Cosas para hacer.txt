@@ -1,0 +1,74 @@
+1-Instalar Moodle - hecho
+2-Ver si se pueden saber los servicios externos web de un moodle desde fuera - hecho
+3-Hacer Documentacion, apuntar URls y pasos a seguir para hacer lo que he hecho
+4-Ver si el Moodle me puede devolver JSON en vez de XML - hecho (Documentation)
+5-Hacer que se pueda acceder al moodle desde fuera de mi red - hecho7-Intentar ejecutar funciones con docencia.etsiit.urjc.es. - hecho
+Comprobar porque a todos los POST devuelve un 200 OK sin datos.
+Motivo: {"error":"Los servicios Web deben estar habilitados en las caracter\u00edsticas avanzadas.","stacktrace":null,"debuginfo":null,"reproductionlink":null}
+Programa de prueba testMoodle.py
+8-Modulo de python para json (librería por defecto de python): import json - hecho
+9-Comprobar los permisos necesarios para obtener el token - hecho (Documentation)
+6-Probar el uso de las siguientes funciones de servicios web:
+    core_files_get_files
+    core_files_upload
+    core_user_create_users
+    core_user_get_users_by_id -
+    core_user_delete_users
+    core_enrol_get_enrolled_users_with_capability
+    core_enrol_get_enrolled_users -
+    core_course_get_contents -
+    core_course_get_courses -
+    core_course_create_courses
+    core_course_delete_courses
+    core_course_duplicate_course
+    core_course_get_categories
+    core_course_create_categories
+    core_course_update_categories
+    core_course_delete_categories
+    core_webservice_get_site_info -
+    mod_assign_get_assignments
+10-github: hacer cuenta, 2 carpetas, test y stable
+11-Mandar enlace de github a Barahona cuando lo tenga
+12-Documentacion: descripcion de Moodle
+    descripcion de la API de Moodle
+    comparacion con otros sistemas
+    como he encontrado la informacion, los enlaces...
+    documentacion de como construir una aplicacion REST con Moodle
+13-Probar funciones contra: contrcampusonline.urjc.es
+14-Hacer parte del programa para descargar ficheros y otros recursos: ya descarga ficheros, probar con assigments
+https://moodle.org/mod/forum/discuss.php?d=70021
+
+NOTAS:
+
+Cambios hechos:
+
+
+get files command:
+moodle api component rest
+http://docs.moodle.org/dev/File_API
+ejemplo en foros del moodle
+
+web services OK tech
+"Oktech doesnt work on 2+ for getting resources, so leave it be": https://moodle.org/mod/forum/discuss.php?d=191886
+
+
+puedo preguntar en Moodle (en inglés) problemas que no pueda resolver. Es probable k no contesten
+
+Seguridad:
+urllib2 en vez de httplib
+
+libreria externa python-moodle
+
+Apoyo de aplicaciones que interactuan con moodle
+Google play market - poner "moodle" en el buscador -> aplicaciones que usan el moodle
+ej de aplicacion mdroid
+USO: mostrar Moodle en un Andoid, filtrado de respuestas HTML, no usa REST
+
+Ejemplos de scripts en python
+busqueda: "python moodle"
+4ª o 5ª respuesta: download submitted assigments from Moodle
+http://dilawarnotes.wordpress.com/2012/02/16/using-python-to-download-submitted-assignments-from-moodle/
+PROBLEMA: utiliza el formato HTML, no peticiones REST
+
+busqueda "javascript moodle"
+ejemplos de javascript para usar Moodle

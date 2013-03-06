@@ -1,0 +1,69 @@
+
+-----------------------------------------------------------------------------------
+REST
+-Obtener respuestas JSON a las peticiones REST:
+En la petición incluir el parámetro "moodlewsrestformat=json"
+por ejemplo: /webservice/rest/server.php?wstoken=1cfc5&wsfunction=core_webservice_get_site_info&moodlewsrestformat=json
+-----------------------------------------------------------------------------------
+APACHE
+-Directorio de contenido web de Apache:
+/var/www
+-Reiniciar Apache
+sudo service apache2 restart
+-Archivos y rutas importantes:
+*virtual hosts habilitados
+/etc/apache2/sites-enabled
+*el virtual host por default(e pueden hacer copias)
+/etc/apache2/sites-available/default
+*el archivo de configuración de PHP
+/etc/php5/apache2/php.ini
+*el archivo de configuración global de MySQL
+/etc/mysql/my.cnf
+-----------------------------------------------------------------------------------
+MySQL
+-Entrar en la consola de MySQL
+mysql -h localhost -u <usuario> -p
+Usuario                 Contraseña
+root                    PERSONALpass
+moodle                  MoodPFC
+-----------------------------------------------------------------------------------
+PHP Client
+-The configuration file for the PHP CLI is /etc/php5/cli/php.ini
+-----------------------------------------------------------------------------------
+phpMyAdmin
+-Usar phpmyadmin: en el navegador web local
+http://localhost/phpmyadmin
+-Configurar phpmyadmin con apache:
+/etc/phpmyadmin/apache.conf
+-----------------------------------------------------------------------------------
+MOODLE
+-Datos importatntes
+Web address: http://localhost/moodle or http://the.ip.address/moodle or http://dnsname.of.server/moodle
+Moodle Directory: /var/www/moodle
+Data Directory: /var/moodledata
+Type: Improved MySQL (native mysqli)
+Database host: localhost
+Database name: dbmoodle
+Database user: moodle
+-Acceso desde maquina, red o internet:
+archivo: /var/www/moodle/config.php
+linea: $CFG->wwwroot   = 'http://<direccion>/moodle';
+Para maquina: direccion= "localhost" o "127.0.0.1"                          Ej: $CFG->wwwroot   = 'http://localhost/moodle';
+Para LAN: direccion= "nombre máquina en la LAN" o "<dir IP privada en la LAN>"      Ej: $CFG->wwwroot   = 'http://ubuntu/moodle';
+Para Internet: direccion= "nombre dominio" o "<dir IP publica>"             Ej: $CFG->wwwroot   = 'http://mimoodle.org/moodle';
+
+-Enable external web services:
+Settings->Site administration->Advaced features->Enable web services:enable
+-Enable REST protocol
+Settings->Site administration->Plugins->Web services->Manage protocols->Rest protocol:Enable
+-Allow users to use web services:
+1) Create a system role(Settings->Site administration->Users->Permissions->Define roles): Context types where this role may be assigned: system
+2) Select this role permissions: webservice/rest:use, moodle/webservice:createtoken
+3) Assign this role to a user(Settings->Site administration->Users->Permissions->Assign system roles)
+-Download files:
+http://docs.moodle.org/dev/Web_services_files_handling#File_download
+
+Usuarios                    Contraseñas
+admin                       AdminP@ss1
+student1                    StudentP@ss1
+manager1                    ManagerP@ss1

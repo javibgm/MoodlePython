@@ -1,0 +1,13 @@
+5-2-2013
+Analisis del funcionamiento del Moodle con el exterior mediante el moodle de prueba: Web Services
+Programa de prueba en python para interactuar con Moodle:
+Peticion REST, generacion de token, uso de la API de Web Services
+----------------------------------------------------------
+12-2-2013
+Poner respuestas con formato JSON en el protocolo REST
+Instalar PHP,MySQL,Apache2 y phpMyAdmin
+----------------------------------------------------------
+15-2-2013
+Instalado Moodle versión 2.4.1+
+Configuración de usuarios para pruebas
+Creacion y configuración del servicio externo de pruebas ext_ser
