@@ -189,3 +189,15 @@ class MoodLib:
             print response.getcode()
         except KeyError:
             print 'File not found. Operation cancelled.'
+    
+    def assign_get_grades(self, assignmid):
+    # Get grades from an assigment
+        if (not (type(int(assignmid)) == int)):
+            print 'Incorrect input: course ID must be an integer'
+            return None
+        function="mod_assign_get_grades"
+        param = urllib.urlencode({'assignmentids[0]': assignmid})
+        return self.connect(function, param)
+    
+    def get_submmited_files(self):
+        url = "http://adry3000.dyndns.org/moodle/webservice/pluginfile.php/45/assignsubmission_file/submission_files/1/Student%201%20File" + '?token=' + self.token

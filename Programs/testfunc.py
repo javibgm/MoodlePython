@@ -19,8 +19,8 @@ pasw="StudentP@ss1"
 
 info = {
     'web': 'http://adry3000.dyndns.org',
-    'user': 'student1',
-    'pasw': 'StudentP@ss1',
+    'user': 'admin',
+    'pasw': 'AdminP@ss1',
     'token': '',
     'service': 'ext_ser'
 }
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     print m.get_token()
     function = ''
     while(function!='0'):
-        print 'Select operation: 1 site info / 2 course contents/ 3 get files/ 4 get courses/ 5 get user/ 6 enrolled users/ 7 get assigments/ 8 get component strings/ 9 download file / 0(exit)'
+        print 'Select operation: 1 site info / 2 course contents/ 3 get files/ 4 get courses/ 5 get user/ 6 enrolled users/ 7 get assigments/ 8 get component strings/ 9 download file / 10 mod_assign_get_grades / 0(exit)'
         function = raw_input()
         result = None
         if function=="0":
@@ -66,6 +66,9 @@ if __name__ == "__main__":
         elif function == "9":
             print "Input: course ID"
             result = m.down_file(raw_input())
+        elif function == "10":
+            print "Input assigment ID: "
+            result = m.assign_get_grades(raw_input())
         else:
             print "Incorrect input, gettin all courses"
             result = m.get_courses()
