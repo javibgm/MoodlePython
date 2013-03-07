@@ -2,7 +2,8 @@
 2-Ver si se pueden saber los servicios externos web de un moodle desde fuera - hecho
 3-Hacer Documentacion, apuntar URls y pasos a seguir para hacer lo que he hecho
 4-Ver si el Moodle me puede devolver JSON en vez de XML - hecho (Documentation)
-5-Hacer que se pueda acceder al moodle desde fuera de mi red - hecho7-Intentar ejecutar funciones con docencia.etsiit.urjc.es. - hecho
+5-Hacer que se pueda acceder al moodle desde fuera de mi red - hecho
+7-Intentar ejecutar funciones con docencia.etsiit.urjc.es. - hecho
 Comprobar porque a todos los POST devuelve un 200 OK sin datos.
 Motivo: {"error":"Los servicios Web deben estar habilitados en las caracter\u00edsticas avanzadas.","stacktrace":null,"debuginfo":null,"reproductionlink":null}
 Programa de prueba testMoodle.py
@@ -26,7 +27,8 @@ Programa de prueba testMoodle.py
     core_course_update_categories
     core_course_delete_categories
     core_webservice_get_site_info -
-    mod_assign_get_assignments
+    mod_assign_get_assignments -
+    mod_assign_get_grades -
 10-github: hacer cuenta, 2 carpetas, test y stable
 11-Mandar enlace de github a Barahona cuando lo tenga
 12-Documentacion: descripcion de Moodle
@@ -34,14 +36,22 @@ Programa de prueba testMoodle.py
     comparacion con otros sistemas
     como he encontrado la informacion, los enlaces...
     documentacion de como construir una aplicacion REST con Moodle
-13-Probar funciones contra: contrcampusonline.urjc.es
+13-Probar funciones contra: contrcampusonline.urjc.es - hecho
+No funciona porque: Web service is not available (it doesn't exist or might be disabled)
 14-Hacer parte del programa para descargar ficheros y otros recursos: ya descarga ficheros, probar con assigments
 https://moodle.org/mod/forum/discuss.php?d=70021
+https://moodle.org/mod/forum/discuss.php?d=93562
+http://docs.moodle.org/dev/Assignment_Web_Services
+Intentar combinar las funciones get_assigments(mod_assign_get_assignments) y mod_assign_get_grades
+PROBLEMA: la funcion get_assigments te da el valor para el usuario actual, no para otros usuarios
+sgio sin saber como obtener el fichero subido por el alumno
+
+15-Evaluar si es util crear una funcion para meter los parametros de la peticion de forma generica
 
 NOTAS:
-
-Cambios hechos:
-
+PROBLEMA: Parece que algunas de las funcionalidades necesarias estan aun en desarrollo
+http://docs.moodle.org/dev/Web_services_Roadmap#Core_web_service_functions
+https://tracker.moodle.org/browse/MDL-29934
 
 get files command:
 moodle api component rest
@@ -50,7 +60,6 @@ ejemplo en foros del moodle
 
 web services OK tech
 "Oktech doesnt work on 2+ for getting resources, so leave it be": https://moodle.org/mod/forum/discuss.php?d=191886
-
 
 puedo preguntar en Moodle (en inglés) problemas que no pueda resolver. Es probable k no contesten
 

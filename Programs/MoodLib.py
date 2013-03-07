@@ -43,19 +43,10 @@ class MoodLib:
             try:
                 self.token = response['token']
             except KeyError:
+                print 'Connection response: ' + str(response)
                 raise ValueError('Invalid parameters: usename, password or service_short_name')
         return self.token
 
-    """
-    def __init__(self, web, token='', user='', pasw='', service=''):
-    # Creates the connection with Moodle
-        self.conn = httplib.HTTPConnection(web,80)
-        self.token = token
-        if (self.token==''):
-            self.create_token(user, pasw, service)
-        else:
-            self.token = token
-    """
     def __init__(self, web, user='', pasw='', service=''):
     # Creates the connection with Moodle
         self.conn = web
@@ -128,7 +119,7 @@ class MoodLib:
         return self.connect(function, param)
     
     def enrolled_users(self, param):
-    # Get users enrrolled in a course
+    # Get users enrolled in a course
         function="core_enrol_get_enrolled_users"
         if param == '':
             print 'Incorrect input parameters'
@@ -141,7 +132,13 @@ class MoodLib:
     def get_assigments(self, courseids='', capabilities=''):
     # Get users enrrolled in a course with the specified capabilities
         function="mod_assign_get_assignments"
-        param = urllib.urlencode({'courseids[0]': courseids, 'capabilities[0]':capabilities})
+        param = []
+        param = urllib.urlencode({})
+        if (courseids!=''):
+            param.append(('courseids[0]', courseids))
+        if (capabilities!=''):
+            param.append(('capabilities[0]', capabilities))
+        param = urllib.urlencode(param)
         return self.connect(function, param)
     
     def get_component_strings(self, component=''):
@@ -174,7 +171,7 @@ class MoodLib:
         return files
     
     def down_file(self, courseid):
-    # Show course resources and download the selected files
+    # Show course resources and download the selected file
         files = self.show_course_contents(self.course_contents(courseid))
         print 'Input: file index'
         fileindex = raw_input()
@@ -200,4 +197,5 @@ class MoodLib:
         return self.connect(function, param)
     
     def get_submmited_files(self):
+    # Developing.....
         url = "http://adry3000.dyndns.org/moodle/webservice/pluginfile.php/45/assignsubmission_file/submission_files/1/Student%201%20File" + '?token=' + self.token
