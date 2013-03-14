@@ -44,9 +44,25 @@ https://moodle.org/mod/forum/discuss.php?d=93562
 http://docs.moodle.org/dev/Assignment_Web_Services
 Intentar combinar las funciones get_assigments(mod_assign_get_assignments) y mod_assign_get_grades
 PROBLEMA: la funcion get_assigments te da el valor para el usuario actual, no para otros usuarios
-sgio sin saber como obtener el fichero subido por el alumno
-
+sigo sin saber como obtener el fichero subido por el alumno
 15-Evaluar si es util crear una funcion para meter los parametros de la peticion de forma generica
+16-Una funcion para subir un documento (mirar como lo hace moodle via web)
+
+
+ALTERNATIVA: usar scrapping (mediante HTML):
+bibliotecas utiles: urlib, urlib2, requests (python-request.org)
+loguearte
+bajarte html de un curso
+bajar 1 documento de un curso
+bajar todos los documentos de 1 curso
+
+
+
+Documentacion:
+hay una seccion de contar de lo que habia antes de empezar el proyecto !!!
+contar las fases de mi proyecto y lo que 
+explicar con detalle cada parte de mi proyeccto
+detalles de implementacion en anexos
 
 NOTAS:
 PROBLEMA: Parece que algunas de las funcionalidades necesarias estan aun en desarrollo
