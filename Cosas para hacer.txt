@@ -1,70 +1,62 @@
+6-Crear las funciones para cada servicio web, con una lista como entrada en las que tenga la opcion de hacer varias cosas en la misma peticion:
+    core_webservice_get_site_info: get_site_info
+    core_course_get_courses: get_courses
+    core_course_get_contents: course_contents
+    
+10-github: hacer cuenta, 2 carpetas, test y stable
+14-Hacer parte del programa para descargar ficheros y otros recursos: ya descarga ficheros, probar con assigments
+    https://moodle.org/mod/forum/discuss.php?d=70021
+    https://moodle.org/mod/forum/discuss.php?d=93562
+    http://docs.moodle.org/dev/Assignment_Web_Services
+    Intentar combinar las funciones get_assigments(mod_assign_get_assignments) y mod_assign_get_grades
+    PROBLEMA: la funcion get_assigments te da el valor para el usuario actual, no para otros usuarios
+    sigo sin saber como obtener el fichero subido por el alumno
+    SOLUCION: nueva funcion que da esa funcionalidad en Moodle 2.5: mod_assign_get_submissions
+15-Evaluar si es util crear una funcion para meter los parametros de la peticion de forma generica
+16-Una funcion para subir un documento (mirar como lo hace moodle via web)
+
+
+TAREAS HECHAS:
 1-Instalar Moodle - hecho
 2-Ver si se pueden saber los servicios externos web de un moodle desde fuera - hecho
 3-Hacer Documentacion, apuntar URls y pasos a seguir para hacer lo que he hecho
 4-Ver si el Moodle me puede devolver JSON en vez de XML - hecho (Documentation)
 5-Hacer que se pueda acceder al moodle desde fuera de mi red - hecho
 7-Intentar ejecutar funciones con docencia.etsiit.urjc.es. - hecho
-Comprobar porque a todos los POST devuelve un 200 OK sin datos.
-Motivo: {"error":"Los servicios Web deben estar habilitados en las caracter\u00edsticas avanzadas.","stacktrace":null,"debuginfo":null,"reproductionlink":null}
-Programa de prueba testMoodle.py
+    Comprobar porque a todos los POST devuelve un 200 OK sin datos.
+    Motivo: {"error":"Los servicios Web deben estar habilitados en las caracter\u00edsticas avanzadas.","stacktrace":null,"debuginfo":null,"reproductionlink":null}
+    Programa de prueba testMoodle.py
 8-Modulo de python para json (librería por defecto de python): import json - hecho
 9-Comprobar los permisos necesarios para obtener el token - hecho (Documentation)
-6-Probar el uso de las siguientes funciones de servicios web:
-    core_files_get_files
-    core_files_upload
-    core_user_create_users
-    core_user_get_users_by_id -
-    core_user_delete_users
-    core_enrol_get_enrolled_users_with_capability
-    core_enrol_get_enrolled_users -
-    core_course_get_contents -
-    core_course_get_courses -
-    core_course_create_courses
-    core_course_delete_courses
-    core_course_duplicate_course
-    core_course_get_categories
-    core_course_create_categories
-    core_course_update_categories
-    core_course_delete_categories
-    core_webservice_get_site_info -
-    mod_assign_get_assignments -
-    mod_assign_get_grades -
-10-github: hacer cuenta, 2 carpetas, test y stable
-11-Mandar enlace de github a Barahona cuando lo tenga
-12-Documentacion: descripcion de Moodle
+11-Mandar enlace de github a Barahona cuando lo tenga - hecho
+13-Probar funciones contra: contrcampusonline.urjc.es - hecho
+    No funciona porque: Web service is not available (it doesn't exist or might be disabled)
+18-Dividir el proyecto en modulos: creado modulo MoodProy - hecho
+17-Instalar moodle ver 2.5dev: hecho
+
+ALTERNATIVA DE PROYECTO: usar scrapping (mediante HTML):
+bibliotecas utiles: urlib, urlib2, requests (python-request.org)
+funciones iniciales a desarrollar:
+    loguearte
+    bajarte html de un curso
+    bajar 1 documento de un curso
+    bajar todos los documentos de 1 curso
+
+
+DOCUMENTATION:
+    descripcion de Moodle
     descripcion de la API de Moodle
     comparacion con otros sistemas
     como he encontrado la informacion, los enlaces...
     documentacion de como construir una aplicacion REST con Moodle
-13-Probar funciones contra: contrcampusonline.urjc.es - hecho
-No funciona porque: Web service is not available (it doesn't exist or might be disabled)
-14-Hacer parte del programa para descargar ficheros y otros recursos: ya descarga ficheros, probar con assigments
-https://moodle.org/mod/forum/discuss.php?d=70021
-https://moodle.org/mod/forum/discuss.php?d=93562
-http://docs.moodle.org/dev/Assignment_Web_Services
-Intentar combinar las funciones get_assigments(mod_assign_get_assignments) y mod_assign_get_grades
-PROBLEMA: la funcion get_assigments te da el valor para el usuario actual, no para otros usuarios
-sigo sin saber como obtener el fichero subido por el alumno
-15-Evaluar si es util crear una funcion para meter los parametros de la peticion de forma generica
-16-Una funcion para subir un documento (mirar como lo hace moodle via web)
 
-
-ALTERNATIVA: usar scrapping (mediante HTML):
-bibliotecas utiles: urlib, urlib2, requests (python-request.org)
-loguearte
-bajarte html de un curso
-bajar 1 documento de un curso
-bajar todos los documentos de 1 curso
-
-
-
-Documentacion:
+DOCUMENTATION PARTS:
 hay una seccion de contar de lo que habia antes de empezar el proyecto !!!
-contar las fases de mi proyecto y lo que 
+contar las fases de mi proyecto y lo que hacen
 explicar con detalle cada parte de mi proyeccto
 detalles de implementacion en anexos
 
-NOTAS:
+NOTES:
 PROBLEMA: Parece que algunas de las funcionalidades necesarias estan aun en desarrollo
 http://docs.moodle.org/dev/Web_services_Roadmap#Core_web_service_functions
 https://tracker.moodle.org/browse/MDL-29934

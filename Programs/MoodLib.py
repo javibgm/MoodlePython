@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-# External web service functions test
+# External web service functions library
 # Javier Benito García-Mochales
 
 import sys, urllib, urllib2, json
@@ -13,22 +13,27 @@ def tabulate(tab):
         buf += "\t"
     return buf
 
-def show(data, tab):
+def showt(data, tab):
 # Prints JSON converted to python data tabulated
     buf = ''
     if (type(data)==type({})):
+        buf += "{"
         for a in data.keys():
             buf += tabulate(tab)
-            buf += str(a) + ": " + show(data[a], tab+1)
+            buf += str(a) + ": " + showt(data[a], tab+1)
+        buf += "}"
     elif (type(data)==type([])):
         buf += "[\n"
         for a in data:
-            buf += show(a, tab)
+            buf += showt(a, tab)
         buf += tabulate(tab)
         buf += "]" + "\n"
     else:
         buf += str(data) + "\n"
     return buf
+
+def show(data):
+    return showt(data,0)
 
 class MoodLib:
     def create_token(self, user='', pasw='', service=''):
@@ -77,7 +82,7 @@ class MoodLib:
         self.conn.close()
 
     def get_site_info(self):
-    # Get generl info about Moodle site
+    # Get general info about Moodle site
         function="core_webservice_get_site_info"
         return self.connect(function, urllib.urlencode({}))
 
@@ -93,17 +98,21 @@ class MoodLib:
     def get_courses(self, param=''):
     # Return course details, all courses details returned if no param specified
         function="core_course_get_courses"
-        if param == '':
-            param = {}
-        else:
-            param = urllib.urlencode({'options[ids][0]': param})
-        return self.connect(function, param)
+        array = ''
+        num=0
+        if param != '':
+            for course in param:
+                array += urllib.urlencode({'options[ids]['+str(num)+']': course}) + '&'
+                num += 1
+        return self.connect(function, array)
     
     def get_files(self, contextid='', component='', filearea='', itemid='', filepath='', filename=''):
     # Browse moodle files
+        """
         if (contextid=='' or component=='' or filearea=='' or itemid=='' or filepath=='' or filename==''):
             print 'Incorrect input parameters'
             return None
+        """
         function="core_files_get_files"
         param = urllib.urlencode({'contextid': contextid, 'component':component, 'filearea':filearea, 'itemid':itemid, 'filepath':filepath, 'filename':filename})
         return self.connect(function, param)
@@ -148,7 +157,7 @@ class MoodLib:
         return self.connect(function, param)
     
     def show_course_contents(self, res):
-    # Shows course contents and returns them in a dictionary
+    # Shows course contents and returns resource items in a dictionary
     # The dicctionary has this structure:
     # Dic = {index : [filename, fileurl]}
         files = {}
@@ -156,15 +165,22 @@ class MoodLib:
         for area in res:
             print area['name']
             for dic in area['modules']:
+                """
                 print str(index) + '.Name: ' + dic['name'] + '\tid: ' + str(dic['id']) + '\tmodname: ' + str(dic['modname'])
                 files[str(index)] = [str(dic['name']), str(dic['url'])]
                 index = index + 1
+                """
+                print '  Name: ' + dic['name'] + '\tid: ' + str(dic['id']) + '\tmodname: ' + str(dic['modname'])
                 try:
                     for content in dic['contents']:
-                        print (str(index) + '. ' + str(content['filename']) + ': ' + str(content['fileurl']) +
-                        '\t Type: ' + str(content['type']))
-                        files[str(index)] = [str(content['filename']), str(content['fileurl']).split('?')[0]]
-                        index = index + 1
+                        if str(content['type'])=='file':
+                            print (str(index) + '.' + str(content['filename']) + ': ' + str(content['fileurl']) +
+                            '\t Type: ' + str(content['type']))
+                            files[str(index)] = [str(content['filename']), str(content['fileurl']).split('?')[0]]
+                            index = index + 1
+                        else:
+                            print ('   ' + str(content['filename']) + ': ' + str(content['fileurl']) +
+                            '\t Type: ' + str(content['type']))
                 except KeyError:
                     # print 'No contents'
                     None

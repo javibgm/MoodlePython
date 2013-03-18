@@ -10,6 +10,11 @@ APACHE
 /var/www
 -Reiniciar Apache
 sudo service apache2 restart
+sudo /etc/init.d/apache2 restart
+To stop Apache 2 web server:
+sudo /etc/init.d/apache2 stop
+To start Apache 2 web server:
+sudo /etc/init.d/apache2 start
 -Archivos y rutas importantes:
 *virtual hosts habilitados
 /etc/apache2/sites-enabled

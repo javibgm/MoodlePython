@@ -4,24 +4,76 @@
 # External web service functions test
 # Javier Benito García-Mochales
 
-import MoodLib
-
 """
-    'user': 'admin',
-    'pasw': 'AdminP@ss1',
-    
-    'user': 'manager1',
-    'pasw': 'ManagerP@ss1',
+python
+import testfunc
+t = testfunc.tester()
 
-    'user': 'student1',
-    'pasw': 'StudentP@ss1',
+t.get_site_info()
+t.course_contents()
+IDs = [2, 4]
+t.get_courses(IDs)
 """
+
 info = {
     'web': 'http://adry3000.dyndns.org',
-    'user': 'student1',
-    'pasw': 'StudentP@ss1',
+    'user': 'admin',
+    'pasw': 'AdminP@ss1',
     'service': 'ext_ser'
 }
+
+import MoodProy.MoodLib as MoodLib
+import MoodProy.aux as Moodaux
+
+class tester:
+    def __init__(self):
+        #m = MoodLib.MoodLib(info['web'], '', '', '')
+        self.m = MoodLib.MoodLib(info['web'], info['user'], info['pasw'], info['service'])
+        print self.m.get_token()
+    
+    def functions(self):
+        print "Available functions:"
+        print " get_site_info(): Get general info about Moodle site"
+        print " course_contents(ID: int): Get contents of one course"
+        print " get_courses(IDS: [int]): Return course details, all courses details returned if no IDs specified"
+    
+    def get_site_info(self):
+        Moodaux.show(self.m.get_site_info())
+
+    def course_contents(self, ID):
+        Moodaux.show(self.m.course_contents(ID))
+    
+    def get_courses(self, IDs):
+        Moodaux.show(self.m.get_courses(IDs))
+    
+    def get_files(self):
+        print "Input: context id, component, file area, item id, file path, file name"
+        Moodaux.show(self.m.get_files(raw_input(),raw_input(),raw_input(),raw_input(),raw_input(),raw_input()))
+    
+    def get_user(self):
+        print "Input user ID: "
+        Moodaux.show(self.m.get_users_by_id(raw_input()))
+    
+    def enrolled_users(self):
+        print "Input course ID: "
+        Moodaux.show(self.m.enrolled_users(raw_input()))
+    
+    def get_assigments(self):
+        print "Input: course ID, capabilities"
+        Moodaux.show(self.m.get_assigments(raw_input(), raw_input()))
+    
+    def get_component_strings(self):
+        print "Input: component"
+        Moodaux.show(self.m.get_component_strings(raw_input()))
+    
+    def down_file(self):
+        print "Input: course ID"
+        Moodaux.show(self.m.down_file(raw_input()))
+    
+    def assign_get_grades(self):
+        print "Input assigment ID: "
+        Moodaux.show(self.m.get_grades(raw_input()))
+    
 
 if __name__ == "__main__":
     """
@@ -51,7 +103,7 @@ if __name__ == "__main__":
             result = m.get_courses(raw_input())
         elif function == "5":
             print "Input user ID: "
-            result = m.get_user(raw_input())
+            result = m.get_users_by_id(raw_input())
         elif function == "6":
             print "Input course ID: "
             result = m.enrolled_users(raw_input())
@@ -66,9 +118,9 @@ if __name__ == "__main__":
             result = m.down_file(raw_input())
         elif function == "10":
             print "Input assigment ID: "
-            result = m.assign_get_grades(raw_input())
+            result = m.get_grades(raw_input())
         else:
             print "Incorrect input, gettin all courses"
             result = m.get_courses()
         if function !="0":
-            print MoodLib.show(result,0)
+            print Moodaux.show(result)
