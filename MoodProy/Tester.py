@@ -22,7 +22,7 @@ info = {
     'service': 'ext_ser'
 }
 
-def test_MoodLib():
+def test_get_site_info():
     show(t.get_site_info())
 
 def test_get_courses(test):
@@ -55,6 +55,6 @@ def test_course_contents(test):
 if __name__ == '__main__':
     t = MoodLib(info['web'], '0458ea98862eecc3eef61dd776ffbdf2')
     # t = MoodLib(info['web'], '', info['user'], info['pasw'], info['service'])
-    # test_MoodLib()
+    test_get_site_info()
     # test_get_courses(raw_input())
     # test_course_contents(raw_input())
