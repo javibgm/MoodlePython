@@ -1,3 +1,21 @@
+"""
+    'user': 'admin',
+    'pasw': 'AdminP@ss1',
+    
+    'user': 'manager1',
+    'pasw': 'ManagerP@ss1',
+
+    'user': 'student1',
+    'pasw': 'StudentP@ss1',
+"""
+
+info = {
+    'web': 'http://adry3000.dyndns.org',
+    'user': 'admin',
+    'pasw': 'AdminP@ss1',
+    'service': 'ext_ser'
+}
+
 def _tabulate(tab):
 # return the number of tabulations indicated in a string
     buf = ''

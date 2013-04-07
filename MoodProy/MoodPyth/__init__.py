@@ -40,6 +40,10 @@ class MoodClass():
         response = urllib2.urlopen(req)
         source = json.load(response)
         print response.getcode()
+        try:
+            raise ValueError('Moodle exception:' + source['errorcode'] + '\n Message: ' + source['message'])
+        except TypeError:
+            pass
         return source
     
     def close(self):
