@@ -2,6 +2,8 @@
     core_webservice_get_site_info: get_site_info
     core_course_get_courses: get_courses
     core_course_get_contents: course_contents
+    core_course_get_categories: get_categories
+    core_course_create_categories: create_categories
     
 10-github: hacer cuenta, 2 carpetas, test y stable
 14-Hacer parte del programa para descargar ficheros y otros recursos: ya descarga ficheros, probar con assigments

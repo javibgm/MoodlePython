@@ -61,10 +61,20 @@ def test_get_categories(test):
         array = [{'keys': 'id', 'values':'1'}]
     show(t.get_categories(array))
 
+def test_create_categories(test):
+    array = []
+    if test == '1':
+        array = [{'name': 'Python Category', 'idnumber':'1', 'description':'Categoty created with MoodPyth'}]
+    # Errors
+    elif test == '2':
+        array = [{'idnumber':'1'}]
+    show(t.create_categories(array))
+
 if __name__ == '__main__':
     t = MoodLib(info['web'], '0458ea98862eecc3eef61dd776ffbdf2')
     # t = MoodLib(info['web'], '', info['user'], info['pasw'], info['service'])
     # test_get_site_info()
     # test_get_courses(raw_input())
     # test_course_contents(raw_input())
-    test_get_categories(raw_input())
+    # test_get_categories(raw_input())
+    test_create_categories(raw_input())

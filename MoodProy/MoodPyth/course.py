@@ -54,15 +54,39 @@ class course(MoodClass):
         param = ''
         num=0
         if type(array)!=type([]) and array!='':
-            raise TypeError('Input must be a list of courses')
+            raise TypeError('Input must be a list of dictionaries with {key:value} structure')
         for criteria in array:
             param += urllib.urlencode({'criteria['+str(num)+'][key]': criteria['key'], 'criteria['+str(num)+'][value]': criteria['value']}) + '&'
             num += 1
         return self.connect(function, param)
 
-    def create_categories(self):
+    def create_categories(self,array):
     # Create course categories
+        ''' name string   //new category name
+            parent int  Default to "0" //the parent category id inside which the new category will be created - set to 0 for a root category
+            idnumber string  Optional //the new category idnumber
+            description string  Optional //the new category description
+            descriptionformat int  Default to "1" //description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            theme string  Optional //the new category theme. This option must be enabled on moodle '''
         function = 'core_course_create_categories'
+        param = ''
+        num=0
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "name"')
+        for categories in array:
+            param += urllib.urlencode({'categories['+str(num)+'][name]': categories['name']}) + '&'
+            if('parent' in categories):
+                param += urllib.urlencode({'categories['+str(num)+'][parent]': categories['parent']}) + '&'
+            if('idnumber' in categories):
+                param += urllib.urlencode({'categories['+str(num)+'][idnumber]': categories['idnumber']}) + '&'
+            if('description' in categories):
+                param += urllib.urlencode({'categories['+str(num)+'][description]': categories['description']}) + '&'
+            if('descriptionformat' in categories):
+                param += urllib.urlencode({'categories['+str(num)+'][descriptionformat]': categories['descriptionformat']}) + '&'
+            if('theme' in categories):
+                param += urllib.urlencode({'categories['+str(num)+'][theme]': categories['theme']}) + '&'
+            num += 1
+        return self.connect(function, param)
 
     def update_categories(self):
     # Update categories
