@@ -17,7 +17,6 @@
     PROBLEMA: la funcion get_assigments te da el valor para el usuario actual, no para otros usuarios
     sigo sin saber como obtener el fichero subido por el alumno
     SOLUCION: nueva funcion que da esa funcionalidad en Moodle 2.5: mod_assign_get_submissions
-15-Evaluar si es util crear una funcion para meter los parametros de la peticion de forma generica
 16-Una funcion para subir un documento (mirar como lo hace moodle via web)
 
 
@@ -36,8 +35,9 @@ TAREAS HECHAS:
 11-Mandar enlace de github a Barahona cuando lo tenga - hecho
 13-Probar funciones contra: contrcampusonline.urjc.es - hecho
     No funciona porque: Web service is not available (it doesn't exist or might be disabled)
-18-Dividir el proyecto en modulos: creado modulo MoodProy - hecho
+15-Evaluar si es util crear una funcion para meter los parametros de la peticion de forma generica - hecho
 17-Instalar moodle ver 2.5dev: hecho
+18-Dividir el proyecto en modulos: creado modulo MoodProy - hecho
 
 ALTERNATIVA DE PROYECTO: usar scrapping (mediante HTML):
 bibliotecas utiles: urlib, urlib2, requests (python-request.org)

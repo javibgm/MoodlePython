@@ -1,0 +1,115 @@
+MoodProy
+    __init__
+        Class: MoodClass: self.web, self.token, self.conn
+            __init__(web, token |(, user, pasw, service))
+            create_token(user, pasw, service)
+            set_token(token)
+            get_token()
+            connect(function, param)
+            close()
+    aux
+        show(data)
+    course
+        Class: course(MoodClass)
+            course_contents(courseid)
+            get_courses([IDs])
+            get_categories([{'key':'value'},{...},...])
+                “key” (value) required ->
+                    "id" (int): the category id
+                    "name" (string): the category name
+                    "parent" (int): the parent category id
+                    "idnumber" (string): category idnumber - user must have 'moodle/category:manage' to search on idnumber
+                    "visible" (int): whether the returned categories must be visible or hidden. If the key is not passed, then the function return all categories that the user can see. - user must have 'moodle/category:manage' or 'moodle/category:viewhiddencategories' to search on visible
+                    "theme" (string): only return the categories having this theme - user must have 'moodle/category:manage' to search on theme
+            create_categories([{'name':'Category name','option1':'option1value',…},{...},...])
+                name: string required //new category name
+                parent: int  Default to "0" //the parent category id inside which the new category will be created - set to 0 for a root category
+                idnumber: string  Optional //the new category idnumber
+                description: string  Optional //the new category description
+                descriptionformat: int  Default to "1" //description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                theme: string  Optional //the new category theme. This option must be enabled on moodle '''
+            create_courses([{'fullname': 'full name', 'shortname': 'course short name', 'categoryid': 'category id', optional parameters},…)
+                fullname string required //full name
+                shortname string required //course short name
+                categoryid int required //category id
+                idnumber string  Optional //id number
+                summary string  Optional //summary
+                summaryformat int  Default to "1" //summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                format string  Default to "weeks" //course format: weeks, topics, social, site,..
+                showgrades int  Default to "1" //1 if grades are shown, otherwise 0
+                newsitems int  Default to "5" //number of recent items appearing on the course page
+                startdate int  Optional //timestamp when the course start
+                numsections int  Optional //(deprecated, use courseformatoptions) number of weeks/topics
+                maxbytes int  Default to "2097152" //largest size of file that can be uploaded into the course
+                showreports int  Default to "0" //are activity report shown (yes = 1, no =0)
+                visible int  Optional //1: available to student, 0:not available
+                hiddensections int  Optional //(deprecated, use courseformatoptions) How the hidden sections in the course are displayed to students
+                groupmode int  Default to "0" //no group, separate, visible
+                groupmodeforce int  Default to "0" //1: yes, 0: no
+                defaultgroupingid int  Default to "0" //default grouping id
+                enablecompletion int  Optional //Enabled, control via completion and activity settings. Disabled, not shown in activity settings.
+                completionstartonenrol int  Optional //1: begin tracking a student's progress in course completion after course enrolment. 0: does not
+                completionnotify int  Optional //1: yes 0: no
+                lang string  Optional //forced course language
+                forcetheme string  Optional //name of the force theme
+                courseformatoptions [{'name':'name1','value':'value1'},...] Optional //additional options for particular course format
+                    name string //course format option name
+                    value string //course format option value
+            delete_courses([courseID,...])
+                courseID int required //course ID
+            update_courses([{'id':'courseID', optional parameters},...])
+                id int required  //ID of the course
+                fullname string  Optional //full name
+                shortname string  Optional //course short name
+                categoryid int  Optional //category id
+                idnumber string  Optional //id number
+                summary string  Optional //summary
+                summaryformat int  Optional //summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                format string  Optional //course format: weeks, topics, social, site,..
+                showgrades int  Optional //1 if grades are shown, otherwise 0
+                newsitems int  Optional //number of recent items appearing on the course page
+                startdate int  Optional //timestamp when the course start
+                numsections int  Optional //(deprecated, use courseformatoptions) number of weeks/topics
+                maxbytes int  Optional //largest size of file that can be uploaded into the course
+                showreports int  Optional //are activity report shown (yes = 1, no =0)
+                visible int  Optional //1: available to student, 0:not available
+                hiddensections int  Optional //(deprecated, use courseformatoptions) How the hidden sections in the course are displayed to students
+                groupmode int  Optional //no group, separate, visible
+                groupmodeforce int  Optional //1: yes, 0: no
+                defaultgroupingid int  Optional //default grouping id
+                enablecompletion int  Optional //Enabled, control via completion and activity settings. Disabled, not shown in activity settings.
+                completionstartonenrol int  Optional //1: begin tracking a student's progress in course completion after course enrolment. 0: does not
+                completionnotify int  Optional //1: yes 0: no
+                lang string  Optional //forced course language
+                forcetheme string  Optional //name of the force theme
+                courseformatoptions [{'name':'paramname1','value':'paramvalue1'},...] Optional //additional options for particular course format
+                    name string   //course format option name
+                    value string   //course format option value
+            duplicate_course(courseid, fullname, shortname, categoryid, visible, options)
+                courseid int required  // course to duplicate id
+                fullname string required  // duplicated course full name
+                shortname string required  // duplicated course short name
+                categoryid int required  // duplicated course category parent
+                visible int (Default to "1") // duplicated course visible, default to yes
+                options [{'name':'paramname1','value':'paramvalue1'},...] Optional // duplicate options
+                    name string  //The backup option name:
+                        "activities" int // Include course activites (default to 1 that is equal to yes),
+                        "blocks" int // Include course blocks (default to 1 that is equal to yes),
+                        "filters" int // Include course filters  (default to 1 that is equal to yes),
+                        "users" int // Include users (default to 1 that is equal to yes),
+                        "role_assignments" int // Include role assignments  (default to 1 that is equal to yes),
+                        "comments" int // Include user comments  (default to 1 that is equal to yes),
+                        "completion_information" int // Include user course completion information  (default to 1 that is equal to yes),
+                        "logs" int // Include course logs  (default to 1 that is equal to yes),
+                        "histories" int // Include histories  (default to 1 that is equal to yes)
+                    value string  //the value for the option 1 (yes) or 0 (no)
+            import_course(importfrom, importto, deletecontent, options)
+                importfrom int required // the id of the course we are importing from
+                importto int required // the id of the course we are importing to
+                deletecontent int (Default to "0") // whether to delete the course content where we are importing to (default to 0 = No)
+                options [{'name':'paramname1','value':'paramvalue1'},...] Optional // import options
+                    name string   //The backup option name:
+                        "activities" int Include course activites (default to 1 that is equal to yes),
+                        "blocks" int Include course blocks (default to 1 that is equal to yes),
+                        "filters" int Include course filters  (default to 1 that is equal to yes)
+                    value string  //the value for the option 1 (yes) or 0 (no)
