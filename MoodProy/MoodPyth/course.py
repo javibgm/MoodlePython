@@ -20,71 +20,118 @@ class course(MoodClass):
         if type(courses)!=type([]) and courses!='':
             raise TypeError('Input must be a list of courses')
         for course in courses:
-            param += urllib.urlencode({'options[ids]['+str(num)+']': course}) + '&'
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(course, 'options[ids]', num)
             num += 1
         return self.connect(function, param)
     
-    def create_courses(self):
+    def create_courses(self,array):
     # Create new courses
         function = 'core_course_create_courses'
+        param = ''
+        num=0
+        reqParameters = ['fullname', 'shortname','categoryid']
+        optParameters = ['idnumber','summary', 'summaryformat', 'format', 'showgrades', 'newsitems', 'startdate', 'numsections', 'maxbytes']
+        optParameters += ['showreports', 'visible', 'hiddensections', 'groupmode', 'groupmodeforce', 'defaultgroupingid', 'enablecompletion']
+        optParameters += ['completionstartonenrol', 'completionnotify', 'lang', 'forcetheme']
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "fullname", shortname" and ""categoryid"')
+        for courses in array:
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(courses, 'courses', num, reqParameters)
+            param += self.add_optParameters(courses, 'courses', num, optParameters)
+            if 'courseformatoptions' in courses:
+                numformat = 0
+                for cfoptions in courses['courseformatoptions']:
+                    param += self.add_optParameters(cfoptions,'courses['+str(num)+'][courseformatoptions]',numformat,['name','value'])
+                    numformat += 1
+            num += 1
+        return self.connect(function, param)
 
-    def delete_courses(self):
+    def delete_courses(self, array):
     # Deletes all specified courses
         function = 'core_course_delete_courses'
+        param = ''
+        num=0
+        reqParameters = ['courseids']
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "fullname", shortname" and ""categoryid"')
+        for courseids in array:
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(courseids, 'courseids', num)
+            num += 1
+        return self.connect(function, param)
 
-    def update_courses(self):
+    def update_courses(self, array):
     # Update courses
         function = 'core_course_update_courses'
+        param = ''
+        num=0
+        reqParameters = ['id']
+        optParameters = ['fullname', 'shortname','categoryid','idnumber','summary', 'summaryformat', 'format', 'showgrades']
+        optParameters += ['newsitems', 'startdate', 'numsections', 'maxbytes']
+        optParameters += ['showreports', 'visible', 'hiddensections', 'groupmode', 'groupmodeforce', 'defaultgroupingid', 'enablecompletion']
+        optParameters += ['completionstartonenrol', 'completionnotify', 'lang', 'forcetheme']
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "fullname", shortname" and ""categoryid"')
+        for courses in array:
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(courses, 'courses', num, reqParameters)
+            param += self.add_optParameters(courses, 'courses', num, optParameters)
+            if 'courseformatoptions' in courses:
+                numformat = 0
+                for cfoptions in courses['courseformatoptions']:
+                    param += self.add_optParameters(cfoptions,'courses['+str(num)+'][courseformatoptions]',numformat,['name','value'])
+                    numformat += 1
+            num += 1
+        return self.connect(function, param)
     
     def duplicate_course(self):
     # Duplicate an existing course (creating a new one) without user data
         function = 'core_course_duplicate_course'
+    
+    def import_course(self):
+    # Import course data from a course into another course. Does not include any user data.
+        function = 'core_course_import_course'
 
-    def get_categories(self, array=''):
+    def get_categories(self, array='', addsubcategories=1):
     # Return category details. All categories details returned if no parameters specified 
     # list=[{'key':'value'},{...},...]
-        ''' key = "id" (int) the category id
-                "name" (string) the category name
-                "parent" (int) the parent category id
-                "idnumber" (string) category idnumber - user must have 'moodle/category:manage' to search on idnumber
-                "visible" (int) whether the returned categories must be visible or hidden. If the key is not passed, then the function return all categories that the user can see. - user must have 'moodle/category:manage' or 'moodle/category:viewhiddencategories' to search on visible
-                "theme" (string) only return the categories having this theme - user must have 'moodle/category:manage' to search on theme
-        '''
+        ''' key = "id"(int) | "name"(string) | "parent"(int) | "idnumber"(string) | "visible" (int) | "theme" (string)'''
         function = 'core_course_get_categories'
         param = ''
         num=0
+        reqParameters = ['key', 'value']
         if type(array)!=type([]) and array!='':
             raise TypeError('Input must be a list of dictionaries with {key:value} structure')
         for criteria in array:
-            param += urllib.urlencode({'criteria['+str(num)+'][key]': criteria['key'], 'criteria['+str(num)+'][value]': criteria['value']}) + '&'
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(criteria, 'criteria', num, reqParameters)
             num += 1
+        if addsubcategories==0:
+            param += '&' + urllib.urlencode({'addsubcategories': str(addsubcategories)})
         return self.connect(function, param)
 
     def create_categories(self,array):
     # Create course categories
-        ''' name string   //new category name
-            parent int  Default to "0" //the parent category id inside which the new category will be created - set to 0 for a root category
-            idnumber string  Optional //the new category idnumber
-            description string  Optional //the new category description
-            descriptionformat int  Default to "1" //description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
-            theme string  Optional //the new category theme. This option must be enabled on moodle '''
+        ''' name = string, parent = int | idnumber = string | description = string | descriptionformat = int | theme = string'''
         function = 'core_course_create_categories'
         param = ''
         num=0
+        reqParameters = ['name']
+        optParameters = ['parent','idnumber','description','descriptionformat','theme']
         if type(array)!=type([]) or array==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "name"')
         for categories in array:
-            param += urllib.urlencode({'categories['+str(num)+'][name]': categories['name']}) + '&'
-            if('parent' in categories):
-                param += urllib.urlencode({'categories['+str(num)+'][parent]': categories['parent']}) + '&'
-            if('idnumber' in categories):
-                param += urllib.urlencode({'categories['+str(num)+'][idnumber]': categories['idnumber']}) + '&'
-            if('description' in categories):
-                param += urllib.urlencode({'categories['+str(num)+'][description]': categories['description']}) + '&'
-            if('descriptionformat' in categories):
-                param += urllib.urlencode({'categories['+str(num)+'][descriptionformat]': categories['descriptionformat']}) + '&'
-            if('theme' in categories):
-                param += urllib.urlencode({'categories['+str(num)+'][theme]': categories['theme']}) + '&'
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(categories, 'categories', num, reqParameters)
+            param += self.add_optParameters(categories, 'categories', num, optParameters)
             num += 1
         return self.connect(function, param)
 
@@ -95,10 +142,6 @@ class course(MoodClass):
     def delete_categories(self):
     # Delete course categories
         function = 'core_course_delete_categories'
-
-    def import_course(self):
-    # Import course data from a course into another course. Does not include any user data.
-        function = 'core_course_import_course'
 
     def delete_modules(self):
     # Deletes all specified module instances

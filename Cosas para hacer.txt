@@ -4,6 +4,9 @@
     core_course_get_contents: course_contents
     core_course_get_categories: get_categories
     core_course_create_categories: create_categories
+    core_course_create_courses: create_courses
+    core_course_delete_courses: delete_courses
+    core_course_update_courses: update_courses
     
 10-github: hacer cuenta, 2 carpetas, test y stable
 14-Hacer parte del programa para descargar ficheros y otros recursos: ya descarga ficheros, probar con assigments
