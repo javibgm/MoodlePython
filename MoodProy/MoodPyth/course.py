@@ -168,14 +168,51 @@ class course(MoodClass):
             num += 1
         return self.connect(function, param)
 
-    def update_categories(self):
+    def update_categories(self, array):
     # Update categories
         function = 'core_course_update_categories'
+        param = ''
+        num=0
+        reqParameters = ['id']
+        optParameters = ['name','parent','idnumber','description','descriptionformat','theme']
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
+        for categories in array:
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(categories, 'categories', num, reqParameters)
+            param += self.add_optParameters(categories, 'categories', num, optParameters)
+            num += 1
+        return self.connect(function, param)
 
-    def delete_categories(self):
+    def delete_categories(self, array):
     # Delete course categories
         function = 'core_course_delete_categories'
+        param = ''
+        num=0
+        reqParameters = ['id']
+        optParameters = ['newparent','recursive']
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
+        for categories in array:
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(categories, 'categories', num, reqParameters)
+            param += self.add_optParameters(categories, 'categories', num, optParameters)
+            num += 1
+        return self.connect(function, param)
 
-    def delete_modules(self):
+    def delete_modules(self, array):
     # Deletes all specified module instances
         function = 'core_course_delete_modules'
+        param = ''
+        num=0
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of integers')
+        for cmids in array:
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(cmids, 'cmids', num)
+            num += 1
+        return self.connect(function, param)
+        

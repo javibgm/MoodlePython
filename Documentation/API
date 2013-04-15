@@ -12,22 +12,9 @@ MoodProy
     course
         Class: course(MoodClass)
             course_contents(courseid)
-            get_courses([IDs])
-            get_categories([{'key':'value'},{...},...])
-                “key” (value) required ->
-                    "id" (int): the category id
-                    "name" (string): the category name
-                    "parent" (int): the parent category id
-                    "idnumber" (string): category idnumber - user must have 'moodle/category:manage' to search on idnumber
-                    "visible" (int): whether the returned categories must be visible or hidden. If the key is not passed, then the function return all categories that the user can see. - user must have 'moodle/category:manage' or 'moodle/category:viewhiddencategories' to search on visible
-                    "theme" (string): only return the categories having this theme - user must have 'moodle/category:manage' to search on theme
-            create_categories([{'name':'Category name','option1':'option1value',…},{...},...])
-                name: string required //new category name
-                parent: int  Default to "0" //the parent category id inside which the new category will be created - set to 0 for a root category
-                idnumber: string  Optional //the new category idnumber
-                description: string  Optional //the new category description
-                descriptionformat: int  Default to "1" //description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
-                theme: string  Optional //the new category theme. This option must be enabled on moodle '''
+                courseid int required //course id
+            get_courses([id,...])
+                id int Optional //List of course id. If empty return all courses except front page course
             create_courses([{'fullname': 'full name', 'shortname': 'course short name', 'categoryid': 'category id', optional parameters},…)
                 fullname string required //full name
                 shortname string required //course short name
@@ -113,3 +100,32 @@ MoodProy
                         "blocks" int Include course blocks (default to 1 that is equal to yes),
                         "filters" int Include course filters  (default to 1 that is equal to yes)
                     value string  //the value for the option 1 (yes) or 0 (no)
+            get_categories([{'key':'value'},{...},...])
+                “key” (value) required ->
+                    "id" (int): the category id
+                    "name" (string): the category name
+                    "parent" (int): the parent category id
+                    "idnumber" (string): category idnumber - user must have 'moodle/category:manage' to search on idnumber
+                    "visible" (int): whether the returned categories must be visible or hidden. If the key is not passed, then the function return all categories that the user can see. - user must have 'moodle/category:manage' or 'moodle/category:viewhiddencategories' to search on visible
+                    "theme" (string): only return the categories having this theme - user must have 'moodle/category:manage' to search on theme
+            create_categories([{'name':'Category name','option1':'option1value',…},{...},...])
+                name: string required //new category name
+                parent: int  Default to "0" //the parent category id inside which the new category will be created - set to 0 for a root category
+                idnumber: string  Optional //the new category idnumber
+                description: string  Optional //the new category description
+                descriptionformat: int  Default to "1" //description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                theme: string  Optional //the new category theme. This option must be enabled on moodle '''
+            update_categories([{'id':'courseid','name':'Category name','idnumber':'idnumbervalue',…},{...},...])
+                id int required //course id
+                name string  Optional //category name
+                idnumber string  Optional //category id number
+                parent int  Optional //parent category id
+                description string  Optional //category description
+                descriptionformat int  Default to "1" //description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                theme string  Optional //the category theme. This option must be enabled on moodle
+            delete_categories([{'id':'courseid','newparent':'parentid','recursive':'0'},{...},...])
+                id int required //category id to delete
+                newparent int  Optional //the parent category to move the contents to, if specified
+                recursive int  Default to "0" //1: recursively delete all contents inside this category, 0 (default): move contents to newparent or current parent category (except if parent is root)
+            delete_modules([cmids,...])
+                cmids int required //course module ID
