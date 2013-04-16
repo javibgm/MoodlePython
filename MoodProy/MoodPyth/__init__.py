@@ -66,14 +66,17 @@ class MoodClass():
     # Auxiliary function: adds required function parameters
         param = ''
         paramnum = 0
-        if(paramnames!=''):        # if we have more than 1 required parameter in a dictionary
-            for paramname in paramnames:
-                if paramnum != 0:   # add a & if is not the first parameter
-                    param += '&'
-                param += urllib.urlencode({itemname + '['+str(num)+'][' + paramname + ']': item[paramname]})
-                paramnum+=1
-        elif (paramnames==''):
-            param = urllib.urlencode({itemname + '['+str(num)+']': item})
+        try:
+            if(paramnames!=''):        # if we have more than 1 required parameter in a dictionary
+                for paramname in paramnames:
+                    if paramnum != 0:   # add a & if is not the first parameter
+                        param += '&'
+                    param += urllib.urlencode({itemname + '['+str(num)+'][' + paramname + ']': item[paramname]})
+                    paramnum += 1
+            elif (paramnames==''):
+                param = urllib.urlencode({itemname + '['+str(num)+']': item})
+        except:
+            raise TypeError('Invalid function parameters')
         return param
     
     def add_optParameters(self, item, itemname, num, paramnames=''):

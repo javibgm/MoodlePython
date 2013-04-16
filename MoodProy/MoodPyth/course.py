@@ -55,7 +55,6 @@ class course(MoodClass):
         function = 'core_course_delete_courses'
         param = ''
         num=0
-        reqParameters = ['courseids']
         if type(array)!=type([]) or array==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 course id')
         for courseids in array:

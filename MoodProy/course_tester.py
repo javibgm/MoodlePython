@@ -148,16 +148,101 @@ def test_create_categories(test):
     # Error: try to create 2 categories with the same idnumber -> execute 2 times test 1
     show(t.create_categories(array))
 
+def test_update_categories(test):
+    array = []
+    if test == '1':
+        print 'Category ID to change name:'
+        catID = raw_input()
+        catName = t.get_categories([{'key': 'id', 'value':catID}])[0]['name']
+        array = [{'id':catID,'name': 'CATEGORY NAME CHANGED'}]
+        show(t.update_categories(array))
+        print 'Category name changed. Press any key to its name be returned...'
+        raw_input()
+        array = [{'id':catID,'name': catName}]
+    # Errors
+    elif test == '2':
+        array = [{'id':-1,'name': 'Error'}]
+    elif test == '3':
+        array = [1]
+    show(t.update_categories(array))
+        
+def test_delete_categories(test):
+    array = []
+    if test=='0':
+    # Delete manually 1 category
+        print 'category ID to delete:'
+        array=[{'id':raw_input(),'recursive':1}]
+    elif test=='1':
+    # create a category, inside a course and delete everything
+        categoryID = t.create_categories([{'name': 'Python Category'}])[0]['id']
+        t.create_courses([{'fullname':'Python course','shortname':'PythCourse','categoryid':categoryID}])
+        print 'Category and course created. Press enter to continue...'
+        raw_input()
+        array = [{'id':categoryID,'recursive':1}]
+    elif test=='2':
+    # create two categories, inside one create a course, delete that category and copy the content to the second course
+        categoryID1 = t.create_categories([{'name': 'Python Category'}])[0]['id']
+        categoryID2 = t.create_categories([{'name': 'Python Category 2'}])[0]['id']
+        t.create_courses([{'fullname':'Python course','shortname':'PythCourse','categoryid':categoryID1}])
+        print 'Categories and course created. Press enter to continue... (delete category and copy the content to the other one)'
+        raw_input()
+        array = [{'id':categoryID1,'newparent':categoryID2}]
+        show(t.delete_categories(array))
+        print 'Category deleted, course moved to second category. Press enter to continue... (delete the other category and the course)'
+        raw_input()
+        array = [{'id':categoryID2,'recursive':1}]
+    elif test=='3':
+    # create two categories, one inside other one, and inside create a course. Delete the child category and copy the content to the parent
+        categoryIDparent = t.create_categories([{'name': 'Python Category'}])[0]['id']
+        categoryIDchild = t.create_categories([{'name': 'Python Category 2','parent':categoryIDparent}])[0]['id']
+        t.create_courses([{'fullname':'Python course','shortname':'PythCourse','categoryid':categoryIDchild}])
+        print 'Categories and course created. Press enter to continue... (delete category and copy the content to the parent)'
+        raw_input()
+        array = [{'id':categoryIDchild}]
+        show(t.delete_categories(array))
+        print 'Category deleted, course moved to parent category. Press enter to continue... (delete the other category and the course)'
+        raw_input()
+        array = [{'id':categoryIDparent,'recursive':1}]
+    #Errors
+    elif test=='4':
+        pass
+    elif test=='5':
+        array = [{'id':'a'}]
+    elif test=='6':
+        categoryID = t.create_categories([{'name': 'Python Category'}])[0]['id'] # Category created, delete manually
+        array = [{'id':categoryID}]
+    elif test=='7':
+        array = [3]
+    elif test=='8':
+        array = ['3']
+    show(t.delete_categories(array))
+
+def test_delete_modules(test):
+    array = []
+    if test=='0':
+        # Delete 1 module manually
+        print 'Module ID to delete: '
+        array = [raw_input()]
+    # Errors
+    elif test == '1':
+        array = [-1]
+    elif test == '2':
+        array = ['a']
+    show(t.delete_modules(array))
+
 if __name__ == '__main__':
     t = MoodLib(info['web'], '0458ea98862eecc3eef61dd776ffbdf2')
     # t = MoodLib(info['web'], '', info['user'], info['pasw'], info['service'])
     # test_get_site_info()
-    # test_get_courses(raw_input())
     # test_course_contents(raw_input())
-    # test_get_categories(raw_input())
-    # test_create_categories(raw_input())
+    # test_get_courses(raw_input())
     # test_create_courses(raw_input())
     # test_delete_courses(raw_input())
     # test_update_courses(raw_input())
     # test_duplicate_course(raw_input())
-    test_import_course(raw_input())
+    # test_import_course(raw_input())
+    # test_get_categories(raw_input())
+    # test_create_categories(raw_input())
+    # test_update_categories(raw_input())
+    # test_delete_categories(raw_input())
+    test_delete_modules(raw_input())
