@@ -245,4 +245,4 @@ if __name__ == '__main__':
     # test_create_categories(raw_input())
     # test_update_categories(raw_input())
     # test_delete_categories(raw_input())
-    test_delete_modules(raw_input())
+    # test_delete_modules(raw_input())

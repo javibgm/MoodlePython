@@ -201,14 +201,14 @@ class course(MoodClass):
             num += 1
         return self.connect(function, param)
 
-    def delete_modules(self, array):
+    def delete_modules(self, modules):
     # Deletes all specified module instances
         function = 'core_course_delete_modules'
         param = ''
         num=0
-        if type(array)!=type([]) or array==[]:
+        if type(modules)!=type([]) or modules==[]:
             raise TypeError('Input must be a list of integers')
-        for cmids in array:
+        for cmids in modules:
             if num!=0:
                 param += '&'
             param += self.add_reqParameters(cmids, 'cmids', num)

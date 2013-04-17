@@ -1,0 +1,7 @@
+Class: MoodClass: self.web, self.token, self.conn
+            __init__(web, token |(, user, pasw, service))
+            create_token(user, pasw, service)
+            set_token(token)
+            get_token()
+            connect(function, param)
+            close()
