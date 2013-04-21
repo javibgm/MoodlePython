@@ -24,7 +24,7 @@ def test_get_files(test):
 
 def test_upload_file(test):
     if test == '1':
-        show(t.upload_file(5, 'user', 'private', 0, '/', 'FileUploaded', '/home/javi/FileUploaded'))
+        show(t.upload_file(5, 'user', 'private', 0, '/', 'FileUploaded', 'FileUploaded'))
 
 def test_down_file():
     print 'Course ID to download file:'
