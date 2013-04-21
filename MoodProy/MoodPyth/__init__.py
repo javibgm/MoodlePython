@@ -68,12 +68,12 @@ class MoodClass():
         paramnum = 0
         try:
             if(paramnames!=''):        # if we have more than 1 required parameter in a dictionary
-                for paramname in paramnames:
+                for paramname in paramnames:    # this generate this string structure: itemname[num][paramname]=item[paramname]
                     if paramnum != 0:   # add a & if is not the first parameter
                         param += '&'
                     param += urllib.urlencode({itemname + '['+str(num)+'][' + paramname + ']': item[paramname]})
                     paramnum += 1
-            elif (paramnames==''):
+            elif (paramnames==''):  # this generate this string structure: itemname[num]=item
                 param = urllib.urlencode({itemname + '['+str(num)+']': item})
         except:
             raise TypeError('Invalid function parameters')

@@ -27,11 +27,13 @@ def _showt(data, tab):
 # Recursive function that returns printable JSON converted to python string
     buf = ''
     if (type(data)==type({})):
-        buf += "{"
+        buf += _tabulate(tab)
+        buf += "{" + "\n"
         for a in data.keys():
             buf += _tabulate(tab)
             buf += str(a) + ": " + _showt(data[a], tab+1)
-        buf += "}"
+        buf += _tabulate(tab)
+        buf += "}" + "\n"
     elif (type(data)==type([])):
         buf += "[\n"
         for a in data:

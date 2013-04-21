@@ -2,7 +2,7 @@ Class: course(MoodClass)
     course_contents(courseid): Get course contents
         courseid int required //course id
     get_courses([id,...]): Return course details, all courses details returned if no param specified
-        id int Optional //List of course id. If empty return all courses except front page course
+        id int Default to [] //List of course id. If empty return all courses except front page course
     create_courses([{'fullname': 'full name', 'shortname': 'course short name', 'categoryid': 'category id', optional parameters},…): Create new courses
         fullname string required //full name
         shortname string required //course short name

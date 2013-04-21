@@ -11,11 +11,11 @@ def test_get_site_info():
     show(t.get_site_info())
 
 def test_course_contents(test):
-    if test == '1':
+    if test == '0':
     # Manually show 1 course content 
         print 'Course ID to show contents:'
         show(t.course_contents(raw_input()))
-    if test == '1':
+    elif test == '1':
         show(t.course_contents('2'))
     elif test == '2':
         show(t.course_contents(2))

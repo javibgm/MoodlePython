@@ -2,20 +2,21 @@ from MoodPyth.course import course
 import urllib, urllib2
 
 class files(course):
-    def get_files(self, contextid='', component='', filearea='', itemid='', filepath='', filename=''):
+    def get_files(self, contextid, component, filearea, itemid, filepath, filename, modified=''):
     # Browse moodle files
-        """
-        if (contextid=='' or component=='' or filearea=='' or itemid=='' or filepath=='' or filename==''):
-            print 'Incorrect input parameters'
-            return None
-        """
         function="core_files_get_files"
         param = urllib.urlencode({'contextid': contextid, 'component':component, 'filearea':filearea, 'itemid':itemid, 'filepath':filepath, 'filename':filename})
+        if modified!='':
+            param += '&' + urllib.urlencode({'modified':modified})
         return self.connect(function, param)
 
-    def upload_file(self):
+    def upload_file(self, contextid, component, filearea, itemid, filepath, filename, filecontent):
     # Upload a file to moodle
         function = 'core_files_upload'
+        param = urllib.urlencode({'contextid': contextid, 'component':component, 'filearea':filearea,
+                                  'itemid':itemid, 'filepath':filepath, 'filename':filename, 'filecontent':filecontent})
+        print param
+        return self.connect(function, param)
 
     def show_course_contents(self, res):
     # Shows course contents and returns resource items in a dictionary
@@ -48,7 +49,7 @@ class files(course):
         return files
     
     def down_file(self, courseid):
-    # Show course resources and download the selected file
+    # Shows course's resources and downloads the selected file
         files = self.show_course_contents(self.course_contents(courseid))
         print 'Input: file index'
         fileindex = raw_input()
