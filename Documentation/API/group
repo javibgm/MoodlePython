@@ -1,0 +1,7 @@
+Class: group(MoodClass)
+    add_group_members([{'groupid':'groupID','userid':'userID'},...]): Adds group members
+        groupid int  required // group record id
+        userid int  required // user id
+    core_group_assign_grouping([{'groupingid':'groupingID','groupid':'groupID'},...]): Assign groups from groupings
+        groupingid int  required // grouping record id
+        groupid int  required // group record id

@@ -5,9 +5,10 @@ from MoodPyth.course import course
 from MoodPyth.enrol import enrol
 from MoodPyth.files import files
 from MoodPyth.forum import forum
+from MoodPyth.group import group
 import urllib
 
-class MoodLib(MoodClass, course, assign, calendar, enrol, files, forum):
+class MoodLib(MoodClass, course, assign, calendar, enrol, files, forum, group):
     def get_site_info(self):
     # Get general info about Moodle site
         function="core_webservice_get_site_info"

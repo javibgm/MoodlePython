@@ -14,11 +14,11 @@ class course(MoodClass):
 
     def get_courses(self, courses=''):
     # Return course details, all courses details returned if no param specified
+        if type(courses)!=type([]) and courses!='':
+            raise TypeError('Input must be a list of courses')
         function="core_course_get_courses"
         param = ''
         num=0
-        if type(courses)!=type([]) and courses!='':
-            raise TypeError('Input must be a list of courses')
         for course in courses:
             if num!=0:
                 param += '&'
@@ -28,6 +28,8 @@ class course(MoodClass):
     
     def create_courses(self,array):
     # Create new courses
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "fullname", shortname" and ""categoryid"')
         function = 'core_course_create_courses'
         param = ''
         num=0
@@ -35,8 +37,6 @@ class course(MoodClass):
         optParameters = ['idnumber','summary', 'summaryformat', 'format', 'showgrades', 'newsitems', 'startdate', 'numsections', 'maxbytes']
         optParameters += ['showreports', 'visible', 'hiddensections', 'groupmode', 'groupmodeforce', 'defaultgroupingid', 'enablecompletion']
         optParameters += ['completionstartonenrol', 'completionnotify', 'lang', 'forcetheme']
-        if type(array)!=type([]) or array==[]:
-            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "fullname", shortname" and ""categoryid"')
         for courses in array:
             if num!=0:
                 param += '&'
@@ -52,11 +52,11 @@ class course(MoodClass):
 
     def delete_courses(self, array):
     # Deletes all specified courses
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of integers with, at least, 1 course id')
         function = 'core_course_delete_courses'
         param = ''
         num=0
-        if type(array)!=type([]) or array==[]:
-            raise TypeError('Input must be a list of integers with, at least, 1 course id')
         for courseids in array:
             if num!=0:
                 param += '&'
@@ -66,6 +66,8 @@ class course(MoodClass):
 
     def update_courses(self, array):
     # Update courses
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
         function = 'core_course_update_courses'
         param = ''
         num=0
@@ -74,8 +76,6 @@ class course(MoodClass):
         optParameters += ['newsitems', 'startdate', 'numsections', 'maxbytes']
         optParameters += ['showreports', 'visible', 'hiddensections', 'groupmode', 'groupmodeforce', 'defaultgroupingid', 'enablecompletion']
         optParameters += ['completionstartonenrol', 'completionnotify', 'lang', 'forcetheme']
-        if type(array)!=type([]) or array==[]:
-            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
         for courses in array:
             if num!=0:
                 param += '&'
@@ -134,12 +134,12 @@ class course(MoodClass):
     # Return category details. All categories details returned if no parameters specified 
     # list=[{'key':'value'},{...},...]
         ''' key = "id"(int) | "name"(string) | "parent"(int) | "idnumber"(string) | "visible" (int) | "theme" (string)'''
+        if type(array)!=type([]) and array!='':
+            raise TypeError('Input must be a list of dictionaries with {key:value} structure')
         function = 'core_course_get_categories'
         param = ''
         num=0
         reqParameters = ['key', 'value']
-        if type(array)!=type([]) and array!='':
-            raise TypeError('Input must be a list of dictionaries with {key:value} structure')
         for criteria in array:
             if num!=0:
                 param += '&'
@@ -152,13 +152,13 @@ class course(MoodClass):
     def create_categories(self,array):
     # Create course categories
         ''' name = string, parent = int | idnumber = string | description = string | descriptionformat = int | theme = string'''
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "name"')
         function = 'core_course_create_categories'
         param = ''
         num=0
         reqParameters = ['name']
         optParameters = ['parent','idnumber','description','descriptionformat','theme']
-        if type(array)!=type([]) or array==[]:
-            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "name"')
         for categories in array:
             if num!=0:
                 param += '&'
@@ -169,13 +169,13 @@ class course(MoodClass):
 
     def update_categories(self, array):
     # Update categories
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
         function = 'core_course_update_categories'
         param = ''
         num=0
         reqParameters = ['id']
         optParameters = ['name','parent','idnumber','description','descriptionformat','theme']
-        if type(array)!=type([]) or array==[]:
-            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
         for categories in array:
             if num!=0:
                 param += '&'
@@ -186,13 +186,13 @@ class course(MoodClass):
 
     def delete_categories(self, array):
     # Delete course categories
+        if type(array)!=type([]) or array==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
         function = 'core_course_delete_categories'
         param = ''
         num=0
         reqParameters = ['id']
         optParameters = ['newparent','recursive']
-        if type(array)!=type([]) or array==[]:
-            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
         for categories in array:
             if num!=0:
                 param += '&'
@@ -203,11 +203,11 @@ class course(MoodClass):
 
     def delete_modules(self, modules):
     # Deletes all specified module instances
+        if type(modules)!=type([]) or modules==[]:
+            raise TypeError('Input must be a list of integers')
         function = 'core_course_delete_modules'
         param = ''
         num=0
-        if type(modules)!=type([]) or modules==[]:
-            raise TypeError('Input must be a list of integers')
         for cmids in modules:
             if num!=0:
                 param += '&'
