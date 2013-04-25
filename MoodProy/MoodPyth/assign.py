@@ -3,7 +3,13 @@ import urllib
 
 class assign(MoodClass):
     def get_assigments(self, courseids='', capabilities=''):
-    # Returns the courses and assignments for the users capability
+        ''' Returns the courses and assignments for the users capability
+        @return: 
+        @param courseids: 0 or more course ids
+        @type courseids: List of Integer
+        @param capabilities: capabilities used to filter courses 
+        @type capabilities: List of String
+        '''
         function="mod_assign_get_assignments"
         param = ''
         num=0
@@ -21,7 +27,12 @@ class assign(MoodClass):
         return self.connect(function, param)
     
     def get_grades(self, assignmentids, since=0):
-    # Returns grades from the assignment
+        ''' Returns grades from the assignment
+        @return: 
+        @param assignmentids: assignment ids
+        @type assignmentids: List of Integer
+        @param since: timestamp, only return records where timemodified >= since
+        @type since: Integer'''
         function="mod_assign_get_grades"
         param = ''
         num=0
@@ -37,7 +48,16 @@ class assign(MoodClass):
         return self.connect(function, param)
     
     def get_submissions(self, assignmentids, status='', since=0, before=0):
-    # Returns the submissions for assignments
+        ''' Returns the submissions for assignment
+        @return: 
+        @param assignmentids: assignment ids
+        @type assignmentids: List of Integer
+        @param status: submission status
+        @type status: String
+        @param since: timestamp, only return records where timemodified >= since
+        @type since: Integer
+        @param before: timestamp, only return records where timemodified <= before
+        @type before: Integer'''
         function = 'mod_assign_get_submissions'
         param = ''
         num=0

@@ -1,9 +1,44 @@
+# MoodPyth 
+# 
+# Copyright (C) 2013 Edward Loper 
+# Author: Javier Benito Garcia-Mochales <javibgm@hotmail.com>
+# URL: <https://github.com/javibgm/MoodlePython> 
+  
+'''
+Moodle Web Service Python library. This library contains
+functions to use each one of Moodle version 2.5 web services 
+functions. The library is separated in modules and these contains
+classes with some web services functions depending of its functionality
+(course module contains Course class and do course functions: create courses
+delete courses, etc)
+All classes inherits from MoodClass and MoodLib class inherit from all classes
+so every function of the library can be used from MoodLib.
+'''
 import sys, urllib, urllib2, json
 
 class MoodClass():
+    '''
+    Main Moodle python class. It contains common functions
+    used in all subclasses like do a request to Moodle or
+    do strings with Moodle's request format. It also has a
+    function to get the authorization token of a specified
+    user and password to the specified web service.
+    '''
     def create_token(self, user='', pasw='', service=''):
-    # Returns your token asking to moodle and
-    # save it in the token variable
+        '''
+        Ask to Moodle the token of the user to the specified
+        web service and set its value to the token variable.
+        
+        @return: User's token of the Moodle's web service.
+        @raise ValueError: if any of the parameters provided are
+        incorrect or does not exists in Moodle's site.
+        @param user: Moodle's user name
+        @type user: String
+        @param pasw: Moodle's user password
+        @type pasw: String
+        @param service: the Moodle's web service to use
+        @type service: String
+        '''
         if(user=='' or pasw=='' or service==''):
             raise ValueError('Parameters necesary: user, password, service_short_name')
         url= self.conn + "/moodle/login/token.php?username=" + user + "&password=" + pasw + "&service=" + service
@@ -17,22 +52,46 @@ class MoodClass():
         return self.token
 
     def __init__(self, web, token='', user='', pasw='', service=''):
-    # Creates the connection with Moodle
-        self.conn = web
-        self.token = token
+        ''' Creates the connection with Moodle.
+        
+        You can directly set your token with the 'token' parameter
+        (use __init__('webURL','tokenvalue')) or give user name,
+        password and web service to obtain the token from Moodle
+        (use __init__('webURL', user='username',pasw='password',
+        service='webservice')).
+        
+        @param web: Moodle's site URL
+        @type web: String 
+        @param token: Moodle's web service token
+        @type token: String
+        @param user: Moodle's user name
+        @type user: String
+        @param pasw: Moodle's user password
+        @type pasw: String
+        @param service: the Moodle's web service to use
+        @type service: String '''
+        self.conn = web #: URL where moodle's site is
+        self.token = token #: User's token of a web service
         if (self.token==''):
             self.token = self.create_token(user, pasw, service)
 
     def set_token(self, token):
-    # Sets the value of the token
+        ''' Sets the token value '''
         self.token = token
 
     def get_token(self):
-    # Return token's value
+        ''' Returns the token value.
+        @return: token value. '''
         return self.token
 
     def connect(self, function, param):
-    # POST to Moodle the function and parameters specified
+        '''
+        POST to Moodle the function and parameters specified
+        and returns the response in JSON format.
+         @return: Moodle's answer in JSON format.
+         @raise ValueError: if an error happens and Moodle can not
+         process the petition. The problem is specified in the exception  
+         '''
         url = self.conn + '/moodle/webservice/rest/server.php?wstoken='+self.token+"&wsfunction="+function+"&moodlewsrestformat=json"
         req = urllib2.Request(url, param)
         req.add_header("Content-type", "application/x-www-form-urlencoded")
@@ -46,12 +105,17 @@ class MoodClass():
             pass
         return source
     
-    def close(self):
-    # Close the connection with Moodle
-        self.conn.close()
-    
     def check_reqParameters(self, item, paramnames):
-    # Auxiliary function: checks if all required parameters(paramnames) are in the dictionary(item) and prints missing parameters (not used)
+        ''' 
+        Auxiliary function: checks if all required parameters
+        are in the dictionary and prints missing parameters
+        
+        @return: True if all paramnames are in item. False otherwise.
+        @param paramnames: required parameters
+        @type paramnames: List of String
+        @param item: parameters values
+        @type item: Dictionary
+        '''
         check = True
         notfound = ''
         for paramname in paramnames:
@@ -63,7 +127,29 @@ class MoodClass():
         return check
     
     def add_reqParameters(self, item, itemname, num, paramnames=''):
-    # Auxiliary function: adds required function parameters
+        '''
+        Auxiliary function: adds required function parameters.
+        Moodle's requests have usually this structure:
+        
+        course[0][id]=3 --> itemname[num][paramname]=item[paramname]
+        
+        This function gets the parameters from inputs and 
+        returns a string with all parameters formatted like this.
+        If no paramnames value is provided a string with format
+        course[0]=3 is returned.
+        
+        @raise TypeError: if a required parameter from paramnames
+        is not in item dictionary.
+        @return: Moodle's request string with provided parameters
+        @param item: parameters values with paramnames keys
+        @type item: Dictionary or String
+        @param itemname: common parameter name
+        @type itemname: String
+        @param num: request number
+        @type num: Integer
+        @param paramnames: list of parameters names(Strings)
+        @type paramnames: List of String or None
+        '''
         param = ''
         paramnum = 0
         try:
@@ -80,17 +166,33 @@ class MoodClass():
         return param
     
     def add_optParameters(self, item, itemname, num, paramnames=''):
-    # Auxiliary function: adds optional function parameters contained in item
+        ''' 
+        Auxiliary function: adds optional function parameters.
+        This function gets the parameters from inputs and 
+        returns a string with all parameters formatted as a
+        Moodle request. This only returns those parameters with
+        a value in the item parameter.
+        If no paramnames value is provided a string with format
+        course[0]=3 is returned.
+        
+        @return: Moodle's request string with provided parameters
+        @param item: parameters values with paramnames keys
+        @type item: Dictionary or String
+        @param itemname: common parameter name
+        @type itemname: String
+        @param num: request number
+        @type num: Integer
+        @param paramnames: list of parameters names(Strings)
+        @type paramnames: List of String or None
+        '''
+        def add_optParameter(self, item, itemname, num, paramname=''):
+            param = ''
+            if((paramname in item) and (paramname!='')):
+                param = '&' + urllib.urlencode({itemname + '['+str(num)+'][' + paramname + ']': item[paramname]})
+            elif ((paramname in item) and (paramname=='')):
+                param = '&' + urllib.urlencode({itemname + '['+str(num)+']': item})
+            return param
         param = ''
         for paramname in paramnames:
             param += self.add_optParameter(item, itemname, num, paramname)
-        return param
-
-    def add_optParameter(self, item, itemname, num, paramname=''):
-    # Auxiliary function: add an optional function parameter if exists in the item dictionary
-        param = ''
-        if((paramname in item) and (paramname!='')):
-            param = '&' + urllib.urlencode({itemname + '['+str(num)+'][' + paramname + ']': item[paramname]})
-        elif ((paramname in item) and (paramname=='')):
-            param = '&' + urllib.urlencode({itemname + '['+str(num)+']': item})
         return param

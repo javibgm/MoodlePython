@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MoodPyth.files</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MoodPyth-module.html">Package&nbsp;MoodPyth</a> ::
+        Module&nbsp;files
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MoodPyth.files-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="MoodPyth.files-module.html">Module MoodPyth.files</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package MoodPyth=MoodPyth-module.html"><a title="MoodPyth" class="py-name" href="#" onclick="return doclink('link-0', 'MoodPyth', 'link-0');">MoodPyth</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module MoodPyth.course=MoodPyth.course-module.html"><a title="MoodPyth.course" class="py-name" href="#" onclick="return doclink('link-1', 'course', 'link-1');">course</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class MoodPyth.course.Course=MoodPyth.course.Course-class.html"><a title="MoodPyth.course.Course" class="py-name" href="#" onclick="return doclink('link-2', 'Course', 'link-2');">Course</a></tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">urllib</tt><tt class="py-op">,</tt> <tt class="py-name">urllib2</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="files"></a><div id="files-def"><a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="files-toggle" onclick="return toggle('files');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="MoodPyth.files.files-class.html">files</a><tt class="py-op">(</tt><tt class="py-base-class">Course</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="files-expanded"><a name="files.get_files"></a><div id="files.get_files-def"><a name="L5"></a><tt class="py-lineno"> 5</tt> <a class="py-toggle" href="#" id="files.get_files-toggle" onclick="return toggle('files.get_files');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MoodPyth.files.files-class.html#get_files">get_files</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">contextid</tt><tt class="py-op">,</tt> <tt class="py-param">component</tt><tt class="py-op">,</tt> <tt class="py-param">filearea</tt><tt class="py-op">,</tt> <tt class="py-param">itemid</tt><tt class="py-op">,</tt> <tt class="py-param">filepath</tt><tt class="py-op">,</tt> <tt class="py-param">filename</tt><tt class="py-op">,</tt> <tt class="py-param">modified</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files.get_files-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="files.get_files-expanded"><a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">    <tt class="py-comment"># Browse moodle files</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line">        <tt class="py-name">function</tt><tt class="py-op">=</tt><tt class="py-string">"core_files_get_files"</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">urlencode</tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">'contextid'</tt><tt class="py-op">:</tt> <tt class="py-name">contextid</tt><tt class="py-op">,</tt> <tt class="py-string">'component'</tt><tt class="py-op">:</tt><tt class="py-name">component</tt><tt class="py-op">,</tt> <tt class="py-string">'filearea'</tt><tt class="py-op">:</tt><tt class="py-name">filearea</tt><tt class="py-op">,</tt> <tt class="py-string">'itemid'</tt><tt class="py-op">:</tt><tt class="py-name">itemid</tt><tt class="py-op">,</tt> <tt class="py-string">'filepath'</tt><tt class="py-op">:</tt><tt class="py-name">filepath</tt><tt class="py-op">,</tt> <tt class="py-string">'filename'</tt><tt class="py-op">:</tt><tt class="py-name">filename</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">modified</tt><tt class="py-op">!=</tt><tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">            <tt class="py-name">param</tt> <tt class="py-op">+=</tt> <tt class="py-string">'&amp;'</tt> <tt class="py-op">+</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">urlencode</tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">'modified'</tt><tt class="py-op">:</tt><tt class="py-name">modified</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method MoodPyth.MoodClass.connect()=MoodPyth.MoodClass-class.html#connect"><a title="MoodPyth.MoodClass.connect" class="py-name" href="#" onclick="return doclink('link-3', 'connect', 'link-3');">connect</a></tt><tt class="py-op">(</tt><tt class="py-name">function</tt><tt class="py-op">,</tt> <tt class="py-name">param</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"> </tt>
+<a name="files.upload_file"></a><div id="files.upload_file-def"><a name="L13"></a><tt class="py-lineno">13</tt> <a class="py-toggle" href="#" id="files.upload_file-toggle" onclick="return toggle('files.upload_file');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MoodPyth.files.files-class.html#upload_file">upload_file</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">contextid</tt><tt class="py-op">,</tt> <tt class="py-param">component</tt><tt class="py-op">,</tt> <tt class="py-param">filearea</tt><tt class="py-op">,</tt> <tt class="py-param">itemid</tt><tt class="py-op">,</tt> <tt class="py-param">filepath</tt><tt class="py-op">,</tt> <tt class="py-param">filename</tt><tt class="py-op">,</tt> <tt class="py-param">filecontent</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files.upload_file-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="files.upload_file-expanded"><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt class="py-comment"># Upload a file to moodle</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">        <tt class="py-name">function</tt> <tt class="py-op">=</tt> <tt class="py-string">'core_files_upload'</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">urlencode</tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">'contextid'</tt><tt class="py-op">:</tt> <tt class="py-name">contextid</tt><tt class="py-op">,</tt> <tt class="py-string">'component'</tt><tt class="py-op">:</tt><tt class="py-name">component</tt><tt class="py-op">,</tt> <tt class="py-string">'filearea'</tt><tt class="py-op">:</tt><tt class="py-name">filearea</tt><tt class="py-op">,</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">                                  <tt class="py-string">'itemid'</tt><tt class="py-op">:</tt><tt class="py-name">itemid</tt><tt class="py-op">,</tt> <tt class="py-string">'filepath'</tt><tt class="py-op">:</tt><tt class="py-name">filepath</tt><tt class="py-op">,</tt> <tt class="py-string">'filename'</tt><tt class="py-op">:</tt><tt class="py-name">filename</tt><tt class="py-op">,</tt> <tt class="py-string">'filecontent'</tt><tt class="py-op">:</tt><tt class="py-name">filecontent</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-name">param</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="MoodPyth.MoodClass.connect" class="py-name" href="#" onclick="return doclink('link-4', 'connect', 'link-3');">connect</a></tt><tt class="py-op">(</tt><tt class="py-name">function</tt><tt class="py-op">,</tt> <tt class="py-name">param</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="files.show_course_contents"></a><div id="files.show_course_contents-def"><a name="L21"></a><tt class="py-lineno">21</tt> <a class="py-toggle" href="#" id="files.show_course_contents-toggle" onclick="return toggle('files.show_course_contents');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MoodPyth.files.files-class.html#show_course_contents">show_course_contents</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">res</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files.show_course_contents-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="files.show_course_contents-expanded"><a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-comment"># Shows course contents and returns resource items in a dictionary</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-comment"># The dicctionary has this structure:</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">    <tt class="py-comment"># Dic = {index : [filename, fileurl]}</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt id="link-5" class="py-name" targets="Module MoodPyth.files=MoodPyth.files-module.html,Class MoodPyth.files.files=MoodPyth.files.files-class.html"><a title="MoodPyth.files
+MoodPyth.files.files" class="py-name" href="#" onclick="return doclink('link-5', 'files', 'link-5');">files</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">        <tt class="py-name">index</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">area</tt> <tt class="py-keyword">in</tt> <tt class="py-name">res</tt><tt class="py-op">:</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-name">area</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">dic</tt> <tt class="py-keyword">in</tt> <tt class="py-name">area</tt><tt class="py-op">[</tt><tt class="py-string">'modules'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">                <tt class="py-string">"""</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-string">                print str(index) + '.Name: ' + dic['name'] + '\tid: ' + str(dic['id']) + '\tmodname: ' + str(dic['modname'])</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-string">                files[str(index)] = [str(dic['name']), str(dic['url'])]</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-string">                index = index + 1</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-string">                """</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-string">'  Name: '</tt> <tt class="py-op">+</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">'\tid: '</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'id'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">'\tmodname: '</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'modname'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">                    <tt class="py-keyword">for</tt> <tt class="py-name">content</tt> <tt class="py-keyword">in</tt> <tt class="py-name">dic</tt><tt class="py-op">[</tt><tt class="py-string">'contents'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'type'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">==</tt><tt class="py-string">'file'</tt><tt class="py-op">:</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">                            <tt class="py-keyword">print</tt> <tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">index</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">'.'</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'filename'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">': '</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'fileurl'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">                            <tt class="py-string">'\t Type: '</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'type'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">                            <tt id="link-6" class="py-name"><a title="MoodPyth.files
+MoodPyth.files.files" class="py-name" href="#" onclick="return doclink('link-6', 'files', 'link-5');">files</a></tt><tt class="py-op">[</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">index</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'filename'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'fileurl'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">'?'</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">]</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">                            <tt class="py-name">index</tt> <tt class="py-op">=</tt> <tt class="py-name">index</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">                        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">                            <tt class="py-keyword">print</tt> <tt class="py-op">(</tt><tt class="py-string">'   '</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'filename'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">': '</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'fileurl'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">                            <tt class="py-string">'\t Type: '</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'type'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">                <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">                    <tt class="py-comment"># print 'No contents'</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">                    <tt class="py-name">None</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-7" class="py-name"><a title="MoodPyth.files
+MoodPyth.files.files" class="py-name" href="#" onclick="return doclink('link-7', 'files', 'link-5');">files</a></tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">     </tt>
+<a name="files.down_file"></a><div id="files.down_file-def"><a name="L51"></a><tt class="py-lineno">51</tt> <a class="py-toggle" href="#" id="files.down_file-toggle" onclick="return toggle('files.down_file');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MoodPyth.files.files-class.html#down_file">down_file</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">courseid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files.down_file-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="files.down_file-expanded"><a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-comment"># Shows course's resources and downloads the selected file</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt id="link-8" class="py-name"><a title="MoodPyth.files
+MoodPyth.files.files" class="py-name" href="#" onclick="return doclink('link-8', 'files', 'link-5');">files</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method MoodPyth.files.files.show_course_contents()=MoodPyth.files.files-class.html#show_course_contents"><a title="MoodPyth.files.files.show_course_contents" class="py-name" href="#" onclick="return doclink('link-9', 'show_course_contents', 'link-9');">show_course_contents</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method MoodPyth.course.Course.course_contents()=MoodPyth.course.Course-class.html#course_contents"><a title="MoodPyth.course.Course.course_contents" class="py-name" href="#" onclick="return doclink('link-10', 'course_contents', 'link-10');">course_contents</a></tt><tt class="py-op">(</tt><tt class="py-name">courseid</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">'Input: file index'</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt class="py-name">fileindex</tt> <tt class="py-op">=</tt> <tt class="py-name">raw_input</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">'Archivo seleccionado: '</tt> <tt class="py-op">+</tt> <tt id="link-11" class="py-name"><a title="MoodPyth.files
+MoodPyth.files.files" class="py-name" href="#" onclick="return doclink('link-11', 'files', 'link-5');">files</a></tt><tt class="py-op">[</tt><tt class="py-name">fileindex</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">            <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="MoodPyth.files
+MoodPyth.files.files" class="py-name" href="#" onclick="return doclink('link-12', 'files', 'link-5');">files</a></tt><tt class="py-op">[</tt><tt class="py-name">fileindex</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'w'</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">            <tt class="py-name">url</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="MoodPyth.files
+MoodPyth.files.files" class="py-name" href="#" onclick="return doclink('link-13', 'files', 'link-5');">files</a></tt><tt class="py-op">[</tt><tt class="py-name">fileindex</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">'?token='</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">token</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-name">url</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">            <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">urllib2</tt><tt class="py-op">.</tt><tt class="py-name">urlopen</tt><tt class="py-op">(</tt><tt class="py-name">url</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">            <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-name">response</tt><tt class="py-op">.</tt><tt class="py-name">read</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">            <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-name">response</tt><tt class="py-op">.</tt><tt class="py-name">getcode</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">'File not found. Operation cancelled.'</tt> </tt>
+</div></div><a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Apr 25 19:42:38 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

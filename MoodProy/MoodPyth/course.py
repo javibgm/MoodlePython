@@ -1,7 +1,7 @@
 from MoodPyth import MoodClass
 import urllib
 
-class course(MoodClass):
+class Course(MoodClass):
     def course_contents(self, courseid, options=''):
     # Get course contents (options parameter for future uses)
         try:

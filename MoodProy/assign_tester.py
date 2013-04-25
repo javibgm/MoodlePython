@@ -72,4 +72,4 @@ if __name__ == '__main__':
     # t = MoodLib(info['web'], '', 'student1', 'StudentP@ss1', info['service'])
     # test_get_assigments(raw_input())
     # test_get_grades(raw_input())
-    test_get_submissions(raw_input())
+    # test_get_submissions(raw_input())

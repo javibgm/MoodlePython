@@ -1,7 +1,7 @@
-from MoodPyth.course import course
+from MoodPyth.course import Course
 import urllib, urllib2
 
-class files(course):
+class files(Course):
     def get_files(self, contextid, component, filearea, itemid, filepath, filename, modified=''):
     # Browse moodle files
         function="core_files_get_files"

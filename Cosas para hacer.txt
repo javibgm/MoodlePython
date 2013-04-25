@@ -70,6 +70,9 @@ hay una seccion de contar de lo que habia antes de empezar el proyecto !!!
 contar las fases de mi proyecto y lo que hacen
 explicar con detalle cada parte de mi proyeccto
 detalles de implementacion en anexos
+API de libreria python:
+    epydoc -> python docstrings
+    pydoc (hay un documento donde te explica todo para usarlo correctamente)
 
 NOTES:
 PROBLEMA: Parece que algunas de las funcionalidades necesarias estan aun en desarrollo

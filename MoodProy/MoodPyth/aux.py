@@ -1,3 +1,6 @@
+'''
+Auxiliar external functions and variables
+'''
 """
     'user': 'admin',
     'pasw': 'AdminP@ss1',
@@ -17,14 +20,14 @@ info = {
 }
 
 def _tabulate(tab):
-# return the number of tabulations indicated in a string
+    ''' Returns the number of tabulations indicated in a string '''
     buf = ''
     for tab in range(tab):
         buf += "\t"
     return buf
 
 def _showt(data, tab):
-# Recursive function that returns printable JSON converted to python string
+    ''' Recursive function that returns printable JSON converted to python string '''
     buf = ''
     if (type(data)==type({})):
         buf += _tabulate(tab)
@@ -45,5 +48,5 @@ def _showt(data, tab):
     return buf
 
 def show(data):
-# Prints JSON converted to tabulated python data
+    ''' Prints JSON converted to tabulated python data '''
     print _showt(data,0)
