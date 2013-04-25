@@ -1,4 +1,3 @@
-
 -----------------------------------------------------------------------------------
 REST
 -Obtener respuestas JSON a las peticiones REST:
@@ -40,6 +39,10 @@ phpMyAdmin
 http://localhost/phpmyadmin
 -Configurar phpmyadmin con apache:
 /etc/phpmyadmin/apache.conf
+-----------------------------------------------------------------------------------
+Epydoc
+-Generate documentation in html:
+epydoc --html MoodProy/MoodPyth/ -o Documentation/API/doc -v
 -----------------------------------------------------------------------------------
 MOODLE
 -Datos importatntes
