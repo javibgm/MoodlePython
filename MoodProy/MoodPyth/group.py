@@ -162,7 +162,7 @@ class group(MoodClass):
         if returngroups==1:
             param += '&' + urllib.urlencode({'returngroups': returngroups})
         return self.connect(function, param)
-    
+
     def get_groups(self, groupids):
         ''' Returns group details. '''
         if type(groupids)!=type([]) or groupids==[]:
