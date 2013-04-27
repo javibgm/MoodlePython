@@ -10,7 +10,7 @@ functions to use each one of Moodle version 2.5 web services
 functions. The library is separated in modules and these contains
 classes with some web services functions depending of its functionality
 (course module contains Course class and do course functions: create courses
-delete courses, etc)
+delete courses, etc).
 All classes inherits from MoodClass and MoodLib class inherit from all classes
 so every function of the library can be used from MoodLib.
 '''
@@ -88,9 +88,10 @@ class MoodClass():
         '''
         POST to Moodle the function and parameters specified
         and returns the response in JSON format.
+        Every MoodClass's subclasses call at this function.
          @return: Moodle's answer in JSON format.
          @raise ValueError: if an error happens and Moodle can not
-         process the petition. The problem is specified in the exception  
+         process the petition. The problem is specified in the exception.
          '''
         url = self.conn + '/moodle/webservice/rest/server.php?wstoken='+self.token+"&wsfunction="+function+"&moodlewsrestformat=json"
         req = urllib2.Request(url, param)
@@ -165,6 +166,14 @@ class MoodClass():
             raise TypeError('Invalid function parameters')
         return param
     
+    def add_optParameter(self, item, itemname, num, paramname=''):
+        param = ''
+        if((paramname in item) and (paramname!='')):
+            param = '&' + urllib.urlencode({itemname + '['+str(num)+'][' + paramname + ']': item[paramname]})
+        elif ((paramname in item) and (paramname=='')):
+            param = '&' + urllib.urlencode({itemname + '['+str(num)+']': item})
+        return param
+
     def add_optParameters(self, item, itemname, num, paramnames=''):
         ''' 
         Auxiliary function: adds optional function parameters.
@@ -185,13 +194,6 @@ class MoodClass():
         @param paramnames: list of parameters names(Strings)
         @type paramnames: List of String or None
         '''
-        def add_optParameter(self, item, itemname, num, paramname=''):
-            param = ''
-            if((paramname in item) and (paramname!='')):
-                param = '&' + urllib.urlencode({itemname + '['+str(num)+'][' + paramname + ']': item[paramname]})
-            elif ((paramname in item) and (paramname=='')):
-                param = '&' + urllib.urlencode({itemname + '['+str(num)+']': item})
-            return param
         param = ''
         for paramname in paramnames:
             param += self.add_optParameter(item, itemname, num, paramname)

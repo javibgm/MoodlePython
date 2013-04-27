@@ -70,6 +70,8 @@
 </dd></dl>
 
 <hr />
+<p>Class with Moodle web services functions that work with groups</p>
+
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -94,7 +96,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="add_group_members"></a><span class="summary-sig-name">add_group_members</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">members</span>)</span></td>
+        <span class="summary-sig-arg">members</span>)</span><br />
+      Adds group members.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.add_group_members">source&nbsp;code</a></span>
             
@@ -111,7 +114,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="assign_grouping"></a><span class="summary-sig-name">assign_grouping</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">groupings</span>)</span></td>
+        <span class="summary-sig-arg">groupings</span>)</span><br />
+      Assing groups from groupings.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.assign_grouping">source&nbsp;code</a></span>
             
@@ -127,7 +131,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="create_groupings"></a><span class="summary-sig-name">create_groupings</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="create_groupings"></a><span class="summary-sig-name">create_groupings</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupings</span>)</span><br />
+      Creates new groupings.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.create_groupings">source&nbsp;code</a></span>
             
@@ -143,7 +149,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="create_groups"></a><span class="summary-sig-name">create_groups</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="create_groups"></a><span class="summary-sig-name">create_groups</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groups</span>)</span><br />
+      Creates new groups.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.create_groups">source&nbsp;code</a></span>
             
@@ -159,7 +167,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="delete_group_members"></a><span class="summary-sig-name">delete_group_members</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="delete_group_members"></a><span class="summary-sig-name">delete_group_members</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">members</span>)</span><br />
+      Deletes group members.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.delete_group_members">source&nbsp;code</a></span>
             
@@ -175,7 +185,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="delete_groupings"></a><span class="summary-sig-name">delete_groupings</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="delete_groupings"></a><span class="summary-sig-name">delete_groupings</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupingids</span>)</span><br />
+      Deletes all specified groupings.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.delete_groupings">source&nbsp;code</a></span>
             
@@ -191,7 +203,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="delete_groups"></a><span class="summary-sig-name">delete_groups</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="delete_groups"></a><span class="summary-sig-name">delete_groups</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupids</span>)</span><br />
+      Deletes all specified groups.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.delete_groups">source&nbsp;code</a></span>
             
@@ -207,7 +221,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="get_course_groupings"></a><span class="summary-sig-name">get_course_groupings</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="get_course_groupings"></a><span class="summary-sig-name">get_course_groupings</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">courseid</span>)</span><br />
+      Returns all groupings in specified course.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.get_course_groupings">source&nbsp;code</a></span>
             
@@ -223,7 +239,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="get_course_groups"></a><span class="summary-sig-name">get_course_groups</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="get_course_groups"></a><span class="summary-sig-name">get_course_groups</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">courseid</span>)</span><br />
+      Returns all groups in specified course.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.get_course_groups">source&nbsp;code</a></span>
             
@@ -239,7 +257,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="get_group_members"></a><span class="summary-sig-name">get_group_members</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="get_group_members"></a><span class="summary-sig-name">get_group_members</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupids</span>)</span><br />
+      Returns group members.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.get_group_members">source&nbsp;code</a></span>
             
@@ -255,7 +275,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="get_groupings"></a><span class="summary-sig-name">get_groupings</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="get_groupings"></a><span class="summary-sig-name">get_groupings</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupingids</span>,
+        <span class="summary-sig-arg">returngroups</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Returns groupings details.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.get_groupings">source&nbsp;code</a></span>
             
@@ -271,7 +294,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="get_groups"></a><span class="summary-sig-name">get_groups</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="get_groups"></a><span class="summary-sig-name">get_groups</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupids</span>)</span><br />
+      Returns group details.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.get_groups">source&nbsp;code</a></span>
             
@@ -287,7 +312,8 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="unassign_grouping"></a><span class="summary-sig-name">unassign_grouping</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="unassign_grouping"></a><span class="summary-sig-name">unassign_grouping</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Unassing groups from groupings.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.unassign_grouping">source&nbsp;code</a></span>
             
@@ -303,7 +329,8 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="update_groupings"></a><span class="summary-sig-name">update_groupings</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="update_groupings"></a><span class="summary-sig-name">update_groupings</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Updates existing groupings.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.group-pysrc.html#group.update_groupings">source&nbsp;code</a></span>
             
@@ -317,6 +344,7 @@
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
       <code><a href="MoodPyth.MoodClass-class.html#__init__">__init__</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameter">add_optParameter</a></code>,
       <code><a href="MoodPyth.MoodClass-class.html#add_optParameters">add_optParameters</a></code>,
       <code><a href="MoodPyth.MoodClass-class.html#add_reqParameters">add_reqParameters</a></code>,
       <code><a href="MoodPyth.MoodClass-class.html#check_reqParameters">check_reqParameters</a></code>,
@@ -380,7 +408,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Apr 25 19:42:37 2013
+    Generated by Epydoc 3.0.1 on Sat Apr 27 15:59:25 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

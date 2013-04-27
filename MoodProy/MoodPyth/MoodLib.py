@@ -1,3 +1,4 @@
+''' Moodle Library functions class module '''
 from MoodPyth import MoodClass
 from MoodPyth.assign import assign
 from MoodPyth.calendar import calendar
@@ -10,7 +11,7 @@ import urllib
 
 class MoodLib(MoodClass, Course, assign, calendar, enrol, files, forum, group):
     '''
-    Basic Moodle python class.
+    Basic Moodle python class. This class inherits from all other classes in order to have all their methods so it can execute every Moodle function. 
     '''
     def get_site_info(self):
         '''

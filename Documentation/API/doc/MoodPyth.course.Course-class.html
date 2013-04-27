@@ -66,10 +66,13 @@
 <dl><dt>Known Subclasses:</dt>
 <dd>
       <ul class="subclass-list">
-<li><a href="MoodPyth.files.files-class.html">files.files</a></li><li>, <a href="MoodPyth.MoodLib.MoodLib-class.html">MoodLib.MoodLib</a></li>  </ul>
+<li><a href="MoodPyth.MoodLib.MoodLib-class.html">MoodLib.MoodLib</a></li><li>, <a href="MoodPyth.files.files-class.html">files.files</a></li>  </ul>
 </dd></dl>
 
 <hr />
+<p>Class with Moodle web services functions that work with courses and 
+  categories</p>
+
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -93,9 +96,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="course_contents"></a><span class="summary-sig-name">course_contents</span>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="MoodPyth.course.Course-class.html#course_contents" class="summary-sig-name">course_contents</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">courseid</span>,
-        <span class="summary-sig-arg">options</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span></td>
+        <span class="summary-sig-arg">options</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+      Get course contents.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.course_contents">source&nbsp;code</a></span>
             
@@ -112,9 +116,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="create_categories"></a><span class="summary-sig-name">create_categories</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">array</span>)</span><br />
-      name = string, parent = int | idnumber = string | description = 
-      string | descriptionformat = int | theme = string</td>
+        <span class="summary-sig-arg">categories</span>)</span><br />
+      Create course categories</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.create_categories">source&nbsp;code</a></span>
             
@@ -131,7 +134,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="create_courses"></a><span class="summary-sig-name">create_courses</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">array</span>)</span></td>
+        <span class="summary-sig-arg">courses</span>)</span><br />
+      Create new courses.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.create_courses">source&nbsp;code</a></span>
             
@@ -148,7 +152,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="delete_categories"></a><span class="summary-sig-name">delete_categories</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">array</span>)</span></td>
+        <span class="summary-sig-arg">categories</span>)</span><br />
+      Delete course categories.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.delete_categories">source&nbsp;code</a></span>
             
@@ -165,7 +170,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="delete_courses"></a><span class="summary-sig-name">delete_courses</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">array</span>)</span></td>
+        <span class="summary-sig-arg">courses</span>)</span><br />
+      Deletes all specified courses.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.delete_courses">source&nbsp;code</a></span>
             
@@ -182,7 +188,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="delete_modules"></a><span class="summary-sig-name">delete_modules</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">modules</span>)</span></td>
+        <span class="summary-sig-arg">modules</span>)</span><br />
+      Deletes all specified module instances.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.delete_modules">source&nbsp;code</a></span>
             
@@ -204,7 +211,8 @@
         <span class="summary-sig-arg">shortname</span>,
         <span class="summary-sig-arg">categoryid</span>,
         <span class="summary-sig-arg">visible</span>=<span class="summary-sig-default">1</span>,
-        <span class="summary-sig-arg">options</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span></td>
+        <span class="summary-sig-arg">options</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+      Duplicate an existing course (creating a new one) without user data.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.duplicate_course">source&nbsp;code</a></span>
             
@@ -220,12 +228,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="get_categories"></a><span class="summary-sig-name">get_categories</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">array</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+          <td><span class="summary-sig"><a href="MoodPyth.course.Course-class.html#get_categories" class="summary-sig-name">get_categories</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">criteria</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
         <span class="summary-sig-arg">addsubcategories</span>=<span class="summary-sig-default">1</span>)</span><br />
-      key = &quot;id&quot;(int) | &quot;name&quot;(string) | 
-      &quot;parent&quot;(int) | &quot;idnumber&quot;(string) | 
-      &quot;visible&quot; (int) | &quot;theme&quot; (string)</td>
+      Return category details.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.get_categories">source&nbsp;code</a></span>
             
@@ -242,7 +248,9 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="get_courses"></a><span class="summary-sig-name">get_courses</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">courses</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span></td>
+        <span class="summary-sig-arg">courses</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+      Return course details, all courses details returned if no param 
+      specified.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.get_courses">source&nbsp;code</a></span>
             
@@ -258,11 +266,12 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="import_course"></a><span class="summary-sig-name">import_course</span>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="MoodPyth.course.Course-class.html#import_course" class="summary-sig-name">import_course</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">importfrom</span>,
         <span class="summary-sig-arg">importto</span>,
         <span class="summary-sig-arg">deletecontent</span>=<span class="summary-sig-default">0</span>,
-        <span class="summary-sig-arg">options</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span></td>
+        <span class="summary-sig-arg">options</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+      Import course data from a course into another course.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.import_course">source&nbsp;code</a></span>
             
@@ -279,7 +288,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="update_categories"></a><span class="summary-sig-name">update_categories</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">array</span>)</span></td>
+        <span class="summary-sig-arg">categories</span>)</span><br />
+      Update categories.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.update_categories">source&nbsp;code</a></span>
             
@@ -296,7 +306,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="update_courses"></a><span class="summary-sig-name">update_courses</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">array</span>)</span></td>
+        <span class="summary-sig-arg">courses</span>)</span><br />
+      Update courses.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.update_courses">source&nbsp;code</a></span>
             
@@ -310,6 +321,7 @@
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
       <code><a href="MoodPyth.MoodClass-class.html#__init__">__init__</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameter">add_optParameter</a></code>,
       <code><a href="MoodPyth.MoodClass-class.html#add_optParameters">add_optParameters</a></code>,
       <code><a href="MoodPyth.MoodClass-class.html#add_reqParameters">add_reqParameters</a></code>,
       <code><a href="MoodPyth.MoodClass-class.html#check_reqParameters">check_reqParameters</a></code>,
@@ -347,6 +359,92 @@
     </td>
   </tr>
 </table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="course_contents"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">course_contents</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">courseid</span>,
+        <span class="sig-arg">options</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.course_contents">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get course contents. (options parameter for future uses)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_categories"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_categories</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">criteria</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">addsubcategories</span>=<span class="sig-default">1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.get_categories">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return category details. All categories details returned if no 
+  parameters specified</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="import_course"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">import_course</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">importfrom</span>,
+        <span class="sig-arg">importto</span>,
+        <span class="sig-arg">deletecontent</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">options</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.course-pysrc.html#Course.import_course">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Import course data from a course into another course. Does not include
+  any user data.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
 <!-- ==================== NAVIGATION BAR ==================== -->
 <table class="navbar" border="0" width="100%" cellpadding="0"
        bgcolor="#a0c0ff" cellspacing="0">
@@ -373,7 +471,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Apr 25 19:42:37 2013
+    Generated by Epydoc 3.0.1 on Sat Apr 27 15:59:25 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

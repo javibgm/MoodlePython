@@ -27,6 +27,7 @@ MoodPyth.MoodClass.add_reqParameters	MoodPyth.MoodClass-class.html#add_reqParame
 MoodPyth.MoodClass.add_optParameters	MoodPyth.MoodClass-class.html#add_optParameters
 MoodPyth.MoodClass.set_token	MoodPyth.MoodClass-class.html#set_token
 MoodPyth.MoodClass.create_token	MoodPyth.MoodClass-class.html#create_token
+MoodPyth.MoodClass.add_optParameter	MoodPyth.MoodClass-class.html#add_optParameter
 MoodPyth.MoodClass.token	MoodPyth.MoodClass-class.html#token
 MoodPyth.MoodClass.get_token	MoodPyth.MoodClass-class.html#get_token
 MoodPyth.MoodClass.connect	MoodPyth.MoodClass-class.html#connect
@@ -51,10 +52,11 @@ MoodPyth.forum.forum.get_forum_discussions	MoodPyth.forum.forum-class.html#get_f
 MoodPyth.MoodClass.__init__	MoodPyth.MoodClass-class.html#__init__
 MoodPyth.course.Course.delete_categories	MoodPyth.course.Course-class.html#delete_categories
 MoodPyth.group.group.get_course_groups	MoodPyth.group.group-class.html#get_course_groups
+MoodPyth.calendar.calendar.delete_calendar_events	MoodPyth.calendar.calendar-class.html#delete_calendar_events
 MoodPyth.group.group.create_groups	MoodPyth.group.group-class.html#create_groups
 MoodPyth.course.Course.create_categories	MoodPyth.course.Course-class.html#create_categories
 MoodPyth.MoodLib.MoodLib.get_site_info	MoodPyth.MoodLib.MoodLib-class.html#get_site_info
-MoodPyth.calendar.calendar.delete_calendar_events	MoodPyth.calendar.calendar-class.html#delete_calendar_events
+MoodPyth.MoodClass.add_optParameter	MoodPyth.MoodClass-class.html#add_optParameter
 MoodPyth.course.Course.create_courses	MoodPyth.course.Course-class.html#create_courses
 MoodPyth.course.Course.course_contents	MoodPyth.course.Course-class.html#course_contents
 MoodPyth.enrol.enrol.enrolled_users	MoodPyth.enrol.enrol-class.html#enrolled_users
@@ -65,7 +67,6 @@ MoodPyth.group.group.unassign_grouping	MoodPyth.group.group-class.html#unassign_
 MoodPyth.group.group.delete_group_members	MoodPyth.group.group-class.html#delete_group_members
 MoodPyth.group.group.update_groupings	MoodPyth.group.group-class.html#update_groupings
 MoodPyth.assign.assign.get_grades	MoodPyth.assign.assign-class.html#get_grades
-MoodPyth.files.files.show_course_contents	MoodPyth.files.files-class.html#show_course_contents
 MoodPyth.MoodClass.set_token	MoodPyth.MoodClass-class.html#set_token
 MoodPyth.files.files.down_file	MoodPyth.files.files-class.html#down_file
 MoodPyth.group.group.get_course_groupings	MoodPyth.group.group-class.html#get_course_groupings
@@ -95,6 +96,7 @@ MoodPyth.assign.assign.get_grades	MoodPyth.assign.assign-class.html#get_grades
 MoodPyth.MoodClass.set_token	MoodPyth.MoodClass-class.html#set_token
 MoodPyth.MoodClass.create_token	MoodPyth.MoodClass-class.html#create_token
 MoodPyth.assign.assign.get_submissions	MoodPyth.assign.assign-class.html#get_submissions
+MoodPyth.MoodClass.add_optParameter	MoodPyth.MoodClass-class.html#add_optParameter
 MoodPyth.MoodClass.token	MoodPyth.MoodClass-class.html#token
 MoodPyth.assign.assign.get_assigments	MoodPyth.assign.assign-class.html#get_assigments
 MoodPyth.MoodClass.connect	MoodPyth.MoodClass-class.html#connect
@@ -112,6 +114,7 @@ MoodPyth.MoodClass.token	MoodPyth.MoodClass-class.html#token
 MoodPyth.MoodClass.get_token	MoodPyth.MoodClass-class.html#get_token
 MoodPyth.MoodClass.connect	MoodPyth.MoodClass-class.html#connect
 MoodPyth.MoodClass.__init__	MoodPyth.MoodClass-class.html#__init__
+MoodPyth.MoodClass.add_optParameter	MoodPyth.MoodClass-class.html#add_optParameter
 MoodPyth.MoodClass.add_reqParameters	MoodPyth.MoodClass-class.html#add_reqParameters
 MoodPyth.MoodClass.check_reqParameters	MoodPyth.MoodClass-class.html#check_reqParameters
 MoodPyth.MoodClass.conn	MoodPyth.MoodClass-class.html#conn
@@ -124,12 +127,13 @@ MoodPyth.MoodClass.connect	MoodPyth.MoodClass-class.html#connect
 MoodPyth.course.Course.delete_modules	MoodPyth.course.Course-class.html#delete_modules
 MoodPyth.MoodClass.check_reqParameters	MoodPyth.MoodClass-class.html#check_reqParameters
 MoodPyth.course.Course.get_courses	MoodPyth.course.Course-class.html#get_courses
-MoodPyth.MoodClass.__init__	MoodPyth.MoodClass-class.html#__init__
+MoodPyth.MoodClass.conn	MoodPyth.MoodClass-class.html#conn
 MoodPyth.course.Course.delete_categories	MoodPyth.course.Course-class.html#delete_categories
 MoodPyth.course.Course.create_categories	MoodPyth.course.Course-class.html#create_categories
+MoodPyth.MoodClass.add_optParameter	MoodPyth.MoodClass-class.html#add_optParameter
 MoodPyth.course.Course.create_courses	MoodPyth.course.Course-class.html#create_courses
 MoodPyth.course.Course.course_contents	MoodPyth.course.Course-class.html#course_contents
-MoodPyth.MoodClass.conn	MoodPyth.MoodClass-class.html#conn
+MoodPyth.MoodClass.__init__	MoodPyth.MoodClass-class.html#__init__
 MoodPyth.course.Course.update_courses	MoodPyth.course.Course-class.html#update_courses
 MoodPyth.MoodClass.set_token	MoodPyth.MoodClass-class.html#set_token
 MoodPyth.course.Course.delete_courses	MoodPyth.course.Course-class.html#delete_courses
@@ -144,6 +148,7 @@ MoodPyth.MoodClass.add_optParameters	MoodPyth.MoodClass-class.html#add_optParame
 MoodPyth.MoodClass.set_token	MoodPyth.MoodClass-class.html#set_token
 MoodPyth.enrol.enrol.get_enrolled_users_with_capability	MoodPyth.enrol.enrol-class.html#get_enrolled_users_with_capability
 MoodPyth.MoodClass.create_token	MoodPyth.MoodClass-class.html#create_token
+MoodPyth.MoodClass.add_optParameter	MoodPyth.MoodClass-class.html#add_optParameter
 MoodPyth.MoodClass.token	MoodPyth.MoodClass-class.html#token
 MoodPyth.MoodClass.get_token	MoodPyth.MoodClass-class.html#get_token
 MoodPyth.enrol.enrol.enrolled_users	MoodPyth.enrol.enrol-class.html#enrolled_users
@@ -165,11 +170,11 @@ MoodPyth.course.Course.get_courses	MoodPyth.course.Course-class.html#get_courses
 MoodPyth.MoodClass.conn	MoodPyth.MoodClass-class.html#conn
 MoodPyth.course.Course.delete_categories	MoodPyth.course.Course-class.html#delete_categories
 MoodPyth.course.Course.create_categories	MoodPyth.course.Course-class.html#create_categories
+MoodPyth.MoodClass.add_optParameter	MoodPyth.MoodClass-class.html#add_optParameter
 MoodPyth.course.Course.create_courses	MoodPyth.course.Course-class.html#create_courses
 MoodPyth.course.Course.course_contents	MoodPyth.course.Course-class.html#course_contents
 MoodPyth.MoodClass.__init__	MoodPyth.MoodClass-class.html#__init__
 MoodPyth.course.Course.update_courses	MoodPyth.course.Course-class.html#update_courses
-MoodPyth.files.files.show_course_contents	MoodPyth.files.files-class.html#show_course_contents
 MoodPyth.MoodClass.set_token	MoodPyth.MoodClass-class.html#set_token
 MoodPyth.files.files.down_file	MoodPyth.files.files-class.html#down_file
 MoodPyth.course.Course.delete_courses	MoodPyth.course.Course-class.html#delete_courses
@@ -185,6 +190,7 @@ MoodPyth.MoodClass.add_reqParameters	MoodPyth.MoodClass-class.html#add_reqParame
 MoodPyth.MoodClass.add_optParameters	MoodPyth.MoodClass-class.html#add_optParameters
 MoodPyth.MoodClass.set_token	MoodPyth.MoodClass-class.html#set_token
 MoodPyth.MoodClass.create_token	MoodPyth.MoodClass-class.html#create_token
+MoodPyth.MoodClass.add_optParameter	MoodPyth.MoodClass-class.html#add_optParameter
 MoodPyth.forum.forum.get_forums_by_courses	MoodPyth.forum.forum-class.html#get_forums_by_courses
 MoodPyth.MoodClass.token	MoodPyth.MoodClass-class.html#token
 MoodPyth.MoodClass.get_token	MoodPyth.MoodClass-class.html#get_token
@@ -206,6 +212,7 @@ MoodPyth.group.group.get_course_groups	MoodPyth.group.group-class.html#get_cours
 MoodPyth.MoodClass.check_reqParameters	MoodPyth.MoodClass-class.html#check_reqParameters
 MoodPyth.MoodClass.conn	MoodPyth.MoodClass-class.html#conn
 MoodPyth.group.group.create_groups	MoodPyth.group.group-class.html#create_groups
+MoodPyth.MoodClass.add_optParameter	MoodPyth.MoodClass-class.html#add_optParameter
 MoodPyth.group.group.delete_group_members	MoodPyth.group.group-class.html#delete_group_members
 MoodPyth.group.group.get_course_groupings	MoodPyth.group.group-class.html#get_course_groupings
 MoodPyth.group.group.update_groupings	MoodPyth.group.group-class.html#update_groupings

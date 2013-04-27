@@ -113,4 +113,4 @@ if __name__ == '__main__':
     # t = MoodLib(info['web'], '', 'student1', 'StudentP@ss1', info['service'])
     # test_create_calendar_events(raw_input())
     # test_delete_calendar_events(raw_input())
-    # test_get_calendar_events(raw_input())
+    test_get_calendar_events(raw_input())

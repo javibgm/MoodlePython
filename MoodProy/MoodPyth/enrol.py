@@ -1,9 +1,13 @@
+''' Enroll class module '''
 from MoodPyth import MoodClass
 import urllib
 
 class enrol(MoodClass):
+    '''
+    Class with Moodle web services functions that work with enrollments
+    '''
     def enrolled_users(self, courseid, options=''):
-    # Get users enrolled in a course
+        ''' Get users enrolled in a course. '''
         function = "core_enrol_get_enrolled_users"
         if type(courseid)!=type('a') and type(courseid)!=type(0):
             raise TypeError('Input must be a an integer')
@@ -15,7 +19,7 @@ class enrol(MoodClass):
         return self.connect(function, param)
 
     def get_enrolled_users_with_capability(self, coursecapabilities, options=''):
-    # For each course and capability specified, return a list of the users that are enrolled in the course and have that capability
+        ''' For each course and capability specified, return a list of the users that are enrolled in the course and have that capability. '''
         function = 'core_enrol_get_enrolled_users_with_capability'
         if type(coursecapabilities)!=type([]) or coursecapabilities==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "courseid" and "capabilities"')
@@ -42,7 +46,7 @@ class enrol(MoodClass):
         return self.connect(function, param)
 
     def get_users_courses(self, userid):
-    # Get the list of courses where a user is enrolled in
+        ''' Get the list of courses where a user is enrolled in. '''
         try:
             userid = int(userid)
             function = 'core_enrol_get_users_courses'
@@ -52,7 +56,7 @@ class enrol(MoodClass):
             raise TypeError('userid must be an integer or a string with only numbers')
 
     def manual_enrol_users(self, enrollist):
-    # Manual enrol users
+        ''' Enrol users manually. '''
         function = 'enrol_manual_enrol_users'
         if type(enrollist)!=type([]) or enrollist==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "roleid", "userid" and "courseid"')

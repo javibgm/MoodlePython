@@ -70,6 +70,6 @@ if __name__ == '__main__':
     t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
     # t = MoodLib(info['web'], 'f03f665848ef2a85e3aee8a1db198ac0') # student
     # t = MoodLib(info['web'], '', 'student1', 'StudentP@ss1', info['service'])
-    # test_get_assigments(raw_input())
+    test_get_assigments(raw_input())
     # test_get_grades(raw_input())
     # test_get_submissions(raw_input())
