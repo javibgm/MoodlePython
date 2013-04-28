@@ -1,12 +1,14 @@
 ''' Forum class module '''
 from MoodPyth import MoodClass
 
-class forum(MoodClass):
+class Forum(MoodClass):
     '''
     Class with Moodle web services functions that work with forums
     '''
     def get_forum_discussions(self, forumids):
-        ''' Returns a list of forum discussions contained within a given set of forums. '''
+        ''' Returns a list of forum discussions contained within a given set of forums.
+        @param forumids: 1 or more forum identifiers.
+        @type forumids: List of Integers. '''
         if type(forumids)!=type([]) or forumids==[]:
             raise TypeError('Input must be a list of forum IDs (integers)')
         function = 'mod_forum_get_forum_discussions'
@@ -20,7 +22,10 @@ class forum(MoodClass):
         return self.connect(function, param)
 
     def get_forums_by_courses(self, courseids=''):
-        ''' Returns a list of forum instances in a provided set of courses, if no courses are provided then all the forum instances the user has access to will be returned. '''
+        ''' Returns a list of forum instances in a provided set of courses,
+        if no courses are provided then all the forum instances the user has access to will be returned. 
+        @param courseids: 0 or more course identifiers to get their forums.
+        @type courseids: List of Integers. '''
         if type(courseids)!=type([]) and courseids!='':
             raise TypeError('Input must be a list of course IDs (integers)')
         function = 'mod_forum_get_forums_by_courses'

@@ -1,7 +1,4 @@
 '''
-Created on 24/03/2013
-
-@author: javi
 '''
 from MoodPyth.MoodLib import MoodLib
 from MoodPyth.aux import info, show
@@ -78,11 +75,21 @@ def test_get_groups(test):
         print 'Required parameters: Group ID'
         show(t.get_groups([raw_input()]))
 
+def test_unassign_grouping(test):
+    if test == '0':
+    # Unassign a group from a grouping manually
+        print 'Required parameters: Grouping ID, Group ID'
+        show(t.unassign_grouping([{'groupingid':raw_input(),'groupid':raw_input()}]))
+
+def test_update_groupings(test):
+    if test == '0':
+    # Update a grouping manually
+        print 'Required parameters: Grouping ID'
+        show(t.update_groupings([{'id':raw_input(),'name':'Python Grouping updated', 'description':'Test grouping updated with Python library'}]))
+
 if __name__ == '__main__':
     t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
-    #t = MoodLib(info['web'], 'f03f665848ef2a85e3aee8a1db198ac0') # student
-    #t = MoodLib(info['web'], '', 'student1', 'StudentP@ss1', info['service'])
-    #est_add_group_members(raw_input())
+    #test_add_group_members(raw_input())
     #test_assign_grouping(raw_input())
     #test_create_groupings(raw_input())
     #test_create_groups(raw_input())
@@ -96,3 +103,5 @@ if __name__ == '__main__':
     #test_get_group_members(raw_input())
     #test_get_groupings(raw_input())
     #test_get_groups(raw_input())
+    #test_unassign_grouping(raw_input())
+    #test_update_groupings(raw_input())

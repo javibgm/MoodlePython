@@ -1,22 +1,12 @@
 6-Crear las funciones para cada servicio web, con una lista como entrada en las que tenga la opcion de hacer varias cosas en la misma peticion:
-    core_webservice_get_site_info: get_site_info
-    -----------------------------------------------
-    COURSES
-    core_course_get_courses: get_courses
-    core_course_get_contents: course_contents
-    core_course_get_categories: get_categories
-    core_course_create_categories: create_categories
-    core_course_create_courses: create_courses
-    core_course_delete_courses: delete_courses
-    core_course_update_courses: update_courses
-    core_course_duplicate_course: duplicate_course
-    core_course_import_course: import_course
-    core_course_update_categories: update_categories
-    core_course_delete_categories: delete_categories
-    core_course_delete_modules: delete_modules
-    -------------------------------------------------
+    MoodLib --> core_webservice_get_site_info: get_site_info
     ASSIGN
-    mod_assign_get_assignments: get_assignments
+    CALENDAR
+    COURSES
+    ENROL
+    FILES*
+    FORUM
+    GROUP
     
 10-github: hacer cuenta, 2 carpetas, test y stable
 14-Hacer parte del programa para descargar ficheros y otros recursos: ya descarga ficheros, probar con assigments
@@ -57,6 +47,14 @@ funciones iniciales a desarrollar:
     bajar 1 documento de un curso
     bajar todos los documentos de 1 curso
 
+PROBLEMS:
+Implementation:
+- Files: can not upload anything with the upload_file function.
+- Message: HTTP 500 internal server error when using search_contacts() function (only if some name matches with the search).
+
+API documentation:
+- where define parameters and return values structure
+- Every function calls at connect function. Connect function can throw an exception. Every function must have the same documentation about throwing that exception?
 
 DOCUMENTATION:
     descripcion de Moodle

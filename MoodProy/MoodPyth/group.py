@@ -2,12 +2,14 @@
 from MoodPyth import MoodClass
 import urllib
 
-class group(MoodClass):
+class Group(MoodClass):
     '''
     Class with Moodle web services functions that work with groups
     '''
     def add_group_members(self, members):
-        ''' Adds group members. '''
+        ''' Adds group members. 
+        @param members: group identifiers and user identifiers to add users to groups.
+        @type members: List of Dictionaries. '''
         if type(members)!=type([]) or members==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "groupid" and "userid"')
         function = 'core_group_add_group_members'
@@ -22,7 +24,9 @@ class group(MoodClass):
         return self.connect(function, param)
         
     def assign_grouping(self, groupings):
-        ''' Assing groups from groupings. '''
+        ''' Assing groups from groupings. 
+        @param groupings: grouping identifiers and group identifiers to assign groups to groupings
+        @type groupings: List of Dictionaries. '''
         if type(groupings)!=type([]) or groupings==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "groupingid" and "groupid"')
         function = 'core_group_assign_grouping'
@@ -37,7 +41,9 @@ class group(MoodClass):
         return self.connect(function, param)
     
     def create_groupings(self, groupings):
-        ''' Creates new groupings. '''
+        ''' Creates new groupings. 
+        @param groupings: 1 or more groupings. 
+        @type groupings: List of Dictionaries. '''
         if type(groupings)!=type([]) or groupings==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "courseid", "name" and "description"')
         function = 'core_group_create_groupings'
@@ -54,7 +60,9 @@ class group(MoodClass):
         return self.connect(function, param)
         
     def create_groups(self, groups):
-        ''' Creates new groups. '''
+        ''' Creates new groups. 
+        @param groups: 1 or more groups.
+        @type groups: List of Dictionaries. '''
         if type(groups)!=type([]) or groups==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "courseid", "name" and "description"')
         function = 'core_group_create_groups'
@@ -71,7 +79,9 @@ class group(MoodClass):
         return self.connect(function, param)
 
     def delete_group_members(self,members):
-        ''' Deletes group members. '''
+        ''' Deletes group members. 
+        @param members: group identifiers and user identifiers to remove users from groups.
+        @type members: List of Dictionaries. '''
         if type(members)!=type([]) or members==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "groupid" and "userid"')
         function = 'core_group_delete_group_members'
@@ -86,7 +96,9 @@ class group(MoodClass):
         return self.connect(function, param)
 
     def delete_groupings(self, groupingids):
-        ''' Deletes all specified groupings. '''
+        ''' Deletes all specified groupings. 
+        @param groupingids: 1 or more grouping identifiers to delete. 
+        @type groupingids: List of Integers. '''
         if type(groupingids)!=type([]) or groupingids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 grouping id')
         function = 'core_group_delete_groupings'
@@ -100,7 +112,9 @@ class group(MoodClass):
         return self.connect(function, param)
 
     def delete_groups(self, groupids):
-        ''' Deletes all specified groups. '''
+        ''' Deletes all specified groups. 
+        @param groupids: 1 or more group identifiers to delete. 
+        @type groupids: List of Integers. '''
         if type(groupids)!=type([]) or groupids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 group id')
         function = 'core_group_delete_groups'
@@ -114,7 +128,9 @@ class group(MoodClass):
         return self.connect(function, param)
 
     def get_course_groupings(self, courseid):
-        ''' Returns all groupings in specified course. '''
+        ''' Returns all groupings in specified course. 
+        @param courseid: course identifier to get its groupings
+        @type courseid: Integer. '''
         try:
             courseid = int(courseid)
             function = 'core_group_get_course_groupings'
@@ -124,7 +140,9 @@ class group(MoodClass):
             raise TypeError('courseid must be an integer or a string only with numbers')
     
     def get_course_groups(self, courseid):
-        ''' Returns all groups in specified course. '''
+        ''' Returns all groups in specified course. 
+        @param courseid: course identifier to get its groups
+        @type courseid: Integer '''
         try:
             courseid = int(courseid)
             function = 'core_group_get_course_groups'
@@ -134,7 +152,9 @@ class group(MoodClass):
             raise TypeError('courseid must be an integer or a string only with numbers')
     
     def get_group_members(self, groupids):
-        ''' Returns group members. '''
+        ''' Returns group members. 
+        @param groupids: 1 or more group identifiers to get their members
+        @type groupids: List of Integers. '''
         if type(groupids)!=type([]) or groupids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 group id')
         function = 'core_group_get_group_members'
@@ -148,7 +168,11 @@ class group(MoodClass):
         return self.connect(function, param)
     
     def get_groupings(self, groupingids, returngroups=0):
-        ''' Returns groupings details. '''
+        ''' Returns groupings details. 
+        @param groupingids: 1 or more grouping identifiers.
+        @type groupingids: List of Integers.
+        @param returngroups: return associated groups (Default to 0)
+        @type returngroups: Integer 1 (yes) or 0 (no). '''
         if type(groupingids)!=type([]) or groupingids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 grouping id')
         function = 'core_group_get_groupings'
@@ -164,7 +188,9 @@ class group(MoodClass):
         return self.connect(function, param)
 
     def get_groups(self, groupids):
-        ''' Returns group details. '''
+        ''' Returns group details. 
+        @param groupids: 1 or more group identifiers 
+        @type groupids: List of Integers. '''
         if type(groupids)!=type([]) or groupids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 group id')
         function = 'core_group_get_groups'
@@ -177,10 +203,38 @@ class group(MoodClass):
             num += 1
         return self.connect(function, param)
     
-    def unassign_grouping(self):
-        ''' Unassing groups from groupings. '''
+    def unassign_grouping(self, unassignments):
+        ''' Unassing groups from groupings. 
+        @param unassignments: grouping identifiers and group identifiers to unassign groups from groupings
+        @type unassignments: List of Dictionaries. '''
+        if type(unassignments)!=type([]) or unassignments==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "groupingid" and "groupid"')
         function = 'core_group_unassign_grouping'
+        param = ''
+        num=0
+        reqParameters = ['groupingid', 'groupid']
+        for unassignment in unassignments:
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(unassignment, 'unassignments', num, reqParameters)
+            num += 1
+        return self.connect(function, param)
 
-    def update_groupings(self):
-        ''' Updates existing groupings. '''
+    def update_groupings(self, groupings):
+        ''' Updates existing groupings. 
+        @param groupings: 1 or more groupings. 
+        @type groupings: List of Dictionaries. '''
+        if type(groupings)!=type([]) or groupings==[]:
+            raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "id", "name" and "description"')
         function = 'core_group_update_groupings'
+        param = ''
+        num=0
+        reqParameters = ['id', 'name','description']
+        optParameters = ['descriptionformat']
+        for grouping in groupings:
+            if num!=0:
+                param += '&'
+            param += self.add_reqParameters(grouping, 'groupings', num, reqParameters)
+            param += self.add_optParameters(grouping, 'groupings', num, optParameters)
+            num += 1
+        return self.connect(function, param)

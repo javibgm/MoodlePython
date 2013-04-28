@@ -1,7 +1,4 @@
 '''
-Created on 24/03/2013
-
-@author: javi
 '''
 from MoodPyth.MoodLib import MoodLib
 from MoodPyth.aux import info, show
@@ -32,8 +29,6 @@ def test_down_file():
     
 if __name__ == '__main__':
     t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
-    # t = MoodLib(info['web'], 'f03f665848ef2a85e3aee8a1db198ac0') # student
-    # t = MoodLib(info['web'], '', 'student1', 'StudentP@ss1', info['service'])
-    # test_get_files(raw_input())
-    # test_upload_file(raw_input())
-    # test_down_file()
+    #test_get_files(raw_input())
+    #test_upload_file(raw_input())
+    #test_down_file()

@@ -1,7 +1,4 @@
 '''
-Created on 24/03/2013
-
-@author: javi
 '''
 from MoodPyth.MoodLib import MoodLib
 from MoodPyth.aux import info, show
@@ -78,9 +75,7 @@ def test_manual_enrol_users(test):
 
 if __name__ == '__main__':
     t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
-    # t = MoodLib(info['web'], 'f03f665848ef2a85e3aee8a1db198ac0') # student
-    # t = MoodLib(info['web'], '', 'student1', 'StudentP@ss1', info['service'])
-    # test_enrolled_users(raw_input())
-    # test_get_enrolled_users_with_capability(raw_input())
-    # test_get_users_courses()
-    # test_manual_enrol_users(raw_input())
+    #test_enrolled_users(raw_input())
+    #test_get_enrolled_users_with_capability(raw_input())
+    #test_get_users_courses()
+    #test_manual_enrol_users(raw_input())

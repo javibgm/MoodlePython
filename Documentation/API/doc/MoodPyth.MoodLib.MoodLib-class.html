@@ -62,33 +62,37 @@
                     |
     <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+   |
                 |   |
+    <a href="MoodPyth.assign.Assign-class.html">assign.Assign</a> --+
+                    |
+    <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+   |
+                |   |
+<a href="MoodPyth.calendar.Calendar-class.html">calendar.Calendar</a> --+
+                    |
+    <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+   |
+                |   |
     <a href="MoodPyth.course.Course-class.html">course.Course</a> --+
                     |
     <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+   |
                 |   |
-    <a href="MoodPyth.assign.assign-class.html">assign.assign</a> --+
-                    |
-    <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+   |
-                |   |
-<a href="MoodPyth.calendar.calendar-class.html">calendar.calendar</a> --+
-                    |
-    <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+   |
-                |   |
-      <a href="MoodPyth.enrol.enrol-class.html">enrol.enrol</a> --+
+      <a href="MoodPyth.enrol.Enrol-class.html">enrol.Enrol</a> --+
                     |
 <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+       |
             |       |
 <a href="MoodPyth.course.Course-class.html">course.Course</a> --+   |
                 |   |
-      <a href="MoodPyth.files.files-class.html">files.files</a> --+
+      <a href="MoodPyth.files.Files-class.html">files.Files</a> --+
                     |
     <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+   |
                 |   |
-      <a href="MoodPyth.forum.forum-class.html">forum.forum</a> --+
+      <a href="MoodPyth.forum.Forum-class.html">forum.Forum</a> --+
                     |
     <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+   |
                 |   |
-      <a href="MoodPyth.group.group-class.html">group.group</a> --+
+      <a href="MoodPyth.group.Group-class.html">group.Group</a> --+
+                    |
+    <a href="MoodPyth.MoodClass-class.html">MoodClass</a> --+   |
+                |   |
+  <a href="MoodPyth.message.Message-class.html">message.Message</a> --+
                     |
                    <strong class="uidshort">MoodLib</strong>
 </pre>
@@ -145,6 +149,16 @@
       <code><a href="MoodPyth.MoodClass-class.html#get_token">get_token</a></code>,
       <code><a href="MoodPyth.MoodClass-class.html#set_token">set_token</a></code>
       </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.assign.Assign-class.html">assign.Assign</a></code></b>:
+      <code><a href="MoodPyth.assign.Assign-class.html#get_assigments">get_assigments</a></code>,
+      <code><a href="MoodPyth.assign.Assign-class.html#get_grades">get_grades</a></code>,
+      <code><a href="MoodPyth.assign.Assign-class.html#get_submissions">get_submissions</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.calendar.Calendar-class.html">calendar.Calendar</a></code></b>:
+      <code><a href="MoodPyth.calendar.Calendar-class.html#create_calendar_events">create_calendar_events</a></code>,
+      <code><a href="MoodPyth.calendar.Calendar-class.html#delete_calendar_events">delete_calendar_events</a></code>,
+      <code><a href="MoodPyth.calendar.Calendar-class.html#get_calendar_events">get_calendar_events</a></code>
+      </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.course.Course-class.html">course.Course</a></code></b>:
       <code><a href="MoodPyth.course.Course-class.html#course_contents">course_contents</a></code>,
       <code><a href="MoodPyth.course.Course-class.html#create_categories">create_categories</a></code>,
@@ -159,46 +173,45 @@
       <code><a href="MoodPyth.course.Course-class.html#update_categories">update_categories</a></code>,
       <code><a href="MoodPyth.course.Course-class.html#update_courses">update_courses</a></code>
       </p>
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.assign.assign-class.html">assign.assign</a></code></b>:
-      <code><a href="MoodPyth.assign.assign-class.html#get_assigments">get_assigments</a></code>,
-      <code><a href="MoodPyth.assign.assign-class.html#get_grades">get_grades</a></code>,
-      <code><a href="MoodPyth.assign.assign-class.html#get_submissions">get_submissions</a></code>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.enrol.Enrol-class.html">enrol.Enrol</a></code></b>:
+      <code><a href="MoodPyth.enrol.Enrol-class.html#enrolled_users">enrolled_users</a></code>,
+      <code><a href="MoodPyth.enrol.Enrol-class.html#get_enrolled_users_with_capability">get_enrolled_users_with_capability</a></code>,
+      <code><a href="MoodPyth.enrol.Enrol-class.html#get_users_courses">get_users_courses</a></code>,
+      <code><a href="MoodPyth.enrol.Enrol-class.html#manual_enrol_users">manual_enrol_users</a></code>
       </p>
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.calendar.calendar-class.html">calendar.calendar</a></code></b>:
-      <code><a href="MoodPyth.calendar.calendar-class.html#create_calendar_events">create_calendar_events</a></code>,
-      <code><a href="MoodPyth.calendar.calendar-class.html#delete_calendar_events">delete_calendar_events</a></code>,
-      <code><a href="MoodPyth.calendar.calendar-class.html#get_calendar_events">get_calendar_events</a></code>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.files.Files-class.html">files.Files</a></code></b>:
+      <code><a href="MoodPyth.files.Files-class.html#down_file">down_file</a></code>,
+      <code><a href="MoodPyth.files.Files-class.html#get_files">get_files</a></code>,
+      <code><a href="MoodPyth.files.Files-class.html#upload_file">upload_file</a></code>
       </p>
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.enrol.enrol-class.html">enrol.enrol</a></code></b>:
-      <code><a href="MoodPyth.enrol.enrol-class.html#enrolled_users">enrolled_users</a></code>,
-      <code><a href="MoodPyth.enrol.enrol-class.html#get_enrolled_users_with_capability">get_enrolled_users_with_capability</a></code>,
-      <code><a href="MoodPyth.enrol.enrol-class.html#get_users_courses">get_users_courses</a></code>,
-      <code><a href="MoodPyth.enrol.enrol-class.html#manual_enrol_users">manual_enrol_users</a></code>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.forum.Forum-class.html">forum.Forum</a></code></b>:
+      <code><a href="MoodPyth.forum.Forum-class.html#get_forum_discussions">get_forum_discussions</a></code>,
+      <code><a href="MoodPyth.forum.Forum-class.html#get_forums_by_courses">get_forums_by_courses</a></code>
       </p>
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.files.files-class.html">files.files</a></code></b>:
-      <code><a href="MoodPyth.files.files-class.html#down_file">down_file</a></code>,
-      <code><a href="MoodPyth.files.files-class.html#get_files">get_files</a></code>,
-      <code><a href="MoodPyth.files.files-class.html#upload_file">upload_file</a></code>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.group.Group-class.html">group.Group</a></code></b>:
+      <code><a href="MoodPyth.group.Group-class.html#add_group_members">add_group_members</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#assign_grouping">assign_grouping</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#create_groupings">create_groupings</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#create_groups">create_groups</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#delete_group_members">delete_group_members</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#delete_groupings">delete_groupings</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#delete_groups">delete_groups</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_course_groupings">get_course_groupings</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_course_groups">get_course_groups</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_group_members">get_group_members</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_groupings">get_groupings</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_groups">get_groups</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#unassign_grouping">unassign_grouping</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#update_groupings">update_groupings</a></code>
       </p>
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.forum.forum-class.html">forum.forum</a></code></b>:
-      <code><a href="MoodPyth.forum.forum-class.html#get_forum_discussions">get_forum_discussions</a></code>,
-      <code><a href="MoodPyth.forum.forum-class.html#get_forums_by_courses">get_forums_by_courses</a></code>
-      </p>
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.group.group-class.html">group.group</a></code></b>:
-      <code><a href="MoodPyth.group.group-class.html#add_group_members">add_group_members</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#assign_grouping">assign_grouping</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#create_groupings">create_groupings</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#create_groups">create_groups</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#delete_group_members">delete_group_members</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#delete_groupings">delete_groupings</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#delete_groups">delete_groups</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#get_course_groupings">get_course_groupings</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#get_course_groups">get_course_groups</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#get_group_members">get_group_members</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#get_groupings">get_groupings</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#get_groups">get_groups</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#unassign_grouping">unassign_grouping</a></code>,
-      <code><a href="MoodPyth.group.group-class.html#update_groupings">update_groupings</a></code>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.message.Message-class.html">message.Message</a></code></b>:
+      <code><a href="MoodPyth.message.Message-class.html#block_contacts">block_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#create_contacts">create_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#delete_contacts">delete_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#get_contacts">get_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#search_contacts">search_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#send_instant_messages">send_instant_messages</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#unblock_contacts">unblock_contacts</a></code>
       </p>
     </td>
   </tr>
@@ -263,6 +276,8 @@
   
   <p>Get general info about Moodle site</p>
   <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>Dictionary.</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -293,7 +308,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Sat Apr 27 15:59:25 2013
+    Generated by Epydoc 3.0.1 on Sun Apr 28 15:39:38 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

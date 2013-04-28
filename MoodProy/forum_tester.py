@@ -1,7 +1,4 @@
 '''
-Created on 24/03/2013
-
-@author: javi
 '''
 from MoodPyth.MoodLib import MoodLib
 from MoodPyth.aux import info, show
@@ -41,7 +38,5 @@ def test_get_forums_by_courses(test):
     
 if __name__ == '__main__':
     t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
-    # t = MoodLib(info['web'], 'f03f665848ef2a85e3aee8a1db198ac0') # student
-    # t = MoodLib(info['web'], '', 'student1', 'StudentP@ss1', info['service'])
-    # test_get_forum_discussions(raw_input())
-    # test_get_forums_by_courses(raw_input())
+    #test_get_forum_discussions(raw_input())
+    #test_get_forums_by_courses(raw_input())

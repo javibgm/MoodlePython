@@ -2,12 +2,26 @@
 from MoodPyth.course import Course
 import urllib, urllib2
 
-class files(Course):
+class Files(Course):
     '''
-    Class with Moodle web services functions that work with files
+    Class with Moodle web services functions that work with files.
     '''
     def get_files(self, contextid, component, filearea, itemid, filepath, filename, modified=''):
-        ''' Browse moodle files. '''
+        ''' Browse moodle files. Do not download any content. 
+        @param contextid: context identifier.
+        @type contextid: Integer.
+        @param component: component.
+        @type component: String.
+        @param filearea: file area. 
+        @type filearea: String.
+        @param itemid: item identifier.
+        @type itemid: Integer.
+        @param filepath: file path.
+        @type filepath: String.
+        @param filename: file name.
+        @type filename: String.
+        @param modified: timestamp to return files changed after this time (Default to "").
+        @type modified: Integer. '''
         function="core_files_get_files"
         param = urllib.urlencode({'contextid': contextid, 'component':component, 'filearea':filearea, 'itemid':itemid, 'filepath':filepath, 'filename':filename})
         if modified!='':
@@ -15,7 +29,21 @@ class files(Course):
         return self.connect(function, param)
 
     def upload_file(self, contextid, component, filearea, itemid, filepath, filename, filecontent):
-        ''' Upload a file to moodle. '''
+        ''' Upload a file to moodle. 
+        @param contextid: context identifier.
+        @type contextid: Integer.
+        @param component: component.
+        @type component: String.
+        @param filearea: file area. 
+        @type filearea: String.
+        @param itemid: item identifier.
+        @type itemid: Integer.
+        @param filepath: file path.
+        @type filepath: String.
+        @param filename: file name.
+        @type filename: String.
+        @param filecontent: file content.
+        @type filecontent: String. '''
         function = 'core_files_upload'
         param = urllib.urlencode({'contextid': contextid, 'component':component, 'filearea':filearea,
                                   'itemid':itemid, 'filepath':filepath, 'filename':filename, 'filecontent':filecontent})
@@ -24,7 +52,7 @@ class files(Course):
     
     def down_file(self, courseid):
         ''' Downloads course's resources via console. Shows course's resources and downloads the selected file. '''
-        def show_course_contents(self, res):
+        def show_course_contents(res):
             ''' Auxiliar function to download files. Shows course contents and returns resource items in a dictionary. '''
             # The dicctionary has this structure:
             # Dic = {index : [filename, fileurl]}
@@ -46,8 +74,8 @@ class files(Course):
                                 '\t Type: ' + str(content['type']))
                     except KeyError:
                         None
-        return files
-        files = self.show_course_contents(self.course_contents(courseid))
+            return files
+        files = show_course_contents(self.course_contents(courseid))
         print 'Input: file index'
         fileindex = raw_input()
         try:

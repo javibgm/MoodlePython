@@ -2,14 +2,14 @@
 from MoodPyth import MoodClass
 import urllib
 
-class calendar(MoodClass):
+class Calendar(MoodClass):
     '''
     Class with Moodle web services functions that work with calendar events
     '''
     def create_calendar_events(self, events):
         ''' Create calendar events
         @param events: 1 or more events
-        @type events: Dictionary
+        @type events: List of Dictionary
             - name string  - event name
             - description string  Default to "null" - Description
             - format int  Default to "1" - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
@@ -60,11 +60,11 @@ class calendar(MoodClass):
 
     def get_calendar_events(self, eventids=[], courseids=[], groupids=[], userevents=1, siteevents=1, timestart=0, timeend='', ignorehidden=1):
         ''' Get calendar events.
-        @param eventids: List of event ids
+        @param eventids: 0 or more event ids
         @type eventids: List of Integer
-        @param courseids: List of course ids for which events will be returned
+        @param courseids: 0 or more course ids for which events will be returned
         @type courseids: List of Integer
-        @param groupids: List of group ids for which events should be returned
+        @param groupids: 0 or more group ids for which events should be returned
         @type groupids: List of Integer
         @param userevents: Set to true to return current user's user events
         @type userevents: Integer

@@ -4,7 +4,7 @@ Assignment class module
 from MoodPyth import MoodClass
 import urllib
 
-class assign(MoodClass):
+class Assign(MoodClass):
     '''
     Class with Moodle web services functions that work with assignments
     '''
@@ -89,7 +89,7 @@ class assign(MoodClass):
                 - itemid int  Optional - when errorcode is 3 then itemid is an assignment id. When errorcode is 1, itemid is a course module id
                 - warningcode string   - errorcode can be 3 (no grades found) or 1 (no permission to get grades)
                 - message string   - untranslated english message to explain the warning
-        @param assignmentids: assignment ids
+        @param assignmentids: 1 or more assignment ids
         @type assignmentids: List of Integer
         @param since: timestamp, only return records where timemodified >= since
         @type since: Integer'''
@@ -136,7 +136,7 @@ class assign(MoodClass):
                 - itemid int  Optional - item id
                 - warningcode string   - the warning code can be used by the client app to implement specific behaviour
                 - message string   - untranslated english message to explain the warning
-        @param assignmentids: assignment ids
+        @param assignmentids: 1 or more assignment ids
         @type assignmentids: List of Integer
         @param status: submission status
         @type status: String

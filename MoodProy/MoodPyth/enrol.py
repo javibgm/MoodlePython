@@ -2,12 +2,29 @@
 from MoodPyth import MoodClass
 import urllib
 
-class enrol(MoodClass):
+class Enrol(MoodClass):
     '''
-    Class with Moodle web services functions that work with enrollments
+    Class with Moodle web services functions that work with enrollments.
     '''
     def enrolled_users(self, courseid, options=''):
-        ''' Get users enrolled in a course. '''
+        ''' Get users enrolled in a course. 
+        @param courseid: course identifier to get its enrolled users.
+        @type courseid: Integer.
+        @param options:  Enrollment options to filter users.
+        Required keys: 'name','value'.
+        
+        The 'name' value is the option name. Expected names (value format) are:
+            -  "withcapability" (string) return only users with this capability.
+                - This option requires 'moodle/role:review' on the course context.
+            - "groupid" (integer) return only users in this group id.
+                - This option requires 'moodle/site:accessallgroups' on the course context.
+            - "onlyactive" (integer) return only users with active enrolments and matching time restrictions.
+                - This option requires 'moodle/course:enrolreview' on the course context.
+            - "userfields" ('string, string, ...') return only the values of these user fields.
+            - "limitfrom" (integer) sql limit from.
+            - "limitnumber" (integer) maximum number of returned users.
+        The 'value' key value is a string with the value to match.
+        @type options: List of Dictionaries. '''
         function = "core_enrol_get_enrolled_users"
         if type(courseid)!=type('a') and type(courseid)!=type(0):
             raise TypeError('Input must be a an integer')
@@ -19,7 +36,22 @@ class enrol(MoodClass):
         return self.connect(function, param)
 
     def get_enrolled_users_with_capability(self, coursecapabilities, options=''):
-        ''' For each course and capability specified, return a list of the users that are enrolled in the course and have that capability. '''
+        ''' For each course and capability specified, return a list of the users that are enrolled in the course and have that capability. 
+        @param coursecapabilities: course identifier and capabilities to get the enrolled users in that course with those capabilities.
+        @type coursecapabilities: Dictionary. 
+        @param options:  Enrollment options to filter users.
+        Required keys: 'name','value'.
+        
+        The 'name' value is the option name. Expected names (value format) are:
+            - "groupid" (integer) return only users in this group id.
+                - Requires 'moodle/site:accessallgroups' .
+            - "onlyactive" (integer) only users with active enrolments.
+                - Requires 'moodle/course:enrolreview' .
+            - "userfields" ('string, string, ...') return only the values of these user fields.
+            - "limitfrom" (integer) sql limit from.
+            - "limitnumber" (integer) max number of users per course and capability.
+        The 'value' key value is a string with the value to match.
+        @type options: List of Dictionaries. '''
         function = 'core_enrol_get_enrolled_users_with_capability'
         if type(coursecapabilities)!=type([]) or coursecapabilities==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "courseid" and "capabilities"')
@@ -46,7 +78,9 @@ class enrol(MoodClass):
         return self.connect(function, param)
 
     def get_users_courses(self, userid):
-        ''' Get the list of courses where a user is enrolled in. '''
+        ''' Get the list of courses where a user is enrolled in.
+        @param userid: User identifier.
+        @type userid: Integer. '''
         try:
             userid = int(userid)
             function = 'core_enrol_get_users_courses'
@@ -56,7 +90,9 @@ class enrol(MoodClass):
             raise TypeError('userid must be an integer or a string with only numbers')
 
     def manual_enrol_users(self, enrollist):
-        ''' Enrol users manually. '''
+        ''' Enrol users manually.
+        @param enrollist: 1 or more enrollments of user into course with a specific role.
+        @type enrollist: List of Dictionaries. '''
         function = 'enrol_manual_enrol_users'
         if type(enrollist)!=type([]) or enrollist==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "roleid", "userid" and "courseid"')

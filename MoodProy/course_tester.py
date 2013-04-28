@@ -1,7 +1,4 @@
 '''
-Created on 24/03/2013
-
-@author: javi
 '''
 from MoodPyth.MoodLib import MoodLib
 from MoodPyth.aux import info, show
@@ -232,17 +229,16 @@ def test_delete_modules(test):
 
 if __name__ == '__main__':
     t = MoodLib(info['web'], '0458ea98862eecc3eef61dd776ffbdf2') # admin
-    # t = MoodLib(info['web'], '', info['user'], info['pasw'], info['service'])
-    # test_get_site_info()
-    # test_course_contents(raw_input())
-    # test_get_courses(raw_input())
-    # test_create_courses(raw_input())
-    # test_delete_courses(raw_input())
-    # test_update_courses(raw_input())
-    # test_duplicate_course(raw_input())
-    # test_import_course(raw_input())
-    # test_get_categories(raw_input())
-    # test_create_categories(raw_input())
-    # test_update_categories(raw_input())
-    # test_delete_categories(raw_input())
-    # test_delete_modules(raw_input())
+    #test_get_site_info()
+    #test_course_contents(raw_input())
+    #test_get_courses(raw_input())
+    #test_create_courses(raw_input())
+    #test_delete_courses(raw_input())
+    #test_update_courses(raw_input())
+    #test_duplicate_course(raw_input())
+    #test_import_course(raw_input())
+    #test_get_categories(raw_input())
+    #test_create_categories(raw_input())
+    #test_update_categories(raw_input())
+    #test_delete_categories(raw_input())
+    #test_delete_modules(raw_input())
