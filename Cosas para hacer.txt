@@ -1,3 +1,4 @@
+Useful info: http://docs.moodle.org/dev/Web_services
 6-Crear las funciones para cada servicio web, con una lista como entrada en las que tenga la opcion de hacer varias cosas en la misma peticion:
     MoodLib --> core_webservice_get_site_info: get_site_info
     ASSIGN
@@ -48,9 +49,22 @@ funciones iniciales a desarrollar:
     bajar todos los documentos de 1 curso
 
 PROBLEMS:
+Firma papeles
+
+Memoria:
+Estado del arte: donde voy a trabajar (ámbito del proyecto), el Moodle y sus semejantes (LMS)
+Hablar del scrapping en general, no solo para Moodle
+También cómo interactúa, con  REST y otras tecnologías, XML-RPC, 
+Características generales de python, sus bibliotecas (las usadas)
+Contar las tecnologias, tanto las que he usado como las que no, de forma independiente al proyecto
+Contar los elementos que tiene Moodle, sus usos y elementos básicos (que es un usuario o un curso o un fichero en Moodle y como se relacionan)
+Tambíen como el Moodle está separado en módulos y su descripción
+Todo de lo que se haga 
+
 Implementation:
 - Files: can not upload anything with the upload_file function.
 - Message: HTTP 500 internal server error when using search_contacts() function (only if some name matches with the search).
+Preguntar en Moodle: lo que me pasa y preguntar si es un bug o no (bug report).
 
 API documentation:
 - where define parameters and return values structure
