@@ -1,9 +1,7 @@
-# MoodPyth 
-# 
-# Copyright (C) 2013 Edward Loper 
+# Copyright (C) 2013 MoodlePython Project
 # Author: Javier Benito Garcia-Mochales <javibgm@hotmail.com>
 # URL: <https://github.com/javibgm/MoodlePython> 
-  
+
 '''
 Moodle Web Service Python library. This library contains
 functions to use each one of Moodle version 2.5 web services 

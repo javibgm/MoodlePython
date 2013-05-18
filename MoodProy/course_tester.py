@@ -1,7 +1,8 @@
 '''
 '''
 from MoodPyth.MoodLib import MoodLib
-from MoodPyth.aux import info, show
+from MoodPyth.aux import show
+from config import info,users
 
 
 def test_get_site_info():
@@ -228,7 +229,7 @@ def test_delete_modules(test):
     show(t.delete_modules(array))
 
 if __name__ == '__main__':
-    t = MoodLib(info['web'], '0458ea98862eecc3eef61dd776ffbdf2') # admin
+    t = MoodLib(info['web'], users['admin']['token'])
     #test_get_site_info()
     #test_course_contents(raw_input())
     #test_get_courses(raw_input())

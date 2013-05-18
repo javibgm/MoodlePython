@@ -1,7 +1,8 @@
 '''
 '''
 from MoodPyth.MoodLib import MoodLib
-from MoodPyth.aux import info, show
+from MoodPyth.aux import show
+from config import info,users
 
 def test_add_group_members(test):
     if test == '0':
@@ -88,7 +89,7 @@ def test_update_groupings(test):
         show(t.update_groupings([{'id':raw_input(),'name':'Python Grouping updated', 'description':'Test grouping updated with Python library'}]))
 
 if __name__ == '__main__':
-    t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
+    t = MoodLib(info['web'], users['manager']['token'])
     #test_add_group_members(raw_input())
     #test_assign_grouping(raw_input())
     #test_create_groupings(raw_input())
@@ -96,7 +97,7 @@ if __name__ == '__main__':
     #test_delete_group_members(raw_input())
     #test_delete_groupings(raw_input())
     #test_get_course_groupings(raw_input())
-    #test_get_course_groups(raw_input())
+    test_get_course_groups(raw_input())
     #test_get_group_members(raw_input())
     #test_get_groupings(raw_input())
     #test_get_groups(raw_input())

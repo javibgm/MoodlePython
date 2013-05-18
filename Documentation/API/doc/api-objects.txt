@@ -5,7 +5,6 @@ MoodPyth.MoodLib.__package__	MoodPyth.MoodLib-module.html#__package__
 MoodPyth.assign	MoodPyth.assign-module.html
 MoodPyth.assign.__package__	MoodPyth.assign-module.html#__package__
 MoodPyth.aux	MoodPyth.aux-module.html
-MoodPyth.aux.info	MoodPyth.aux-module.html#info
 MoodPyth.aux.show	MoodPyth.aux-module.html#show
 MoodPyth.aux._tabulate	MoodPyth.aux-module.html#_tabulate
 MoodPyth.aux._showt	MoodPyth.aux-module.html#_showt

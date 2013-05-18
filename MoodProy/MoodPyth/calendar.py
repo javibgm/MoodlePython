@@ -11,7 +11,7 @@ class Calendar(MoodClass):
         @param events: 1 or more events
         @type events: List of Dictionary
             - name string  - event name
-            - description string  Default to "null" - Description
+            - description string  Default to "null" - event description
             - format int  Default to "1" - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             - courseid int  Default to "0" - course id
             - groupid int  Default to "0" - group id

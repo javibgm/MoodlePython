@@ -1,8 +1,8 @@
 '''
 '''
 from MoodPyth.MoodLib import MoodLib
-from MoodPyth.aux import info, show
-from datetime import datetime
+from MoodPyth.aux import show
+from config import info,users
 import time
 
 
@@ -74,7 +74,7 @@ def test_manual_enrol_users(test):
         show(t.manual_enrol_users([{'roleid':1, 'userid':4, 'courseid':4,'suspend':'a'}]))
 
 if __name__ == '__main__':
-    t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
+    t = MoodLib(info['web'], users['manager']['token'])
     #test_enrolled_users(raw_input())
     #test_get_enrolled_users_with_capability(raw_input())
     #test_get_users_courses()

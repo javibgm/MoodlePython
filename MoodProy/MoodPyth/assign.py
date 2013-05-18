@@ -16,7 +16,7 @@ class Assign(MoodClass):
                 - id int   - course id
                 - fullname string   - course full name
                 - shortname string   - course short name
-                - timemodified int   - last time modified
+                - timemodified int   - last time the course was modified
                 - assignments List of dictionary - assignment information:
                     - id int   - assignment id
                     - course int   - course id
@@ -26,7 +26,7 @@ class Assign(MoodClass):
                     - sendnotifications int   - send notifications
                     - sendlatenotifications int   - send notifications
                     - duedate int   - assignment due date
-                    - allowsubmissionsfromdate int   - allow submissions from date
+                    - allowsubmissionsfromdate int   - allow submissions in the assignment from this date
                     - grade int   - grade type
                     - timemodified int   - last time assignment was modified
                     - completionsubmit int   - if enabled, set activity as complete following submission

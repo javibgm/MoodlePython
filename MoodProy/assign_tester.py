@@ -1,7 +1,8 @@
 '''
 '''
 from MoodPyth.MoodLib import MoodLib
-from MoodPyth.aux import info, show
+from MoodPyth.aux import show
+from config import info,users
 
 
 def test_get_assigments(test):
@@ -64,7 +65,7 @@ def test_get_submissions(test):
         show(t.get_submissions([1],'submitted','a'))
 
 if __name__ == '__main__':
-    t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
+    t = MoodLib(info['web'], users['manager']['token'])
     #test_get_assigments(raw_input())
     #test_get_grades(raw_input())
     #test_get_submissions(raw_input())

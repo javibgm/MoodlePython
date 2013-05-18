@@ -1,7 +1,8 @@
 '''
 '''
 from MoodPyth.MoodLib import MoodLib
-from MoodPyth.aux import info, show
+from MoodPyth.aux import show
+from config import info,users
 
 def test_get_forum_discussions(test):
     if test == '0':
@@ -37,6 +38,6 @@ def test_get_forums_by_courses(test):
         show(t.get_forums_by_courses([-1]))
     
 if __name__ == '__main__':
-    t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
+    t = MoodLib(info['web'], users['manager']['token'])
     #test_get_forum_discussions(raw_input())
     #test_get_forums_by_courses(raw_input())

@@ -1,7 +1,9 @@
 '''
 '''
 from MoodPyth.MoodLib import MoodLib
-from MoodPyth.aux import info, show
+from MoodPyth.aux import show
+from config import info,users
+import time
 
 
 def test_create_calendar_events(test):
@@ -18,7 +20,7 @@ def test_create_calendar_events(test):
                                         'groupid':'0',
                                         'repeats':'3',
                                         'eventtype':'course',
-                                        'timestart':'1367532868',
+                                        'timestart':int(time.time()),
                                         'timeduration':'240',
                                         'visible':'1',
                                         'sequence':'1'}]))
@@ -105,7 +107,7 @@ def test_get_calendar_events(test):
         show(t.get_calendar_events(timeend='a'))
     
 if __name__ == '__main__':
-    t = MoodLib(info['web'], 'f03f665848ef2a85e3aee8a1db198ac0') # student
+    t = MoodLib(info['web'], users['student']['token'])
     #test_create_calendar_events(raw_input())
     #test_delete_calendar_events(raw_input())
     #test_get_calendar_events(raw_input())

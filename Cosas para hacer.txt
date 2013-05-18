@@ -5,10 +5,10 @@ Useful info: http://docs.moodle.org/dev/Web_services
     CALENDAR
     COURSES
     ENROL
-    FILES*
+    FILES* -> downlad and upload
     FORUM
     GROUP
-    
+
 10-github: hacer cuenta, 2 carpetas, test y stable
 14-Hacer parte del programa para descargar ficheros y otros recursos: ya descarga ficheros, probar con assigments
     https://moodle.org/mod/forum/discuss.php?d=70021

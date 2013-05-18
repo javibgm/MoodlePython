@@ -10,16 +10,14 @@ import MoodLib
 web = 'http://campusonline.urjc.es'
 
 token="77246fc17e1198dbd171e7f467dfa908"
-
-user='j.benitogar'
-pasw='J@vi3r008'           # !!!!!!!! IMPORTANTE: PONER USUARIO Y CONTASEÑA ¡¡¡¡¡¡¡¡¡¡¡
 service="moodle_mobile_app"
 
 if __name__ == "__main__":
     """
     Programa principal
     """
-    url="/moodle/login/token.php?username=" + user + "&password=" + pasw + "&service=" + service
+    print 'Insert user'
+    user = raw_input()
+    print 'Insert pasword'
+    pasw = raw_input()
     m = MoodLib.MoodLib(web, user, pasw, service)
-    
-    conn.close()

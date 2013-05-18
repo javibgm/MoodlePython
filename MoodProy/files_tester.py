@@ -1,7 +1,8 @@
 '''
 '''
 from MoodPyth.MoodLib import MoodLib
-from MoodPyth.aux import info, show
+from MoodPyth.aux import show
+from config import info,users
 
 def test_get_files(test):
     if test == '0':
@@ -28,7 +29,7 @@ def test_down_file():
     t.down_file(raw_input())
     
 if __name__ == '__main__':
-    t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
+    t = MoodLib(info['web'], users['manager']['token'])
     #test_get_files(raw_input())
     #test_upload_file(raw_input())
     #test_down_file()

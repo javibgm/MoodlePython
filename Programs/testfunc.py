@@ -2,28 +2,11 @@
 # -*- coding: UTF-8 -*-
 
 # External web service functions test
-# Javier Benito García-Mochales
+# Authon: Javier Benito García-Mochales
 
-"""
-python
-import testfunc
-t = testfunc.tester()
-
-t.get_site_info()
-t.course_contents()
-IDs = [2, 4]
-t.get_courses(IDs)
-"""
-
-info = {
-    'web': 'http://adry3000.dyndns.org',
-    'user': 'admin',
-    'pasw': 'AdminP@ss1',
-    'service': 'ext_ser'
-}
-
-import MoodProy.MoodLib as MoodLib
-import MoodProy.aux as Moodaux
+import MoodLib as MoodLib
+import MoodLib as Moodaux
+from config import info
 
 class tester:
     def __init__(self):

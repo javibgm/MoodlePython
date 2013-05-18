@@ -76,10 +76,6 @@ class MoodLib:
         source = json.load(response)
         print response.getcode()
         return source
-    
-    def close(self):
-    # Close the connection with Moodle
-        self.conn.close()
 
     def get_site_info(self):
     # Get general info about Moodle site

@@ -1,7 +1,8 @@
 '''
 '''
 from MoodPyth.MoodLib import MoodLib
-from MoodPyth.aux import info, show
+from MoodPyth.aux import show
+from config import info,users
 
 def test_block_contacts(test):
     if test == '0':
@@ -43,7 +44,7 @@ def test_unblock_contacts(test):
         show(t.unblock_contacts([raw_input()]))
 
 if __name__ == '__main__':
-    t = MoodLib(info['web'], 'e1a3bfc5a6066730ce75e83fd0b0e47f') # manager
+    t = MoodLib(info['web'], users['manager']['token'])
     #test_block_contacts(raw_input())
     #test_create_contacts(raw_input())
     #test_delete_contacts(raw_input())

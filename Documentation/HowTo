@@ -27,9 +27,6 @@ sudo /etc/init.d/apache2 start
 MySQL
 -Entrar en la consola de MySQL
 mysql -h localhost -u <usuario> -p
-Usuario                 Contraseña
-root                    PERSONALpass
-moodle                  MoodPFC
 -----------------------------------------------------------------------------------
 PHP Client
 -The configuration file for the PHP CLI is /etc/php5/cli/php.ini
@@ -70,13 +67,6 @@ Settings->Site administration->Plugins->Web services->Manage protocols->Rest pro
 3) Assign this role to a user(Settings->Site administration->Users->Permissions->Assign system roles)
 -Download files:
 http://docs.moodle.org/dev/Web_services_files_handling#File_download
-
-Usuarios                    Contraseñas
-admin                       AdminP@ss1
-student1                    StudentP@ss1
-manager1                    ManagerP@ss1
-
-
 
 
 -FIXES:
