@@ -58,7 +58,7 @@ class Assign(MoodClass):
         param = ''
         num=0
         if (type(courseids)!=type([]) and courseids!='') or (type(capabilities)!=type([]) and capabilities!=''):
-            raise TypeError('Input must be a list of courseIDs(integers) and a list of capabilities(strings)')
+            raise TypeError('Input must be a list of courseIDs(integer) and a list of capabilities(strings)')
         for course in courseids:
             if num!=0:
                 param += '&'

@@ -8,9 +8,9 @@ class Forum(MoodClass):
     def get_forum_discussions(self, forumids):
         ''' Returns a list of forum discussions contained within a given set of forums.
         @param forumids: 1 or more forum identifiers.
-        @type forumids: List of Integers. '''
+        @type forumids: List of Integer '''
         if type(forumids)!=type([]) or forumids==[]:
-            raise TypeError('Input must be a list of forum IDs (integers)')
+            raise TypeError('Input must be a list of forum IDs (integer)')
         function = 'mod_forum_get_forum_discussions'
         param = ''
         num=0
@@ -25,9 +25,9 @@ class Forum(MoodClass):
         ''' Returns a list of forum instances in a provided set of courses,
         if no courses are provided then all the forum instances the user has access to will be returned. 
         @param courseids: 0 or more course identifiers to get their forums.
-        @type courseids: List of Integers. '''
+        @type courseids: List of Integer '''
         if type(courseids)!=type([]) and courseids!='':
-            raise TypeError('Input must be a list of course IDs (integers)')
+            raise TypeError('Input must be a list of course IDs (integer)')
         function = 'mod_forum_get_forums_by_courses'
         param = ''
         num=0

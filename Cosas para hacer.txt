@@ -52,22 +52,23 @@ PROBLEMS:
 Firma papeles
 
 Memoria:
-Estado del arte: donde voy a trabajar (ámbito del proyecto), el Moodle y sus semejantes (LMS)
-Hablar del scrapping en general, no solo para Moodle
-También cómo interactúa, con  REST y otras tecnologías, XML-RPC, 
-Características generales de python, sus bibliotecas (las usadas)
-Contar las tecnologias, tanto las que he usado como las que no, de forma independiente al proyecto
-Contar los elementos que tiene Moodle, sus usos y elementos básicos (que es un usuario o un curso o un fichero en Moodle y como se relacionan)
-Tambíen como el Moodle está separado en módulos y su descripción
-Todo de lo que se haga 
+State of the art: hasta que nivel de detalle hay que explicar (hay que explicar lo que es un navegador web, por ejemplo)?
+Requirements: nose que más poner, definir requisitos del proyecto
+Design: Contar la estructura de la libreria aquí?
+        Alternativas a todas las decisiones de diseño? Nombrarlas o detallarlas?
 
 Implementation:
-- Files: can not upload anything with the upload_file function.
-- Message: HTTP 500 internal server error when using search_contacts() function (only if some name matches with the search).
-Preguntar en Moodle: lo que me pasa y preguntar si es un bug o no (bug report).
+- Files: Only can upload files to the user's private file area.
+Cannot create resources to share files with web services: https://moodle.org/mod/forum/discuss.php?d=226256
+- Message: Al usar la funcion core_message_search_contacts da un error: 500 HTTP Internal server error
+Mirando fichero de log de apache (cat /var/log/apache2/error.log | less) vemos que en el fichero /var/www/moodle/message/externallib.php se hace una llamada a una función que no existe (user_get_user_details())
+Para arreglarlo hay que "importar" un archivo al pricipio de la función: 
+        require_once($CFG->dirroot . '/user/lib.php'); 
+Preguntar en Moodle: lo que me pasa y preguntar si es un bug o no (bug report). ->
+
 
 API documentation:
-- where define parameters and return values structure
+-! where define parameters and return values structure -> In this API
 - Every function calls at connect function. Connect function can throw an exception. Every function must have the same documentation about throwing that exception?
 
 DOCUMENTATION:

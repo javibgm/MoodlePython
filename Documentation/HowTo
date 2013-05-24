@@ -69,8 +69,3 @@ Settings->Site administration->Plugins->Web services->Manage protocols->Rest pro
 http://docs.moodle.org/dev/Web_services_files_handling#File_download
 
 
--FIXES:
-Al usar la funcion core_message_search_contacts da un error: 500 HTTP Internal server error
-Mirando fichero de log de apache (cat /var/log/apache2/error.log | less) vemos que en el fichero /var/www/moodle/message/externallib.php se hace una llamada a una función que no existe (user_get_user_details())
-Para arreglarlo hay que "importar" un archivo al pricipio de la función: 
-        require_once($CFG->dirroot . '/user/lib.php'); 

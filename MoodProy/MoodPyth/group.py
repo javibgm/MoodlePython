@@ -98,7 +98,7 @@ class Group(MoodClass):
     def delete_groupings(self, groupingids):
         ''' Deletes all specified groupings. 
         @param groupingids: 1 or more grouping identifiers to delete. 
-        @type groupingids: List of Integers. '''
+        @type groupingids: List of Integer '''
         if type(groupingids)!=type([]) or groupingids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 grouping id')
         function = 'core_group_delete_groupings'
@@ -114,7 +114,7 @@ class Group(MoodClass):
     def delete_groups(self, groupids):
         ''' Deletes all specified groups. 
         @param groupids: 1 or more group identifiers to delete. 
-        @type groupids: List of Integers. '''
+        @type groupids: List of Integer '''
         if type(groupids)!=type([]) or groupids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 group id')
         function = 'core_group_delete_groups'
@@ -154,7 +154,7 @@ class Group(MoodClass):
     def get_group_members(self, groupids):
         ''' Returns group members. 
         @param groupids: 1 or more group identifiers to get their members
-        @type groupids: List of Integers. '''
+        @type groupids: List of Integer '''
         if type(groupids)!=type([]) or groupids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 group id')
         function = 'core_group_get_group_members'
@@ -170,7 +170,7 @@ class Group(MoodClass):
     def get_groupings(self, groupingids, returngroups=0):
         ''' Returns groupings details. 
         @param groupingids: 1 or more grouping identifiers.
-        @type groupingids: List of Integers.
+        @type groupingids: List of Integer
         @param returngroups: return associated groups (Default to 0)
         @type returngroups: Integer 1 (yes) or 0 (no). '''
         if type(groupingids)!=type([]) or groupingids==[]:
@@ -190,7 +190,7 @@ class Group(MoodClass):
     def get_groups(self, groupids):
         ''' Returns group details. 
         @param groupids: 1 or more group identifiers 
-        @type groupids: List of Integers. '''
+        @type groupids: List of Integer '''
         if type(groupids)!=type([]) or groupids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 group id')
         function = 'core_group_get_groups'

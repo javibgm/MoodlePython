@@ -64,7 +64,11 @@ class Files(Course):
             pass
         return source
         '''
-        #use requests library
+        import requests
+        url = self.conn + '/moodle/webservice/upload.php' + '?' + urllib.urlencode({'token':self.token,'filepath':moodlepath})
+        files = {'file': open(path, 'rb')}
+        r = requests.post(url, files=files)
+        return r.json()
     
     def down_file(self, courseid):
         ''' Downloads course's resources via console. Shows course's resources and downloads the selected file. '''

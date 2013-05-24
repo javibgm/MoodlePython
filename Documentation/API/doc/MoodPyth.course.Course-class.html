@@ -402,10 +402,10 @@
           later version):
           <ul>
             <li>
-              name: (string) - option name
+              name (string) - option name
             </li>
             <li>
-              value: (string) - the value of the option, this param is 
+              value (string) - the value of the option, this param is 
               personally validated in the external function
             </li>
           </ul></li>
@@ -763,7 +763,7 @@
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>courses</code></strong> (List of Integers) - 1 or more course identifiers.</li>
+        <li><strong class="pname"><code>courses</code></strong> (List of Integer) - 1 or more course identifiers.</li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -829,40 +829,40 @@
               (with their possible values formats) are:
               <ul>
                 <li>
-                  &quot;activities&quot; (int) - Include course activites 
+                  &quot;activities&quot;  int  - Include course activites 
                   (default to 1 that is equal to yes).
                 </li>
                 <li>
-                  &quot;blocks&quot; (int) - Include course blocks (default
+                  &quot;blocks&quot;  int  - Include course blocks (default
                   to 1 that is equal to yes).
                 </li>
                 <li>
-                  &quot;filters&quot; (int) - Include course filters  
+                  &quot;filters&quot;  int  - Include course filters  
                   (default to 1 that is equal to yes).
                 </li>
                 <li>
-                  &quot;users&quot; (int) - Include users (default to 0 
+                  &quot;users&quot;  int  - Include users (default to 0 
                   that is equal to no).
                 </li>
                 <li>
-                  &quot;role_assignments&quot; (int) - Include role 
+                  &quot;role_assignments&quot;  int  - Include role 
                   assignments  (default to 0 that is equal to no).
                 </li>
                 <li>
-                  &quot;comments&quot; (int) - Include user comments  
+                  &quot;comments&quot;  int  - Include user comments  
                   (default to 0 that is equal to no).
                 </li>
                 <li>
-                  &quot;completion_information&quot; (int) - Include user 
+                  &quot;completion_information&quot;  int  - Include user 
                   course completion information  (default to 0 that is 
                   equal to no).
                 </li>
                 <li>
-                  &quot;logs&quot; (int) - Include course logs  (default to
+                  &quot;logs&quot;  int  - Include course logs  (default to
                   0 that is equal to no).
                 </li>
                 <li>
-                  &quot;histories&quot; (int) - Include histories  (default
+                  &quot;histories&quot;  int  - Include histories  (default
                   to 0 that is equal to no).
                 </li>
               </ul>
@@ -913,20 +913,25 @@
               keys (with their possible values formats) are:
               <ul>
                 <li>
-                  &quot;id&quot; (int) the category id.
+                  &quot;id&quot;  int  the category id.
                 </li>
                 <li>
                   &quot;name&quot; (string) the category name.
                 </li>
                 <li>
-                  &quot;parent&quot; (int) the parent category id.
+                  &quot;parent&quot;  int  the parent category id.
                 </li>
                 <li>
-                  &quot;idnumber&quot; (string) category idnumber - user 
-                  must have 'moodle/category:manage' to search on idnumber.
+                  &quot;idnumber&quot; (string) category idnumber
+                  <ul>
+                    <li>
+                      user must have 'moodle/category:manage' to search on 
+                      idnumber.
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  &quot;visible&quot; (int) whether the returned categories
+                  &quot;visible&quot;  int  whether the returned categories
                   must be visible or hidden. If the key is not passed, then
                   the function return all categories that the user can see.
                   <ul>
@@ -1030,7 +1035,7 @@
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>courses</code></strong> (List of Integers) - 0 or more course identifiers.</li>
+        <li><strong class="pname"><code>courses</code></strong> (List of Integer) - 0 or more course identifiers.</li>
     </ul></dd>
     <dt>Returns:</dt>
         <dd>List of Dictionary - list of courses:
@@ -1180,15 +1185,15 @@
               (with their possible values formats) are:
               <ul>
                 <li>
-                  &quot;activities&quot; (int) Include course activites 
+                  &quot;activities&quot;  int  Include course activites 
                   (default to 1 that is equal to yes).
                 </li>
                 <li>
-                  &quot;blocks&quot; (int) Include course blocks (default 
+                  &quot;blocks&quot;  int  Include course blocks (default 
                   to 1 that is equal to yes).
                 </li>
                 <li>
-                  &quot;filters&quot; (int) Include course filters  
+                  &quot;filters&quot;  int  Include course filters  
                   (default to 1 that is equal to yes).
                 </li>
               </ul>
@@ -1423,7 +1428,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu May 23 16:55:00 2013
+    Generated by Epydoc 3.0.1 on Fri May 24 16:26:21 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

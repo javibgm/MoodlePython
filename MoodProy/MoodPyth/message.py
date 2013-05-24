@@ -10,7 +10,7 @@ class Message(MoodClass):
         ''' Block contacts.
         @return: List of warnings.
         @param userids: 1 or more user identifiers.
-        @type userids: List of Integers. '''
+        @type userids: List of Integer '''
         if type(userids)!=type([]) or userids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 user id')
         function = 'core_message_block_contacts'
@@ -27,7 +27,7 @@ class Message(MoodClass):
         ''' Add contacts to the contact list.
         @return: List of warnings.
         @param userids: 1 or more user identifiers.
-        @type userids: List of Integers. '''
+        @type userids: List of Integer '''
         if type(userids)!=type([]) or userids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 user id')
         function = 'core_message_create_contacts'
@@ -43,7 +43,7 @@ class Message(MoodClass):
     def delete_contacts(self, userids):
         ''' Remove contacts from the contact list. 
         @param userids: 1 or more user identifiers.
-        @type userids: List of Integers. '''
+        @type userids: List of Integer '''
         if type(userids)!=type([]) or userids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 user id')
         function = 'core_message_delete_contacts'
@@ -97,7 +97,7 @@ class Message(MoodClass):
     def unblock_contacts(self, userids):
         ''' Unblock contacts.
         @param userids: 1 or more user identifiers.
-        @type userids: List of Integers.'''
+        @type userids: List of Integer'''
         if type(userids)!=type([]) or userids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 user id')
         function = 'core_message_unblock_contacts'

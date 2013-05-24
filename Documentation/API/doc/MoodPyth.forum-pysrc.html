@@ -66,9 +66,9 @@
 <a name="Forum.get_forum_discussions"></a><div id="Forum.get_forum_discussions-def"><a name="L8"></a><tt class="py-lineno"> 8</tt> <a class="py-toggle" href="#" id="Forum.get_forum_discussions-toggle" onclick="return toggle('Forum.get_forum_discussions');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MoodPyth.forum.Forum-class.html#get_forum_discussions">get_forum_discussions</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">forumids</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="Forum.get_forum_discussions-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Forum.get_forum_discussions-expanded"><a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-docstring">''' Returns a list of forum discussions contained within a given set of forums.</tt> </tt>
 <a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">        @param forumids: 1 or more forum identifiers.</tt> </tt>
-<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">        @type forumids: List of Integers. '''</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">        @type forumids: List of Integer '''</tt> </tt>
 <a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">forumids</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">forumids</tt><tt class="py-op">==</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
-<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">'Input must be a list of forum IDs (integers)'</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">'Input must be a list of forum IDs (integer)'</tt><tt class="py-op">)</tt> </tt>
 <a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">        <tt class="py-name">function</tt> <tt class="py-op">=</tt> <tt class="py-string">'mod_forum_get_forum_discussions'</tt> </tt>
 <a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
 <a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">        <tt class="py-name">num</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> </tt>
@@ -83,9 +83,9 @@
 </div><div id="Forum.get_forums_by_courses-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Forum.get_forums_by_courses-expanded"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt class="py-docstring">''' Returns a list of forum instances in a provided set of courses,</tt> </tt>
 <a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-docstring">        if no courses are provided then all the forum instances the user has access to will be returned. </tt> </tt>
 <a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-docstring">        @param courseids: 0 or more course identifiers to get their forums.</tt> </tt>
-<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">        @type courseids: List of Integers. '''</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">        @type courseids: List of Integer '''</tt> </tt>
 <a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">courseids</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">courseids</tt><tt class="py-op">!=</tt><tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
-<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">'Input must be a list of course IDs (integers)'</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">'Input must be a list of course IDs (integer)'</tt><tt class="py-op">)</tt> </tt>
 <a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">        <tt class="py-name">function</tt> <tt class="py-op">=</tt> <tt class="py-string">'mod_forum_get_forums_by_courses'</tt> </tt>
 <a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
 <a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-name">num</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> </tt>
@@ -128,7 +128,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu May 23 16:55:00 2013
+    Generated by Epydoc 3.0.1 on Fri May 24 16:26:21 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

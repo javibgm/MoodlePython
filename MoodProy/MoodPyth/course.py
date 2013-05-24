@@ -11,8 +11,8 @@ class Course(MoodClass):
         @param courseid: Course identifier.
         @type courseid: Integer
         @param options: 0 or more user course options (Not used yet, might be used in later version):
-            - name: (string) - option name
-            - value: (string) - the value of the option, this param is personally validated in the external function
+            - name (string) - option name
+            - value (string) - the value of the option, this param is personally validated in the external function
         @type options: List of Dictionary
         @return: List of Dictionary - list of sections:
             - id int - Section ID
@@ -62,7 +62,7 @@ class Course(MoodClass):
     def get_courses(self, courses=''):
         ''' Return course details, all courses details returned if no parameters specified. 
         @param courses: 0 or more course identifiers.
-        @type courses: List of Integers
+        @type courses: List of Integer
         @return: List of Dictionary - list of courses:
             - id int   - course id
             - shortname (string)   - course short name
@@ -164,7 +164,7 @@ class Course(MoodClass):
     def delete_courses(self, courses):
         ''' Deletes all specified courses.
         @param courses: 1 or more course identifiers.
-        @type courses: List of Integers '''
+        @type courses: List of Integer '''
         if type(courses)!=type([]) or courses==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 course id')
         function = 'core_course_delete_courses'
@@ -251,15 +251,15 @@ class Course(MoodClass):
         @type visible: Integer
         @param options: list of duplicating options:
             - name  (string)   - the backup option name. Expected names (with their possible values formats) are:
-                - "activities" (int) - Include course activites (default to 1 that is equal to yes).
-                - "blocks" (int) - Include course blocks (default to 1 that is equal to yes).
-                - "filters" (int) - Include course filters  (default to 1 that is equal to yes).
-                - "users" (int) - Include users (default to 0 that is equal to no).
-                - "role_assignments" (int) - Include role assignments  (default to 0 that is equal to no).
-                - "comments" (int) - Include user comments  (default to 0 that is equal to no).
-                - "completion_information" (int) - Include user course completion information  (default to 0 that is equal to no).
-                - "logs" (int) - Include course logs  (default to 0 that is equal to no).
-                - "histories" (int) - Include histories  (default to 0 that is equal to no).
+                - "activities"  int  - Include course activites (default to 1 that is equal to yes).
+                - "blocks"  int  - Include course blocks (default to 1 that is equal to yes).
+                - "filters"  int  - Include course filters  (default to 1 that is equal to yes).
+                - "users"  int  - Include users (default to 0 that is equal to no).
+                - "role_assignments"  int  - Include role assignments  (default to 0 that is equal to no).
+                - "comments"  int  - Include user comments  (default to 0 that is equal to no).
+                - "completion_information"  int  - Include user course completion information  (default to 0 that is equal to no).
+                - "logs"  int  - Include course logs  (default to 0 that is equal to no).
+                - "histories"  int  - Include histories  (default to 0 that is equal to no).
             - value (string)   - the value for the option 1 (yes) or 0 (no)
         @type options: List of Dictionaries
         @return: A dictionary with the course copy id and shortname:
@@ -297,9 +297,9 @@ class Course(MoodClass):
         @type deletecontent: Integer
         @param options: list of importing options:
             - name  (string)   - the backup option name. Expected names (with their possible values formats) are:
-                - "activities" (int) Include course activites (default to 1 that is equal to yes).
-                - "blocks" (int) Include course blocks (default to 1 that is equal to yes).
-                - "filters" (int) Include course filters  (default to 1 that is equal to yes).
+                - "activities"  int  Include course activites (default to 1 that is equal to yes).
+                - "blocks"  int  Include course blocks (default to 1 that is equal to yes).
+                - "filters"  int  Include course filters  (default to 1 that is equal to yes).
             - value (string)   - the value for the option 1 (yes) or 0 (no)
         @type options: List of Dictionaries'''
         function = 'core_course_import_course'
@@ -321,11 +321,12 @@ class Course(MoodClass):
         ''' Return category details. All categories details returned if no parameters specified.
         @param criteria: List of criteria to filter the categories:
             - key  (string)   - the category column to search. Expected keys (with their possible values formats) are:
-                - "id" (int) the category id.
+                - "id"  int  the category id.
                 - "name" (string) the category name.
-                - "parent" (int) the parent category id.
-                - "idnumber" (string) category idnumber - user must have 'moodle/category:manage' to search on idnumber.
-                - "visible" (int) whether the returned categories must be visible or hidden. If the key is not passed, then the function return all categories that the user can see.
+                - "parent"  int  the parent category id.
+                - "idnumber" (string) category idnumber
+                    - user must have 'moodle/category:manage' to search on idnumber.
+                - "visible"  int  whether the returned categories must be visible or hidden. If the key is not passed, then the function return all categories that the user can see.
                     - user must have 'moodle/category:manage' or 'moodle/category:viewhiddencategories' to search on visible
                 - "theme" (string) only return the categories having this theme
                     - user must have 'moodle/category:manage' to search on theme

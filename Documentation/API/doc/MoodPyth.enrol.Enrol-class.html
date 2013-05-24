@@ -263,8 +263,8 @@
                   </ul>
                 </li>
                 <li>
-                  &quot;groupid&quot; (integer) return only users in this 
-                  group id.
+                  &quot;groupid&quot;  int  return only users in this group
+                  id.
                   <ul>
                     <li>
                       This option requires 'moodle/site:accessallgroups' on
@@ -273,7 +273,7 @@
                   </ul>
                 </li>
                 <li>
-                  &quot;onlyactive&quot; (integer) return only users with 
+                  &quot;onlyactive&quot;  int  return only users with 
                   active enrollments and matching time restrictions.
                   <ul>
                     <li>
@@ -287,16 +287,16 @@
                   only the values of these user fields.
                 </li>
                 <li>
-                  &quot;limitfrom&quot; (integer) sql limit from.
+                  &quot;limitfrom&quot;  int  sql limit from.
                 </li>
                 <li>
-                  &quot;limitnumber&quot; (integer) maximum number of 
-                  returned users.
+                  &quot;limitnumber&quot;  int  maximum number of returned 
+                  users.
                 </li>
               </ul>
             </li>
             <li>
-              value(string)  - the value to match.
+              value (string)  - the value to match.
             </li>
           </ul>
           <p>Enrollment options example: 
@@ -312,58 +312,58 @@
               id int   - ID of the user
             </li>
             <li>
-              username(string) Optional - Username policy is defined in 
+              username (string) Optional - Username policy is defined in 
               Moodle security config
             </li>
             <li>
-              firstname(string) Optional - The first name(s) of the user
+              firstname (string) Optional - The first name(s) of the user
             </li>
             <li>
-              lastname(string) Optional - The family name of the user
+              lastname (string) Optional - The family name of the user
             </li>
             <li>
-              fullname(string)  - The fullname of the user
+              fullname (string)  - The fullname of the user
             </li>
             <li>
-              email(string) Optional - An email address - allow email as 
+              email (string) Optional - An email address - allow email as 
               root@localhost
             </li>
             <li>
-              address(string) Optional - Postal address
+              address (string) Optional - Postal address
             </li>
             <li>
-              phone1(string) Optional - Phone 1
+              phone1 (string) Optional - Phone 1
             </li>
             <li>
-              phone2(string) Optional - Phone 2
+              phone2 (string) Optional - Phone 2
             </li>
             <li>
-              icq(string) Optional - icq number
+              icq (string) Optional - icq number
             </li>
             <li>
-              skype(string) Optional - skype id
+              skype (string) Optional - skype id
             </li>
             <li>
-              yahoo(string) Optional - yahoo id
+              yahoo (string) Optional - yahoo id
             </li>
             <li>
-              aim(string) Optional - aim id
+              aim (string) Optional - aim id
             </li>
             <li>
-              msn(string) Optional - msn number
+              msn (string) Optional - msn number
             </li>
             <li>
-              department(string) Optional - department
+              department (string) Optional - department
             </li>
             <li>
-              institution(string) Optional - institution
+              institution (string) Optional - institution
             </li>
             <li>
-              idnumber(string) Optional - An arbitrary ID code number 
+              idnumber (string) Optional - An arbitrary ID code number 
               perhaps from the institution
             </li>
             <li>
-              interests(string) Optional - user interests (separated by 
+              interests (string) Optional - user interests (separated by 
               commas)
             </li>
             <li>
@@ -375,28 +375,28 @@
               never)
             </li>
             <li>
-              description(string) Optional - User profile description
+              description (string) Optional - User profile description
             </li>
             <li>
               descriptionformat int  Optional - description format (1 = 
               HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             </li>
             <li>
-              city(string) Optional - Home city of the user
+              city (string) Optional - Home city of the user
             </li>
             <li>
-              url(string) Optional - URL of the user
+              url (string) Optional - URL of the user
             </li>
             <li>
-              country(string) Optional - Home country code of the user, 
+              country (string) Optional - Home country code of the user, 
               such as AU or CZ
             </li>
             <li>
-              profileimageurlsmall(string) Optional - User image profile 
+              profileimageurlsmall (string) Optional - User image profile 
               URL - small version
             </li>
             <li>
-              profileimageurl(string) Optional - User image profile URL - 
+              profileimageurl (string) Optional - User image profile URL - 
               big version
             </li>
             <li>
@@ -404,17 +404,17 @@
               custom fields (also known as user profile fields):
               <ul>
                 <li>
-                  type(string)  - The type of the custom field - text 
+                  type (string)  - The type of the custom field - text 
                   field, checkbox...
                 </li>
                 <li>
-                  value(string)  - The value of the custom field
+                  value (string)  - The value of the custom field
                 </li>
                 <li>
-                  name(string)  - The name of the custom field
+                  name (string)  - The name of the custom field
                 </li>
                 <li>
-                  shortname(string)  - The shortname of the custom field - 
+                  shortname (string)  - The shortname of the custom field -
                   to be able to build the field class in the code
                 </li>
               </ul>
@@ -427,10 +427,10 @@
                   id int   - group id
                 </li>
                 <li>
-                  name(string)  - group name
+                  name (string)  - group name
                 </li>
                 <li>
-                  description(string)  - group description
+                  description (string)  - group description
                 </li>
                 <li>
                   descriptionformat int   - description format (1 = HTML, 0
@@ -445,10 +445,10 @@
                   roleid int   - role id
                 </li>
                 <li>
-                  name(string)  - role name
+                  name (string)  - role name
                 </li>
                 <li>
-                  shortname(string)  - role shortname
+                  shortname (string)  - role shortname
                 </li>
                 <li>
                   sortorder int   - role sortorder
@@ -460,10 +460,10 @@
               list:
               <ul>
                 <li>
-                  name(string)  - The name of the preferences
+                  name (string)  - The name of the preferences
                 </li>
                 <li>
-                  value(string)  - The value of the custom field
+                  value (string)  - The value of the custom field
                 </li>
               </ul>
             </li>
@@ -476,10 +476,10 @@
                   id int   - Id of the course
                 </li>
                 <li>
-                  fullname(string)  - Fullname of the course
+                  fullname (string)  - Fullname of the course
                 </li>
                 <li>
-                  shortname(string)  - Shortname of the course
+                  shortname (string)  - Shortname of the course
                 </li>
               </ul>
             </li>
@@ -520,8 +520,8 @@
               possible values formats) are:
               <ul>
                 <li>
-                  &quot;groupid&quot; (integer) return only users in this 
-                  group id.
+                  &quot;groupid&quot;  int  return only users in this group
+                  id.
                   <ul>
                     <li>
                       Requires 'moodle/site:accessallgroups' .
@@ -529,7 +529,7 @@
                   </ul>
                 </li>
                 <li>
-                  &quot;onlyactive&quot; (integer) only users with active 
+                  &quot;onlyactive&quot;  int  only users with active 
                   enrolments.
                   <ul>
                     <li>
@@ -542,10 +542,10 @@
                   only the values of these user fields.
                 </li>
                 <li>
-                  &quot;limitfrom&quot; (integer) sql limit from.
+                  &quot;limitfrom&quot;  int  sql limit from.
                 </li>
                 <li>
-                  &quot;limitnumber&quot; (integer) max number of users per
+                  &quot;limitnumber&quot;  int  max number of users per 
                   course and capability.
                 </li>
               </ul>
@@ -563,58 +563,58 @@
               id int   - ID of the user
             </li>
             <li>
-              username(string) Optional - Username policy is defined in 
+              username (string) Optional - Username policy is defined in 
               Moodle security config
             </li>
             <li>
-              firstname(string) Optional - The first name(s) of the user
+              firstname (string) Optional - The first name(s) of the user
             </li>
             <li>
-              lastname(string) Optional - The family name of the user
+              lastname (string) Optional - The family name of the user
             </li>
             <li>
-              fullname(string)  - The fullname of the user
+              fullname (string)  - The fullname of the user
             </li>
             <li>
-              email(string) Optional - An email address - allow email as 
+              email (string) Optional - An email address - allow email as 
               root@localhost
             </li>
             <li>
-              address(string) Optional - Postal address
+              address (string) Optional - Postal address
             </li>
             <li>
-              phone1(string) Optional - Phone 1
+              phone1 (string) Optional - Phone 1
             </li>
             <li>
-              phone2(string) Optional - Phone 2
+              phone2 (string) Optional - Phone 2
             </li>
             <li>
-              icq(string) Optional - icq number
+              icq (string) Optional - icq number
             </li>
             <li>
-              skype(string) Optional - skype id
+              skype (string) Optional - skype id
             </li>
             <li>
-              yahoo(string) Optional - yahoo id
+              yahoo (string) Optional - yahoo id
             </li>
             <li>
-              aim(string) Optional - aim id
+              aim (string) Optional - aim id
             </li>
             <li>
-              msn(string) Optional - msn number
+              msn (string) Optional - msn number
             </li>
             <li>
-              department(string) Optional - department
+              department (string) Optional - department
             </li>
             <li>
-              institution(string) Optional - institution
+              institution (string) Optional - institution
             </li>
             <li>
-              idnumber(string) Optional - An arbitrary ID code number 
+              idnumber (string) Optional - An arbitrary ID code number 
               perhaps from the institution
             </li>
             <li>
-              interests(string) Optional - user interests (separated by 
+              interests (string) Optional - user interests (separated by 
               commas)
             </li>
             <li>
@@ -626,28 +626,28 @@
               never)
             </li>
             <li>
-              description(string) Optional - User profile description
+              description (string) Optional - User profile description
             </li>
             <li>
               descriptionformat int  Optional - description format (1 = 
               HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             </li>
             <li>
-              city(string) Optional - Home city of the user
+              city (string) Optional - Home city of the user
             </li>
             <li>
-              url(string) Optional - URL of the user
+              url (string) Optional - URL of the user
             </li>
             <li>
-              country(string) Optional - Home country code of the user, 
+              country (string) Optional - Home country code of the user, 
               such as AU or CZ
             </li>
             <li>
-              profileimageurlsmall(string) Optional - User image profile 
+              profileimageurlsmall (string) Optional - User image profile 
               URL - small version
             </li>
             <li>
-              profileimageurl(string) Optional - User image profile URL - 
+              profileimageurl (string) Optional - User image profile URL - 
               big version
             </li>
             <li>
@@ -655,17 +655,17 @@
               custom fields (also known as user profile fields):
               <ul>
                 <li>
-                  type(string)  - The type of the custom field - text 
+                  type (string)  - The type of the custom field - text 
                   field, checkbox...
                 </li>
                 <li>
-                  value(string)  - The value of the custom field
+                  value (string)  - The value of the custom field
                 </li>
                 <li>
-                  name(string)  - The name of the custom field
+                  name (string)  - The name of the custom field
                 </li>
                 <li>
-                  shortname(string)  - The shortname of the custom field - 
+                  shortname (string)  - The shortname of the custom field -
                   to be able to build the field class in the code
                 </li>
               </ul>
@@ -678,10 +678,10 @@
                   id int   - group id
                 </li>
                 <li>
-                  name(string)  - group name
+                  name (string)  - group name
                 </li>
                 <li>
-                  description(string)  - group description
+                  description (string)  - group description
                 </li>
                 <li>
                   descriptionformat int   - description format (1 = HTML, 0
@@ -696,10 +696,10 @@
                   roleid int   - role id
                 </li>
                 <li>
-                  name(string)  - role name
+                  name (string)  - role name
                 </li>
                 <li>
-                  shortname(string)  - role shortname
+                  shortname (string)  - role shortname
                 </li>
                 <li>
                   sortorder int   - role sortorder
@@ -711,10 +711,10 @@
               list:
               <ul>
                 <li>
-                  name(string)  - The name of the preferences
+                  name (string)  - The name of the preferences
                 </li>
                 <li>
-                  value(string)  - The value of the custom field
+                  value (string)  - The value of the custom field
                 </li>
               </ul>
             </li>
@@ -727,10 +727,10 @@
                   id int   - Id of the course
                 </li>
                 <li>
-                  fullname(string)  - Fullname of the course
+                  fullname (string)  - Fullname of the course
                 </li>
                 <li>
-                  shortname(string)  - Shortname of the course
+                  shortname (string)  - Shortname of the course
                 </li>
               </ul>
             </li>
@@ -766,17 +766,17 @@
               id int   - id of course
             </li>
             <li>
-              shortname(string)  - short name of course
+              shortname (string)  - short name of course
             </li>
             <li>
-              fullname(string)  - long name of course
+              fullname (string)  - long name of course
             </li>
             <li>
               enrolledusercount int   - Number of enrolled users in this 
               course
             </li>
             <li>
-              idnumber(string)  - id number of course
+              idnumber (string)  - id number of course
             </li>
             <li>
               visible int   - 1 means visible, 0 means hidden course
@@ -856,7 +856,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu May 23 16:55:00 2013
+    Generated by Epydoc 3.0.1 on Fri May 24 16:26:21 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
