@@ -39,14 +39,15 @@ class MoodClass():
         '''
         if(user=='' or pasw=='' or service==''):
             raise ValueError('Parameters necesary: user, password, service_short_name')
-        url= self.conn + "/moodle/login/token.php?username=" + user + "&password=" + pasw + "&service=" + service
-        response = urllib2.urlopen(url)
+        url= self.conn + '/moodle/login/token.php'
+        param = urllib.urlencode({'username':user,'password':pasw,'service':service})
+        req = urllib2.Request(url, param)
+        response = urllib2.urlopen(req)
         response = json.load(response)
         try:
             self.token = response['token']
         except KeyError:
-            print 'Connection response: ' + str(response)
-            raise ValueError('Incorrect parameters: usename, password or service_short_name')
+            raise ValueError('Login error: ' + response['error'])
         return self.token
 
     def __init__(self, web, token='', user='', pasw='', service=''):
@@ -91,7 +92,9 @@ class MoodClass():
          @raise ValueError: if an error happens and Moodle can not
          process the petition. The problem is specified in the exception.
          '''
-        url = self.conn + '/moodle/webservice/rest/server.php?wstoken='+self.token+"&wsfunction="+function+"&moodlewsrestformat=json"
+        #url = self.conn + '/moodle/webservice/rest/server.php?wstoken='+self.token+"&wsfunction="+function+"&moodlewsrestformat=json"
+        url = self.conn + '/moodle/webservice/rest/server.php'
+        param = urllib.urlencode({'wstoken':self.token,'wsfunction':function,'moodlewsrestformat':'json'}) + '&' + param
         req = urllib2.Request(url, param)
         req.add_header("Content-type", "application/x-www-form-urlencoded")
         req.add_header("Accept", "application/json")

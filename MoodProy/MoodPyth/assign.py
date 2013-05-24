@@ -12,15 +12,15 @@ class Assign(MoodClass):
         ''' Returns the courses and assignments for the users capability.
         If no courseids and capabilities are specified, it will be searched in all courses where user is enrolled
         @return: A dictionary with:
-            - courses List of dictionary - list of courses:
+            - courses List of Dictionary - list of courses:
                 - id int   - course id
-                - fullname string   - course full name
-                - shortname string   - course short name
+                - fullname (string)   - course full name
+                - shortname (string)   - course short name
                 - timemodified int   - last time the course was modified
-                - assignments List of dictionary - assignment information:
+                - assignments List of Dictionary - information about assignments:
                     - id int   - assignment id
                     - course int   - course id
-                    - name string   - assignment name
+                    - name (string)   - assignment name
                     - nosubmissions int   - no submissions
                     - submissiondrafts int   - submissions drafts
                     - sendnotifications int   - send notifications
@@ -37,18 +37,18 @@ class Assign(MoodClass):
                     - blindmarking int   - if enabled, hide identities until reveal identities actioned
                     - revealidentities int   - show identities for a blind marking assignment
                     - requiresubmissionstatement int   - student must accept submission statement
-                    - configs List of dictionary - configuration settings:
-                            - id int   - assign_plugin_config id
+                    - configs List of Dictionary - configuration settings:
+                            - id int   - assign plugin config id
                             - assignment int   - assignment id
-                            - plugin string   - plugin
-                            - subtype string   - subtype
-                            - name string   - name
-                            - value string   - value
-            - warnings List of dictionary Optional - list of warnings:
-                - item string  Optional - item can be 'course' (errorcode 1 or 2) or 'module' (errorcode 1)
+                            - plugin (string)   - plugin
+                            - subtype (string)   - subtype
+                            - name (string)   - name
+                            - value (string)   - value
+            - warnings List of Dictionary Optional - list of possible warnings:
+                - item (string)  Optional - item can be 'course' (errorcode 1 or 2) or 'module' (errorcode 1)
                 - itemid int  Optional - When item is a course then itemid is a course id. When the item is a module then itemid is a module id
-                - warningcode string   - errorcode can be 1 (no access rights) or 2 (not enrolled or no permissions)
-                - message string   - untranslated english message to explain the warning
+                - warningcode (string)   - errorcode can be 1 (no access rights) or 2 (not enrolled or no permissions)
+                - message (string)   - untranslated English message to explain the warning
         @param courseids: 0 or more course ids
         @type courseids: List of Integer
         @param capabilities: capabilities used to filter courses 
@@ -73,22 +73,22 @@ class Assign(MoodClass):
     def get_grades(self, assignmentids, since=0):
         ''' Returns grades from the assignment
         @return: A dictionary with:
-            - assignments List of dictionary - list of assignment grade information:
+            - assignments List of Dictionary - list of assignment grade information:
                 - assignmentid int   - assignment id
-                - grades List of dictionary  - list of grades:
+                - grades List of Dictionary  - list of grades:
                     - id int   - grade id
                     - userid int   - student id
                     - timecreated int   - grade creation time
                     - timemodified int   - grade last modified time
                     - grader int   - grader
-                    - grade string   - grade
+                    - grade (string)   - grade
                     - locked int   - locked
                     - mailed int   - mailed
-            - warnings List of dictionary Optional - list of warnings:
-                - item string  Optional - item is always 'assignment'
+            - warnings List of Dictionary Optional - list of warnings:
+                - item (string)  Optional - item is always 'assignment'
                 - itemid int  Optional - when errorcode is 3 then itemid is an assignment id. When errorcode is 1, itemid is a course module id
-                - warningcode string   - errorcode can be 3 (no grades found) or 1 (no permission to get grades)
-                - message string   - untranslated english message to explain the warning
+                - warningcode (string)   - errorcode can be 3 (no grades found) or 1 (no permission to get grades)
+                - message (string)   - untranslated English message to explain the warning
         @param assignmentids: 1 or more assignment ids
         @type assignmentids: List of Integer
         @param since: timestamp, only return records where timemodified >= since
@@ -110,32 +110,32 @@ class Assign(MoodClass):
     def get_submissions(self, assignmentids, status='', since=0, before=0):
         ''' Returns the submissions for assignment
         @return: A dictionary with:
-            - assignments List of dictionary  - assignment submissions:
+            - assignments List of Dictionary  - assignment submissions:
                 - assignmentid int   - assignment id
-                - submissions List of dictionary - list of submissions:
+                - submissions List of Dictionary - list of submissions:
                     - id int   - submission id
                     - userid int   - student id
                     - timecreated int   - submission creation time
                     - timemodified int   - submission last modified time
-                    - status string   - submission status
+                    - status (string)   - submission status
                     - groupid int   - group id
-                    - plugins List of dictionary Optional - plugins
-                        - type string   - submission plugin type
-                        - name string   - submission plugin name
-                        - fileareas List of dictionary Optional - fileareas:
-                            - area string   - file area
-                            - files List of dictionary Optional - files
-                                - filepath string   - file path
-                        - editorfields List of dictionary Optional - editorfields:
-                            - name string   - field name
-                            - description string   - field description
-                            - text string   - field value
+                    - plugins List of Dictionary Optional - plugins
+                        - type (string)   - submission plugin type
+                        - name (string)   - submission plugin name
+                        - fileareas List of Dictionary Optional - fileareas:
+                            - area (string)   - file area
+                            - files List of Dictionary Optional - files
+                                - filepath (string)   - file path
+                        - editorfields List of Dictionary Optional - editor fields:
+                            - name (string)   - field name
+                            - description (string)   - field description
+                            - text (string)   - field value
                             - format int   - text format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
-            - warnings List of dictionary Optional - list of warnings:
-                - item string  Optional - item
+            - warnings List of Dictionary Optional - list of warnings:
+                - item (string)  Optional - item
                 - itemid int  Optional - item id
-                - warningcode string   - the warning code can be used by the client app to implement specific behaviour
-                - message string   - untranslated english message to explain the warning
+                - warningcode (string)   - the warning code can be used by the client app to implement specific behaviour
+                - message (string)   - untranslated English message to explain the warning
         @param assignmentids: 1 or more assignment ids
         @type assignmentids: List of Integer
         @param status: submission status

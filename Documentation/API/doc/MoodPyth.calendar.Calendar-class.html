@@ -230,13 +230,14 @@
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>events</code></strong> (List of Dictionary
+        <li><strong class="pname"><code>events</code></strong> (List of Dictionary) - 1 or more events to create:
           <ul>
             <li>
-              name string  - event name
+              name (string)  - event name
             </li>
             <li>
-              description string  Default to &quot;null&quot; - Description
+              description (string)  Default to &quot;null&quot; - event 
+              description
             </li>
             <li>
               format int  Default to &quot;1&quot; - description format (1 
@@ -252,24 +253,106 @@
               repeats int  Default to &quot;0&quot; - number of repeats
             </li>
             <li>
-              eventtype string  Default to &quot;user&quot; - Event type
+              eventtype (string)  Default to &quot;user&quot; - Event type
             </li>
             <li>
-              timestart int  Default to &quot;1367063293&quot; - timestart
+              timestart int  Default to actual time - starting event time
             </li>
             <li>
-              timeduration int  Default to &quot;0&quot; - time duration
+              timeduration int  Default to &quot;0&quot; - event duration
             </li>
             <li>
-              visible int  Default to &quot;1&quot; - visible
+              visible int  Default to &quot;1&quot; - visibility
             </li>
             <li>
               sequence int  Default to &quot;1&quot; - sequence
             </li>
-          </ul>) - 1 or more events</li>
+          </ul></li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd>a dictionary with the events created and warnings.</dd>
+        <dd>A dictionary with the events created and possible warnings:
+          <ul>
+            <li>
+              events List of Dictionary - list of events created:
+              <ul>
+                <li>
+                  id int   - event id
+                </li>
+                <li>
+                  name (string)   - event name
+                </li>
+                <li>
+                  description (string)  Optional - event description
+                </li>
+                <li>
+                  format int   - description format (1 = HTML, 0 = MOODLE, 
+                  2 = PLAIN or 4 = MARKDOWN)
+                </li>
+                <li>
+                  courseid int   - course id
+                </li>
+                <li>
+                  groupid int   - group id
+                </li>
+                <li>
+                  userid int   - user id
+                </li>
+                <li>
+                  repeatid int  Optional - repeat id
+                </li>
+                <li>
+                  modulename (string)  Optional - module name
+                </li>
+                <li>
+                  instance int   - instance id
+                </li>
+                <li>
+                  eventtype (string)   - Event type
+                </li>
+                <li>
+                  timestart int   - timestart
+                </li>
+                <li>
+                  timeduration int   - time duration
+                </li>
+                <li>
+                  visible int   - visible
+                </li>
+                <li>
+                  uuid (string)  Optional - unique id of ical events
+                </li>
+                <li>
+                  sequence int   - sequence
+                </li>
+                <li>
+                  timemodified int   - time modified
+                </li>
+                <li>
+                  subscriptionid int  Optional - Subscription id
+                </li>
+              </ul>
+            </li>
+            <li>
+              warnings List of Dictionary Optional - list of possible 
+              warnings for each event created:
+              <ul>
+                <li>
+                  item (string)  Optional - item
+                </li>
+                <li>
+                  itemid int  Optional - item id
+                </li>
+                <li>
+                  warningcode (string)   - the warning code can be used by 
+                  the client app to implement specific behavior
+                </li>
+                <li>
+                  message (string)   - untranslated English message to 
+                  explain the warning
+                </li>
+              </ul>
+            </li>
+          </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -292,15 +375,15 @@
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>events</code></strong> (Dictionary
+        <li><strong class="pname"><code>events</code></strong> (List of Dictionary) - 1 or more events to delete:
           <ul>
             <li>
               eventid int  - Event ID
             </li>
             <li>
-              repeat 0/1  - Delete comeplete series if repeated event
+              repeat 0/1  - Delete complete series if repeated event
             </li>
-          </ul>) - 1 or more events</li>
+          </ul></li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -377,7 +460,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri May 17 15:42:50 2013
+    Generated by Epydoc 3.0.1 on Thu May 23 16:55:00 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

@@ -1,6 +1,6 @@
 ''' Files class module '''
 from MoodPyth.course import Course
-import urllib, urllib2
+import urllib, urllib2, json, pycurl
 
 class Files(Course):
     '''
@@ -49,6 +49,22 @@ class Files(Course):
                                   'itemid':itemid, 'filepath':filepath, 'filename':filename, 'filecontent':filecontent})
         return self.connect(function, param)
 
+    def upload_file2(self, path, moodlepath):
+        '''
+        param = 'file_box='+'@'+path+'&'+urllib.urlencode({'filepath':moodlepath,'token':self.token})
+        print url, param
+        req = urllib2.Request(url, param)
+        req.add_header("Content-type", "application/x-www-form-urlencoded")
+        req.add_header("Accept", "application/json")
+        response = urllib2.urlopen(req)
+        source = json.load(response)
+        try:
+            raise ValueError('Moodle exception:' + source['errorcode'] + '\n Message: ' + source['message'])
+        except (TypeError, KeyError):
+            pass
+        return source
+        '''
+        #use requests library
     
     def down_file(self, courseid):
         ''' Downloads course's resources via console. Shows course's resources and downloads the selected file. '''

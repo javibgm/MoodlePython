@@ -24,12 +24,17 @@ def test_upload_file(test):
     if test == '1':
         show(t.upload_file(5, 'user', 'private', 0, '/', 'FileUploaded', 'FileUploaded'))
 
+def test_upload_file2(test):
+    if test == '1':
+        show(t.upload_file2('/home/javi/PythFile','/'))
+
 def test_down_file():
     print 'Course ID to download file:'
     t.down_file(raw_input())
     
 if __name__ == '__main__':
-    t = MoodLib(info['web'], users['manager']['token'])
+    t = MoodLib(info['web'], users['student']['token'])
     #test_get_files(raw_input())
     #test_upload_file(raw_input())
+    test_upload_file2(raw_input())
     #test_down_file()

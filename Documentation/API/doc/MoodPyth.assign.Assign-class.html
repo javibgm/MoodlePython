@@ -238,22 +238,23 @@
         <dd>A dictionary with:
           <ul>
             <li>
-              courses List of dictionary - list of courses:
+              courses List of Dictionary - list of courses:
               <ul>
                 <li>
                   id int   - course id
                 </li>
                 <li>
-                  fullname string   - course full name
+                  fullname (string)   - course full name
                 </li>
                 <li>
-                  shortname string   - course short name
+                  shortname (string)   - course short name
                 </li>
                 <li>
-                  timemodified int   - last time modified
+                  timemodified int   - last time the course was modified
                 </li>
                 <li>
-                  assignments List of dictionary - assignment information:
+                  assignments List of Dictionary - information about 
+                  assignments:
                   <ul>
                     <li>
                       id int   - assignment id
@@ -262,7 +263,7 @@
                       course int   - course id
                     </li>
                     <li>
-                      name string   - assignment name
+                      name (string)   - assignment name
                     </li>
                     <li>
                       nosubmissions int   - no submissions
@@ -280,8 +281,8 @@
                       duedate int   - assignment due date
                     </li>
                     <li>
-                      allowsubmissionsfromdate int   - allow submissions 
-                      from date
+                      allowsubmissionsfromdate int   - allow submissions in
+                      the assignment from this date
                     </li>
                     <li>
                       grade int   - grade type
@@ -323,25 +324,25 @@
                       accept submission statement
                     </li>
                     <li>
-                      configs List of dictionary - configuration settings:
+                      configs List of Dictionary - configuration settings:
                       <ul>
                         <li>
-                          id int   - assign_plugin_config id
+                          id int   - assign plugin config id
                         </li>
                         <li>
                           assignment int   - assignment id
                         </li>
                         <li>
-                          plugin string   - plugin
+                          plugin (string)   - plugin
                         </li>
                         <li>
-                          subtype string   - subtype
+                          subtype (string)   - subtype
                         </li>
                         <li>
-                          name string   - name
+                          name (string)   - name
                         </li>
                         <li>
-                          value string   - value
+                          value (string)   - value
                         </li>
                       </ul>
                     </li>
@@ -350,11 +351,12 @@
               </ul>
             </li>
             <li>
-              warnings List of dictionary Optional - list of warnings:
+              warnings List of Dictionary Optional - list of possible 
+              warnings:
               <ul>
                 <li>
-                  item string  Optional - item can be 'course' (errorcode 1
-                  or 2) or 'module' (errorcode 1)
+                  item (string)  Optional - item can be 'course' (errorcode
+                  1 or 2) or 'module' (errorcode 1)
                 </li>
                 <li>
                   itemid int  Optional - When item is a course then itemid 
@@ -362,11 +364,11 @@
                   a module id
                 </li>
                 <li>
-                  warningcode string   - errorcode can be 1 (no access 
+                  warningcode (string)   - errorcode can be 1 (no access 
                   rights) or 2 (not enrolled or no permissions)
                 </li>
                 <li>
-                  message string   - untranslated english message to 
+                  message (string)   - untranslated English message to 
                   explain the warning
                 </li>
               </ul>
@@ -402,14 +404,14 @@
         <dd>A dictionary with:
           <ul>
             <li>
-              assignments List of dictionary - list of assignment grade 
+              assignments List of Dictionary - list of assignment grade 
               information:
               <ul>
                 <li>
                   assignmentid int   - assignment id
                 </li>
                 <li>
-                  grades List of dictionary  - list of grades:
+                  grades List of Dictionary  - list of grades:
                   <ul>
                     <li>
                       id int   - grade id
@@ -427,7 +429,7 @@
                       grader int   - grader
                     </li>
                     <li>
-                      grade string   - grade
+                      grade (string)   - grade
                     </li>
                     <li>
                       locked int   - locked
@@ -440,10 +442,10 @@
               </ul>
             </li>
             <li>
-              warnings List of dictionary Optional - list of warnings:
+              warnings List of Dictionary Optional - list of warnings:
               <ul>
                 <li>
-                  item string  Optional - item is always 'assignment'
+                  item (string)  Optional - item is always 'assignment'
                 </li>
                 <li>
                   itemid int  Optional - when errorcode is 3 then itemid is
@@ -451,11 +453,11 @@
                   module id
                 </li>
                 <li>
-                  warningcode string   - errorcode can be 3 (no grades 
+                  warningcode (string)   - errorcode can be 3 (no grades 
                   found) or 1 (no permission to get grades)
                 </li>
                 <li>
-                  message string   - untranslated english message to 
+                  message (string)   - untranslated English message to 
                   explain the warning
                 </li>
               </ul>
@@ -495,13 +497,13 @@
         <dd>A dictionary with:
           <ul>
             <li>
-              assignments List of dictionary  - assignment submissions:
+              assignments List of Dictionary  - assignment submissions:
               <ul>
                 <li>
                   assignmentid int   - assignment id
                 </li>
                 <li>
-                  submissions List of dictionary - list of submissions:
+                  submissions List of Dictionary - list of submissions:
                   <ul>
                     <li>
                       id int   - submission id
@@ -516,49 +518,49 @@
                       timemodified int   - submission last modified time
                     </li>
                     <li>
-                      status string   - submission status
+                      status (string)   - submission status
                     </li>
                     <li>
                       groupid int   - group id
                     </li>
                     <li>
-                      plugins List of dictionary Optional - plugins
+                      plugins List of Dictionary Optional - plugins
                       <ul>
                         <li>
-                          type string   - submission plugin type
+                          type (string)   - submission plugin type
                         </li>
                         <li>
-                          name string   - submission plugin name
+                          name (string)   - submission plugin name
                         </li>
                         <li>
-                          fileareas List of dictionary Optional - 
+                          fileareas List of Dictionary Optional - 
                           fileareas:
                           <ul>
                             <li>
-                              area string   - file area
+                              area (string)   - file area
                             </li>
                             <li>
-                              files List of dictionary Optional - files
+                              files List of Dictionary Optional - files
                               <ul>
                                 <li>
-                                  filepath string   - file path
+                                  filepath (string)   - file path
                                 </li>
                               </ul>
                             </li>
                           </ul>
                         </li>
                         <li>
-                          editorfields List of dictionary Optional - 
-                          editorfields:
+                          editorfields List of Dictionary Optional - editor
+                          fields:
                           <ul>
                             <li>
-                              name string   - field name
+                              name (string)   - field name
                             </li>
                             <li>
-                              description string   - field description
+                              description (string)   - field description
                             </li>
                             <li>
-                              text string   - field value
+                              text (string)   - field value
                             </li>
                             <li>
                               format int   - text format (1 = HTML, 0 = 
@@ -573,20 +575,20 @@
               </ul>
             </li>
             <li>
-              warnings List of dictionary Optional - list of warnings:
+              warnings List of Dictionary Optional - list of warnings:
               <ul>
                 <li>
-                  item string  Optional - item
+                  item (string)  Optional - item
                 </li>
                 <li>
                   itemid int  Optional - item id
                 </li>
                 <li>
-                  warningcode string   - the warning code can be used by 
+                  warningcode (string)   - the warning code can be used by 
                   the client app to implement specific behaviour
                 </li>
                 <li>
-                  message string   - untranslated english message to 
+                  message (string)   - untranslated English message to 
                   explain the warning
                 </li>
               </ul>
@@ -622,7 +624,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri May 17 15:42:50 2013
+    Generated by Epydoc 3.0.1 on Thu May 23 16:55:00 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

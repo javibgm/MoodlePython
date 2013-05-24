@@ -49,6 +49,6 @@ if __name__ == '__main__':
     #test_create_contacts(raw_input())
     #test_delete_contacts(raw_input())
     #test_get_contacts()
-    test_search_contacts(raw_input())
+    #test_search_contacts(raw_input())
     #test_send_instant_messages(raw_input())
     #test_unblock_contacts(raw_input())

@@ -8,20 +8,44 @@ class Calendar(MoodClass):
     '''
     def create_calendar_events(self, events):
         ''' Create calendar events
-        @param events: 1 or more events
-        @type events: List of Dictionary
-            - name string  - event name
-            - description string  Default to "null" - event description
+        @param events: 1 or more events to create:
+            - name (string)  - event name
+            - description (string)  Default to "null" - event description
             - format int  Default to "1" - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             - courseid int  Default to "0" - course id
             - groupid int  Default to "0" - group id
             - repeats int  Default to "0" - number of repeats
-            - eventtype string  Default to "user" - Event type
-            - timestart int  Default to "1367063293" - timestart
-            - timeduration int  Default to "0" - time duration
-            - visible int  Default to "1" - visible
+            - eventtype (string)  Default to "user" - Event type
+            - timestart int  Default to actual time - starting event time
+            - timeduration int  Default to "0" - event duration
+            - visible int  Default to "1" - visibility
             - sequence int  Default to "1" - sequence
-        @return: a dictionary with the events created and warnings.
+        @type events: List of Dictionary
+        @return: A dictionary with the events created and possible warnings:
+            - events List of Dictionary - list of events created:
+                - id int   - event id
+                - name (string)   - event name
+                - description (string)  Optional - event description
+                - format int   - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                - courseid int   - course id
+                - groupid int   - group id
+                - userid int   - user id
+                - repeatid int  Optional - repeat id
+                - modulename (string)  Optional - module name
+                - instance int   - instance id
+                - eventtype (string)   - Event type
+                - timestart int   - timestart
+                - timeduration int   - time duration
+                - visible int   - visible
+                - uuid (string)  Optional - unique id of ical events
+                - sequence int   - sequence
+                - timemodified int   - time modified
+                - subscriptionid int  Optional - Subscription id
+            - warnings List of Dictionary Optional - list of possible warnings for each event created:
+                - item (string)  Optional - item
+                - itemid int  Optional - item id
+                - warningcode (string)   - the warning code can be used by the client app to implement specific behavior
+                - message (string)   - untranslated English message to explain the warning
         '''
         function = 'core_calendar_create_calendar_events'
         if type(events)!=type([]) or events==[]:
@@ -40,10 +64,10 @@ class Calendar(MoodClass):
 
     def delete_calendar_events(self, events):
         '''Delete calendar events
-        @param events: 1 or more events
-        @type events: Dictionary
+        @param events: 1 or more events to delete:
             - eventid int  - Event ID
-            - repeat 0/1  - Delete comeplete series if repeated event
+            - repeat 0/1  - Delete complete series if repeated event
+        @type events: List of Dictionary
         '''
         function = 'core_calendar_delete_calendar_events'
         if type(events)!=type([]) or events==[]:

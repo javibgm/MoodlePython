@@ -14,7 +14,7 @@ def test_course_contents(test):
         print 'Course ID to show contents:'
         show(t.course_contents(raw_input()))
     elif test == '1':
-        show(t.course_contents('2'))
+        show(t.course_contents('2',[{'name':'optionname','value':'valuename'}]))
     elif test == '2':
         show(t.course_contents(2))
     # Errors
