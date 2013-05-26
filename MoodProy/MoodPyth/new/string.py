@@ -1,6 +1,6 @@
 from MoodPyth import MoodClass
 
-class string(MoodClass):
+class String(MoodClass):
     def get_string(self):
     # Return a translated string - similar to core get_string() call
         function = 'core_get_string'

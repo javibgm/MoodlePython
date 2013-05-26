@@ -1,6 +1,6 @@
 from MoodPyth import MoodClass
 
-class role(MoodClass):
+class Role(MoodClass):
     def assign_roles(self):
     # Manual role assignments
         function = 'core_role_assign_roles'

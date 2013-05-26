@@ -184,6 +184,98 @@
     <dd><ul class="nomargin-top">
         <li><strong class="pname"><code>forumids</code></strong> (List of Integer) - 1 or more forum identifiers.</li>
     </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary - list of forum discussions:
+          <ul>
+            <li>
+              id (int)   - Forum id
+            </li>
+            <li>
+              course (int)   - Course id
+            </li>
+            <li>
+              forum (int)   - The forum id
+            </li>
+            <li>
+              name string   - Discussion name
+            </li>
+            <li>
+              userid (int)   - User id
+            </li>
+            <li>
+              groupid (int)   - Group id
+            </li>
+            <li>
+              assessed (int)   - Is this assessed?
+            </li>
+            <li>
+              timemodified (int)   - Time modified
+            </li>
+            <li>
+              usermodified (int)   - The id of the user who last modified
+            </li>
+            <li>
+              timestart (int)   - Time discussion can start
+            </li>
+            <li>
+              timeend (int)   - Time discussion ends
+            </li>
+            <li>
+              firstpost (int)   - The first post in the discussion
+            </li>
+            <li>
+              firstuserfullname (string)   - The discussion creators 
+              fullname
+            </li>
+            <li>
+              firstuserimagealt (string)   - The discussion creators image 
+              alt
+            </li>
+            <li>
+              firstuserpicture (int)   - The discussion creators profile 
+              picture
+            </li>
+            <li>
+              firstuseremail (string)   - The discussion creators email
+            </li>
+            <li>
+              subject (string)   - The discussion subject
+            </li>
+            <li>
+              numreplies (string)   - The number of replies in the 
+              discussion
+            </li>
+            <li>
+              numunread (string)   - The number of unread posts, blank if 
+              this value is not available due to forum settings.
+            </li>
+            <li>
+              lastpost (int)   - The id of the last post in the discussion
+            </li>
+            <li>
+              lastuserid (int)   - The id of the user who made the last 
+              post
+            </li>
+            <li>
+              lastuserfullname (string)   - The last person to posts 
+              fullname
+            </li>
+            <li>
+              lastuserimagealt (string)   - The last person to posts image 
+              alt
+            </li>
+            <li>
+              lastuserpicture (int)   - The last person to posts profile 
+              picture
+            </li>
+            <li>
+              lastuseremail (string)   - The last person to posts email
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if forumids input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -210,6 +302,85 @@
     <dd><ul class="nomargin-top">
         <li><strong class="pname"><code>courseids</code></strong> (List of Integer) - 0 or more course identifiers to get their forums.</li>
     </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary - list of forum instances:
+          <ul>
+            <li>
+              id (int)   - Forum id
+            </li>
+            <li>
+              course (string)   - Course id
+            </li>
+            <li>
+              type (string)   - The forum type
+            </li>
+            <li>
+              name (string)   - Forum name
+            </li>
+            <li>
+              intro (string)   - The forum intro
+            </li>
+            <li>
+              introformat (int)   - intro format (1 = HTML, 0 = MOODLE, 2 =
+              PLAIN or 4 = MARKDOWN)
+            </li>
+            <li>
+              assessed (int)   - Aggregate type
+            </li>
+            <li>
+              assesstimestart (int)   - Assess start time
+            </li>
+            <li>
+              assesstimefinish (int)   - Assess finish time
+            </li>
+            <li>
+              scale (int)   - Scale
+            </li>
+            <li>
+              maxbytes (int)   - Maximum attachment size
+            </li>
+            <li>
+              maxattachments (int)   - Maximum number of attachments
+            </li>
+            <li>
+              forcesubscribe (int)   - Force users to subscribe
+            </li>
+            <li>
+              trackingtype (int)   - Subscription mode
+            </li>
+            <li>
+              rsstype (int)   - RSS feed for this activity
+            </li>
+            <li>
+              rssarticles (int)   - Number of RSS recent articles
+            </li>
+            <li>
+              timemodified (int)   - Time modified
+            </li>
+            <li>
+              warnafter (int)   - Post threshold for warning
+            </li>
+            <li>
+              blockafter (int)   - Post threshold for blocking
+            </li>
+            <li>
+              blockperiod (int)   - Time period for blocking
+            </li>
+            <li>
+              completiondiscussions (int)   - Student must create 
+              discussions
+            </li>
+            <li>
+              completionreplies (int)   - Student must post replies
+            </li>
+            <li>
+              completionposts (int)   - Student must post discussions or 
+              replies
+            </li>
+            <li>
+              cmid (int)   - Course module id
+            </li>
+          </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -240,7 +411,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Sun May 26 05:10:56 2013
+    Generated by Epydoc 3.0.1 on Sun May 26 16:25:09 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

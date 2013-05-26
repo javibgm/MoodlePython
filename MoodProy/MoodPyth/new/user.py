@@ -1,16 +1,10 @@
 from MoodPyth import MoodClass
 import urllib
 
-class user(MoodClass):
-    def get_users_by_id(self, param):
+class User(MoodClass):
+    def get_users_by_id(self):
     # Get users by id
         function = 'core_user_get_users_by_id'
-        if param == '':
-            print 'Incorrect input parameters'
-            return None
-        else:
-            param = urllib.urlencode({'userids[0]': param})
-        return self.connect(function, param)
     
     def create_users(self):
     # Create users.
