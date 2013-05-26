@@ -77,7 +77,7 @@ class Message(MoodClass):
     def send_instant_messages(self, messages):
         ''' Send instant messages.
         @param messages: 1 or more messages and destination user identifiers.
-        @type messages: List of Dictionaries.
+        @type messages: List of Dictionary
         @return: List of message identifiers with their errors if they happen. '''
         if type(messages)!=type([]) or messages==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "touserid" and "text"')

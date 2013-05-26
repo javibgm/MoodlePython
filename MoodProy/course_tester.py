@@ -119,11 +119,11 @@ def test_get_categories(test):
         array = [{'key': 'visible', 'value':'1'}]
     elif test == '6':
         array = [{'key': 'theme', 'value':'None'}]
-    # Errors
     elif test == '7':
         array = [{'key': 'id', 'value':'100'}]
     elif test == '8':
         array = [{'key': 'id', 'value':'a'}]
+    # Errors
     elif test == '9':
         array = [{'key': 'false_key', 'value':'1'}]
     elif test == '10':

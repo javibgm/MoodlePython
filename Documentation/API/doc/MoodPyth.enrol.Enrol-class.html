@@ -181,32 +181,6 @@
     </td>
   </tr>
 </table>
-<!-- ==================== INSTANCE VARIABLES ==================== -->
-<a name="section-InstanceVariables"></a>
-<table class="summary" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr bgcolor="#70b0f0" class="table-header">
-  <td colspan="2" class="table-header">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr valign="top">
-        <td align="left"><span class="table-header">Instance Variables</span></td>
-        <td align="right" valign="top"
-         ><span class="options">[<a href="#section-InstanceVariables"
-         class="privatelink" onclick="toggle_private();"
-         >hide private</a>]</span></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-  <tr>
-    <td colspan="2" class="summary">
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
-      <code><a href="MoodPyth.MoodClass-class.html#conn">conn</a></code>,
-      <code><a href="MoodPyth.MoodClass-class.html#token">token</a></code>
-      </p>
-    </td>
-  </tr>
-</table>
 <!-- ==================== METHOD DETAILS ==================== -->
 <a name="section-MethodDetails"></a>
 <table class="details" border="1" cellpadding="3"
@@ -263,8 +237,8 @@
                   </ul>
                 </li>
                 <li>
-                  &quot;groupid&quot;  int  return only users in this group
-                  id.
+                  &quot;groupid&quot;  (int)  return only users in this 
+                  group id.
                   <ul>
                     <li>
                       This option requires 'moodle/site:accessallgroups' on
@@ -273,7 +247,7 @@
                   </ul>
                 </li>
                 <li>
-                  &quot;onlyactive&quot;  int  return only users with 
+                  &quot;onlyactive&quot;  (int)  return only users with 
                   active enrollments and matching time restrictions.
                   <ul>
                     <li>
@@ -287,11 +261,11 @@
                   only the values of these user fields.
                 </li>
                 <li>
-                  &quot;limitfrom&quot;  int  sql limit from.
+                  &quot;limitfrom&quot;  (int)  sql limit from.
                 </li>
                 <li>
-                  &quot;limitnumber&quot;  int  maximum number of returned 
-                  users.
+                  &quot;limitnumber&quot;  (int)  maximum number of 
+                  returned users.
                 </li>
               </ul>
             </li>
@@ -309,7 +283,7 @@
           that match with enrollment options filters:
           <ul>
             <li>
-              id int   - ID of the user
+              id (int)   - ID of the user
             </li>
             <li>
               username (string) Optional - Username policy is defined in 
@@ -367,18 +341,18 @@
               commas)
             </li>
             <li>
-              firstaccess int  Optional - first access to the site (0 if 
+              firstaccess (int)  Optional - first access to the site (0 if 
               never)
             </li>
             <li>
-              lastaccess int  Optional - last access to the site (0 if 
+              lastaccess (int)  Optional - last access to the site (0 if 
               never)
             </li>
             <li>
               description (string) Optional - User profile description
             </li>
             <li>
-              descriptionformat int  Optional - description format (1 = 
+              descriptionformat (int)  Optional - description format (1 = 
               HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             </li>
             <li>
@@ -400,7 +374,7 @@
               big version
             </li>
             <li>
-              customfields List of Dictionary  Optional - List of user 
+              customfields (List of Dictionary)  Optional - List of user 
               custom fields (also known as user profile fields):
               <ul>
                 <li>
@@ -420,11 +394,11 @@
               </ul>
             </li>
             <li>
-              groups List of Dictionary  Optional - list of user groups 
+              groups (List of Dictionary)  Optional - list of user groups 
               which user belongs:
               <ul>
                 <li>
-                  id int   - group id
+                  id (int)   - group id
                 </li>
                 <li>
                   name (string)  - group name
@@ -433,16 +407,16 @@
                   description (string)  - group description
                 </li>
                 <li>
-                  descriptionformat int   - description format (1 = HTML, 0
-                  = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                  descriptionformat (int)   - description format (1 = HTML,
+                  0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
                 </li>
               </ul>
             </li>
             <li>
-              roles List of Dictionary  Optional - user roles list:
+              roles (List of Dictionary)  Optional - user roles list:
               <ul>
                 <li>
-                  roleid int   - role id
+                  roleid (int)   - role id
                 </li>
                 <li>
                   name (string)  - role name
@@ -451,13 +425,13 @@
                   shortname (string)  - role shortname
                 </li>
                 <li>
-                  sortorder int   - role sortorder
+                  sortorder (int)   - role sortorder
                 </li>
               </ul>
             </li>
             <li>
-              preferences List of Dictionary  Optional -  user preferences 
-              list:
+              preferences (List of Dictionary)  Optional -  user 
+              preferences list:
               <ul>
                 <li>
                   name (string)  - The name of the preferences
@@ -473,7 +447,7 @@
               see)
               <ul>
                 <li>
-                  id int   - Id of the course
+                  id (int)   - Id of the course
                 </li>
                 <li>
                   fullname (string)  - Fullname of the course
@@ -510,8 +484,8 @@
     <dd><ul class="nomargin-top">
         <li><strong class="pname"><code>coursecapabilities</code></strong> (List of Dictionary) - dictionaries with a course identifier and capabilities to get the
           enrolled users in that course with those capabilities: courseid 
-          int   - Course ID number in the Moodle course table capabilities 
-          List of string - Capability names, such as 
+          (int)   - Course ID number in the Moodle course table 
+          capabilities (List of string) - Capability names, such as 
           &quot;mod/forum:viewdiscussion&quot;</li>
         <li><strong class="pname"><code>options</code></strong> (List of Dictionaries) - List of enrollment options to filter users:
           <ul>
@@ -520,8 +494,8 @@
               possible values formats) are:
               <ul>
                 <li>
-                  &quot;groupid&quot;  int  return only users in this group
-                  id.
+                  &quot;groupid&quot;  (int)  return only users in this 
+                  group id.
                   <ul>
                     <li>
                       Requires 'moodle/site:accessallgroups' .
@@ -529,7 +503,7 @@
                   </ul>
                 </li>
                 <li>
-                  &quot;onlyactive&quot;  int  only users with active 
+                  &quot;onlyactive&quot;  (int)  only users with active 
                   enrolments.
                   <ul>
                     <li>
@@ -542,16 +516,16 @@
                   only the values of these user fields.
                 </li>
                 <li>
-                  &quot;limitfrom&quot;  int  sql limit from.
+                  &quot;limitfrom&quot;  (int)  sql limit from.
                 </li>
                 <li>
-                  &quot;limitnumber&quot;  int  max number of users per 
+                  &quot;limitnumber&quot;  (int)  max number of users per 
                   course and capability.
                 </li>
               </ul>
             </li>
             <li>
-              value(string)  - the value to match.
+              value (string)  - the value to match.
             </li>
           </ul></li>
     </ul></dd>
@@ -560,7 +534,7 @@
           specified capability and a users list:
           <ul>
             <li>
-              id int   - ID of the user
+              id (int)   - ID of the user
             </li>
             <li>
               username (string) Optional - Username policy is defined in 
@@ -618,18 +592,18 @@
               commas)
             </li>
             <li>
-              firstaccess int  Optional - first access to the site (0 if 
+              firstaccess (int)  Optional - first access to the site (0 if 
               never)
             </li>
             <li>
-              lastaccess int  Optional - last access to the site (0 if 
+              lastaccess (int)  Optional - last access to the site (0 if 
               never)
             </li>
             <li>
               description (string) Optional - User profile description
             </li>
             <li>
-              descriptionformat int  Optional - description format (1 = 
+              descriptionformat (int)  Optional - description format (1 = 
               HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             </li>
             <li>
@@ -651,7 +625,7 @@
               big version
             </li>
             <li>
-              customfields List of Dictionary  Optional - List of user 
+              customfields (List of Dictionary)  Optional - List of user 
               custom fields (also known as user profile fields):
               <ul>
                 <li>
@@ -671,11 +645,11 @@
               </ul>
             </li>
             <li>
-              groups List of Dictionary  Optional - list of user groups 
+              groups (List of Dictionary)  Optional - list of user groups 
               which user belongs:
               <ul>
                 <li>
-                  id int   - group id
+                  id (int)   - group id
                 </li>
                 <li>
                   name (string)  - group name
@@ -684,16 +658,16 @@
                   description (string)  - group description
                 </li>
                 <li>
-                  descriptionformat int   - description format (1 = HTML, 0
-                  = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                  descriptionformat (int)   - description format (1 = HTML,
+                  0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
                 </li>
               </ul>
             </li>
             <li>
-              roles List of Dictionary  Optional - user roles list:
+              roles (List of Dictionary)  Optional - user roles list:
               <ul>
                 <li>
-                  roleid int   - role id
+                  roleid (int)   - role id
                 </li>
                 <li>
                   name (string)  - role name
@@ -702,13 +676,13 @@
                   shortname (string)  - role shortname
                 </li>
                 <li>
-                  sortorder int   - role sortorder
+                  sortorder (int)   - role sortorder
                 </li>
               </ul>
             </li>
             <li>
-              preferences List of Dictionary  Optional -  user preferences 
-              list:
+              preferences (List of Dictionary)  Optional -  user 
+              preferences list:
               <ul>
                 <li>
                   name (string)  - The name of the preferences
@@ -719,12 +693,12 @@
               </ul>
             </li>
             <li>
-              enrolledcourses List of Dictionary  Optional - list of 
+              enrolledcourses (List of Dictionary)  Optional - list of 
               courses where the user is enrolled (limited by which courses 
               the user is able to see)
               <ul>
                 <li>
-                  id int   - Id of the course
+                  id (int)   - Id of the course
                 </li>
                 <li>
                   fullname (string)  - Fullname of the course
@@ -763,7 +737,7 @@
         <dd>List of Dictionary. Courses list:
           <ul>
             <li>
-              id int   - id of course
+              id (int)   - id of course
             </li>
             <li>
               shortname (string)  - short name of course
@@ -772,14 +746,14 @@
               fullname (string)  - long name of course
             </li>
             <li>
-              enrolledusercount int   - Number of enrolled users in this 
+              enrolledusercount (int)   - Number of enrolled users in this 
               course
             </li>
             <li>
               idnumber (string)  - id number of course
             </li>
             <li>
-              visible int   - 1 means visible, 0 means hidden course
+              visible (int)   - 1 means visible, 0 means hidden course
             </li>
           </ul></dd>
   </dl>
@@ -807,22 +781,23 @@
         <li><strong class="pname"><code>enrollist</code></strong> (List of Dictionaries) - 1 or more enrollments of user into course with a specific role:
           <ul>
             <li>
-              roleid int   - Role to assign to the user
+              roleid (int)   - Role to assign to the user
             </li>
             <li>
-              userid int   - The user that is going to be enrolled
+              userid (int)   - The user that is going to be enrolled
             </li>
             <li>
-              courseid int   - The course to enrol the user role in
+              courseid (int)   - The course to enrol the user role in
             </li>
             <li>
-              timestart int  Optional - Timestamp when the enrolment start
+              timestart (int)  Optional - Timestamp when the enrolment 
+              start
             </li>
             <li>
-              timeend int  Optional - Timestamp when the enrolment end
+              timeend (int)  Optional - Timestamp when the enrolment end
             </li>
             <li>
-              suspend int  Optional - set to 1 to suspend the enrolment
+              suspend (int)  Optional - set to 1 to suspend the enrolment
             </li>
           </ul></li>
     </ul></dd>
@@ -856,7 +831,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri May 24 16:26:21 2013
+    Generated by Epydoc 3.0.1 on Sun May 26 05:10:56 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

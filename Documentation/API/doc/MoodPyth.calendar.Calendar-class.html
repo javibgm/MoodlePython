@@ -167,32 +167,6 @@
     </td>
   </tr>
 </table>
-<!-- ==================== INSTANCE VARIABLES ==================== -->
-<a name="section-InstanceVariables"></a>
-<table class="summary" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr bgcolor="#70b0f0" class="table-header">
-  <td colspan="2" class="table-header">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr valign="top">
-        <td align="left"><span class="table-header">Instance Variables</span></td>
-        <td align="right" valign="top"
-         ><span class="options">[<a href="#section-InstanceVariables"
-         class="privatelink" onclick="toggle_private();"
-         >hide private</a>]</span></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-  <tr>
-    <td colspan="2" class="summary">
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
-      <code><a href="MoodPyth.MoodClass-class.html#conn">conn</a></code>,
-      <code><a href="MoodPyth.MoodClass-class.html#token">token</a></code>
-      </p>
-    </td>
-  </tr>
-</table>
 <!-- ==================== METHOD DETAILS ==================== -->
 <a name="section-MethodDetails"></a>
 <table class="details" border="1" cellpadding="3"
@@ -240,32 +214,32 @@
               description
             </li>
             <li>
-              format int  Default to &quot;1&quot; - description format (1 
-              = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+              format (int)  Default to &quot;1&quot; - description format 
+              (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             </li>
             <li>
-              courseid int  Default to &quot;0&quot; - course id
+              courseid (int)  Default to &quot;0&quot; - course id
             </li>
             <li>
-              groupid int  Default to &quot;0&quot; - group id
+              groupid (int)  Default to &quot;0&quot; - group id
             </li>
             <li>
-              repeats int  Default to &quot;0&quot; - number of repeats
+              repeats (int)  Default to &quot;0&quot; - number of repeats
             </li>
             <li>
               eventtype (string)  Default to &quot;user&quot; - Event type
             </li>
             <li>
-              timestart int  Default to actual time - starting event time
+              timestart (int)  Default to actual time - starting event time
             </li>
             <li>
-              timeduration int  Default to &quot;0&quot; - event duration
+              timeduration (int)  Default to &quot;0&quot; - event duration
             </li>
             <li>
-              visible int  Default to &quot;1&quot; - visibility
+              visible (int)  Default to &quot;1&quot; - visibility
             </li>
             <li>
-              sequence int  Default to &quot;1&quot; - sequence
+              sequence (int)  Default to &quot;1&quot; - sequence
             </li>
           </ul></li>
     </ul></dd>
@@ -273,10 +247,10 @@
         <dd>A dictionary with the events created and possible warnings:
           <ul>
             <li>
-              events List of Dictionary - list of events created:
+              events (List of Dictionary) - list of events created:
               <ul>
                 <li>
-                  id int   - event id
+                  id (int)   - event id
                 </li>
                 <li>
                   name (string)   - event name
@@ -285,62 +259,62 @@
                   description (string)  Optional - event description
                 </li>
                 <li>
-                  format int   - description format (1 = HTML, 0 = MOODLE, 
-                  2 = PLAIN or 4 = MARKDOWN)
+                  format (int)   - description format (1 = HTML, 0 = 
+                  MOODLE, 2 = PLAIN or 4 = MARKDOWN)
                 </li>
                 <li>
-                  courseid int   - course id
+                  courseid (int)   - course id
                 </li>
                 <li>
-                  groupid int   - group id
+                  groupid (int)   - group id
                 </li>
                 <li>
-                  userid int   - user id
+                  userid (int)   - user id
                 </li>
                 <li>
-                  repeatid int  Optional - repeat id
+                  repeatid (int)  Optional - repeat id
                 </li>
                 <li>
                   modulename (string)  Optional - module name
                 </li>
                 <li>
-                  instance int   - instance id
+                  instance (int)   - instance id
                 </li>
                 <li>
                   eventtype (string)   - Event type
                 </li>
                 <li>
-                  timestart int   - timestart
+                  timestart (int)   - timestart
                 </li>
                 <li>
-                  timeduration int   - time duration
+                  timeduration (int)   - time duration
                 </li>
                 <li>
-                  visible int   - visible
+                  visible (int)   - visible
                 </li>
                 <li>
                   uuid (string)  Optional - unique id of ical events
                 </li>
                 <li>
-                  sequence int   - sequence
+                  sequence (int)   - sequence
                 </li>
                 <li>
-                  timemodified int   - time modified
+                  timemodified (int)   - time modified
                 </li>
                 <li>
-                  subscriptionid int  Optional - Subscription id
+                  subscriptionid (int)  Optional - Subscription id
                 </li>
               </ul>
             </li>
             <li>
-              warnings List of Dictionary Optional - list of possible 
+              warnings (List of Dictionary) Optional - list of possible 
               warnings for each event created:
               <ul>
                 <li>
                   item (string)  Optional - item
                 </li>
                 <li>
-                  itemid int  Optional - item id
+                  itemid (int)  Optional - item id
                 </li>
                 <li>
                   warningcode (string)   - the warning code can be used by 
@@ -353,6 +327,10 @@
               </ul>
             </li>
           </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if events input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -378,12 +356,16 @@
         <li><strong class="pname"><code>events</code></strong> (List of Dictionary) - 1 or more events to delete:
           <ul>
             <li>
-              eventid int  - Event ID
+              eventid (int)  - Event ID
             </li>
             <li>
               repeat 0/1  - Delete complete series if repeated event
             </li>
           </ul></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if events input parameter type is not a list or is an empty list.</li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -426,6 +408,11 @@
     <dt>Returns:</dt>
         <dd>a dictionary with the events which match with the search 
           parameters and warnings.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if eventids, courseids or groupids input parameters types are not 
+        lists.</li>
+    </ul></dd>
   </dl>
 <div class="fields">      <p><strong>Note:</strong>
         This function only returns events that have been created with 
@@ -460,7 +447,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri May 24 16:26:21 2013
+    Generated by Epydoc 3.0.1 on Sun May 26 05:10:56 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

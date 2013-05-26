@@ -15,40 +15,41 @@ class Course(MoodClass):
             - value (string) - the value of the option, this param is personally validated in the external function
         @type options: List of Dictionary
         @return: List of Dictionary - list of sections:
-            - id int - Section ID
+            - id (int) - Section ID
             - name (string) - Section name
-            - visible int  Optional - is the section visible
+            - visible (int)  Optional - is the section visible
             - summary (string) - Section description
-            - summaryformat int - summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
-            - modules List of Dictionary - list of activities
-                - id int - activity id
+            - summaryformat (int) - summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            - modules (List of Dictionary) - list of activities
+                - id (int) - activity id
                 - url (string)  Optional - activity url
                 - name (string) - activity module name
                 - description (string)  Optional - activity description
-                - visible int  Optional - module visibility (1:visible, 0: not visible)
+                - visible (int)  Optional - module visibility (1:visible, 0: not visible)
                 - modicon (string) - activity icon url
                 - modname (string) - activity module type
                 - modplural (string) - activity module plural name
-                - availablefrom int  Optional - module availability start date
-                - availableuntil int  Optional - module availability en date
-                - indent int - number of indentation in the site
-                - contents List of Dictionary - list of contents
+                - availablefrom (int)  Optional - module availability start date
+                - availableuntil (int)  Optional - module availability en date
+                - indent (int) - number of indentation in the site
+                - contents (List of Dictionary) - list of contents
                     - type (string) - a file or a folder or external link
                     - filename (string) - filename
                     - filepath (string) - filepath
-                    - filesize int - filesize
+                    - filesize (int) - filesize
                     - fileurl (string)  Optional - downloadable file url
                     - content (string)  Optional - Raw content, will be used when type is content
-                    - timecreated int - Time created
-                    - timemodified int - Time modified
-                    - sortorder int - Content sort order
-                    - userid int - User who added this content to Moodle
+                    - timecreated (int) - Time created
+                    - timemodified (int) - Time modified
+                    - sortorder (int) - Content sort order
+                    - userid (int) - User who added this content to Moodle
                     - author (string) - Content owner
                     - license (string) - Content license
+        @raise TypeError: if courseid input parameter is not an integer.
         '''
         try:
             courseid = int(courseid)
-        except TypeError:
+        except ValueError:
             raise TypeError('courseid must be an integer or a string only with numbers')
         function = 'core_course_get_contents'
         param = urllib.urlencode({'courseid': courseid})
@@ -59,42 +60,43 @@ class Course(MoodClass):
             num += 1
         return self.connect(function, param)
 
-    def get_courses(self, courses=''):
+    def get_courses(self, courses=[]):
         ''' Return course details, all courses details returned if no parameters specified. 
         @param courses: 0 or more course identifiers.
         @type courses: List of Integer
         @return: List of Dictionary - list of courses:
-            - id int   - course id
+            - id (int)   - course id
             - shortname (string)   - course short name
-            - categoryid int   - category id
-            - categorysortorder int  Optional - sort order into the category
+            - categoryid (int)   - category id
+            - categorysortorder (int)  Optional - sort order into the category
             - fullname (string)   - course's full name
             - idnumber (string)  Optional - id number
             - summary (string)   - summary
-            - summaryformat int   - summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            - summaryformat (int)   - summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             - format (string)   - course format: weeks, topics, social, site,..
-            - showgrades int  Optional - 1 if grades are shown, otherwise 0
-            - newsitems int  Optional - number of recent items appearing on the course page
-            - startdate int   - timestamp when the course start
-            - numsections int  Optional - (Deprecated, use courseformatoptions) number of weeks/topics
-            - maxbytes int  Optional - largest size of file that can be uploaded into the course
-            - showreports int  Optional - are activity report shown (yes = 1, no =0)
-            - visible int  Optional - 1: available to student, 0:not available
-            - hiddensections int  Optional - (deprecated, use courseformatoptions) How the hidden sections in the course are displayed to students
-            - groupmode int  Optional - no group, separate, visible
-            - groupmodeforce int  Optional - force to use group mode (1: yes, 0: no)
-            - defaultgroupingid int  Optional - default grouping id
-            - timecreated int  Optional - timestamp when the course have been created
-            - timemodified int  Optional - timestamp when the course have been modified
-            - enablecompletion int  Optional - Enabled, control via completion and activity settings. Disabled, not shown in activity settings.
-            - completionnotify int  Optional - Notify users when they complete this course (1: yes 0: no)
+            - showgrades (int)  Optional - 1 if grades are shown, otherwise 0
+            - newsitems (int)  Optional - number of recent items appearing on the course page
+            - startdate (int)   - timestamp when the course start
+            - numsections (int)  Optional - (Deprecated, use courseformatoptions) number of weeks/topics
+            - maxbytes (int)  Optional - largest size of file that can be uploaded into the course
+            - showreports (int)  Optional - are activity report shown (yes = 1, no =0)
+            - visible (int)  Optional - 1: available to student, 0:not available
+            - hiddensections (int)  Optional - (deprecated, use courseformatoptions) How the hidden sections in the course are displayed to students
+            - groupmode (int)  Optional - no group, separate, visible
+            - groupmodeforce (int)  Optional - force to use group mode (1: yes, 0: no)
+            - defaultgroupingid (int)  Optional - default grouping id
+            - timecreated (int)  Optional - timestamp when the course have been created
+            - timemodified (int)  Optional - timestamp when the course have been modified
+            - enablecompletion (int)  Optional - Enabled, control via completion and activity settings. Disabled, not shown in activity settings.
+            - completionnotify (int)  Optional - Notify users when they complete this course (1: yes 0: no)
             - lang (string)  Optional - forced course language
             - forcetheme (string)  Optional - name of the course's forced theme (if allowcoursethemes option is enabled)
-            - courseformatoptions List of Dictionary Optional - additional options for particular course format
+            - courseformatoptions (List of Dictionary) Optional - additional options for particular course format
                 - name (string)   - course format option name
                 - value (string)   - course format option value
+        @raise TypeError: if courses input parameter type is not a list.
         '''
-        if type(courses)!=type([]) and courses!='':
+        if type(courses)!=type([]):
             raise TypeError('Input must be a list of courses')
         function="core_course_get_courses"
         param = ''
@@ -106,29 +108,29 @@ class Course(MoodClass):
             num += 1
         return self.connect(function, param)
     
-    def create_courses(self,courses):
+    def create_courses(self, courses):
         ''' Create new courses.
         @param courses: 1 or more courses to create:
             - fullname (string)    - course's full name
             - shortname (string)    - course short name
-            - categoryid int    - category identifier
+            - categoryid (int)    - category identifier
             - idnumber (string)  Optional  - id number
             - summary (string)  Optional  - summary
-            - summaryformat int  Default to "1"  - summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            - summaryformat (int)  Default to "1"  - summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             - format (string)  Default to "weeks"  - course format: weeks, topics, social, site,..
-            - showgrades int  Default to "1"  - 1 if grades are shown, otherwise 0
-            - newsitems int  Default to "5"  - number of recent items appearing on the course page
-            - startdate int  Optional  - timestamp when the course start
-            - numsections int  Optional  - (deprecated, use courseformatoptions) number of weeks/topics
-            - maxbytes int  Default to "2097152"  - largest size of file that can be uploaded into the course
-            - showreports int  Default to "0"  - are activity reports shown (yes = 1, no =0)
-            - visible int  Optional - 1: visible for students, 0:not visible for students
-            - hiddensections int  Optional  - (deprecated, use courseformatoptions) How the hidden sections in the course are displayed to students
-            - groupmode int  Default to "0"  - no group, separate, visible
-            - groupmodeforce int  Default to "0"  - force to use group mode (1: yes, 0: no)
-            - defaultgroupingid int  Default to "0"  - default grouping id
-            - enablecompletion int  Optional  - Enabled, control via completion and activity settings. Disabled, not shown in activity settings.
-            - completionnotify int  Optional  - Notify users when they complete this course (1: yes 0: no)
+            - showgrades (int)  Default to "1"  - 1 if grades are shown, otherwise 0
+            - newsitems (int)  Default to "5"  - number of recent items appearing on the course page
+            - startdate (int)  Optional  - timestamp when the course start
+            - numsections (int)  Optional  - (deprecated, use courseformatoptions) number of weeks/topics
+            - maxbytes (int)  Default to "2097152"  - largest size of file that can be uploaded into the course
+            - showreports (int)  Default to "0"  - are activity reports shown (yes = 1, no =0)
+            - visible (int)  Optional - 1: visible for students, 0:not visible for students
+            - hiddensections (int)  Optional  - (deprecated, use courseformatoptions) How the hidden sections in the course are displayed to students
+            - groupmode (int)  Default to "0"  - no group, separate, visible
+            - groupmodeforce (int)  Default to "0"  - force to use group mode (1: yes, 0: no)
+            - defaultgroupingid (int)  Default to "0"  - default grouping id
+            - enablecompletion (int)  Optional  - Enabled, control via completion and activity settings. Disabled, not shown in activity settings.
+            - completionnotify (int)  Optional  - Notify users when they complete this course (1: yes 0: no)
             - lang (string)  Optional  - forced course language
             - forcetheme (string)  Optional  - name of the course's forced theme (if allowcoursethemes option is enabled)
             - courseformatoptions  Optional  - additional options for particular course format
@@ -136,8 +138,9 @@ class Course(MoodClass):
                 - value (string)    - course format option value
         @type courses: List of Dictionaries
         @return: List of Dictionary - List of courses created:
-            - id int  - course id
+            - id (int)  - course id
             - shortname (string)   - course's short name
+        @raise TypeError: if courses input parameter type is not a list or is an empty list.
         '''
         if type(courses)!=type([]) or courses==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "fullname", shortname" and ""categoryid"')
@@ -164,7 +167,9 @@ class Course(MoodClass):
     def delete_courses(self, courses):
         ''' Deletes all specified courses.
         @param courses: 1 or more course identifiers.
-        @type courses: List of Integer '''
+        @type courses: List of Integer
+        @raise TypeError: if courses input parameter type is not a list or is an empty list.
+        '''
         if type(courses)!=type([]) or courses==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 course id')
         function = 'core_course_delete_courses'
@@ -180,27 +185,27 @@ class Course(MoodClass):
     def update_courses(self, courses):
         ''' Update courses.
         @param courses: 1 or more courses to update:
-            - id int   - ID of the course
+            - id (int)   - ID of the course
             - fullname (string)  Optional  - course's full name
             - shortname (string)  Optional  - course short name
-            - categoryid int  Optional  - category identifier
+            - categoryid (int)  Optional  - category identifier
             - idnumber (string)  Optional  - id number
             - summary (string)  Optional  - summary
-            - summaryformat int  Optional  - summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            - summaryformat (int)  Optional  - summary format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             - format (string)  Optional  - course format: weeks, topics, social, site,..
-            - showgrades int  Optional  - 1 if grades are shown, otherwise 0
-            - newsitems int  Optional  - number of recent items appearing on the course page
-            - startdate int  Optional  - timestamp when the course start
-            - numsections int  Optional  - (deprecated, use courseformatoptions) number of weeks/topics
-            - maxbytes int  Optional  - largest size of file that can be uploaded into the course
-            - showreports int  Optional  - are activity reports shown (yes = 1, no =0)
-            - visible int  Optional - 1: visible for students, 0:not visible for students
-            - hiddensections int  Optional  - (deprecated, use courseformatoptions) How the hidden sections in the course are displayed to students
-            - groupmode int  Optional  - no group, separate, visible
-            - groupmodeforce int  Optional  - force to use group mode (1: yes, 0: no)
-            - defaultgroupingid int  Optional  - default grouping id
-            - enablecompletion int  Optional  - Enabled, control via completion and activity settings. Disabled, not shown in activity settings.
-            - completionnotify int  Optional  - Notify users when they complete this course (1: yes 0: no)
+            - showgrades (int)  Optional  - 1 if grades are shown, otherwise 0
+            - newsitems (int)  Optional  - number of recent items appearing on the course page
+            - startdate (int)  Optional  - timestamp when the course start
+            - numsections (int)  Optional  - (deprecated, use courseformatoptions) number of weeks/topics
+            - maxbytes (int)  Optional  - largest size of file that can be uploaded into the course
+            - showreports (int)  Optional  - are activity reports shown (yes = 1, no =0)
+            - visible (int)  Optional - 1: visible for students, 0:not visible for students
+            - hiddensections (int)  Optional  - (deprecated, use courseformatoptions) How the hidden sections in the course are displayed to students
+            - groupmode (int)  Optional  - no group, separate, visible
+            - groupmodeforce (int)  Optional  - force to use group mode (1: yes, 0: no)
+            - defaultgroupingid (int)  Optional  - default grouping id
+            - enablecompletion (int)  Optional  - Enabled, control via completion and activity settings. Disabled, not shown in activity settings.
+            - completionnotify (int)  Optional  - Notify users when they complete this course (1: yes 0: no)
             - lang (string)  Optional  - forced course language
             - forcetheme (string)  Optional  - name of the course's forced theme (if allowcoursethemes option is enabled)
             - courseformatoptions  Optional  - additional options for particular course format
@@ -208,11 +213,12 @@ class Course(MoodClass):
                 - value (string)    - course format option value
         @type courses: List of Dictionaries
         @return: A dictionary with a list of possible warnings for each course updated:
-            - warnings List of Dictionary  Optional - list of warnings
+            - warnings (List of Dictionary)  Optional - list of warnings
                 - item (string)  Optional  - item
-                - itemid int  Optional  - item id
+                - itemid (int)  Optional  - item id
                 - warningcode (string)   - the warning code can be used by the client app to implement specific behaviour
                 - message (string)   - untranslated english message to explain the warning
+        @raise TypeError: if courses input parameter type is not a list or is an empty list.
         '''
         if type(courses)!=type([]) or courses==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
@@ -251,20 +257,22 @@ class Course(MoodClass):
         @type visible: Integer
         @param options: list of duplicating options:
             - name  (string)   - the backup option name. Expected names (with their possible values formats) are:
-                - "activities"  int  - Include course activites (default to 1 that is equal to yes).
-                - "blocks"  int  - Include course blocks (default to 1 that is equal to yes).
-                - "filters"  int  - Include course filters  (default to 1 that is equal to yes).
-                - "users"  int  - Include users (default to 0 that is equal to no).
-                - "role_assignments"  int  - Include role assignments  (default to 0 that is equal to no).
-                - "comments"  int  - Include user comments  (default to 0 that is equal to no).
-                - "completion_information"  int  - Include user course completion information  (default to 0 that is equal to no).
-                - "logs"  int  - Include course logs  (default to 0 that is equal to no).
-                - "histories"  int  - Include histories  (default to 0 that is equal to no).
+                - "activities"  (int)  - Include course activites (default to 1 that is equal to yes).
+                - "blocks"  (int)  - Include course blocks (default to 1 that is equal to yes).
+                - "filters"  (int)  - Include course filters  (default to 1 that is equal to yes).
+                - "users"  (int)  - Include users (default to 0 that is equal to no).
+                - "role_assignments"  (int)  - Include role assignments  (default to 0 that is equal to no).
+                - "comments"  (int)  - Include user comments  (default to 0 that is equal to no).
+                - "completion_information"  (int)  - Include user course completion information  (default to 0 that is equal to no).
+                - "logs"  (int)  - Include course logs  (default to 0 that is equal to no).
+                - "histories"  (int)  - Include histories  (default to 0 that is equal to no).
             - value (string)   - the value for the option 1 (yes) or 0 (no)
         @type options: List of Dictionaries
         @return: A dictionary with the course copy id and shortname:
-            - id int   - course id
-            - shortname (string)   - short name '''
+            - id (int)   - course id
+            - shortname (string)   - short name
+        @raise TypeError: if courseid or categoryid parameters are not integers or if fullname or shortname parameters are not strings.
+        '''
         try:
             courseid = int(courseid)
         except ValueError:
@@ -297,11 +305,13 @@ class Course(MoodClass):
         @type deletecontent: Integer
         @param options: list of importing options:
             - name  (string)   - the backup option name. Expected names (with their possible values formats) are:
-                - "activities"  int  Include course activites (default to 1 that is equal to yes).
-                - "blocks"  int  Include course blocks (default to 1 that is equal to yes).
-                - "filters"  int  Include course filters  (default to 1 that is equal to yes).
+                - "activities"  (int)  Include course activites (default to 1 that is equal to yes).
+                - "blocks"  (int)  Include course blocks (default to 1 that is equal to yes).
+                - "filters"  (int)  Include course filters  (default to 1 that is equal to yes).
             - value (string)   - the value for the option 1 (yes) or 0 (no)
-        @type options: List of Dictionaries'''
+        @type options: List of Dictionaries
+        @raise TypeError: if importfrom or importto parameters are not integers.
+        '''
         function = 'core_course_import_course'
         try:
             importfrom = int(importfrom)
@@ -317,16 +327,16 @@ class Course(MoodClass):
         return self.connect(function, param)
         
 
-    def get_categories(self, criteria='', addsubcategories=1):
+    def get_categories(self, criteria=[], addsubcategories=1):
         ''' Return category details. All categories details returned if no parameters specified.
         @param criteria: List of criteria to filter the categories:
             - key  (string)   - the category column to search. Expected keys (with their possible values formats) are:
-                - "id"  int  the category id.
+                - "id"  (int)  the category id.
                 - "name" (string) the category name.
-                - "parent"  int  the parent category id.
+                - "parent"  (int)  the parent category id.
                 - "idnumber" (string) category idnumber
                     - user must have 'moodle/category:manage' to search on idnumber.
-                - "visible"  int  whether the returned categories must be visible or hidden. If the key is not passed, then the function return all categories that the user can see.
+                - "visible"  (int)  whether the returned categories must be visible or hidden. If the key is not passed, then the function return all categories that the user can see.
                     - user must have 'moodle/category:manage' or 'moodle/category:viewhiddencategories' to search on visible
                 - "theme" (string) only return the categories having this theme
                     - user must have 'moodle/category:manage' to search on theme
@@ -336,23 +346,24 @@ class Course(MoodClass):
         @param addsubcategories: return the sub categories infos (1 - default) otherwise only the category info (0).
         @type addsubcategories: Integer
         @return: List of Dictionary - Categories list:
-            - id int   - category id
+            - id (int)   - category id
             - name (string)   - category name
             - idnumber (string)  Optional - category id number
             - description (string)   - category description
-            - descriptionformat int   - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
-            - parent int   - parent category id
-            - sortorder int   - category sorting order
-            - coursecount int   - number of courses in this category
-            - visible int  Optional - 1: visible, 0: not visible
-            - visibleold int  Optional - visibility independent of parent categories, 1: visible, 0:not visible
-            - timemodified int  Optional - timestamp
-            - depth int   - category depth
+            - descriptionformat (int)   - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            - parent (int)   - parent category id
+            - sortorder (int)   - category sorting order
+            - coursecount (int)   - number of courses in this category
+            - visible (int)  Optional - 1: visible, 0: not visible
+            - visibleold (int)  Optional - visibility independent of parent categories, 1: visible, 0:not visible
+            - timemodified (int)  Optional - timestamp
+            - depth (int)   - category depth
             - path (string)   - category path
             - theme (string)  Optional - category theme
+        @raise TypeError: if criteria input parameter type is not a list.
         '''
-        if type(criteria)!=type([]) and criteria!='':
-            raise TypeError('Input must be a list of dictionaries with {key:value} structure')
+        if type(criteria)!=type([]):
+            raise TypeError('Input must be a list of dictionaries with {"key":string,"value":string} structure')
         function = 'core_course_get_categories'
         param = ''
         num=0
@@ -370,15 +381,16 @@ class Course(MoodClass):
         ''' Create course categories. 
         @param categories: 1 or more categories to create:
             - name (string)   - new category name
-            - parent int  Default to "0" - the parent category id inside which the new category will be created. Set to 0 for a root category
+            - parent (int)  Default to "0" - the parent category id inside which the new category will be created. Set to 0 for a root category
             - idnumber (string)  Optional - the new category idnumber
             - description (string)  Optional - the new category description
-            - descriptionformat int  Default to "1" - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            - descriptionformat (int)  Default to "1" - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             - theme (string)  Optional - the new category theme. This option must be enabled on Moodle
         @type categories: List of Dictionaries
         @return: List of Dictionary. List of categories created:
-            - id int   //new category id
-            - name (string)   //new category name
+            - id (int)   - new category id
+            - name (string)   - new category name
+        @raise TypeError: if categories input parameter type is not a list or is an empty list.
         '''
         if type(categories)!=type([]) or categories==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "name"')
@@ -398,14 +410,16 @@ class Course(MoodClass):
     def update_categories(self, categories):
         ''' Update categories. 
         @param categories: 1 or more categories to update:
-            - id int   - category id to update
+            - id (int)   - category id to update
             - name (string)  Optional - category name
             - idnumber (string)  Optional - category id number
-            - parent int  Optional - parent category id
+            - parent (int)  Optional - parent category id
             - description (string)  Optional - category description
-            - descriptionformat int  Default to "1" - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            - descriptionformat (int)  Default to "1" - description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
             - theme (string)  Optional - the category theme. This option must be enabled on moodle
-        @type categories: List of Dictionaries '''
+        @type categories: List of Dictionaries
+        @raise TypeError: if categories input parameter type is not a list or is an empty list.
+        '''
         if type(categories)!=type([]) or categories==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
         function = 'core_course_update_categories'
@@ -424,10 +438,12 @@ class Course(MoodClass):
     def delete_categories(self, categories):
         ''' Delete course categories. 
         @param categories: 1 or more categories to delete:
-            - id int   - category id to delete
-            - newparent int  Optional - the parent category to move the contents to, if specified
-            - recursive int  Default to "0" - 1: recursively delete all contents inside this category, 0 (default): move contents to newparent or current parent category (except if parent is root)
-        @type categories: List of Dictionaries '''
+            - id (int)   - category id to delete
+            - newparent (int)  Optional - the parent category to move the contents to, if specified
+            - recursive (int)  Default to "0" - 1: recursively delete all contents inside this category, 0 (default): move contents to newparent or current parent category (except if parent is root)
+        @type categories: List of Dictionaries
+        @raise TypeError: if categories input parameter type is not a list or is an empty list.
+        '''
         if type(categories)!=type([]) or categories==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "id"')
         function = 'core_course_delete_categories'
@@ -446,7 +462,9 @@ class Course(MoodClass):
     def delete_modules(self, modules):
         ''' Deletes all specified module instances. 
         @param modules: 1 or more module identifiers.
-        @type modules: List of Integer '''
+        @type modules: List of Integer
+        @raise TypeError: if modules input parameter type is not a list or is an empty list.
+        '''
         if type(modules)!=type([]) or modules==[]:
             raise TypeError('Input must be a list of integers')
         function = 'core_course_delete_modules'

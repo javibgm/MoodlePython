@@ -9,7 +9,7 @@ class Group(MoodClass):
     def add_group_members(self, members):
         ''' Adds group members. 
         @param members: group identifiers and user identifiers to add users to groups.
-        @type members: List of Dictionaries. '''
+        @type members: List of Dictionaries '''
         if type(members)!=type([]) or members==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "groupid" and "userid"')
         function = 'core_group_add_group_members'
@@ -26,7 +26,7 @@ class Group(MoodClass):
     def assign_grouping(self, groupings):
         ''' Assing groups from groupings. 
         @param groupings: grouping identifiers and group identifiers to assign groups to groupings
-        @type groupings: List of Dictionaries. '''
+        @type groupings: List of Dictionaries '''
         if type(groupings)!=type([]) or groupings==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "groupingid" and "groupid"')
         function = 'core_group_assign_grouping'
@@ -43,7 +43,7 @@ class Group(MoodClass):
     def create_groupings(self, groupings):
         ''' Creates new groupings. 
         @param groupings: 1 or more groupings. 
-        @type groupings: List of Dictionaries. '''
+        @type groupings: List of Dictionaries '''
         if type(groupings)!=type([]) or groupings==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "courseid", "name" and "description"')
         function = 'core_group_create_groupings'
@@ -62,7 +62,7 @@ class Group(MoodClass):
     def create_groups(self, groups):
         ''' Creates new groups. 
         @param groups: 1 or more groups.
-        @type groups: List of Dictionaries. '''
+        @type groups: List of Dictionaries '''
         if type(groups)!=type([]) or groups==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "courseid", "name" and "description"')
         function = 'core_group_create_groups'
@@ -81,7 +81,7 @@ class Group(MoodClass):
     def delete_group_members(self,members):
         ''' Deletes group members. 
         @param members: group identifiers and user identifiers to remove users from groups.
-        @type members: List of Dictionaries. '''
+        @type members: List of Dictionaries '''
         if type(members)!=type([]) or members==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the keys "groupid" and "userid"')
         function = 'core_group_delete_group_members'
@@ -133,11 +133,11 @@ class Group(MoodClass):
         @type courseid: Integer. '''
         try:
             courseid = int(courseid)
-            function = 'core_group_get_course_groupings'
-            param = urllib.urlencode({'courseid': courseid})
-            return self.connect(function, param)
         except ValueError:
             raise TypeError('courseid must be an integer or a string only with numbers')
+        function = 'core_group_get_course_groupings'
+        param = urllib.urlencode({'courseid': courseid})
+        return self.connect(function, param)
     
     def get_course_groups(self, courseid):
         ''' Returns all groups in specified course. 
@@ -145,11 +145,11 @@ class Group(MoodClass):
         @type courseid: Integer '''
         try:
             courseid = int(courseid)
-            function = 'core_group_get_course_groups'
-            param = urllib.urlencode({'courseid': courseid})
-            return self.connect(function, param)
         except ValueError:
             raise TypeError('courseid must be an integer or a string only with numbers')
+        function = 'core_group_get_course_groups'
+        param = urllib.urlencode({'courseid': courseid})
+        return self.connect(function, param)
     
     def get_group_members(self, groupids):
         ''' Returns group members. 

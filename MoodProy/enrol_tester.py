@@ -76,6 +76,6 @@ def test_manual_enrol_users(test):
 if __name__ == '__main__':
     t = MoodLib(info['web'], users['manager']['token'])
     #test_enrolled_users(raw_input())
-    #test_get_enrolled_users_with_capability(raw_input())
+    test_get_enrolled_users_with_capability(raw_input())
     #test_get_users_courses()
     #test_manual_enrol_users(raw_input())

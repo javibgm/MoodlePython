@@ -97,8 +97,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="MoodPyth.assign.Assign-class.html#get_assigments" class="summary-sig-name">get_assigments</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">courseids</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
-        <span class="summary-sig-arg">capabilities</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+        <span class="summary-sig-arg">courseids</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="summary-sig-arg">capabilities</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span><br />
       Returns the courses and assignments for the users capability.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="MoodPyth.assign-pysrc.html#Assign.get_assigments">source&nbsp;code</a></span>
@@ -165,32 +165,6 @@
     </td>
   </tr>
 </table>
-<!-- ==================== INSTANCE VARIABLES ==================== -->
-<a name="section-InstanceVariables"></a>
-<table class="summary" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr bgcolor="#70b0f0" class="table-header">
-  <td colspan="2" class="table-header">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr valign="top">
-        <td align="left"><span class="table-header">Instance Variables</span></td>
-        <td align="right" valign="top"
-         ><span class="options">[<a href="#section-InstanceVariables"
-         class="privatelink" onclick="toggle_private();"
-         >hide private</a>]</span></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-  <tr>
-    <td colspan="2" class="summary">
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
-      <code><a href="MoodPyth.MoodClass-class.html#conn">conn</a></code>,
-      <code><a href="MoodPyth.MoodClass-class.html#token">token</a></code>
-      </p>
-    </td>
-  </tr>
-</table>
 <!-- ==================== METHOD DETAILS ==================== -->
 <a name="section-MethodDetails"></a>
 <table class="details" border="1" cellpadding="3"
@@ -217,8 +191,8 @@
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">get_assigments</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">courseids</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
-        <span class="sig-arg">capabilities</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span>
+        <span class="sig-arg">courseids</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="sig-arg">capabilities</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="MoodPyth.assign-pysrc.html#Assign.get_assigments">source&nbsp;code</a></span>&nbsp;
@@ -232,16 +206,16 @@
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
         <li><strong class="pname"><code>courseids</code></strong> (List of Integer) - 0 or more course ids</li>
-        <li><strong class="pname"><code>capabilities</code></strong> (List of String) - capabilities used to filter courses</li>
+        <li><strong class="pname"><code>capabilities</code></strong> (List of String) - 0 or more capabilities used to filter courses</li>
     </ul></dd>
     <dt>Returns:</dt>
         <dd>A dictionary with:
           <ul>
             <li>
-              courses List of Dictionary - list of courses:
+              courses (List of Dictionary) - list of courses:
               <ul>
                 <li>
-                  id int   - course id
+                  id (int)   - course id
                 </li>
                 <li>
                   fullname (string)   - course full name
@@ -250,87 +224,88 @@
                   shortname (string)   - course short name
                 </li>
                 <li>
-                  timemodified int   - last time the course was modified
+                  timemodified (int)   - last time the course was modified
                 </li>
                 <li>
-                  assignments List of Dictionary - information about 
+                  assignments (List of Dictionary) - information about 
                   assignments:
                   <ul>
                     <li>
-                      id int   - assignment id
+                      id (int)   - assignment id
                     </li>
                     <li>
-                      course int   - course id
+                      course (int)   - course id
                     </li>
                     <li>
                       name (string)   - assignment name
                     </li>
                     <li>
-                      nosubmissions int   - no submissions
+                      nosubmissions (int)   - no submissions
                     </li>
                     <li>
-                      submissiondrafts int   - submissions drafts
+                      submissiondrafts (int)   - submissions drafts
                     </li>
                     <li>
-                      sendnotifications int   - send notifications
+                      sendnotifications (int)   - send notifications
                     </li>
                     <li>
-                      sendlatenotifications int   - send notifications
+                      sendlatenotifications (int)   - send notifications
                     </li>
                     <li>
-                      duedate int   - assignment due date
+                      duedate (int)   - assignment due date
                     </li>
                     <li>
-                      allowsubmissionsfromdate int   - allow submissions in
-                      the assignment from this date
+                      allowsubmissionsfromdate (int)   - allow submissions 
+                      in the assignment from this date
                     </li>
                     <li>
-                      grade int   - grade type
+                      grade (int)   - grade type
                     </li>
                     <li>
-                      timemodified int   - last time assignment was 
+                      timemodified (int)   - last time assignment was 
                       modified
                     </li>
                     <li>
-                      completionsubmit int   - if enabled, set activity as 
-                      complete following submission
+                      completionsubmit (int)   - if enabled, set activity 
+                      as complete following submission
                     </li>
                     <li>
-                      cutoffdate int   - date after which submission is not
-                      accepted without an extension
+                      cutoffdate (int)   - date after which submission is 
+                      not accepted without an extension
                     </li>
                     <li>
-                      teamsubmission int   - if enabled, students submit as
-                      a team
+                      teamsubmission (int)   - if enabled, students submit 
+                      as a team
                     </li>
                     <li>
-                      requireallteammemberssubmit int   - if enabled, all 
+                      requireallteammemberssubmit (int)   - if enabled, all
                       team members must submit
                     </li>
                     <li>
-                      teamsubmissiongroupingid int   - the grouping id for 
-                      the team submission groups
+                      teamsubmissiongroupingid (int)   - the grouping id 
+                      for the team submission groups
                     </li>
                     <li>
-                      blindmarking int   - if enabled, hide identities 
+                      blindmarking (int)   - if enabled, hide identities 
                       until reveal identities actioned
                     </li>
                     <li>
-                      revealidentities int   - show identities for a blind 
-                      marking assignment
+                      revealidentities (int)   - show identities for a 
+                      blind marking assignment
                     </li>
                     <li>
-                      requiresubmissionstatement int   - student must 
+                      requiresubmissionstatement (int)   - student must 
                       accept submission statement
                     </li>
                     <li>
-                      configs List of Dictionary - configuration settings:
+                      configs (List of Dictionary) - configuration 
+                      settings:
                       <ul>
                         <li>
-                          id int   - assign plugin config id
+                          id (int)   - assign plugin config id
                         </li>
                         <li>
-                          assignment int   - assignment id
+                          assignment (int)   - assignment id
                         </li>
                         <li>
                           plugin (string)   - plugin
@@ -351,7 +326,7 @@
               </ul>
             </li>
             <li>
-              warnings List of Dictionary Optional - list of possible 
+              warnings (List of Dictionary) Optional - list of possible 
               warnings:
               <ul>
                 <li>
@@ -359,9 +334,9 @@
                   1 or 2) or 'module' (errorcode 1)
                 </li>
                 <li>
-                  itemid int  Optional - When item is a course then itemid 
-                  is a course id. When the item is a module then itemid is 
-                  a module id
+                  itemid (int)  Optional - When item is a course then 
+                  itemid is a course id. When the item is a module then 
+                  itemid is a module id
                 </li>
                 <li>
                   warningcode (string)   - errorcode can be 1 (no access 
@@ -374,6 +349,10 @@
               </ul>
             </li>
           </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if courseids or capabilities input parameters types are not lists.</li>
+    </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -404,53 +383,53 @@
         <dd>A dictionary with:
           <ul>
             <li>
-              assignments List of Dictionary - list of assignment grade 
+              assignments (List of Dictionary) - list of assignment grade 
               information:
               <ul>
                 <li>
-                  assignmentid int   - assignment id
+                  assignmentid (int)   - assignment id
                 </li>
                 <li>
-                  grades List of Dictionary  - list of grades:
+                  grades (List of Dictionary)  - list of grades:
                   <ul>
                     <li>
-                      id int   - grade id
+                      id (int)   - grade id
                     </li>
                     <li>
-                      userid int   - student id
+                      userid (int)   - student id
                     </li>
                     <li>
-                      timecreated int   - grade creation time
+                      timecreated (int)   - grade creation time
                     </li>
                     <li>
-                      timemodified int   - grade last modified time
+                      timemodified (int)   - grade last modified time
                     </li>
                     <li>
-                      grader int   - grader
+                      grader (int)   - grader
                     </li>
                     <li>
                       grade (string)   - grade
                     </li>
                     <li>
-                      locked int   - locked
+                      locked (int)   - locked
                     </li>
                     <li>
-                      mailed int   - mailed
+                      mailed (int)   - mailed
                     </li>
                   </ul>
                 </li>
               </ul>
             </li>
             <li>
-              warnings List of Dictionary Optional - list of warnings:
+              warnings (List of Dictionary) Optional - list of warnings:
               <ul>
                 <li>
                   item (string)  Optional - item is always 'assignment'
                 </li>
                 <li>
-                  itemid int  Optional - when errorcode is 3 then itemid is
-                  an assignment id. When errorcode is 1, itemid is a course
-                  module id
+                  itemid (int)  Optional - when errorcode is 3 then itemid 
+                  is an assignment id. When errorcode is 1, itemid is a 
+                  course module id
                 </li>
                 <li>
                   warningcode (string)   - errorcode can be 3 (no grades 
@@ -463,6 +442,11 @@
               </ul>
             </li>
           </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if assignmentids input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -497,34 +481,34 @@
         <dd>A dictionary with:
           <ul>
             <li>
-              assignments List of Dictionary  - assignment submissions:
+              assignments (List of Dictionary)  - assignment submissions:
               <ul>
                 <li>
-                  assignmentid int   - assignment id
+                  assignmentid (int)   - assignment id
                 </li>
                 <li>
-                  submissions List of Dictionary - list of submissions:
+                  submissions (List of Dictionary) - list of submissions:
                   <ul>
                     <li>
-                      id int   - submission id
+                      id (int)   - submission id
                     </li>
                     <li>
-                      userid int   - student id
+                      userid (int)   - student id
                     </li>
                     <li>
-                      timecreated int   - submission creation time
+                      timecreated (int)   - submission creation time
                     </li>
                     <li>
-                      timemodified int   - submission last modified time
+                      timemodified (int)   - submission last modified time
                     </li>
                     <li>
                       status (string)   - submission status
                     </li>
                     <li>
-                      groupid int   - group id
+                      groupid (int)   - group id
                     </li>
                     <li>
-                      plugins List of Dictionary Optional - plugins
+                      plugins (List of Dictionary) Optional - plugins
                       <ul>
                         <li>
                           type (string)   - submission plugin type
@@ -533,14 +517,14 @@
                           name (string)   - submission plugin name
                         </li>
                         <li>
-                          fileareas List of Dictionary Optional - 
+                          fileareas (List of Dictionary) Optional - 
                           fileareas:
                           <ul>
                             <li>
                               area (string)   - file area
                             </li>
                             <li>
-                              files List of Dictionary Optional - files
+                              files (List of Dictionary) Optional - files
                               <ul>
                                 <li>
                                   filepath (string)   - file path
@@ -550,8 +534,8 @@
                           </ul>
                         </li>
                         <li>
-                          editorfields List of Dictionary Optional - editor
-                          fields:
+                          editorfields (List of Dictionary) Optional - 
+                          editor fields:
                           <ul>
                             <li>
                               name (string)   - field name
@@ -563,7 +547,7 @@
                               text (string)   - field value
                             </li>
                             <li>
-                              format int   - text format (1 = HTML, 0 = 
+                              format (int)   - text format (1 = HTML, 0 = 
                               MOODLE, 2 = PLAIN or 4 = MARKDOWN)
                             </li>
                           </ul>
@@ -575,13 +559,13 @@
               </ul>
             </li>
             <li>
-              warnings List of Dictionary Optional - list of warnings:
+              warnings (List of Dictionary) Optional - list of warnings:
               <ul>
                 <li>
                   item (string)  Optional - item
                 </li>
                 <li>
-                  itemid int  Optional - item id
+                  itemid (int)  Optional - item id
                 </li>
                 <li>
                   warningcode (string)   - the warning code can be used by 
@@ -594,6 +578,11 @@
               </ul>
             </li>
           </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if assignmentids input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
   </dl>
 </td></tr></table>
 </div>
@@ -624,7 +613,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri May 24 16:26:21 2013
+    Generated by Epydoc 3.0.1 on Sun May 26 05:10:56 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

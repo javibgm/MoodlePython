@@ -18,7 +18,7 @@ def test_get_assigments(test):
         show(t.get_assigments([], ['moodle/user:viewdetails']))
     elif test == '3':
     # Filter with a manager role capability
-        show(t.get_assigments('', ['enrol/authorize:managepayments']))
+        show(t.get_assigments(capabilities=['enrol/authorize:managepayments']))
     elif test == '4':
         show(t.get_assigments([2],['moodle/user:viewdetails']))
     elif test == '5':
@@ -66,6 +66,6 @@ def test_get_submissions(test):
 
 if __name__ == '__main__':
     t = MoodLib(info['web'], users['manager']['token'])
-    #test_get_assigments(raw_input())
+    test_get_assigments(raw_input())
     #test_get_grades(raw_input())
     #test_get_submissions(raw_input())

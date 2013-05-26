@@ -12,7 +12,7 @@ delete courses, etc).
 All classes inherits from MoodClass and MoodLib class inherit from all classes
 so every function of the library can be used from MoodLib.
 '''
-import sys, urllib, urllib2, json
+import urllib, requests
 
 class MoodClass():
     '''
@@ -41,9 +41,8 @@ class MoodClass():
             raise ValueError('Parameters necesary: user, password, service_short_name')
         url= self.conn + '/moodle/login/token.php'
         param = urllib.urlencode({'username':user,'password':pasw,'service':service})
-        req = urllib2.Request(url, param)
-        response = urllib2.urlopen(req)
-        response = json.load(response)
+        headers = {'Content-type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
+        response = requests.post(url, data=param, headers=headers).json()
         try:
             self.token = response['token']
         except KeyError:
@@ -69,8 +68,8 @@ class MoodClass():
         @type pasw: String
         @param service: the Moodle's web service to use
         @type service: String '''
-        self.conn = web #: URL where moodle's site is
-        self.token = token #: User's token of a web service
+        self.conn = web # URL where moodle's site is
+        self.token = token # User's token of a web service
         if (self.token==''):
             self.token = self.create_token(user, pasw, service)
 
@@ -88,24 +87,19 @@ class MoodClass():
         POST to Moodle the function and parameters specified
         and returns the response in JSON format.
         Every MoodClass's subclasses call at this function.
-         @return: Moodle's answer in JSON format.
-         @raise ValueError: if an error happens and Moodle can not
-         process the petition. The problem is specified in the exception.
+        @return: Moodle's answer in JSON format.
+        @raise ValueError: if an error happens and Moodle can not
+        process the petition. The problem is specified in the exception.
          '''
-        #url = self.conn + '/moodle/webservice/rest/server.php?wstoken='+self.token+"&wsfunction="+function+"&moodlewsrestformat=json"
         url = self.conn + '/moodle/webservice/rest/server.php'
         param = urllib.urlencode({'wstoken':self.token,'wsfunction':function,'moodlewsrestformat':'json'}) + '&' + param
-        req = urllib2.Request(url, param)
-        req.add_header("Content-type", "application/x-www-form-urlencoded")
-        req.add_header("Accept", "application/json")
-        response = urllib2.urlopen(req)
-        source = json.load(response)
-        print response.getcode()
+        headers = {'Content-type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
+        response = requests.post(url, data=param, headers=headers).json()
         try:
-            raise ValueError('Moodle exception:' + source['errorcode'] + '\n Message: ' + source['message'])
+            raise ValueError('Moodle exception:' + response['errorcode'] + '\n Message: ' + response['message'])
         except (TypeError, KeyError):
             pass
-        return source
+        return response
     
     def check_reqParameters(self, item, paramnames):
         ''' 
@@ -141,7 +135,7 @@ class MoodClass():
         course[0]=3 is returned.
         
         @raise TypeError: if a required parameter from paramnames
-        is not in item dictionary.
+        is not in item dictionary. Missing parameter name is specified.
         @return: Moodle's request string with provided parameters
         @param item: parameters values with paramnames keys
         @type item: Dictionary or String
@@ -164,7 +158,7 @@ class MoodClass():
             elif (paramnames==''):  # this generate this string structure: itemname[num]=item
                 param = urllib.urlencode({itemname + '['+str(num)+']': item})
         except:
-            raise TypeError('Invalid function parameters')
+            raise TypeError('Invalid function parameters. Missing parameter is: ' + paramname)
         return param
     
     def add_optParameter(self, item, itemname, num, paramname=''):
