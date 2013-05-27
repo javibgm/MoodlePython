@@ -9,8 +9,9 @@ from MoodPyth.files import Files
 from MoodPyth.forum import Forum
 from MoodPyth.group import Group
 from MoodPyth.message import Message
+from MoodPyth.notes import Notes
 
-class MoodLib(MoodClass, Assign, Calendar, Cohorts, Course, Enrol, Files, Forum, Group, Message):
+class MoodLib(MoodClass, Assign, Calendar, Cohorts, Course, Enrol, Files, Forum, Group, Message, Notes):
     '''
     Basic Moodle python class. This class inherits from all other classes in order to have all their methods so it can execute every Moodle function. 
     '''
