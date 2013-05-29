@@ -10,7 +10,12 @@ def test_get_files(test):
         print 'Parameters: contextid, component, filearea, itemid, filepath, filename'
         show(t.get_files(raw_input(), raw_input(), raw_input(), raw_input(), raw_input(), raw_input()))
     elif test == '1':
-        show(t.get_files(45, 'assignsubmission_file', 'submission_files', 1, '/', ''))
+        show(t.get_files(45,
+                         'assignsubmission_file',
+                         'submission_files',
+                         1,
+                         '/',
+                         ''))
     # Errors
     elif test == '2':
         show(t.get_files(45, 'assignsubmission_file', 'submission_files', 1, '/'))

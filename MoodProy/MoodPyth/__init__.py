@@ -93,6 +93,7 @@ class MoodClass():
          '''
         url = self.conn + '/moodle/webservice/rest/server.php'
         param = urllib.urlencode({'wstoken':self.token,'wsfunction':function,'moodlewsrestformat':'json'}) + '&' + param
+        print param
         headers = {'Content-type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
         response = requests.post(url, data=param, headers=headers).json()
         try:

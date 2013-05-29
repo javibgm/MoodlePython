@@ -18,27 +18,36 @@ Useful info: http://docs.moodle.org/dev/Web_services
     PROBLEMA: la funcion get_assigments te da el valor para el usuario actual, no para otros usuarios
     sigo sin saber como obtener el fichero subido por el alumno
     SOLUCION: nueva funcion que da esa funcionalidad en Moodle 2.5: mod_assign_get_submissions
-16-Una funcion para subir un documento (mirar como lo hace moodle via web)
+16-Una funcion para subir un documento (mirar como lo hace moodle via web):
+files.upload_files: sube ficheros a la zona privada de un usuario. Para otros ficheros mirar seccion PROBLEMS - Implementation
 
 
 TAREAS HECHAS:
-1-Instalar Moodle - hecho
-2-Ver si se pueden saber los servicios externos web de un moodle desde fuera - hecho
+1-Instalar Moodle -> hecho
+2-Ver si se pueden saber los servicios externos web de un moodle desde fuera -> hecho
 3-Hacer Documentacion, apuntar URls y pasos a seguir para hacer lo que he hecho
-4-Ver si el Moodle me puede devolver JSON en vez de XML - hecho (Documentation)
-5-Hacer que se pueda acceder al moodle desde fuera de mi red - hecho
-7-Intentar ejecutar funciones con docencia.etsiit.urjc.es. - hecho
+4-Ver si el Moodle me puede devolver JSON en vez de XML -> hecho (Documentation)
+5-Hacer que se pueda acceder al moodle desde fuera de mi red -> hecho
+7-Intentar ejecutar funciones con docencia.etsiit.urjc.es. -> hecho
     Comprobar porque a todos los POST devuelve un 200 OK sin datos.
     Motivo: {"error":"Los servicios Web deben estar habilitados en las caracter\u00edsticas avanzadas.","stacktrace":null,"debuginfo":null,"reproductionlink":null}
     Programa de prueba testMoodle.py
-8-Modulo de python para json (librería por defecto de python): import json - hecho
-9-Comprobar los permisos necesarios para obtener el token - hecho (Documentation)
-11-Mandar enlace de github a Barahona cuando lo tenga - hecho
-13-Probar funciones contra: contrcampusonline.urjc.es - hecho
+8-Modulo de python para json (librería por defecto de python): import json -> hecho
+9-Comprobar los permisos necesarios para obtener el token -> hecho (Documentation)
+11-Mandar enlace de github a Barahona cuando lo tenga -> hecho
+13-Probar funciones contra: contrcampusonline.urjc.es -> hecho
     No funciona porque: Web service is not available (it doesn't exist or might be disabled)
-15-Evaluar si es util crear una funcion para meter los parametros de la peticion de forma generica - hecho
-17-Instalar moodle ver 2.5dev: hecho
-18-Dividir el proyecto en modulos: creado modulo MoodProy - hecho
+15-Evaluar si es util crear una funcion para meter los parametros de la peticion de forma generica -> hecho
+17-Instalar moodle ver 2.5dev- > hecho
+18-Dividir el proyecto en modulos: creado modulo MoodProy -> hecho
+19-Instalar Epydoc -> hecho
+20-Message: Al usar la funcion core_message_search_contacts da un error: 500 HTTP Internal server error
+Mirando fichero de log de apache (cat /var/log/apache2/error.log | less) vemos que en el fichero /var/www/moodle/message/externallib.php se hace una llamada a una función que no existe (user_get_user_details())
+Para arreglarlo hay que "importar" un archivo al pricipio de la función: 
+        require_once($CFG->dirroot . '/user/lib.php'); 
+Preguntar en Moodle -> hecho
+21-Instalar graphviz (http://www.graphviz.org/About.php) -> hecho
+
 
 ALTERNATIVA DE PROYECTO: usar scrapping (mediante HTML):
 bibliotecas utiles: urlib, urlib2, requests (python-request.org)
@@ -58,14 +67,24 @@ Design: Contar la estructura de la libreria aquí?
         Alternativas a todas las decisiones de diseño? Nombrarlas o detallarlas?
 
 Implementation:
+- Calendar: get_calendar_events
+This function only returns events that have been created with web services, not those created via web interface
 - Files: Only can upload files to the user's private file area.
 Cannot create resources to share files with web services: https://moodle.org/mod/forum/discuss.php?d=226256
-- Message: Al usar la funcion core_message_search_contacts da un error: 500 HTTP Internal server error
-Mirando fichero de log de apache (cat /var/log/apache2/error.log | less) vemos que en el fichero /var/www/moodle/message/externallib.php se hace una llamada a una función que no existe (user_get_user_details())
-Para arreglarlo hay que "importar" un archivo al pricipio de la función: 
-        require_once($CFG->dirroot . '/user/lib.php'); 
-Preguntar en Moodle: lo que me pasa y preguntar si es un bug o no (bug report). ->
-
+Files upload and download are controlled for each module were the file is (for example, uploading a file for an assigment is controlled by the assignment Moodle module)
+https://moodle.org/mod/forum/discuss.php?d=200690
+http://docs.moodle.org/dev/Assignment_Web_Services
+Add a resource from a coustom web service: https://moodle.org/mod/forum/discuss.php?d=226256
+However, the only module that provides downloadable modules is the course module with course_contests function
+- Notes:
+delete_notes and get_notes functions wrong implemented:
+        Wrong parameters given to the function which checks the parameters provided in moodle/notes/externallib.php:
+        line 229: $params = self::validate_parameters(self::delete_notes_parameters(), $notes);
+        changed to: $params = self::validate_parameters(self::delete_notes_parameters(), array('notes'=>$notes));
+        line 295: $params = self::validate_parameters(self::get_notes_parameters(), $notes);
+        changed to: $params = self::validate_parameters(self::get_notes_parameters(), array('notes'=>$notes));
+get_notes: if you try to get a non-existing note, it will return an exception (Invalid response value detected),
+            but i think it should return a warning in the response data structure
 
 API documentation:
 -! where define parameters and return values structure -> In this API

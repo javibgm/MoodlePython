@@ -54,11 +54,13 @@ def test_delete_calendar_events(test):
     if test == '0':
     # Manually delete 1 event
         print 'Event ID to delete:'
-        show(t.delete_calendar_events([{'eventid':raw_input(),'repeat':0}]))
+        show(t.delete_calendar_events([{'eventid':raw_input(),
+                                        'repeat':0}]))
     elif test == '1':
     # Manually delete 1 event series
         print 'Event ID to delete with series(repeated event):'
-        show(t.delete_calendar_events([{'eventid':raw_input(),'repeat':1}]))
+        show(t.delete_calendar_events([{'eventid':raw_input(),
+                                        'repeat':1}]))
     # Errors:
     #  try to delete a global event with student user
     elif test == '2':
@@ -66,9 +68,11 @@ def test_delete_calendar_events(test):
     elif test == '3':
         show(t.delete_calendar_events([{'eventid':1}]))
     elif test == '4':
-        show(t.delete_calendar_events([{'eventid':1,'repeat':2}]))
+        show(t.delete_calendar_events([{'eventid':1,
+                                        'repeat':2}]))
     elif test == '5':
-        show(t.delete_calendar_events([{'eventid':-1,'repeat':0}]))
+        show(t.delete_calendar_events([{'eventid':-1,
+                                        'repeat':0}]))
 
 def test_get_calendar_events(test):
     if test == '0':

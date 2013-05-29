@@ -14,7 +14,8 @@ def test_course_contents(test):
         print 'Course ID to show contents:'
         show(t.course_contents(raw_input()))
     elif test == '1':
-        show(t.course_contents('2',[{'name':'optionname','value':'valuename'}]))
+        show(t.course_contents('2',[{'name':'optionname',
+                                     'value':'valuename'}]))
     elif test == '2':
         show(t.course_contents(2))
     # Errors
@@ -45,17 +46,37 @@ def test_get_courses(test):
 def test_create_courses(test):
     array=[]
     if test=='1':
-        array = [{'fullname':'Python course','shortname':'PythCourse','categoryid':'1'}]
+        array = [{'fullname':'Python course',
+                  'shortname':'PythCourse',
+                  'categoryid':'1'}]
     elif test =='2':
-        array = [{'fullname':'Python course1','shortname':'PythCourse1','categoryid':'1'},{'fullname':'Python course2','shortname':'PythCourse2','categoryid':'1'}]
+        array = [{'fullname':'Python course1',
+                  'shortname':'PythCourse1',
+                  'categoryid':'1'},
+                 {'fullname':'Python course2',
+                  'shortname':'PythCourse2',
+                  'categoryid':'1'}]
     elif test =='3':
-        array = [{'fullname':'Python course','shortname':'PythCourse','categoryid':'1', 'courseformatoptions':[{'name':'numsections','value':'10'},{'name':'hiddensections','value':'0'},{'name':'coursedisplay','value':'0'}]}]
+        array = [{'fullname':'Python course',
+                  'shortname':'PythCourse',
+                  'categoryid':'1',
+                  'courseformatoptions':
+                    [{'name':'numsections',
+                      'value':'10'},
+                     {'name':'hiddensections',
+                      'value':'0'},
+                     {'name':'coursedisplay',
+                      'value':'0'}]
+                  }]
     # Errors: try to create 2 categories with the same idnumber -> execute 2 times test 1
     elif test =='4':
-        array = [{'shortname':'PythCourse','categoryid':'1'}]
+        array = [{'shortname':'PythCourse',
+                  'categoryid':'1'}]
     elif test =='5':
     # Add a course in a non-existent category
-        array = [{'fullname':'Python course','shortname':'PythCourse','categoryid':'100001'}]
+        array = [{'fullname':'Python course',
+                  'shortname':'PythCourse',
+                  'categoryid':'100001'}]
     show(t.create_courses(array))
 
 def test_delete_courses(test):
@@ -74,25 +95,42 @@ def test_delete_courses(test):
 def test_update_courses(test):
     array=[]
     if test=='1':
-        array =[{'id':'2','fullname':'Course 1 modified'}]
+        array =[{'id':'2',
+                 'fullname':'Course 1 modified'}]
     # Warnings
     elif test=='2':
-        array =[{'id':'200','fullname':'Course 1 modified'}]
+        array =[{'id':'200',
+                 'fullname':'Course 1 modified'}]
     # Errors
     elif test=='3':
         array =[{'fullname':'Course lost'}]
     elif test=='4':
-        array =[{'id':'2','categoryid':'a'}]
+        array =[{'id':'2',
+                 'categoryid':'a'}]
     show(t.update_courses(array))
     
 def test_duplicate_course(test):
     if test=='1':
-        show(t.duplicate_course(2, 'Course 1 copy', 'Course1copy', '1'))
+        show(t.duplicate_course(2,
+                                'Course 1 copy',
+                                'Course1copy', '1'))
     elif test=='2':
-        show(t.duplicate_course(2, 'Course 1 copy', 'Course1copy', '1', 1, [{'name':'activities','value':'0'},{'name':'blocks','value':'0'},{'name':'filters','value':'0'},
-                                                                            {'name':'users','value':'0'},{'name':'role_assignments','value':'0'}]))
+        show(t.duplicate_course(2,
+                                'Course 1 copy',
+                                'Course1copy',
+                                '1',
+                                1,
+                                [{'name':'activities','value':'0'},
+                                 {'name':'blocks','value':'0'},
+                                 {'name':'filters','value':'0'},
+                                 {'name':'users','value':'0'},
+                                 {'name':'role_assignments','value':'0'}]))
     elif test=='3':
-        show(t.duplicate_course(2, 'Course 1 copy', 'Course1copy', '1','a'))
+        show(t.duplicate_course(2,
+                                'Course 1 copy',
+                                'Course1copy',
+                                '1',
+                                'a'))
 
 def test_import_course(test):
     if test=='1':
@@ -100,10 +138,21 @@ def test_import_course(test):
         show(t.import_course(2, 15))
     elif test=='2':
     # Import only activities 
-        show(t.import_course(2, 15, 0,[{'name':'activities','value':'1'},{'name':'blocks','value':'0'},{'name':'filters','value':'0'}]))
+        show(t.import_course(2,
+                             15,
+                             0,
+                             [{'name':'activities','value':'1'},
+                              {'name':'blocks','value':'0'},
+                              {'name':'filters','value':'0'}]))
     elif test=='3':
     # Delete contents and do not import anything 
-        show(t.import_course(2, 15, 1,[{'name':'activities','value':'0'},{'name':'blocks','value':'0'},{'name':'filters','value':'0'}]))
+        show(t.import_course(2,
+                             15,
+                             1,
+                             [{'name':'activities','value':'0'},
+                              {'name':'blocks','value':'0'},
+                              {'name':'filters','value':'0'}
+                              ]))
     
 def test_get_categories(test):
     array = []
@@ -137,9 +186,15 @@ def test_get_categories(test):
 def test_create_categories(test):
     array = []
     if test == '1':
-        array = [{'name': 'Python Category', 'idnumber':'1', 'description':'Category created with MoodPyth'}]
+        array = [{'name': 'Python Category',
+                  'idnumber':'1',
+                  'description':'Category created with MoodPyth'}]
     elif test == '2':
-        array=[{'name': 'Python Category', 'idnumber':'2', 'description':'Category created with MoodPyth','parent':'1','descriptionformat':'0'}]
+        array=[{'name': 'Python Category',
+                'idnumber':'2',
+                'description':'Category created with MoodPyth',
+                'parent':'1',
+                'descriptionformat':'0'}]
     # Errors
     elif test == '3':
         array = [{'idnumber':'1'}]
@@ -154,7 +209,7 @@ def test_update_categories(test):
         catName = t.get_categories([{'key': 'id', 'value':catID}])[0]['name']
         array = [{'id':catID,'name': 'CATEGORY NAME CHANGED'}]
         show(t.update_categories(array))
-        print 'Category name changed. Press any key to its name be returned...'
+        print 'Category name changed. Press enter key to its name be returned...'
         raw_input()
         array = [{'id':catID,'name': catName}]
     # Errors
@@ -173,7 +228,9 @@ def test_delete_categories(test):
     elif test=='1':
     # create a category, inside a course and delete everything
         categoryID = t.create_categories([{'name': 'Python Category'}])[0]['id']
-        t.create_courses([{'fullname':'Python course','shortname':'PythCourse','categoryid':categoryID}])
+        t.create_courses([{'fullname':'Python course',
+                           'shortname':'PythCourse',
+                           'categoryid':categoryID}])
         print 'Category and course created. Press enter to continue...'
         raw_input()
         array = [{'id':categoryID,'recursive':1}]
@@ -181,26 +238,34 @@ def test_delete_categories(test):
     # create two categories, inside one create a course, delete that category and copy the content to the second course
         categoryID1 = t.create_categories([{'name': 'Python Category'}])[0]['id']
         categoryID2 = t.create_categories([{'name': 'Python Category 2'}])[0]['id']
-        t.create_courses([{'fullname':'Python course','shortname':'PythCourse','categoryid':categoryID1}])
+        t.create_courses([{'fullname':'Python course',
+                           'shortname':'PythCourse',
+                           'categoryid':categoryID1}])
         print 'Categories and course created. Press enter to continue... (delete category and copy the content to the other one)'
         raw_input()
-        array = [{'id':categoryID1,'newparent':categoryID2}]
+        array = [{'id':categoryID1,
+                  'newparent':categoryID2}]
         show(t.delete_categories(array))
         print 'Category deleted, course moved to second category. Press enter to continue... (delete the other category and the course)'
         raw_input()
-        array = [{'id':categoryID2,'recursive':1}]
+        array = [{'id':categoryID2,
+                  'recursive':1}]
     elif test=='3':
     # create two categories, one inside other one, and inside create a course. Delete the child category and copy the content to the parent
         categoryIDparent = t.create_categories([{'name': 'Python Category'}])[0]['id']
-        categoryIDchild = t.create_categories([{'name': 'Python Category 2','parent':categoryIDparent}])[0]['id']
-        t.create_courses([{'fullname':'Python course','shortname':'PythCourse','categoryid':categoryIDchild}])
+        categoryIDchild = t.create_categories([{'name': 'Python Category 2',
+                                                'parent':categoryIDparent}])[0]['id']
+        t.create_courses([{'fullname':'Python course',
+                           'shortname':'PythCourse',
+                           'categoryid':categoryIDchild}])
         print 'Categories and course created. Press enter to continue... (delete category and copy the content to the parent)'
         raw_input()
         array = [{'id':categoryIDchild}]
         show(t.delete_categories(array))
         print 'Category deleted, course moved to parent category. Press enter to continue... (delete the other category and the course)'
         raw_input()
-        array = [{'id':categoryIDparent,'recursive':1}]
+        array = [{'id':categoryIDparent,
+                  'recursive':1}]
     #Errors
     elif test=='4':
         pass

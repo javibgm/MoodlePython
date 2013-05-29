@@ -35,7 +35,8 @@ def test_send_instant_messages(test):
     if test == '0':
     # Send a message to a user manually
         print 'Required parameters: User ID, text message'
-        show(t.send_instant_messages([{'touserid':raw_input(), 'text':raw_input()}]))
+        show(t.send_instant_messages([{'touserid':raw_input(),
+                                       'text':raw_input()}]))
 
 def test_unblock_contacts(test):
     if test == '0':

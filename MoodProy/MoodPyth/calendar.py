@@ -104,7 +104,7 @@ class Calendar(MoodClass):
         @type ignorehidden: Integer
         @return: a dictionary with the events which match with the search parameters and warnings.
         @raise TypeError: if eventids, courseids or groupids input parameters types are not lists.
-        @note: This function only returns events that have been created with MoodPyth '''
+        @note: This function only returns events that have been created with web services '''
         function = 'core_calendar_get_calendar_events'
         if type(eventids)!=type([]) or type(courseids)!=type([]) or type(groupids)!=type([]):
             raise TypeError('Input must be lists of integers')

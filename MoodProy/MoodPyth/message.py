@@ -8,9 +8,10 @@ class Message(MoodClass):
     '''
     def block_contacts(self, userids):
         ''' Block contacts.
-        @return: List of warnings.
         @param userids: 1 or more user identifiers.
-        @type userids: List of Integer '''
+        @type userids: List of Integer 
+        @return: List of warnings.
+        '''
         if type(userids)!=type([]) or userids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 user id')
         function = 'core_message_block_contacts'
@@ -25,9 +26,10 @@ class Message(MoodClass):
     
     def create_contacts(self, userids):
         ''' Add contacts to the contact list.
-        @return: List of warnings.
         @param userids: 1 or more user identifiers.
-        @type userids: List of Integer '''
+        @type userids: List of Integer
+        @return: List of warnings.
+        '''
         if type(userids)!=type([]) or userids==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 user id')
         function = 'core_message_create_contacts'

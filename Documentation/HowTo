@@ -65,7 +65,5 @@ Settings->Site administration->Plugins->Web services->Manage protocols->Rest pro
 1) Create a system role(Settings->Site administration->Users->Permissions->Define roles): Context types where this role may be assigned: system
 2) Select this role permissions: webservice/rest:use, moodle/webservice:createtoken
 3) Assign this role to a user(Settings->Site administration->Users->Permissions->Assign system roles)
--Download files:
-http://docs.moodle.org/dev/Web_services_files_handling#File_download
-
-
+-Download and upload files:
+http://docs.moodle.org/dev/Web_services_files_handling
