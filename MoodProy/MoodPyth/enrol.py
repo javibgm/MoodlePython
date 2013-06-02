@@ -91,8 +91,8 @@ class Enrol(MoodClass):
     def get_enrolled_users_with_capability(self, coursecapabilities, options=''):
         ''' For each course and capability specified, return a list of the users that are enrolled in that course and have that capability. 
         @param coursecapabilities: dictionaries with a course identifier and capabilities to get the enrolled users in that course with those capabilities:
-            courseid (int)   - Course ID number in the Moodle course table
-            capabilities (List of string) - Capability names, such as "mod/forum:viewdiscussion"
+            - courseid (int)   - Course ID number in the Moodle course table
+            - capabilities (List of string) - Capability names, such as "mod/forum:viewdiscussion"
         @type coursecapabilities: List of Dictionary
         @param options:  List of enrollment options to filter users:
             - name (string)  - the option name. Expected names (with their possible values formats) are:

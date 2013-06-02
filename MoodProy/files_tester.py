@@ -28,14 +28,9 @@ def test_get_files(test):
 def test_upload_file():
     # Manually upload the specified file to the main private area folder
     print 'Parameter: file path to upload'
-    show(t.upload_file(raw_input(),'/Testfiles/'))
-
-def test_down_file():
-    print 'Course ID to download file:'
-    t.down_file(raw_input())
+    show(t.upload_file(raw_input(),'1/Testfiles/'))
     
 if __name__ == '__main__':
     t = MoodLib(info['web'], users['student']['token'])
     #test_get_files(raw_input())
     test_upload_file()
-    #test_down_file()

@@ -1,8 +1,8 @@
-''' Cohorts class module '''
+''' Cohort class module '''
 from MoodPyth import MoodClass
 import urllib
 
-class Cohorts(MoodClass):
+class Cohort(MoodClass):
     '''
     Class with Moodle web services functions that work with cohorts
     '''

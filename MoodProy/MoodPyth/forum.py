@@ -13,7 +13,7 @@ class Forum(MoodClass):
             - id (int)   - Forum id
             - course (int)   - Course id
             - forum (int)   - The forum id
-            - name string   - Discussion name
+            - name (string)   - Discussion name
             - userid (int)   - User id
             - groupid (int)   - Group id
             - assessed (int)   - Is this assessed?

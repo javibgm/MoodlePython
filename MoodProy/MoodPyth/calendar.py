@@ -48,9 +48,9 @@ class Calendar(MoodClass):
                 - message (string)   - untranslated English message to explain the warning
         @raise TypeError: if events input parameter type is not a list or is an empty list.
         '''
-        function = 'core_calendar_create_calendar_events'
         if type(events)!=type([]) or events==[]:
             raise TypeError('Input must be a list of dictionaries with, at least, 1 dictionary with the key "name"')
+        function = 'core_calendar_create_calendar_events'
         param = ''
         num=0
         reqParameters = ['name']
@@ -104,7 +104,7 @@ class Calendar(MoodClass):
         @type ignorehidden: Integer
         @return: a dictionary with the events which match with the search parameters and warnings.
         @raise TypeError: if eventids, courseids or groupids input parameters types are not lists.
-        @note: This function only returns events that have been created with web services '''
+        @bug: This function only returns events that have been created with web services '''
         function = 'core_calendar_get_calendar_events'
         if type(eventids)!=type([]) or type(courseids)!=type([]) or type(groupids)!=type([]):
             raise TypeError('Input must be lists of integers')

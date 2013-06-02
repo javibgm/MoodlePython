@@ -106,9 +106,9 @@
 <a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">                - message (string)   - untranslated English message to explain the warning</tt> </tt>
 <a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">        @raise TypeError: if events input parameter type is not a list or is an empty list.</tt> </tt>
 <a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
-<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">function</tt> <tt class="py-op">=</tt> <tt class="py-string">'core_calendar_create_calendar_events'</tt> </tt>
-<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">events</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">events</tt><tt class="py-op">==</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
-<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">'Input must be a list of dictionaries with, at least, 1 dictionary with the key "name"'</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">events</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">events</tt><tt class="py-op">==</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">'Input must be a list of dictionaries with, at least, 1 dictionary with the key "name"'</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-name">function</tt> <tt class="py-op">=</tt> <tt class="py-string">'core_calendar_create_calendar_events'</tt> </tt>
 <a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
 <a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">num</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> </tt>
 <a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">reqParameters</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> </tt>
@@ -162,7 +162,7 @@
 <a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        @type ignorehidden: Integer</tt> </tt>
 <a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">        @return: a dictionary with the events which match with the search parameters and warnings.</tt> </tt>
 <a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">        @raise TypeError: if eventids, courseids or groupids input parameters types are not lists.</tt> </tt>
-<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        @note: This function only returns events that have been created with MoodPyth '''</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        @bug: This function only returns events that have been created with web services '''</tt> </tt>
 <a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">function</tt> <tt class="py-op">=</tt> <tt class="py-string">'core_calendar_get_calendar_events'</tt> </tt>
 <a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">eventids</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">courseids</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">groupids</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 <a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">'Input must be lists of integers'</tt><tt class="py-op">)</tt> </tt>
@@ -233,7 +233,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon May 27 15:01:34 2013
+    Generated by Epydoc 3.0.1 on Sat Jun  1 13:22:53 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

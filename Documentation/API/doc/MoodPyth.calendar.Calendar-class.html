@@ -59,21 +59,21 @@
 <h1 class="epydoc">Class Calendar</h1><p class="nomargin-top"><span class="codelink"><a href="MoodPyth.calendar-pysrc.html#Calendar">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_moodpyth_4" name="uml_class_diagram_for_moodpyth_4">
-<area shape="rect" href="MoodPyth.MoodClass-class.html#__init__" title="Creates the connection with Moodle." alt="" coords="33,36,407,55"/>
-<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameter" title="MoodPyth.MoodClass.add_optParameter" alt="" coords="33,55,407,73"/>
-<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameters" title="Auxiliary function: adds optional function parameters." alt="" coords="33,73,407,92"/>
-<area shape="rect" href="MoodPyth.MoodClass-class.html#add_reqParameters" title="Auxiliary function: adds required function parameters." alt="" coords="33,92,407,111"/>
-<area shape="rect" href="MoodPyth.MoodClass-class.html#check_reqParameters" title="Auxiliary function: checks if all required parameters are in the dictionary and prints missing parameters" alt="" coords="33,111,407,129"/>
-<area shape="rect" href="MoodPyth.MoodClass-class.html#connect" title="POST to Moodle the function and parameters specified and returns the &#160;response in JSON format." alt="" coords="33,129,407,148"/>
-<area shape="rect" href="MoodPyth.MoodClass-class.html#create_token" title="Ask to Moodle the token of the user to the specified web service and set &#160;its value to the token variable." alt="" coords="33,148,407,167"/>
-<area shape="rect" href="MoodPyth.MoodClass-class.html#get_token" title="Returns the token value." alt="" coords="33,167,407,185"/>
-<area shape="rect" href="MoodPyth.MoodClass-class.html#set_token" title="Sets the token value" alt="" coords="33,185,407,204"/>
-<area shape="rect" href="MoodPyth.MoodClass-class.html" title="Main Moodle python class." alt="" coords="32,11,408,205"/>
-<area shape="rect" href="MoodPyth.MoodLib.MoodLib-class.html" title="Basic Moodle python class." alt="" coords="161,347,279,373"/>
-<area shape="rect" href="MoodPyth.calendar.Calendar-class.html#create_calendar_events" title="Create calendar events" alt="" coords="55,260,833,279"/>
-<area shape="rect" href="MoodPyth.calendar.Calendar-class.html#delete_calendar_events" title="Delete calendar events" alt="" coords="55,279,833,297"/>
-<area shape="rect" href="MoodPyth.calendar.Calendar-class.html#get_calendar_events" title="Get calendar events." alt="" coords="55,297,833,316"/>
-<area shape="rect" href="MoodPyth.calendar.Calendar-class.html" title="Class with Moodle web services functions that work with calendar events" alt="" coords="53,235,835,317"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#__init__" title="Creates the connection with Moodle." alt="" coords="443,36,816,55"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameter" title="MoodPyth.MoodClass.add_optParameter" alt="" coords="443,55,816,73"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameters" title="Auxiliary function: adds optional function parameters." alt="" coords="443,73,816,92"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_reqParameters" title="Auxiliary function: adds required function parameters." alt="" coords="443,92,816,111"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#check_reqParameters" title="Auxiliary function: checks if all required parameters are in the dictionary and prints missing parameters" alt="" coords="443,111,816,129"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#connect" title="POST to Moodle the function and parameters specified and returns the &#160;response in JSON format." alt="" coords="443,129,816,148"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#create_token" title="Ask to Moodle the token of the user to the specified web service and set &#160;its value to the token variable." alt="" coords="443,148,816,167"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#get_token" title="Returns the token value." alt="" coords="443,167,816,185"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#set_token" title="Sets the token value" alt="" coords="443,185,816,204"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html" title="Main Moodle python class." alt="" coords="441,11,817,205"/>
+<area shape="rect" href="MoodPyth.calendar.Calendar-class.html#create_calendar_events" title="Create calendar events" alt="" coords="17,260,796,279"/>
+<area shape="rect" href="MoodPyth.calendar.Calendar-class.html#delete_calendar_events" title="Delete calendar events" alt="" coords="17,279,796,297"/>
+<area shape="rect" href="MoodPyth.calendar.Calendar-class.html#get_calendar_events" title="Get calendar events." alt="" coords="17,297,796,316"/>
+<area shape="rect" href="MoodPyth.calendar.Calendar-class.html" title="Class with Moodle web services functions that work with calendar events" alt="" coords="16,235,797,317"/>
+<area shape="rect" href="MoodPyth.MoodLib.MoodLib-class.html" title="Basic Moodle python class." alt="" coords="571,347,688,373"/>
 </map>
   <img src="uml_class_diagram_for_moodpyth_4.gif" alt='' usemap="#uml_class_diagram_for_moodpyth_4" ismap="ismap" class="graph-without-title" />
 </center>
@@ -423,9 +423,9 @@
         lists.</li>
     </ul></dd>
   </dl>
-<div class="fields">      <p><strong>Note:</strong>
-        This function only returns events that have been created with 
-        MoodPyth
+<div class="fields">      <p><strong>Bug:</strong>
+        This function only returns events that have been created with web 
+    services
       </p>
 </div></td></tr></table>
 </div>
@@ -456,7 +456,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon May 27 15:01:33 2013
+    Generated by Epydoc 3.0.1 on Sat Jun  1 13:22:51 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

@@ -1,6 +1,10 @@
+''' Notes class module '''
 from MoodPyth import MoodClass
 
 class Notes(MoodClass):
+    '''
+    Class with Moodle web services functions that work with notes
+    '''
     def create_notes(self, notes):
         ''' Create notes about some users.
         @param notes: 1 or more notes to create:
@@ -42,6 +46,11 @@ class Notes(MoodClass):
             - warningcode (string)   - errorcode can be badparam (incorrect parameter), savedfailed (could not be modified), or badid (note does not exist)
             - message (string)   - untranslated English message to explain the warning
         @raise TypeError: if notes input parameter type is not a list or is an empty list.
+        @bug: always return an invalidparameter exception -> fix: in moodle/notes/externallib.php:
+        
+        line 229: $params = self::validate_parameters(self::delete_notes_parameters(), $notes);
+        
+        changed to: $params = self::validate_parameters(self::delete_notes_parameters(), array('notes'=>$notes));
         '''
         if type(notes)!=type([]) or notes==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 note id')
@@ -73,6 +82,13 @@ class Notes(MoodClass):
                 - warningcode (string)   - errorcode can be badparam (incorrect parameter), savedfailed (could not be modified), or badid (note does not exist)
                 - message (string)   - untranslated English message to explain the warning
         @raise TypeError: if notes input parameter type is not a list or is an empty list.
+        @bug: always return an invalidparameter exception -> fix: in moodle/notes/externallib.php:
+        
+        line 295: $params = self::validate_parameters(self::get_notes_parameters(), $notes);
+        
+        changed to: $params = self::validate_parameters(self::get_notes_parameters(), array('notes'=>$notes));
+        @bug: if you try to get a non-existing note, it will return an exception (Invalid response value detected),
+        but it should return a warning in the response data structure 
         '''
         if type(notes)!=type([]) or notes==[]:
             raise TypeError('Input must be a list of integers with, at least, 1 note id')
@@ -89,10 +105,10 @@ class Notes(MoodClass):
     def update_notes(self, notes=[]):
         ''' Update notes about users.
         @param notes: 0 or more notes to update.
-            - id int   - id of the note
-            - publishstate string   - where this note is shown. Possible values are: 'personal', 'course' or 'site'
-            - text string   - the text of the message - text or HTML
-            - format int  Default to "1" - text format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            - id (int)   - id of the note
+            - publishstate (string)   - where this note is shown. Possible values are: 'personal', 'course' or 'site'
+            - text (string)   - the text of the message - text or HTML
+            - format (int)  Default to "1" - text format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
         @type notes: List of Dictionary
         @return: List of Dictionary. Warnings if happened.
             - item (string)  Optional - item is always 'note'

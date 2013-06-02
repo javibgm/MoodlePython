@@ -7,7 +7,7 @@ Moodle Web Service Python library. This library contains
 functions to use each one of Moodle version 2.5 web services 
 functions. The library is separated in modules and these contains
 classes with some web services functions depending of its functionality
-(course module contains Course class and do course functions: create courses
+(course module contains Course class and do course functions: create courses,
 delete courses, etc).
 All classes inherits from MoodClass and MoodLib class inherit from all classes
 so every function of the library can be used from MoodLib.
@@ -59,7 +59,7 @@ class MoodClass():
         service='webservice')).
         
         @param web: Moodle's site URL
-        @type web: String 
+        @type web: String
         @param token: Moodle's web service token
         @type token: String
         @param user: Moodle's user name
@@ -67,7 +67,8 @@ class MoodClass():
         @param pasw: Moodle's user password
         @type pasw: String
         @param service: the Moodle's web service to use
-        @type service: String '''
+        @type service: String
+        '''
         self.conn = web # URL where moodle's site is
         self.token = token # User's token of a web service
         if (self.token==''):
@@ -97,7 +98,10 @@ class MoodClass():
         headers = {'Content-type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
         response = requests.post(url, data=param, headers=headers).json()
         try:
-            raise ValueError('Moodle exception:' + response['errorcode'] + '\n Message: ' + response['message'])
+            if ('debuginfo' in response):
+                raise ValueError('Moodle exception:' + response['errorcode'] + '\n Message: ' + response['message'] + '\n Debuginfo: ' + response['debuginfo'])
+            else:
+                raise ValueError('Moodle exception:' + response['errorcode'] + '\n Message: ' + response['message'])
         except (TypeError, KeyError):
             pass
         return response

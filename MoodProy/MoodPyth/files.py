@@ -1,8 +1,8 @@
 ''' Files class module '''
-from MoodPyth.course import Course
+from MoodPyth import MoodClass
 import urllib, urllib2
 
-class Files(Course):
+class Files(MoodClass):
     '''
     Class with Moodle web services functions that work with files.
     '''
@@ -55,48 +55,9 @@ class Files(Course):
         url = self.conn + '/moodle/webservice/upload.php' + '?' + urllib.urlencode({'token':self.token,'filepath':moodlepath})
         files = {'file': open(path, 'rb')}
         response = requests.post(url, files=files).json()
+        print response
         try:
             raise ValueError('Moodle exception: moodlefilesexception\n Message: ' + response['error'])
         except (TypeError, KeyError):
             pass
         return response
-    
-    def down_file(self, courseid):
-        ''' Downloads course's resources via console. Shows course's resources and downloads the selected file. '''
-        def show_course_contents(res):
-            ''' Auxiliar function to download files. Shows course contents and returns resource items in a dictionary. '''
-            # The dicctionary has this structure:
-            # Dic = {index : [filename, fileurl]}
-            files = {}
-            index = 1
-            for area in res:
-                print area['name']
-                for dic in area['modules']:
-                    print '  Name: ' + dic['name'] + '\tid: ' + str(dic['id']) + '\tmodname: ' + str(dic['modname'])
-                    try:
-                        for content in dic['contents']:
-                            if str(content['type'])=='file':
-                                print (str(index) + '.' + str(content['filename']) + ': ' + str(content['fileurl']) +
-                                '\t Type: ' + str(content['type']))
-                                files[str(index)] = [str(content['filename']), str(content['fileurl']).split('?')[0]]
-                                index = index + 1
-                            else:
-                                print ('   ' + str(content['filename']) + ': ' + str(content['fileurl']) +
-                                '\t Type: ' + str(content['type']))
-                    except KeyError:
-                        None
-            return files
-        files = show_course_contents(self.course_contents(courseid))
-        print 'Input: file index'
-        fileindex = raw_input()
-        try:
-            print 'Selected file: ' + files[fileindex][0]
-            f = open(files[fileindex][0], 'w')
-            url = files[fileindex][1] + '?token=' + self.token
-            print url
-            response = urllib2.urlopen(url)
-            f.write(response.read())
-            f.close()
-            print response.getcode()
-        except KeyError:
-            print 'File not found. Operation cancelled.'
