@@ -29,8 +29,12 @@ def test_upload_file():
     # Manually upload the specified file to the main private area folder
     print 'Parameter: file path to upload'
     show(t.upload_file(raw_input(),'1/Testfiles/'))
+
+def test_download_file():
+    show(t.download_file('/42/mod_resource/content/2/File1'))
     
 if __name__ == '__main__':
     t = MoodLib(info['web'], users['student']['token'])
     #test_get_files(raw_input())
-    test_upload_file()
+    #test_upload_file()
+    test_download_file()

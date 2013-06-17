@@ -8,23 +8,23 @@ from config import info,users
 def test_get_site_info():
     show(t.get_site_info())
 
-def test_course_contents(test):
+def test_get_contents(test):
     if test == '0':
     # Manually show 1 course content 
         print 'Course ID to show contents:'
-        show(t.course_contents(raw_input()))
+        show(t.get_contents(raw_input()))
     elif test == '1':
-        show(t.course_contents('2',[{'name':'optionname',
+        show(t.get_contents('2',[{'name':'optionname',
                                      'value':'valuename'}]))
     elif test == '2':
-        show(t.course_contents(2))
+        show(t.get_contents(2))
     # Errors
     elif test == '3':
-        show(t.course_contents('a'))
+        show(t.get_contents('a'))
     elif test == '4':
-        show(t.course_contents(255))
+        show(t.get_contents(255))
     elif test == '5':
-        show(t.course_contents(2546453415))
+        show(t.get_contents(2546453415))
 
 def test_get_courses(test):
     if test == '0':
@@ -296,7 +296,7 @@ def test_delete_modules(test):
 if __name__ == '__main__':
     t = MoodLib(info['web'], users['admin']['token'])
     #test_get_site_info()
-    #test_course_contents(raw_input())
+    test_get_contents(raw_input())
     #test_get_courses(raw_input())
     #test_create_courses(raw_input())
     #test_delete_courses(raw_input())

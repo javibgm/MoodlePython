@@ -6,27 +6,27 @@ from config import info,users
 import time
 
 
-def test_enrolled_users(test):
+def test_get_enrolled_users(test):
     if test == '0':
     #  Get enrolled users from 1 course manually
         print 'Course ID enrolled user get from:'
-        show(t.enrolled_users(raw_input()))
+        show(t.get_enrolled_users(raw_input()))
     elif test == '1':
     #  Get enrolled users from 1 course manually with options (only full user names and only 2 results)
         print 'Course ID enrolled user get from:'
-        show(t.enrolled_users(raw_input(),
+        show(t.get_enrolled_users(raw_input(),
                               [{'name':'userfields','value':'fullname'},
                                {'name':'limitnumber','value':'2'}]))
     elif test == '2':
-        show(t.enrolled_users('1',
+        show(t.get_enrolled_users('1',
                               [{'name':'userfields','value':'fullname'}]))
     # Errors
     elif test == '3':
-        show(t.enrolled_users('-1'))
+        show(t.get_enrolled_users('-1'))
     elif test == '4':
-        show(t.enrolled_users('a'))
+        show(t.get_enrolled_users('a'))
     elif test == '5':
-        show(t.enrolled_users('1',
+        show(t.get_enrolled_users('1',
                               [{'name':'userfields','value':'nofield'}]))
 
 def test_get_enrolled_users_with_capability(test):
@@ -101,7 +101,7 @@ def test_manual_enrol_users(test):
 
 if __name__ == '__main__':
     t = MoodLib(info['web'], users['manager']['token'])
-    #test_enrolled_users(raw_input())
+    #test_eget_enrolled_users(raw_input())
     #test_get_enrolled_users_with_capability(raw_input())
     #test_get_users_courses()
     #test_manual_enrol_users(raw_input())

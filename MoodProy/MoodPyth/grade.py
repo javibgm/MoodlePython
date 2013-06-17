@@ -62,10 +62,10 @@ class Grade(MoodClass):
             - warnings (List of Dictionary) Optional - list of warnings
                 - item (string)  Optional - item
                 - itemid (int)  Optional - item id
-                - warningcode (string)   - the warning code can be used by the client app to implement specific behaviour
-                - message (string)   - untranslated english message to explain the warning
+                - warningcode (string)   - the warning code can be used by the client app to implement specific behavior
+                - message (string)   - untranslated English message to explain the warning
         @raise TypeError: if cmids input parameter type is not a list or is an empty list.
-        @bug: areaname parameter functionality unknown
+        @note: areaname parameter functionality unknown
         '''
         if type(cmids)!=type([]) or cmids==[]:
             raise TypeError('Input must be a list of course module ids (int)')

@@ -6,7 +6,7 @@ class Course(MoodClass):
     '''
     Class with Moodle web services functions that work with courses and categories
     '''
-    def course_contents(self, courseid, options=''):
+    def get_contents(self, courseid, options=''):
         ''' Get course contents (options parameter for future uses).
         @param courseid: Course identifier.
         @type courseid: Integer

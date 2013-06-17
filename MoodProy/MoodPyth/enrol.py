@@ -6,7 +6,7 @@ class Enrol(MoodClass):
     '''
     Class with Moodle web services functions that work with enrollments.
     '''
-    def enrolled_users(self, courseid, options=''):
+    def get_enrolled_users(self, courseid, options=''):
         ''' Get users enrolled in a course. 
         @param courseid: course identifier to get its enrolled users.
         @type courseid: Integer

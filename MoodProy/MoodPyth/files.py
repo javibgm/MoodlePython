@@ -1,6 +1,6 @@
 ''' Files class module '''
 from MoodPyth import MoodClass
-import urllib, urllib2
+import urllib
 
 class Files(MoodClass):
     '''
@@ -30,31 +30,34 @@ class Files(MoodClass):
         return self.connect(function, param)
 
     def upload_file(self, path, moodlepath):
-        ''' Uploads a file to the users private files area.
+        ''' Uploads a file to the user's private files area.
         @param path: file path to be uploaded.
         @type path: Integer
         @param moodlepath: moodle private files area path. It must start and end with the "/" character.
         @type moodlepath: Integer
         @raise IOError: if file specified in path parameter do not exists or cannot be readable.
         '''
-        '''
-        param = 'file_box='+'@'+path+'&'+urllib.urlencode({'filepath':moodlepath,'token':self.token})
-        print url, param
-        req = urllib2.Request(url, param)
-        req.add_header("Content-type", "application/x-www-form-urlencoded")
-        req.add_header("Accept", "application/json")
-        response = urllib2.urlopen(req)
-        source = json.load(response)
-        try:
-            raise ValueError('Moodle exception:' + source['errorcode'] + '\n Message: ' + source['message'])
-        except (TypeError, KeyError):
-            pass
-        return source
-        '''
         import requests
         url = self.conn + '/moodle/webservice/upload.php' + '?' + urllib.urlencode({'token':self.token,'filepath':moodlepath})
         files = {'file': open(path, 'rb')}
         response = requests.post(url, files=files).json()
+        print response
+        try:
+            raise ValueError('Moodle exception: moodlefilesexception\n Message: ' + response['error'])
+        except (TypeError, KeyError):
+            pass
+        return response
+    
+    def download_file(self, relativepath):
+        ''' Download a file using its URL with web services.
+        @param relativepath: file URL to be downloaded.
+        @type relativepath: String
+        @raise IOError: if file specified in path parameter do not exists or cannot be readable.
+        '''
+        import requests
+        url = self.conn + '/moodle/webservice/pluginfile.php' + relativepath + '?' + urllib.urlencode({'token':self.token})
+        #files = {'file': open(path, 'rb')}
+        response = requests.post(url).text
         print response
         try:
             raise ValueError('Moodle exception: moodlefilesexception\n Message: ' + response['error'])

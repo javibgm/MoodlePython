@@ -37,7 +37,7 @@ if __name__ == '__main__':
     t = MoodLib(info['web'], users['student']['token'])
     print 'Introduce the course ID to download files'
     courseid = raw_input()
-    contents = t.course_contents(courseid) # get the contents form the selected course
+    contents = t.get_contents(courseid) # get the contents form the selected course
     files = show_course_contents(contents) # show contents in console and save the downloadable files' names and URLs in an array
     print 'Input: file index'
     fileindex = raw_input()

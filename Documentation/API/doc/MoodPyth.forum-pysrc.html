@@ -137,19 +137,20 @@
 <a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line"><tt class="py-docstring">            - completionreplies (int)   - Student must post replies</tt> </tt>
 <a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line"><tt class="py-docstring">            - completionposts (int)   - Student must post discussions or replies</tt> </tt>
 <a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line"><tt class="py-docstring">            - cmid (int)   - Course module id</tt> </tt>
-<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
-<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">courseids</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">courseids</tt><tt class="py-op">!=</tt><tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
-<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">'Input must be a list of course IDs (integer)'</tt><tt class="py-op">)</tt> </tt>
-<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">        <tt class="py-name">function</tt> <tt class="py-op">=</tt> <tt class="py-string">'mod_forum_get_forums_by_courses'</tt> </tt>
-<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
-<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line">        <tt class="py-name">num</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> </tt>
-<a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">courseid</tt> <tt class="py-keyword">in</tt> <tt class="py-name">courseids</tt><tt class="py-op">:</tt> </tt>
-<a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">num</tt><tt class="py-op">!=</tt><tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
-<a name="L90"></a><tt class="py-lineno">90</tt>  <tt class="py-line">                <tt class="py-name">param</tt> <tt class="py-op">+=</tt> <tt class="py-string">'&amp;'</tt> </tt>
-<a name="L91"></a><tt class="py-lineno">91</tt>  <tt class="py-line">            <tt class="py-name">param</tt> <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="MoodPyth.MoodClass.add_reqParameters" class="py-name" href="#" onclick="return doclink('link-4', 'add_reqParameters', 'link-2');">add_reqParameters</a></tt><tt class="py-op">(</tt><tt class="py-name">courseid</tt><tt class="py-op">,</tt> <tt class="py-string">'courseids'</tt><tt class="py-op">,</tt> <tt class="py-name">num</tt><tt class="py-op">)</tt> </tt>
-<a name="L92"></a><tt class="py-lineno">92</tt>  <tt class="py-line">            <tt class="py-name">num</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
-<a name="L93"></a><tt class="py-lineno">93</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="MoodPyth.MoodClass.connect" class="py-name" href="#" onclick="return doclink('link-5', 'connect', 'link-3');">connect</a></tt><tt class="py-op">(</tt><tt class="py-name">function</tt><tt class="py-op">,</tt> <tt class="py-name">param</tt><tt class="py-op">)</tt> </tt>
-</div></div><a name="L94"></a><tt class="py-lineno">94</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line"><tt class="py-docstring">        @raise TypeError: if courseids input parameter type is not a list.</tt> </tt>
+<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">courseids</tt><tt class="py-op">)</tt><tt class="py-op">!=</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">courseids</tt><tt class="py-op">!=</tt><tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt><tt class="py-string">'Input must be a list of course IDs (integer)'</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line">        <tt class="py-name">function</tt> <tt class="py-op">=</tt> <tt class="py-string">'mod_forum_get_forums_by_courses'</tt> </tt>
+<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line">        <tt class="py-name">num</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> </tt>
+<a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">courseid</tt> <tt class="py-keyword">in</tt> <tt class="py-name">courseids</tt><tt class="py-op">:</tt> </tt>
+<a name="L90"></a><tt class="py-lineno">90</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">num</tt><tt class="py-op">!=</tt><tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L91"></a><tt class="py-lineno">91</tt>  <tt class="py-line">                <tt class="py-name">param</tt> <tt class="py-op">+=</tt> <tt class="py-string">'&amp;'</tt> </tt>
+<a name="L92"></a><tt class="py-lineno">92</tt>  <tt class="py-line">            <tt class="py-name">param</tt> <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="MoodPyth.MoodClass.add_reqParameters" class="py-name" href="#" onclick="return doclink('link-4', 'add_reqParameters', 'link-2');">add_reqParameters</a></tt><tt class="py-op">(</tt><tt class="py-name">courseid</tt><tt class="py-op">,</tt> <tt class="py-string">'courseids'</tt><tt class="py-op">,</tt> <tt class="py-name">num</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno">93</tt>  <tt class="py-line">            <tt class="py-name">num</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L94"></a><tt class="py-lineno">94</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="MoodPyth.MoodClass.connect" class="py-name" href="#" onclick="return doclink('link-5', 'connect', 'link-3');">connect</a></tt><tt class="py-op">(</tt><tt class="py-name">function</tt><tt class="py-op">,</tt> <tt class="py-name">param</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L95"></a><tt class="py-lineno">95</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
 // -->
@@ -182,7 +183,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Sat Jun  1 13:22:53 2013
+    Generated by Epydoc 3.0.1 on Sun Jun 16 17:12:31 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

@@ -79,6 +79,7 @@ class Forum(MoodClass):
             - completionreplies (int)   - Student must post replies
             - completionposts (int)   - Student must post discussions or replies
             - cmid (int)   - Course module id
+        @raise TypeError: if courseids input parameter type is not a list.
         '''
         if type(courseids)!=type([]) and courseids!='':
             raise TypeError('Input must be a list of course IDs (integer)')
