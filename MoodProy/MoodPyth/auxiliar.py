@@ -1,4 +1,3 @@
-# Copyright 2013 Javier Benito Garcia-Mochales
 ######################## BEGIN LICENSE BLOCK ########################
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,6 +12,8 @@
 # You should have received a copy of the GNU General Public License
 # along with MoodPyth.  If not, see <http://www.gnu.org/licenses/>.
 ######################### END LICENSE BLOCK #########################
+# Copyright 2013 Javier Benito Garcia-Mochales
+
 '''
 Auxiliar external functions
 '''
