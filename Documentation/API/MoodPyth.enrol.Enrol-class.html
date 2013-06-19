@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MoodPyth.enrol.Enrol</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MoodPyth-module.html">Package&nbsp;MoodPyth</a> ::
+        <a href="MoodPyth.enrol-module.html">Module&nbsp;enrol</a> ::
+        Class&nbsp;Enrol
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MoodPyth.enrol.Enrol-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Enrol</h1><p class="nomargin-top"><span class="codelink"><a href="MoodPyth.enrol-pysrc.html#Enrol">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_moodpyth_7" name="uml_class_diagram_for_moodpyth_7">
+<area shape="rect" href="MoodPyth.MoodClass-class.html#__init__" title="Creates the connection with Moodle." alt="" coords="165,36,539,55"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameter" title="MoodPyth.MoodClass.add_optParameter" alt="" coords="165,55,539,73"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameters" title="Auxiliary function: adds optional function parameters." alt="" coords="165,73,539,92"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_reqParameters" title="Auxiliary function: adds required function parameters." alt="" coords="165,92,539,111"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#check_reqParameters" title="Auxiliary function: checks if all required parameters are in the dictionary and prints missing parameters" alt="" coords="165,111,539,129"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#connect" title="POST to Moodle the function and parameters specified and returns the &#160;response in JSON format." alt="" coords="165,129,539,148"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#create_token" title="Ask to Moodle the token of the user to the specified web service and set &#160;its value to the token variable." alt="" coords="165,148,539,167"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#get_token" title="Returns the token value." alt="" coords="165,167,539,185"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#set_token" title="Sets the token value" alt="" coords="165,185,539,204"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html" title="Main Moodle python class." alt="" coords="164,11,540,205"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html#get_enrolled_users" title="Get users enrolled in a course." alt="" coords="17,260,425,279"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html#get_enrolled_users_with_capability" title="For each course and capability specified, return a list of the users that &#160;are enrolled in that course and have that capability." alt="" coords="17,279,425,297"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html#get_users_courses" title="Get the list of courses where a user is enrolled in." alt="" coords="17,297,425,316"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html#manual_enrol_users" title="Enrol users manually." alt="" coords="17,316,425,335"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html" title="Class with Moodle web services functions that work with enrollments." alt="" coords="16,235,427,336"/>
+<area shape="rect" href="MoodPyth.MoodLib.MoodLib-class.html" title="Basic Moodle python class." alt="" coords="293,365,411,392"/>
+</map>
+  <img src="uml_class_diagram_for_moodpyth_7.gif" alt='' usemap="#uml_class_diagram_for_moodpyth_7" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Class with Moodle web services functions that work with 
+  enrollments.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.enrol.Enrol-class.html#get_enrolled_users" class="summary-sig-name">get_enrolled_users</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">courseid</span>,
+        <span class="summary-sig-arg">options</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+      Get users enrolled in a course.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.enrol-pysrc.html#Enrol.get_enrolled_users">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.enrol.Enrol-class.html#get_enrolled_users_with_capability" class="summary-sig-name">get_enrolled_users_with_capability</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">coursecapabilities</span>,
+        <span class="summary-sig-arg">options</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+      For each course and capability specified, return a list of the users 
+      that are enrolled in that course and have that capability.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.enrol-pysrc.html#Enrol.get_enrolled_users_with_capability">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.enrol.Enrol-class.html#get_users_courses" class="summary-sig-name">get_users_courses</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">userid</span>)</span><br />
+      Get the list of courses where a user is enrolled in.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.enrol-pysrc.html#Enrol.get_users_courses">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.enrol.Enrol-class.html#manual_enrol_users" class="summary-sig-name">manual_enrol_users</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">enrollist</span>)</span><br />
+      Enrol users manually.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.enrol-pysrc.html#Enrol.manual_enrol_users">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
+      <code><a href="MoodPyth.MoodClass-class.html#__init__">__init__</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameter">add_optParameter</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameters">add_optParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_reqParameters">add_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#check_reqParameters">check_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#connect">connect</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#create_token">create_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#get_token">get_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#set_token">set_token</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="get_enrolled_users"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_enrolled_users</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">courseid</span>,
+        <span class="sig-arg">options</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.enrol-pysrc.html#Enrol.get_enrolled_users">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get users enrolled in a course.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>courseid</code></strong> (Integer) - course identifier to get its enrolled users.</li>
+        <li><strong class="pname"><code>options</code></strong> (List of Dictionaries) - List of enrollment options to filter users:
+          <ul>
+            <li>
+              name (string)  - the option name. Expected names (with their 
+              possible values formats) are:
+              <ul>
+                <li>
+                  &quot;withcapability&quot; (string) return only users 
+                  with this capability.
+                  <ul>
+                    <li>
+                      This option requires 'moodle/role:review' on the 
+                      course context.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  &quot;groupid&quot;  (int)  return only users in this 
+                  group id.
+                  <ul>
+                    <li>
+                      This option requires 'moodle/site:accessallgroups' on
+                      the course context.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  &quot;onlyactive&quot;  (int)  return only users with 
+                  active enrollments and matching time restrictions.
+                  <ul>
+                    <li>
+                      This option requires 'moodle/course:enrolreview' on 
+                      the course context.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  &quot;userfields&quot; ('string, string, ...') return 
+                  only the values of these user fields.
+                </li>
+                <li>
+                  &quot;limitfrom&quot;  (int)  sql limit from.
+                </li>
+                <li>
+                  &quot;limitnumber&quot;  (int)  maximum number of 
+                  returned users.
+                </li>
+              </ul>
+            </li>
+            <li>
+              value (string)  - the value to match.
+            </li>
+          </ul>
+          <p>Enrollment options example: 
+          [{'key':'withcapability','value':'moodle/role:review'},{'key':'groupid','value':'1'}].
+          Gets enrolled users which have moodle/role:review capability and 
+          belong to group 1</p></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary. List of enrolled users in courseid course and
+          that match with enrollment options filters:
+          <ul>
+            <li>
+              id (int)   - ID of the user
+            </li>
+            <li>
+              username (string) Optional - Username policy is defined in 
+              Moodle security config
+            </li>
+            <li>
+              firstname (string) Optional - The first name(s) of the user
+            </li>
+            <li>
+              lastname (string) Optional - The family name of the user
+            </li>
+            <li>
+              fullname (string)  - The fullname of the user
+            </li>
+            <li>
+              email (string) Optional - An email address - allow email as 
+              root@localhost
+            </li>
+            <li>
+              address (string) Optional - Postal address
+            </li>
+            <li>
+              phone1 (string) Optional - Phone 1
+            </li>
+            <li>
+              phone2 (string) Optional - Phone 2
+            </li>
+            <li>
+              icq (string) Optional - icq number
+            </li>
+            <li>
+              skype (string) Optional - skype id
+            </li>
+            <li>
+              yahoo (string) Optional - yahoo id
+            </li>
+            <li>
+              aim (string) Optional - aim id
+            </li>
+            <li>
+              msn (string) Optional - msn number
+            </li>
+            <li>
+              department (string) Optional - department
+            </li>
+            <li>
+              institution (string) Optional - institution
+            </li>
+            <li>
+              idnumber (string) Optional - An arbitrary ID code number 
+              perhaps from the institution
+            </li>
+            <li>
+              interests (string) Optional - user interests (separated by 
+              commas)
+            </li>
+            <li>
+              firstaccess (int)  Optional - first access to the site (0 if 
+              never)
+            </li>
+            <li>
+              lastaccess (int)  Optional - last access to the site (0 if 
+              never)
+            </li>
+            <li>
+              description (string) Optional - User profile description
+            </li>
+            <li>
+              descriptionformat (int)  Optional - description format (1 = 
+              HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+            <li>
+              city (string) Optional - Home city of the user
+            </li>
+            <li>
+              url (string) Optional - URL of the user
+            </li>
+            <li>
+              country (string) Optional - Home country code of the user, 
+              such as AU or CZ
+            </li>
+            <li>
+              profileimageurlsmall (string) Optional - User image profile 
+              URL - small version
+            </li>
+            <li>
+              profileimageurl (string) Optional - User image profile URL - 
+              big version
+            </li>
+            <li>
+              customfields (List of Dictionary)  Optional - List of user 
+              custom fields (also known as user profile fields):
+              <ul>
+                <li>
+                  type (string)  - The type of the custom field - text 
+                  field, checkbox...
+                </li>
+                <li>
+                  value (string)  - The value of the custom field
+                </li>
+                <li>
+                  name (string)  - The name of the custom field
+                </li>
+                <li>
+                  shortname (string)  - The shortname of the custom field -
+                  to be able to build the field class in the code
+                </li>
+              </ul>
+            </li>
+            <li>
+              groups (List of Dictionary)  Optional - list of user groups 
+              which user belongs:
+              <ul>
+                <li>
+                  id (int)   - group id
+                </li>
+                <li>
+                  name (string)  - group name
+                </li>
+                <li>
+                  description (string)  - group description
+                </li>
+                <li>
+                  descriptionformat (int)   - description format (1 = HTML,
+                  0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                </li>
+              </ul>
+            </li>
+            <li>
+              roles (List of Dictionary)  Optional - user roles list:
+              <ul>
+                <li>
+                  roleid (int)   - role id
+                </li>
+                <li>
+                  name (string)  - role name
+                </li>
+                <li>
+                  shortname (string)  - role shortname
+                </li>
+                <li>
+                  sortorder (int)   - role sortorder
+                </li>
+              </ul>
+            </li>
+            <li>
+              preferences (List of Dictionary)  Optional -  user 
+              preferences list:
+              <ul>
+                <li>
+                  name (string)  - The name of the preferences
+                </li>
+                <li>
+                  value (string)  - The value of the custom field
+                </li>
+              </ul>
+            </li>
+            <li>
+              enrolledcourses   Optional - list of courses where the user 
+              is enrolled (limited by which courses the user is able to 
+              see)
+              <ul>
+                <li>
+                  id (int)   - Id of the course
+                </li>
+                <li>
+                  fullname (string)  - Fullname of the course
+                </li>
+                <li>
+                  shortname (string)  - Shortname of the course
+                </li>
+              </ul>
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if courseid input parameter is not an integer.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_enrolled_users_with_capability"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_enrolled_users_with_capability</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">coursecapabilities</span>,
+        <span class="sig-arg">options</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.enrol-pysrc.html#Enrol.get_enrolled_users_with_capability">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>For each course and capability specified, return a list of the users 
+  that are enrolled in that course and have that capability.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>coursecapabilities</code></strong> (List of Dictionary) - dictionaries with a course identifier and capabilities to get the
+          enrolled users in that course with those capabilities:
+          <ul>
+            <li>
+              courseid (int)   - Course ID number in the Moodle course 
+              table
+            </li>
+            <li>
+              capabilities (List of string) - Capability names, such as 
+              &quot;mod/forum:viewdiscussion&quot;
+            </li>
+          </ul></li>
+        <li><strong class="pname"><code>options</code></strong> (List of Dictionaries) - List of enrollment options to filter users:
+          <ul>
+            <li>
+              name (string)  - the option name. Expected names (with their 
+              possible values formats) are:
+              <ul>
+                <li>
+                  &quot;groupid&quot;  (int)  return only users in this 
+                  group id.
+                  <ul>
+                    <li>
+                      Requires 'moodle/site:accessallgroups' .
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  &quot;onlyactive&quot;  (int)  only users with active 
+                  enrolments.
+                  <ul>
+                    <li>
+                      Requires 'moodle/course:enrolreview' .
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  &quot;userfields&quot; ('string, string, ...') return 
+                  only the values of these user fields.
+                </li>
+                <li>
+                  &quot;limitfrom&quot;  (int)  sql limit from.
+                </li>
+                <li>
+                  &quot;limitnumber&quot;  (int)  max number of users per 
+                  course and capability.
+                </li>
+              </ul>
+            </li>
+            <li>
+              value (string)  - the value to match.
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary. Dictionaries with a specified course, a 
+          specified capability and a users list:
+          <ul>
+            <li>
+              id (int)   - ID of the user
+            </li>
+            <li>
+              username (string) Optional - Username policy is defined in 
+              Moodle security config
+            </li>
+            <li>
+              firstname (string) Optional - The first name(s) of the user
+            </li>
+            <li>
+              lastname (string) Optional - The family name of the user
+            </li>
+            <li>
+              fullname (string)  - The fullname of the user
+            </li>
+            <li>
+              email (string) Optional - An email address - allow email as 
+              root@localhost
+            </li>
+            <li>
+              address (string) Optional - Postal address
+            </li>
+            <li>
+              phone1 (string) Optional - Phone 1
+            </li>
+            <li>
+              phone2 (string) Optional - Phone 2
+            </li>
+            <li>
+              icq (string) Optional - icq number
+            </li>
+            <li>
+              skype (string) Optional - skype id
+            </li>
+            <li>
+              yahoo (string) Optional - yahoo id
+            </li>
+            <li>
+              aim (string) Optional - aim id
+            </li>
+            <li>
+              msn (string) Optional - msn number
+            </li>
+            <li>
+              department (string) Optional - department
+            </li>
+            <li>
+              institution (string) Optional - institution
+            </li>
+            <li>
+              idnumber (string) Optional - An arbitrary ID code number 
+              perhaps from the institution
+            </li>
+            <li>
+              interests (string) Optional - user interests (separated by 
+              commas)
+            </li>
+            <li>
+              firstaccess (int)  Optional - first access to the site (0 if 
+              never)
+            </li>
+            <li>
+              lastaccess (int)  Optional - last access to the site (0 if 
+              never)
+            </li>
+            <li>
+              description (string) Optional - User profile description
+            </li>
+            <li>
+              descriptionformat (int)  Optional - description format (1 = 
+              HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+            <li>
+              city (string) Optional - Home city of the user
+            </li>
+            <li>
+              url (string) Optional - URL of the user
+            </li>
+            <li>
+              country (string) Optional - Home country code of the user, 
+              such as AU or CZ
+            </li>
+            <li>
+              profileimageurlsmall (string) Optional - User image profile 
+              URL - small version
+            </li>
+            <li>
+              profileimageurl (string) Optional - User image profile URL - 
+              big version
+            </li>
+            <li>
+              customfields (List of Dictionary)  Optional - List of user 
+              custom fields (also known as user profile fields):
+              <ul>
+                <li>
+                  type (string)  - The type of the custom field - text 
+                  field, checkbox...
+                </li>
+                <li>
+                  value (string)  - The value of the custom field
+                </li>
+                <li>
+                  name (string)  - The name of the custom field
+                </li>
+                <li>
+                  shortname (string)  - The shortname of the custom field -
+                  to be able to build the field class in the code
+                </li>
+              </ul>
+            </li>
+            <li>
+              groups (List of Dictionary)  Optional - list of user groups 
+              which user belongs:
+              <ul>
+                <li>
+                  id (int)   - group id
+                </li>
+                <li>
+                  name (string)  - group name
+                </li>
+                <li>
+                  description (string)  - group description
+                </li>
+                <li>
+                  descriptionformat (int)   - description format (1 = HTML,
+                  0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                </li>
+              </ul>
+            </li>
+            <li>
+              roles (List of Dictionary)  Optional - user roles list:
+              <ul>
+                <li>
+                  roleid (int)   - role id
+                </li>
+                <li>
+                  name (string)  - role name
+                </li>
+                <li>
+                  shortname (string)  - role shortname
+                </li>
+                <li>
+                  sortorder (int)   - role sortorder
+                </li>
+              </ul>
+            </li>
+            <li>
+              preferences (List of Dictionary)  Optional -  user 
+              preferences list:
+              <ul>
+                <li>
+                  name (string)  - The name of the preferences
+                </li>
+                <li>
+                  value (string)  - The value of the custom field
+                </li>
+              </ul>
+            </li>
+            <li>
+              enrolledcourses (List of Dictionary)  Optional - list of 
+              courses where the user is enrolled (limited by which courses 
+              the user is able to see)
+              <ul>
+                <li>
+                  id (int)   - Id of the course
+                </li>
+                <li>
+                  fullname (string)  - Fullname of the course
+                </li>
+                <li>
+                  shortname (string)  - Shortname of the course
+                </li>
+              </ul>
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if coursecapabilities input parameter type is not a list or is an 
+        empty list. Also if coursecapabilities contained dictionaries do 
+        not have the courseid and capabilities keys.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_users_courses"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_users_courses</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">userid</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.enrol-pysrc.html#Enrol.get_users_courses">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get the list of courses where a user is enrolled in.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>userid</code></strong> (Integer) - User identifier.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary. Courses list:
+          <ul>
+            <li>
+              id (int)   - id of course
+            </li>
+            <li>
+              shortname (string)  - short name of course
+            </li>
+            <li>
+              fullname (string)  - long name of course
+            </li>
+            <li>
+              enrolledusercount (int)   - Number of enrolled users in this 
+              course
+            </li>
+            <li>
+              idnumber (string)  - id number of course
+            </li>
+            <li>
+              visible (int)   - 1 means visible, 0 means hidden course
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if userid input parameter is not an integer.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="manual_enrol_users"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">manual_enrol_users</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">enrollist</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.enrol-pysrc.html#Enrol.manual_enrol_users">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Enrol users manually.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>enrollist</code></strong> (List of Dictionaries) - 1 or more enrollments of user into course with a specific role:
+          <ul>
+            <li>
+              roleid (int)   - Role to assign to the user
+            </li>
+            <li>
+              userid (int)   - The user that is going to be enrolled
+            </li>
+            <li>
+              courseid (int)   - The course to enrol the user role in
+            </li>
+            <li>
+              timestart (int)  Optional - Timestamp when the enrolment 
+              start
+            </li>
+            <li>
+              timeend (int)  Optional - Timestamp when the enrolment end
+            </li>
+            <li>
+              suspend (int)  Optional - set to 1 to suspend the enrolment
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if enrollist input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jun 18 20:49:00 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

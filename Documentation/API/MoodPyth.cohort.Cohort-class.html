@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MoodPyth.cohort.Cohort</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MoodPyth-module.html">Package&nbsp;MoodPyth</a> ::
+        <a href="MoodPyth.cohort-module.html">Module&nbsp;cohort</a> ::
+        Class&nbsp;Cohort
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MoodPyth.cohort.Cohort-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Cohort</h1><p class="nomargin-top"><span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_moodpyth_5" name="uml_class_diagram_for_moodpyth_5">
+<area shape="rect" href="MoodPyth.MoodClass-class.html#__init__" title="Creates the connection with Moodle." alt="" coords="35,36,408,55"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameter" title="MoodPyth.MoodClass.add_optParameter" alt="" coords="35,55,408,73"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameters" title="Auxiliary function: adds optional function parameters." alt="" coords="35,73,408,92"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_reqParameters" title="Auxiliary function: adds required function parameters." alt="" coords="35,92,408,111"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#check_reqParameters" title="Auxiliary function: checks if all required parameters are in the dictionary and prints missing parameters" alt="" coords="35,111,408,129"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#connect" title="POST to Moodle the function and parameters specified and returns the &#160;response in JSON format." alt="" coords="35,129,408,148"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#create_token" title="Ask to Moodle the token of the user to the specified web service and set &#160;its value to the token variable." alt="" coords="35,148,408,167"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#get_token" title="Returns the token value." alt="" coords="35,167,408,185"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#set_token" title="Sets the token value" alt="" coords="35,185,408,204"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html" title="Main Moodle python class." alt="" coords="33,11,409,205"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#add_cohort_members" title="Adds users to cohorts" alt="" coords="17,260,252,279"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#create_cohorts" title="Creates new cohorts." alt="" coords="17,279,252,297"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#delete_cohort_members" title="Deletes cohort members." alt="" coords="17,297,252,316"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#delete_cohorts" title="Deletes all specified cohorts." alt="" coords="17,316,252,335"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#get_cohort_members" title="Returns cohort members." alt="" coords="17,335,252,353"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#get_cohorts" title="Returns cohort details." alt="" coords="17,353,252,372"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#update_cohorts" title="Updates existing cohorts." alt="" coords="17,372,252,391"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html" title="Class with Moodle web services functions that work with cohorts" alt="" coords="16,235,253,392"/>
+<area shape="rect" href="MoodPyth.MoodLib.MoodLib-class.html" title="Basic Moodle python class." alt="" coords="163,421,280,448"/>
+</map>
+  <img src="uml_class_diagram_for_moodpyth_5.gif" alt='' usemap="#uml_class_diagram_for_moodpyth_5" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Class with Moodle web services functions that work with cohorts</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.cohort.Cohort-class.html#add_cohort_members" class="summary-sig-name">add_cohort_members</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">members</span>)</span><br />
+      Adds users to cohorts</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.add_cohort_members">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.cohort.Cohort-class.html#create_cohorts" class="summary-sig-name">create_cohorts</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cohorts</span>)</span><br />
+      Creates new cohorts.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.create_cohorts">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.cohort.Cohort-class.html#delete_cohort_members" class="summary-sig-name">delete_cohort_members</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">members</span>)</span><br />
+      Deletes cohort members.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.delete_cohort_members">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.cohort.Cohort-class.html#delete_cohorts" class="summary-sig-name">delete_cohorts</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cohortids</span>)</span><br />
+      Deletes all specified cohorts.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.delete_cohorts">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.cohort.Cohort-class.html#get_cohort_members" class="summary-sig-name">get_cohort_members</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cohortids</span>)</span><br />
+      Returns cohort members.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.get_cohort_members">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.cohort.Cohort-class.html#get_cohorts" class="summary-sig-name">get_cohorts</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cohortids</span>)</span><br />
+      Returns cohort details.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.get_cohorts">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.cohort.Cohort-class.html#update_cohorts" class="summary-sig-name">update_cohorts</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cohorts</span>)</span><br />
+      Updates existing cohorts.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.update_cohorts">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
+      <code><a href="MoodPyth.MoodClass-class.html#__init__">__init__</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameter">add_optParameter</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameters">add_optParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_reqParameters">add_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#check_reqParameters">check_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#connect">connect</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#create_token">create_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#get_token">get_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#set_token">set_token</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="add_cohort_members"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add_cohort_members</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">members</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.add_cohort_members">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Adds users to cohorts</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>members</code></strong> (List of Dictionary) - specifies for each cohort(determined by its id or its idnumber) 
+          what user (determined by its id or its username) add.
+          <ul>
+            <li>
+              cohorttype (Dictionary) - specifies the cohort where to add
+              <ul>
+                <li>
+                  type (string) - The name of the cohort field specified. 
+                  Possible values are:
+                  <ul>
+                    <li>
+                      &quot;id&quot;  - Numeric value of the cohortid 
+                      assigned automatically by moodle
+                    </li>
+                    <li>
+                      &quot;idnumber&quot;  - Alphanumeric value of 
+                      idnumber assigned to the cohort manually
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  value (string)   - The value of the cohort filed 
+                  specified by the 'type' parameter
+                </li>
+              </ul>
+            </li>
+            <li>
+              usertype (Dictionary) - specifies the user to be added
+              <ul>
+                <li>
+                  type (string) - The name of the user field specified. It 
+                  can be:
+                  <ul>
+                    <li>
+                      &quot;id&quot;  - Numeric value of user's id
+                    </li>
+                    <li>
+                      &quot;username&quot;  - Alphanumeric value of 
+                      username
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  value (string)  - The value of the cohort filed specified
+                  by the 'type' parameter
+                </li>
+              </ul>
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Dictionary. Warnings about cohorts where users have been added:
+          <ul>
+            <li>
+              warnings (List of Dictionary) Optional - possible happened 
+              warnings
+              <ul>
+                <li>
+                  item (string)  Optional - item
+                </li>
+                <li>
+                  itemid (int)  Optional - item id
+                </li>
+                <li>
+                  warningcode (string)   - the warning code can be used by 
+                  the client app to implement specific behavior
+                </li>
+                <li>
+                  message (string)   - untranslated English message to 
+                  explain the warning
+                </li>
+              </ul>
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if members input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="create_cohorts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">create_cohorts</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cohorts</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.create_cohorts">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates new cohorts.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>cohorts</code></strong> (List of Dictionary) - 1 or more user cohorts to create.
+          <ul>
+            <li>
+              type (string) - category type field name. Possible values 
+              are:
+              <ul>
+                <li>
+                  &quot;id&quot;  - numeric value of course category id
+                </li>
+                <li>
+                  &quot;idnumber&quot; - alphanumeric value of idnumber 
+                  course category
+                </li>
+                <li>
+                  &quot;system&quot; - value ignored
+                </li>
+              </ul>
+            </li>
+            <li>
+              value (string) - the value of the category type filed (this 
+              parameter is necessary even if you select the 
+              &quot;system&quot; cohort type)
+            </li>
+            <li>
+              name (string) - cohort name
+            </li>
+            <li>
+              idnumber (string) - cohort idnumber
+            </li>
+            <li>
+              description (string)  Optional - cohort description
+            </li>
+            <li>
+              descriptionformat (int)  Default to &quot;1&quot; - 
+              description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = 
+              MARKDOWN)
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary -  created cohorts list:
+          <ul>
+            <li>
+              id (int) - cohort id
+            </li>
+            <li>
+              name (string) - cohort name
+            </li>
+            <li>
+              idnumber (string) - cohort idnumber
+            </li>
+            <li>
+              description (string) - cohort description
+            </li>
+            <li>
+              descriptionformat (int) - description format (1 = HTML, 0 = 
+              MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if cohorts input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="delete_cohort_members"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">delete_cohort_members</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">members</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.delete_cohort_members">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deletes cohort members.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>members</code></strong> (List of Dictionary) - cohort and user ids to unassign user from cohort.
+          <ul>
+            <li>
+              cohortid (int)   - cohort record id
+            </li>
+            <li>
+              userid (int)   - user id
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if members input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="delete_cohorts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">delete_cohorts</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cohortids</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.delete_cohorts">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deletes all specified cohorts.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>cohortids</code></strong> (List of Integer) - 1 or more of cohort ids to delete.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if cohortids input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_cohort_members"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_cohort_members</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cohortids</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.get_cohort_members">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns cohort members.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>cohortids</code></strong> (List of Integer) - 1 or more of cohort ids to get its members.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary. For each cohort, its ID and its members ID 
+          are returned:
+          <ul>
+            <li>
+              cohortid (int)   - cohort record id
+            </li>
+            <li>
+              userids (List of Integer)  - users ids
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if cohortids input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_cohorts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_cohorts</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cohortids</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.get_cohorts">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns cohort details.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>cohortids</code></strong> (List of Integer) - 1 or more of cohort ids to get its details.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary. For each cohort, its details are returned:
+          <ul>
+            <li>
+              id (double)   - ID of the cohort
+            </li>
+            <li>
+              name (string)   - cohort name
+            </li>
+            <li>
+              idnumber (string)   - cohort idnumber
+            </li>
+            <li>
+              description (string)   - cohort description
+            </li>
+            <li>
+              descriptionformat (int)   - description format (1 = HTML, 0 =
+              MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if cohortids input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="update_cohorts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update_cohorts</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">cohorts</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.cohort-pysrc.html#Cohort.update_cohorts">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Updates existing cohorts.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>cohorts</code></strong> (List of Dictionary) - 1 or more user cohorts to create.
+          <ul>
+            <li>
+              id (double)   - ID of the cohort
+            </li>
+            <li>
+              type (string) - new category type field name. Possible values
+              are:
+              <ul>
+                <li>
+                  &quot;id&quot;  - numeric value of course category id
+                </li>
+                <li>
+                  &quot;idnumber&quot; - alphanumeric value of idnumber 
+                  course category
+                </li>
+                <li>
+                  &quot;system&quot; - value ignored
+                </li>
+              </ul>
+            </li>
+            <li>
+              value (string) - new value for the category type filed (this 
+              parameter is necessary even if you select the 
+              &quot;system&quot; cohort type)
+            </li>
+            <li>
+              name (string) - new cohort name
+            </li>
+            <li>
+              idnumber (string) - new cohort idnumber
+            </li>
+            <li>
+              description (string)  Optional - new cohort description
+            </li>
+            <li>
+              descriptionformat (int)  Default to &quot;1&quot; - new 
+              description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = 
+              MARKDOWN)
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if cohorts input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jun 18 20:49:00 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

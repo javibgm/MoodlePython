@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MoodPyth.forum.Forum</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MoodPyth-module.html">Package&nbsp;MoodPyth</a> ::
+        <a href="MoodPyth.forum-module.html">Module&nbsp;forum</a> ::
+        Class&nbsp;Forum
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MoodPyth.forum.Forum-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Forum</h1><p class="nomargin-top"><span class="codelink"><a href="MoodPyth.forum-pysrc.html#Forum">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_moodpyth_10" name="uml_class_diagram_for_moodpyth_10">
+<area shape="rect" href="MoodPyth.MoodClass-class.html#__init__" title="Creates the connection with Moodle." alt="" coords="45,36,419,55"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameter" title="MoodPyth.MoodClass.add_optParameter" alt="" coords="45,55,419,73"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameters" title="Auxiliary function: adds optional function parameters." alt="" coords="45,73,419,92"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_reqParameters" title="Auxiliary function: adds required function parameters." alt="" coords="45,92,419,111"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#check_reqParameters" title="Auxiliary function: checks if all required parameters are in the dictionary and prints missing parameters" alt="" coords="45,111,419,129"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#connect" title="POST to Moodle the function and parameters specified and returns the &#160;response in JSON format." alt="" coords="45,129,419,148"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#create_token" title="Ask to Moodle the token of the user to the specified web service and set &#160;its value to the token variable." alt="" coords="45,148,419,167"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#get_token" title="Returns the token value." alt="" coords="45,167,419,185"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#set_token" title="Sets the token value" alt="" coords="45,185,419,204"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html" title="Main Moodle python class." alt="" coords="44,11,420,205"/>
+<area shape="rect" href="MoodPyth.forum.Forum-class.html#get_forum_discussions" title="Returns a list of forum discussions contained within a given set of forums." alt="" coords="17,260,265,279"/>
+<area shape="rect" href="MoodPyth.forum.Forum-class.html#get_forums_by_courses" title="Returns a list of forum instances in a provided set of courses, if no &#160;courses are provided then all the forum instances the user has access to &#160;will be returned." alt="" coords="17,279,265,297"/>
+<area shape="rect" href="MoodPyth.forum.Forum-class.html" title="Class with Moodle web services functions that work with forums" alt="" coords="16,235,267,299"/>
+<area shape="rect" href="MoodPyth.MoodLib.MoodLib-class.html" title="Basic Moodle python class." alt="" coords="173,328,291,355"/>
+</map>
+  <img src="uml_class_diagram_for_moodpyth_10.gif" alt='' usemap="#uml_class_diagram_for_moodpyth_10" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Class with Moodle web services functions that work with forums</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.forum.Forum-class.html#get_forum_discussions" class="summary-sig-name">get_forum_discussions</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">forumids</span>)</span><br />
+      Returns a list of forum discussions contained within a given set of 
+      forums.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.forum-pysrc.html#Forum.get_forum_discussions">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.forum.Forum-class.html#get_forums_by_courses" class="summary-sig-name">get_forums_by_courses</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">courseids</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+      Returns a list of forum instances in a provided set of courses, if no
+      courses are provided then all the forum instances the user has access
+      to will be returned.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.forum-pysrc.html#Forum.get_forums_by_courses">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
+      <code><a href="MoodPyth.MoodClass-class.html#__init__">__init__</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameter">add_optParameter</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameters">add_optParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_reqParameters">add_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#check_reqParameters">check_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#connect">connect</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#create_token">create_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#get_token">get_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#set_token">set_token</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="get_forum_discussions"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_forum_discussions</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">forumids</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.forum-pysrc.html#Forum.get_forum_discussions">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a list of forum discussions contained within a given set of 
+  forums.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>forumids</code></strong> (List of Integer) - 1 or more forum identifiers.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary - list of forum discussions:
+          <ul>
+            <li>
+              id (int)   - Forum id
+            </li>
+            <li>
+              course (int)   - Course id
+            </li>
+            <li>
+              forum (int)   - The forum id
+            </li>
+            <li>
+              name (string)   - Discussion name
+            </li>
+            <li>
+              userid (int)   - User id
+            </li>
+            <li>
+              groupid (int)   - Group id
+            </li>
+            <li>
+              assessed (int)   - Is this assessed?
+            </li>
+            <li>
+              timemodified (int)   - Time modified
+            </li>
+            <li>
+              usermodified (int)   - The id of the user who last modified
+            </li>
+            <li>
+              timestart (int)   - Time discussion can start
+            </li>
+            <li>
+              timeend (int)   - Time discussion ends
+            </li>
+            <li>
+              firstpost (int)   - The first post in the discussion
+            </li>
+            <li>
+              firstuserfullname (string)   - The discussion creators 
+              fullname
+            </li>
+            <li>
+              firstuserimagealt (string)   - The discussion creators image 
+              alt
+            </li>
+            <li>
+              firstuserpicture (int)   - The discussion creators profile 
+              picture
+            </li>
+            <li>
+              firstuseremail (string)   - The discussion creators email
+            </li>
+            <li>
+              subject (string)   - The discussion subject
+            </li>
+            <li>
+              numreplies (string)   - The number of replies in the 
+              discussion
+            </li>
+            <li>
+              numunread (string)   - The number of unread posts, blank if 
+              this value is not available due to forum settings.
+            </li>
+            <li>
+              lastpost (int)   - The id of the last post in the discussion
+            </li>
+            <li>
+              lastuserid (int)   - The id of the user who made the last 
+              post
+            </li>
+            <li>
+              lastuserfullname (string)   - The last person to posts 
+              fullname
+            </li>
+            <li>
+              lastuserimagealt (string)   - The last person to posts image 
+              alt
+            </li>
+            <li>
+              lastuserpicture (int)   - The last person to posts profile 
+              picture
+            </li>
+            <li>
+              lastuseremail (string)   - The last person to posts email
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if forumids input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_forums_by_courses"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_forums_by_courses</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">courseids</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.forum-pysrc.html#Forum.get_forums_by_courses">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a list of forum instances in a provided set of courses, if no 
+  courses are provided then all the forum instances the user has access to 
+  will be returned.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>courseids</code></strong> (List of Integer) - 0 or more course identifiers to get their forums.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary - list of forum instances:
+          <ul>
+            <li>
+              id (int)   - Forum id
+            </li>
+            <li>
+              course (string)   - Course id
+            </li>
+            <li>
+              type (string)   - The forum type
+            </li>
+            <li>
+              name (string)   - Forum name
+            </li>
+            <li>
+              intro (string)   - The forum intro
+            </li>
+            <li>
+              introformat (int)   - intro format (1 = HTML, 0 = MOODLE, 2 =
+              PLAIN or 4 = MARKDOWN)
+            </li>
+            <li>
+              assessed (int)   - Aggregate type
+            </li>
+            <li>
+              assesstimestart (int)   - Assess start time
+            </li>
+            <li>
+              assesstimefinish (int)   - Assess finish time
+            </li>
+            <li>
+              scale (int)   - Scale
+            </li>
+            <li>
+              maxbytes (int)   - Maximum attachment size
+            </li>
+            <li>
+              maxattachments (int)   - Maximum number of attachments
+            </li>
+            <li>
+              forcesubscribe (int)   - Force users to subscribe
+            </li>
+            <li>
+              trackingtype (int)   - Subscription mode
+            </li>
+            <li>
+              rsstype (int)   - RSS feed for this activity
+            </li>
+            <li>
+              rssarticles (int)   - Number of RSS recent articles
+            </li>
+            <li>
+              timemodified (int)   - Time modified
+            </li>
+            <li>
+              warnafter (int)   - Post threshold for warning
+            </li>
+            <li>
+              blockafter (int)   - Post threshold for blocking
+            </li>
+            <li>
+              blockperiod (int)   - Time period for blocking
+            </li>
+            <li>
+              completiondiscussions (int)   - Student must create 
+              discussions
+            </li>
+            <li>
+              completionreplies (int)   - Student must post replies
+            </li>
+            <li>
+              completionposts (int)   - Student must post discussions or 
+              replies
+            </li>
+            <li>
+              cmid (int)   - Course module id
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if courseids input parameter type is not a list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jun 18 20:49:00 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

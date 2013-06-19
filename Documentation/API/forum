@@ -1,5 +1,0 @@
-Class: forum(MoodClass)
-    get_get_forum_discussions([forumids,...]): Returns a list of forum discussions contained within a given set of forums
-        forumids int  Default to "1" //forum ID
-    get_forums_by_courses([courseids,...]): Returns a list of forum instances in a provided set of courses, if no courses are provided then all the forum instances the user has access to will be returned
-        courseids int  Default to "[]" // course IDs

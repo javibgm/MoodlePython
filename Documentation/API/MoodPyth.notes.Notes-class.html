@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MoodPyth.notes.Notes</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MoodPyth-module.html">Package&nbsp;MoodPyth</a> ::
+        <a href="MoodPyth.notes-module.html">Module&nbsp;notes</a> ::
+        Class&nbsp;Notes
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MoodPyth.notes.Notes-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Notes</h1><p class="nomargin-top"><span class="codelink"><a href="MoodPyth.notes-pysrc.html#Notes">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_moodpyth_14" name="uml_class_diagram_for_moodpyth_14">
+<area shape="rect" href="MoodPyth.MoodClass-class.html#__init__" title="Creates the connection with Moodle." alt="" coords="17,36,391,55"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameter" title="MoodPyth.MoodClass.add_optParameter" alt="" coords="17,55,391,73"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameters" title="Auxiliary function: adds optional function parameters." alt="" coords="17,73,391,92"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_reqParameters" title="Auxiliary function: adds required function parameters." alt="" coords="17,92,391,111"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#check_reqParameters" title="Auxiliary function: checks if all required parameters are in the dictionary and prints missing parameters" alt="" coords="17,111,391,129"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#connect" title="POST to Moodle the function and parameters specified and returns the &#160;response in JSON format." alt="" coords="17,129,391,148"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#create_token" title="Ask to Moodle the token of the user to the specified web service and set &#160;its value to the token variable." alt="" coords="17,148,391,167"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#get_token" title="Returns the token value." alt="" coords="17,167,391,185"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#set_token" title="Sets the token value" alt="" coords="17,185,391,204"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html" title="Main Moodle python class." alt="" coords="16,11,392,205"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html#create_notes" title="Create notes about some users." alt="" coords="49,260,217,279"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html#delete_notes" title="Delete notes about users." alt="" coords="49,279,217,297"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html#get_notes" title="Get notes about users." alt="" coords="49,297,217,316"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html#update_notes" title="Update notes about users." alt="" coords="49,316,217,335"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html" title="Class with Moodle web services functions that work with notes" alt="" coords="48,235,219,336"/>
+<area shape="rect" href="MoodPyth.MoodLib.MoodLib-class.html" title="Basic Moodle python class." alt="" coords="145,365,263,392"/>
+</map>
+  <img src="uml_class_diagram_for_moodpyth_14.gif" alt='' usemap="#uml_class_diagram_for_moodpyth_14" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Class with Moodle web services functions that work with notes</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.notes.Notes-class.html#create_notes" class="summary-sig-name">create_notes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notes</span>)</span><br />
+      Create notes about some users.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.notes-pysrc.html#Notes.create_notes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.notes.Notes-class.html#delete_notes" class="summary-sig-name">delete_notes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notes</span>)</span><br />
+      Delete notes about users.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.notes-pysrc.html#Notes.delete_notes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.notes.Notes-class.html#get_notes" class="summary-sig-name">get_notes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notes</span>)</span><br />
+      Get notes about users.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.notes-pysrc.html#Notes.get_notes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.notes.Notes-class.html#update_notes" class="summary-sig-name">update_notes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notes</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span><br />
+      Update notes about users.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.notes-pysrc.html#Notes.update_notes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
+      <code><a href="MoodPyth.MoodClass-class.html#__init__">__init__</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameter">add_optParameter</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameters">add_optParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_reqParameters">add_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#check_reqParameters">check_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#connect">connect</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#create_token">create_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#get_token">get_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#set_token">set_token</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="create_notes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">create_notes</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notes</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.notes-pysrc.html#Notes.create_notes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create notes about some users.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notes</code></strong> (List of Dictionary) - 1 or more notes to create:
+          <ul>
+            <li>
+              userid (int)   - id of the user the note is about
+            </li>
+            <li>
+              publishstate (string)   - where this note is shown. Possible 
+              values are: 'personal', 'course' or 'site'
+            </li>
+            <li>
+              courseid (int)   - course id of the note (in Moodle a note 
+              can only be created into a course, even for site and personal
+              notes)
+            </li>
+            <li>
+              text (string)   - the text of the message. Can be normal text
+              or HTML code
+            </li>
+            <li>
+              format (int)  Default to &quot;1&quot; - text format (1 = 
+              HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+            <li>
+              clientnoteid (string)  Optional - your own client id for the 
+              note. If this id is provided, the fail message id will be 
+              returned to you
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary. Notes id if they have been successfully 
+          created and errors if have happened:
+          <ul>
+            <li>
+              clientnoteid (string)  Optional - your own id for the note
+            </li>
+            <li>
+              noteid (int)   - test this to know if it success: id of the 
+              created note when successed, -1 when failed
+            </li>
+            <li>
+              errormessage (string)  Optional - error message - if failed
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if notes input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="delete_notes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">delete_notes</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notes</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.notes-pysrc.html#Notes.delete_notes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Delete notes about users.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notes</code></strong> (List of Integer) - 1 or more note Ids to be deleted.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary. Warnings if happened.
+          <ul>
+            <li>
+              item (string)  Optional - item is always 'note'
+            </li>
+            <li>
+              itemid (int)  Optional - When errorcode is savedfailed the 
+              note could not be modified.When errorcode is badparam, an 
+              incorrect parameter was provided.When errorcode is badid, the
+              note does not exist
+            </li>
+            <li>
+              warningcode (string)   - errorcode can be badparam (incorrect
+              parameter), savedfailed (could not be modified), or badid 
+              (note does not exist)
+            </li>
+            <li>
+              message (string)   - untranslated English message to explain 
+              the warning
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if notes input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Bug:</strong>
+        always return an invalidparameter exception -&gt; fix: in 
+    moodle/notes/externallib.php:
+    <p>line 229: $params = 
+    self::validate_parameters(self::delete_notes_parameters(), $notes);</p>
+    <p>changed to: $params = 
+    self::validate_parameters(self::delete_notes_parameters(), 
+    array('notes'=&gt;$notes));</p>
+      </p>
+</div></td></tr></table>
+</div>
+<a name="get_notes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_notes</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notes</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.notes-pysrc.html#Notes.get_notes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get notes about users.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notes</code></strong> (List of Integer) - 1 or more note Ids to get information about them.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Dictionary. Notes and Warnings if happened.
+          <ul>
+            <li>
+              notes (List of Dictionary) - list of notes:
+              <ul>
+                <li>
+                  noteid (int)  Optional - id of the note
+                </li>
+                <li>
+                  userid (int)  Optional - id of the user the note is about
+                </li>
+                <li>
+                  publishstate (string)  Optional - where this note is 
+                  shown. Possible values are: 'personal', 'course' or 
+                  'site'
+                </li>
+                <li>
+                  courseid (int)  Optional - course id of the note
+                </li>
+                <li>
+                  text (string)  Optional - the text of the message - text 
+                  or HTML
+                </li>
+                <li>
+                  format (int)  Optional - text format (1 = HTML, 0 = 
+                  MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                </li>
+              </ul>
+            </li>
+            <li>
+              warnings (List of Dictionary) Optional - list of warnings if 
+              happened
+              <ul>
+                <li>
+                  item (string)  Optional - item is always 'note'
+                </li>
+                <li>
+                  itemid (int)  Optional - When errorcode is savedfailed 
+                  the note could not be modified.When errorcode is 
+                  badparam, an incorrect parameter was provided.When 
+                  errorcode is badid, the note does not exist
+                </li>
+                <li>
+                  warningcode (string)   - errorcode can be badparam 
+                  (incorrect parameter), savedfailed (could not be 
+                  modified), or badid (note does not exist)
+                </li>
+                <li>
+                  message (string)   - untranslated English message to 
+                  explain the warning
+                </li>
+              </ul>
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if notes input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <strong>Bugs:</strong>
+      <ul class="nomargin-top">
+        <li>
+        always return an invalidparameter exception -&gt; fix: in 
+    moodle/notes/externallib.php:
+    <p>line 295: $params = 
+    self::validate_parameters(self::get_notes_parameters(), $notes);</p>
+    <p>changed to: $params = 
+    self::validate_parameters(self::get_notes_parameters(), 
+    array('notes'=&gt;$notes));</p>
+        </li>
+        <li>
+        if you try to get a non-existing note, it will return an exception 
+    (Invalid response value detected), but it should return a warning in 
+    the response data structure
+        </li>
+      </ul>
+</div></td></tr></table>
+</div>
+<a name="update_notes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update_notes</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notes</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.notes-pysrc.html#Notes.update_notes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Update notes about users.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notes</code></strong> (List of Dictionary) - 0 or more notes to update.
+          <ul>
+            <li>
+              id (int)   - id of the note
+            </li>
+            <li>
+              publishstate (string)   - where this note is shown. Possible 
+              values are: 'personal', 'course' or 'site'
+            </li>
+            <li>
+              text (string)   - the text of the message - text or HTML
+            </li>
+            <li>
+              format (int)  Default to &quot;1&quot; - text format (1 = 
+              HTML, 0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionary. Warnings if happened.
+          <ul>
+            <li>
+              item (string)  Optional - item is always 'note'
+            </li>
+            <li>
+              itemid (int)  Optional - When errorcode is savedfailed the 
+              note could not be modified.When errorcode is badparam, an 
+              incorrect parameter was provided.When errorcode is badid, the
+              note does not exist
+            </li>
+            <li>
+              warningcode (string)   - errorcode can be badparam (incorrect
+              parameter), savedfailed (could not be modified), or badid 
+              (note does not exist)
+            </li>
+            <li>
+              message (string)   - untranslated English message to explain 
+              the warning
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if notes input parameter type is not a list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jun 18 20:49:01 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

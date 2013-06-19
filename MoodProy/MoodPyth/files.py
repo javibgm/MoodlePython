@@ -1,3 +1,17 @@
+######################## BEGIN LICENSE BLOCK ########################
+# This library is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with MoodPyth.  If not, see <http://www.gnu.org/licenses/>.
+######################### END LICENSE BLOCK #########################
 ''' Files class module '''
 from MoodPyth import MoodClass
 import urllib
@@ -49,16 +63,22 @@ class Files(MoodClass):
         return response
     
     def download_file(self, relativepath):
-        ''' Download a file using its URL with web services.
+        ''' Download a text plain file using its URL with web services.
         @param relativepath: file URL to be downloaded.
         @type relativepath: String
-        @raise IOError: if file specified in path parameter do not exists or cannot be readable.
+        @return: downloaded file data
+        @raise ValueError: if URL specified has not the appropriate format to download a file.
         '''
         import requests
-        url = self.conn + '/moodle/webservice/pluginfile.php' + relativepath + '?' + urllib.urlencode({'token':self.token})
-        #files = {'file': open(path, 'rb')}
-        response = requests.post(url).text
-        print response
+        try:
+            url = self.conn + '/moodle/webservice/pluginfile.php' + relativepath.split('pluginfile.php')[1].split('?')[0] + '?' + urllib.urlencode({'token':self.token})
+        except IndexError:
+            raise TypeError('URL provided has not web services format')
+        try:
+            url = url + '&' + relativepath.split('?')[1]
+        except IndexError:
+            pass
+        response = requests.post(url).content
         try:
             raise ValueError('Moodle exception: moodlefilesexception\n Message: ' + response['error'])
         except (TypeError, KeyError):

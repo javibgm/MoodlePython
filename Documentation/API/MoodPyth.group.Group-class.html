@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MoodPyth.group.Group</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MoodPyth-module.html">Package&nbsp;MoodPyth</a> ::
+        <a href="MoodPyth.group-module.html">Module&nbsp;group</a> ::
+        Class&nbsp;Group
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MoodPyth.group.Group-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Group</h1><p class="nomargin-top"><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_moodpyth_12" name="uml_class_diagram_for_moodpyth_12">
+<area shape="rect" href="MoodPyth.MoodClass-class.html#__init__" title="Creates the connection with Moodle." alt="" coords="73,36,447,55"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameter" title="MoodPyth.MoodClass.add_optParameter" alt="" coords="73,55,447,73"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameters" title="Auxiliary function: adds optional function parameters." alt="" coords="73,73,447,92"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_reqParameters" title="Auxiliary function: adds required function parameters." alt="" coords="73,92,447,111"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#check_reqParameters" title="Auxiliary function: checks if all required parameters are in the dictionary and prints missing parameters" alt="" coords="73,111,447,129"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#connect" title="POST to Moodle the function and parameters specified and returns the &#160;response in JSON format." alt="" coords="73,129,447,148"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#create_token" title="Ask to Moodle the token of the user to the specified web service and set &#160;its value to the token variable." alt="" coords="73,148,447,167"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#get_token" title="Returns the token value." alt="" coords="73,167,447,185"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#set_token" title="Sets the token value" alt="" coords="73,185,447,204"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html" title="Main Moodle python class." alt="" coords="72,11,448,205"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#add_group_members" title="Adds group members." alt="" coords="17,260,303,279"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#assign_grouping" title="Assing groups from groupings." alt="" coords="17,279,303,297"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#create_groupings" title="Creates new groupings." alt="" coords="17,297,303,316"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#create_groups" title="Creates new groups." alt="" coords="17,316,303,335"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#delete_group_members" title="Deletes group members." alt="" coords="17,335,303,353"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#delete_groupings" title="Deletes all specified groupings." alt="" coords="17,353,303,372"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#delete_groups" title="Deletes all specified groups." alt="" coords="17,372,303,391"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_course_groupings" title="Returns all groupings in specified course." alt="" coords="17,391,303,409"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_course_groups" title="Returns all groups in specified course." alt="" coords="17,409,303,428"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_group_members" title="Returns group members." alt="" coords="17,428,303,447"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_groupings" title="Returns groupings details." alt="" coords="17,447,303,465"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_groups" title="Returns group details." alt="" coords="17,465,303,484"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#unassign_grouping" title="Unassing groups from groupings." alt="" coords="17,484,303,503"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#update_groupings" title="Updates existing groupings." alt="" coords="17,503,303,521"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html" title="Class with Moodle web services functions that work with groups" alt="" coords="16,235,304,523"/>
+<area shape="rect" href="MoodPyth.MoodLib.MoodLib-class.html" title="Basic Moodle python class." alt="" coords="201,552,319,579"/>
+</map>
+  <img src="uml_class_diagram_for_moodpyth_12.gif" alt='' usemap="#uml_class_diagram_for_moodpyth_12" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Class with Moodle web services functions that work with groups</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#add_group_members" class="summary-sig-name">add_group_members</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">members</span>)</span><br />
+      Adds group members.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.add_group_members">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#assign_grouping" class="summary-sig-name">assign_grouping</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupings</span>)</span><br />
+      Assing groups from groupings.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.assign_grouping">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#create_groupings" class="summary-sig-name">create_groupings</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupings</span>)</span><br />
+      Creates new groupings.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.create_groupings">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#create_groups" class="summary-sig-name">create_groups</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groups</span>)</span><br />
+      Creates new groups.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.create_groups">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#delete_group_members" class="summary-sig-name">delete_group_members</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">members</span>)</span><br />
+      Deletes group members.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.delete_group_members">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#delete_groupings" class="summary-sig-name">delete_groupings</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupingids</span>)</span><br />
+      Deletes all specified groupings.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.delete_groupings">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#delete_groups" class="summary-sig-name">delete_groups</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupids</span>)</span><br />
+      Deletes all specified groups.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.delete_groups">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#get_course_groupings" class="summary-sig-name">get_course_groupings</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">courseid</span>)</span><br />
+      Returns all groupings in specified course.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_course_groupings">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#get_course_groups" class="summary-sig-name">get_course_groups</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">courseid</span>)</span><br />
+      Returns all groups in specified course.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_course_groups">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#get_group_members" class="summary-sig-name">get_group_members</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupids</span>)</span><br />
+      Returns group members.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_group_members">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#get_groupings" class="summary-sig-name">get_groupings</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupingids</span>,
+        <span class="summary-sig-arg">returngroups</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Returns groupings details.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_groupings">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#get_groups" class="summary-sig-name">get_groups</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupids</span>)</span><br />
+      Returns group details.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_groups">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#unassign_grouping" class="summary-sig-name">unassign_grouping</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">unassignments</span>)</span><br />
+      Unassing groups from groupings.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.unassign_grouping">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.group.Group-class.html#update_groupings" class="summary-sig-name">update_groupings</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groupings</span>)</span><br />
+      Updates existing groupings.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.update_groupings">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
+      <code><a href="MoodPyth.MoodClass-class.html#__init__">__init__</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameter">add_optParameter</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameters">add_optParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_reqParameters">add_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#check_reqParameters">check_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#connect">connect</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#create_token">create_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#get_token">get_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#set_token">set_token</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="add_group_members"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add_group_members</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">members</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.add_group_members">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Adds group members.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>members</code></strong> (List of Dictionaries) - group identifiers and user identifiers to add users to groups:
+          <ul>
+            <li>
+              groupid (int)   - group record id
+            </li>
+            <li>
+              userid (int)   - user id
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if members input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="assign_grouping"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">assign_grouping</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groupings</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.assign_grouping">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Assing groups from groupings.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groupings</code></strong> (List of Dictionaries) - grouping identifiers and group identifiers to assign groups to 
+          groupings:
+          <ul>
+            <li>
+              groupingid (int)   - grouping record id
+            </li>
+            <li>
+              groupid (int)   - group record id
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if groupings input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="create_groupings"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">create_groupings</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groupings</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.create_groupings">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates new groupings.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groupings</code></strong> (List of Dictionaries) - 1 or more groupings. A grouping has a courseid, a name and a 
+          description:
+          <ul>
+            <li>
+              courseid (int)   - id of course
+            </li>
+            <li>
+              name (string)   - multilang compatible name, course unique
+            </li>
+            <li>
+              description (string)   - grouping description text
+            </li>
+            <li>
+              descriptionformat (int)  Default to &quot;1&quot; - 
+              description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = 
+              MARKDOWN)
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionaries. List of grouping created:
+          <ul>
+            <li>
+              id (int)   - grouping record id
+            </li>
+            <li>
+              courseid (int)   - id of course
+            </li>
+            <li>
+              name (string)   - multilang compatible name, course unique
+            </li>
+            <li>
+              description (string)   - grouping description text
+            </li>
+            <li>
+              descriptionformat (int)   - description format (1 = HTML, 0 =
+              MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if groupings input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="create_groups"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">create_groups</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groups</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.create_groups">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates new groups.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groups</code></strong> (List of Dictionaries) - 1 or more groups. A group has a courseid, a name, a description 
+          and an enrolment key:
+          <ul>
+            <li>
+              courseid (int)   - id of course
+            </li>
+            <li>
+              name (string)   - multilang compatible name, course unique
+            </li>
+            <li>
+              description (string)   - group description text
+            </li>
+            <li>
+              descriptionformat (int)  Default to &quot;1&quot; - 
+              description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = 
+              MARKDOWN)
+            </li>
+            <li>
+              enrolmentkey (string)  Optional - group enrol secret phrase
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionaries. List of groups created:
+          <ul>
+            <li>
+              id (int)   - grouping record id
+            </li>
+            <li>
+              courseid (int)   - id of course
+            </li>
+            <li>
+              name (string)   - multilang compatible name, course unique
+            </li>
+            <li>
+              description (string)   - grouping description text
+            </li>
+            <li>
+              descriptionformat (int)   - description format (1 = HTML, 0 =
+              MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if groups input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="delete_group_members"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">delete_group_members</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">members</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.delete_group_members">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deletes group members.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>members</code></strong> (List of Dictionaries) - group identifiers and user identifiers to remove users from 
+          groups:
+          <ul>
+            <li>
+              groupid (int)   - group record id
+            </li>
+            <li>
+              userid (int)   - user id
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if members input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="delete_groupings"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">delete_groupings</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groupingids</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.delete_groupings">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deletes all specified groupings.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groupingids</code></strong> (List of Integer) - 1 or more grouping identifiers to delete.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if groupingids input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="delete_groups"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">delete_groups</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groupids</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.delete_groups">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deletes all specified groups.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groupids</code></strong> (List of Integer) - 1 or more group identifiers to delete.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if groupids input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_course_groupings"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_course_groupings</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">courseid</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_course_groupings">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns all groupings in specified course.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>courseid</code></strong> (Integer) - course identifier to get its groupings</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionaries. List of groupings in the specified course:
+          <ul>
+            <li>
+              id (int)   - grouping record id
+            </li>
+            <li>
+              courseid (int)   - id of course
+            </li>
+            <li>
+              name (string)   - multilang compatible name, course unique
+            </li>
+            <li>
+              description (string)   - grouping description text
+            </li>
+            <li>
+              descriptionformat (int)   - description format (1 = HTML, 0 =
+              MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if courseid input parameter is not an integer.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_course_groups"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_course_groups</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">courseid</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_course_groups">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns all groups in specified course.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>courseid</code></strong> (Integer) - course identifier to get its groups</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionaries. List of groups in the specified course:
+          <ul>
+            <li>
+              id (int)   - group record id
+            </li>
+            <li>
+              courseid (int)   - id of course
+            </li>
+            <li>
+              name (string)   - multilang compatible name, course unique
+            </li>
+            <li>
+              description (string)   - group description text
+            </li>
+            <li>
+              descriptionformat (int)   - description format (1 = HTML, 0 =
+              MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+            <li>
+              enrolmentkey (string)   - group enrol secret phrase
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if courseid input parameter is not an integer.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_group_members"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_group_members</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groupids</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_group_members">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns group members.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groupids</code></strong> (List of Integer) - 1 or more group identifiers to get their members.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionaries. List of groupids with their members 
+          userids:
+          <ul>
+            <li>
+              groupid (int)   - group record id
+            </li>
+            <li>
+              userids (List of Integer) - user id
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if groupids input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_groupings"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_groupings</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groupingids</span>,
+        <span class="sig-arg">returngroups</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_groupings">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns groupings details.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groupingids</code></strong> (List of Integer) - 1 or more grouping identifiers.</li>
+        <li><strong class="pname"><code>returngroups</code></strong> (Integer) - return associated groups: 1 (yes) or 0 (no = Default).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionaries. Groupings information:
+          <ul>
+            <li>
+              id (int)   - grouping record id
+            </li>
+            <li>
+              courseid (int)   - id of course
+            </li>
+            <li>
+              name (string)   - multilang compatible name, course unique
+            </li>
+            <li>
+              description (string)   - grouping description text
+            </li>
+            <li>
+              descriptionformat (int)   - description format (1 = HTML, 0 =
+              MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+            <li>
+              groups (List of Dictionaries) Optional - optional groups:
+              <ul>
+                <li>
+                  id (int)   - group record id
+                </li>
+                <li>
+                  courseid (int)   - id of course
+                </li>
+                <li>
+                  name (string)   - multilang compatible name, course 
+                  unique
+                </li>
+                <li>
+                  description (string)   - group description text
+                </li>
+                <li>
+                  descriptionformat (int)   - description format (1 = HTML,
+                  0 = MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+                </li>
+                <li>
+                  enrolmentkey (string)   - group enrol secret phrase
+                </li>
+              </ul>
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if groupingids input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_groups"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_groups</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groupids</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.get_groups">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns group details.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groupids</code></strong> (List of Integer) - 1 or more group identifiers</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>List of Dictionaries. Groups information:
+          <ul>
+            <li>
+              id (int)   - group record id
+            </li>
+            <li>
+              courseid (int)   - id of course
+            </li>
+            <li>
+              name (string)   - multilang compatible name, course unique
+            </li>
+            <li>
+              description (string)   - group description text
+            </li>
+            <li>
+              descriptionformat (int)   - description format (1 = HTML, 0 =
+              MOODLE, 2 = PLAIN or 4 = MARKDOWN)
+            </li>
+            <li>
+              enrolmentkey (string)   - group enrol secret phrase
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if groupids input parameter type is not a list or is an empty list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="unassign_grouping"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">unassign_grouping</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">unassignments</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.unassign_grouping">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Unassing groups from groupings.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>unassignments</code></strong> (List of Dictionaries) - grouping identifiers and group identifiers to unassign groups 
+          from groupings:
+          <ul>
+            <li>
+              groupingid (int)   - grouping record id
+            </li>
+            <li>
+              groupid (int)   - group record id
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if unassignments input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="update_groupings"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update_groupings</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groupings</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.group-pysrc.html#Group.update_groupings">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Updates existing groupings.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groupings</code></strong> (List of Dictionaries) - 1 or more groupings. A grouping has a courseid, a name and a 
+          description:
+          <ul>
+            <li>
+              id (int)   - id of grouping
+            </li>
+            <li>
+              name (string)   - multilang compatible name, course unique
+            </li>
+            <li>
+              description (string)   - grouping description text
+            </li>
+            <li>
+              descriptionformat (int)  Default to &quot;1&quot; - 
+              description format (1 = HTML, 0 = MOODLE, 2 = PLAIN or 4 = 
+              MARKDOWN)
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - if groupings input parameter type is not a list or is an empty 
+        list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jun 18 20:49:00 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

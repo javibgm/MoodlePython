@@ -6,7 +6,7 @@ URL: <https://github.com/javibgm/MoodlePython>
 Downloads course's resources via console. Shows course's resources and downloads the selected file.
 '''
 from MoodPyth.MoodLib import MoodLib
-from config import info,users
+from tests.config import info,users
 import urllib2
 
 def show_course_contents(res):

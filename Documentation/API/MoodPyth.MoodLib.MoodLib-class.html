@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MoodPyth.MoodLib.MoodLib</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MoodPyth-module.html">Package&nbsp;MoodPyth</a> ::
+        <a href="MoodPyth.MoodLib-module.html">Module&nbsp;MoodLib</a> ::
+        Class&nbsp;MoodLib
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MoodPyth.MoodLib.MoodLib-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class MoodLib</h1><p class="nomargin-top"><span class="codelink"><a href="MoodPyth.MoodLib-pysrc.html#MoodLib">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_moodpyth_2" name="uml_class_diagram_for_moodpyth_2">
+<area shape="rect" href="MoodPyth.files.Files-class.html#download_file" title="Download a text plain file using its URL with web services." alt="" coords="17,363,497,381"/>
+<area shape="rect" href="MoodPyth.files.Files-class.html#get_files" title="Browse moodle files." alt="" coords="17,381,497,400"/>
+<area shape="rect" href="MoodPyth.files.Files-class.html#upload_file" title="Uploads a file to the user&#39;s private files area." alt="" coords="17,400,497,419"/>
+<area shape="rect" href="MoodPyth.files.Files-class.html" title="Class with Moodle web services functions that work with files." alt="" coords="16,337,499,420"/>
+<area shape="rect" href="MoodPyth.MoodLib.MoodLib-class.html#get_site_info" title="Get general info about Moodle site" alt="" coords="3128,577,3235,596"/>
+<area shape="rect" href="MoodPyth.MoodLib.MoodLib-class.html" title="Basic Moodle python class." alt="" coords="3127,552,3236,597"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#__init__" title="Creates the connection with Moodle." alt="" coords="2995,36,3368,55"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameter" title="MoodPyth.MoodClass.add_optParameter" alt="" coords="2995,55,3368,73"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_optParameters" title="Auxiliary function: adds optional function parameters." alt="" coords="2995,73,3368,92"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#add_reqParameters" title="Auxiliary function: adds required function parameters." alt="" coords="2995,92,3368,111"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#check_reqParameters" title="Auxiliary function: checks if all required parameters are in the dictionary and prints missing parameters" alt="" coords="2995,111,3368,129"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#connect" title="POST to Moodle the function and parameters specified and returns the &#160;response in JSON format." alt="" coords="2995,129,3368,148"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#create_token" title="Ask to Moodle the token of the user to the specified web service and set &#160;its value to the token variable." alt="" coords="2995,148,3368,167"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#get_token" title="Returns the token value." alt="" coords="2995,167,3368,185"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html#set_token" title="Sets the token value" alt="" coords="2995,185,3368,204"/>
+<area shape="rect" href="MoodPyth.MoodClass-class.html" title="Main Moodle python class." alt="" coords="2993,11,3369,205"/>
+<area shape="rect" href="MoodPyth.message.Message-class.html#block_contacts" title="Block contacts." alt="" coords="551,325,860,344"/>
+<area shape="rect" href="MoodPyth.message.Message-class.html#create_contacts" title="Add contacts to the contact list." alt="" coords="551,344,860,363"/>
+<area shape="rect" href="MoodPyth.message.Message-class.html#delete_contacts" title="Remove contacts from the contact list." alt="" coords="551,363,860,381"/>
+<area shape="rect" href="MoodPyth.message.Message-class.html#get_contacts" title="Retrieve your contact list." alt="" coords="551,381,860,400"/>
+<area shape="rect" href="MoodPyth.message.Message-class.html#search_contacts" title="Search for contacts." alt="" coords="551,400,860,419"/>
+<area shape="rect" href="MoodPyth.message.Message-class.html#send_instant_messages" title="Send instant messages." alt="" coords="551,419,860,437"/>
+<area shape="rect" href="MoodPyth.message.Message-class.html#unblock_contacts" title="Unblock contacts." alt="" coords="551,437,860,456"/>
+<area shape="rect" href="MoodPyth.message.Message-class.html" title="Class with Moodle web services functions that work with messages" alt="" coords="549,300,861,457"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html#get_enrolled_users" title="Get users enrolled in a course." alt="" coords="913,353,1321,372"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html#get_enrolled_users_with_capability" title="For each course and capability specified, return a list of the users that &#160;are enrolled in that course and have that capability." alt="" coords="913,372,1321,391"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html#get_users_courses" title="Get the list of courses where a user is enrolled in." alt="" coords="913,391,1321,409"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html#manual_enrol_users" title="Enrol users manually." alt="" coords="913,409,1321,428"/>
+<area shape="rect" href="MoodPyth.enrol.Enrol-class.html" title="Class with Moodle web services functions that work with enrollments." alt="" coords="912,328,1323,429"/>
+<area shape="rect" href="MoodPyth.calendar.Calendar-class.html#create_calendar_events" title="Create calendar events" alt="" coords="1375,363,2153,381"/>
+<area shape="rect" href="MoodPyth.calendar.Calendar-class.html#delete_calendar_events" title="Delete calendar events" alt="" coords="1375,381,2153,400"/>
+<area shape="rect" href="MoodPyth.calendar.Calendar-class.html#get_calendar_events" title="Get calendar events." alt="" coords="1375,400,2153,419"/>
+<area shape="rect" href="MoodPyth.calendar.Calendar-class.html" title="Class with Moodle web services functions that work with calendar events" alt="" coords="1373,337,2155,420"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#add_cohort_members" title="Adds users to cohorts" alt="" coords="2207,325,2441,344"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#create_cohorts" title="Creates new cohorts." alt="" coords="2207,344,2441,363"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#delete_cohort_members" title="Deletes cohort members." alt="" coords="2207,363,2441,381"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#delete_cohorts" title="Deletes all specified cohorts." alt="" coords="2207,381,2441,400"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#get_cohort_members" title="Returns cohort members." alt="" coords="2207,400,2441,419"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#get_cohorts" title="Returns cohort details." alt="" coords="2207,419,2441,437"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html#update_cohorts" title="Updates existing cohorts." alt="" coords="2207,437,2441,456"/>
+<area shape="rect" href="MoodPyth.cohort.Cohort-class.html" title="Class with Moodle web services functions that work with cohorts" alt="" coords="2205,300,2443,457"/>
+<area shape="rect" href="MoodPyth.grade.Grade-class.html#get_definitions" title="Get grading definitions." alt="" coords="2495,381,2799,400"/>
+<area shape="rect" href="MoodPyth.grade.Grade-class.html" title="Class with Moodle web services functions that works with grades." alt="" coords="2493,356,2800,401"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html#create_notes" title="Create notes about some users." alt="" coords="2852,353,3020,372"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html#delete_notes" title="Delete notes about users." alt="" coords="2852,372,3020,391"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html#get_notes" title="Get notes about users." alt="" coords="2852,391,3020,409"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html#update_notes" title="Update notes about users." alt="" coords="2852,409,3020,428"/>
+<area shape="rect" href="MoodPyth.notes.Notes-class.html" title="Class with Moodle web services functions that work with notes" alt="" coords="2851,328,3021,429"/>
+<area shape="rect" href="MoodPyth.role.Role-class.html#assign_roles" title="Manual role assignments to users." alt="" coords="3073,372,3289,391"/>
+<area shape="rect" href="MoodPyth.role.Role-class.html#unassign_roles" title="Unassign roles from users." alt="" coords="3073,391,3289,409"/>
+<area shape="rect" href="MoodPyth.role.Role-class.html" title="Class with Moodle web services functions that work with roles" alt="" coords="3072,347,3291,411"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#add_group_members" title="Adds group members." alt="" coords="3404,260,3689,279"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#assign_grouping" title="Assing groups from groupings." alt="" coords="3404,279,3689,297"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#create_groupings" title="Creates new groupings." alt="" coords="3404,297,3689,316"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#create_groups" title="Creates new groups." alt="" coords="3404,316,3689,335"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#delete_group_members" title="Deletes group members." alt="" coords="3404,335,3689,353"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#delete_groupings" title="Deletes all specified groupings." alt="" coords="3404,353,3689,372"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#delete_groups" title="Deletes all specified groups." alt="" coords="3404,372,3689,391"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_course_groupings" title="Returns all groupings in specified course." alt="" coords="3404,391,3689,409"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_course_groups" title="Returns all groups in specified course." alt="" coords="3404,409,3689,428"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_group_members" title="Returns group members." alt="" coords="3404,428,3689,447"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_groupings" title="Returns groupings details." alt="" coords="3404,447,3689,465"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#get_groups" title="Returns group details." alt="" coords="3404,465,3689,484"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#unassign_grouping" title="Unassing groups from groupings." alt="" coords="3404,484,3689,503"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html#update_groupings" title="Updates existing groupings." alt="" coords="3404,503,3689,521"/>
+<area shape="rect" href="MoodPyth.group.Group-class.html" title="Class with Moodle web services functions that work with groups" alt="" coords="3403,235,3691,523"/>
+<area shape="rect" href="MoodPyth.user.User-class.html#create_users" title="Create users." alt="" coords="3743,335,3972,353"/>
+<area shape="rect" href="MoodPyth.user.User-class.html#delete_users" title="Deletes all specified users." alt="" coords="3743,353,3972,372"/>
+<area shape="rect" href="MoodPyth.user.User-class.html#get_course_user_profiles" title="Get course user profiles (each of the profiles matching a course id and a &#160;user id)" alt="" coords="3743,372,3972,391"/>
+<area shape="rect" href="MoodPyth.user.User-class.html#get_users" title="Search for users matching the parameters." alt="" coords="3743,391,3972,409"/>
+<area shape="rect" href="MoodPyth.user.User-class.html#get_users_by_field" title="Retrieve users information for a specified unique field &#45; If you want to do a user search, use get_users()" alt="" coords="3743,409,3972,428"/>
+<area shape="rect" href="MoodPyth.user.User-class.html#update_users" title="Update users." alt="" coords="3743,428,3972,447"/>
+<area shape="rect" href="MoodPyth.user.User-class.html" title="Class with Moodle web services functions that works with users." alt="" coords="3741,309,3973,448"/>
+<area shape="rect" href="MoodPyth.external.External-class.html#get_string" title="Return a translated string &#45; similar to core get_string() call" alt="" coords="4025,363,4393,381"/>
+<area shape="rect" href="MoodPyth.external.External-class.html#get_strings" title="Return some translated strings." alt="" coords="4025,381,4393,400"/>
+<area shape="rect" href="MoodPyth.external.External-class.html#get_component_strings" title="Return all raw strings (with {$a&#45;&gt;xxx}) for a specific component" alt="" coords="4025,400,4393,419"/>
+<area shape="rect" href="MoodPyth.external.External-class.html" title="Class with Moodle web services functions that provide external functionalities." alt="" coords="4024,337,4395,420"/>
+<area shape="rect" href="MoodPyth.assign.Assign-class.html#get_assigments" title="Returns the courses and assignments for the users capability." alt="" coords="4447,363,4839,381"/>
+<area shape="rect" href="MoodPyth.assign.Assign-class.html#get_grades" title="Returns grades from the assignment" alt="" coords="4447,381,4839,400"/>
+<area shape="rect" href="MoodPyth.assign.Assign-class.html#get_submissions" title="Returns the submissions for assignment" alt="" coords="4447,400,4839,419"/>
+<area shape="rect" href="MoodPyth.assign.Assign-class.html" title="Class with Moodle web services functions that work with assignments" alt="" coords="4445,337,4840,420"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#create_categories" title="Create course categories." alt="" coords="4892,279,5393,297"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#create_courses" title="Create new courses." alt="" coords="4892,297,5393,316"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#delete_categories" title="Delete course categories." alt="" coords="4892,316,5393,335"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#delete_courses" title="Deletes all specified courses." alt="" coords="4892,335,5393,353"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#delete_modules" title="Deletes all specified module instances." alt="" coords="4892,353,5393,372"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#duplicate_course" title="Duplicate an existing course (creating a new one) without user data." alt="" coords="4892,372,5393,391"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#get_categories" title="Return category details." alt="" coords="4892,391,5393,409"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#get_contents" title="Get course contents (options parameter for future uses)." alt="" coords="4892,409,5393,428"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#get_courses" title="Return course details, all courses details returned if no parameters &#160;specified." alt="" coords="4892,428,5393,447"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#import_course" title="Import course data from a course into another course." alt="" coords="4892,447,5393,465"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#update_categories" title="Update categories." alt="" coords="4892,465,5393,484"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html#update_courses" title="Update courses." alt="" coords="4892,484,5393,503"/>
+<area shape="rect" href="MoodPyth.course.Course-class.html" title="Class with Moodle web services functions that work with courses and categories" alt="" coords="4891,253,5395,504"/>
+<area shape="rect" href="MoodPyth.forum.Forum-class.html#get_forum_discussions" title="Returns a list of forum discussions contained within a given set of forums." alt="" coords="5447,372,5695,391"/>
+<area shape="rect" href="MoodPyth.forum.Forum-class.html#get_forums_by_courses" title="Returns a list of forum instances in a provided set of courses, if no &#160;courses are provided then all the forum instances the user has access to &#160;will be returned." alt="" coords="5447,391,5695,409"/>
+<area shape="rect" href="MoodPyth.forum.Forum-class.html" title="Class with Moodle web services functions that work with forums" alt="" coords="5445,347,5696,411"/>
+</map>
+  <img src="uml_class_diagram_for_moodpyth_2.gif" alt='' usemap="#uml_class_diagram_for_moodpyth_2" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Basic Moodle python class. This class inherits from all other classes 
+  in order to have all their methods so it can execute every Moodle 
+  function. It also have functions related with web services.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MoodPyth.MoodLib.MoodLib-class.html#get_site_info" class="summary-sig-name">get_site_info</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Get general info about Moodle site</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MoodPyth.MoodLib-pysrc.html#MoodLib.get_site_info">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.MoodClass-class.html">MoodClass</a></code></b>:
+      <code><a href="MoodPyth.MoodClass-class.html#__init__">__init__</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameter">add_optParameter</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_optParameters">add_optParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#add_reqParameters">add_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#check_reqParameters">check_reqParameters</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#connect">connect</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#create_token">create_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#get_token">get_token</a></code>,
+      <code><a href="MoodPyth.MoodClass-class.html#set_token">set_token</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.assign.Assign-class.html">assign.Assign</a></code></b>:
+      <code><a href="MoodPyth.assign.Assign-class.html#get_assigments">get_assigments</a></code>,
+      <code><a href="MoodPyth.assign.Assign-class.html#get_grades">get_grades</a></code>,
+      <code><a href="MoodPyth.assign.Assign-class.html#get_submissions">get_submissions</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.calendar.Calendar-class.html">calendar.Calendar</a></code></b>:
+      <code><a href="MoodPyth.calendar.Calendar-class.html#create_calendar_events">create_calendar_events</a></code>,
+      <code><a href="MoodPyth.calendar.Calendar-class.html#delete_calendar_events">delete_calendar_events</a></code>,
+      <code><a href="MoodPyth.calendar.Calendar-class.html#get_calendar_events">get_calendar_events</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.cohort.Cohort-class.html">cohort.Cohort</a></code></b>:
+      <code><a href="MoodPyth.cohort.Cohort-class.html#add_cohort_members">add_cohort_members</a></code>,
+      <code><a href="MoodPyth.cohort.Cohort-class.html#create_cohorts">create_cohorts</a></code>,
+      <code><a href="MoodPyth.cohort.Cohort-class.html#delete_cohort_members">delete_cohort_members</a></code>,
+      <code><a href="MoodPyth.cohort.Cohort-class.html#delete_cohorts">delete_cohorts</a></code>,
+      <code><a href="MoodPyth.cohort.Cohort-class.html#get_cohort_members">get_cohort_members</a></code>,
+      <code><a href="MoodPyth.cohort.Cohort-class.html#get_cohorts">get_cohorts</a></code>,
+      <code><a href="MoodPyth.cohort.Cohort-class.html#update_cohorts">update_cohorts</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.course.Course-class.html">course.Course</a></code></b>:
+      <code><a href="MoodPyth.course.Course-class.html#create_categories">create_categories</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#create_courses">create_courses</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#delete_categories">delete_categories</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#delete_courses">delete_courses</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#delete_modules">delete_modules</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#duplicate_course">duplicate_course</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#get_categories">get_categories</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#get_contents">get_contents</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#get_courses">get_courses</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#import_course">import_course</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#update_categories">update_categories</a></code>,
+      <code><a href="MoodPyth.course.Course-class.html#update_courses">update_courses</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.enrol.Enrol-class.html">enrol.Enrol</a></code></b>:
+      <code><a href="MoodPyth.enrol.Enrol-class.html#get_enrolled_users">get_enrolled_users</a></code>,
+      <code><a href="MoodPyth.enrol.Enrol-class.html#get_enrolled_users_with_capability">get_enrolled_users_with_capability</a></code>,
+      <code><a href="MoodPyth.enrol.Enrol-class.html#get_users_courses">get_users_courses</a></code>,
+      <code><a href="MoodPyth.enrol.Enrol-class.html#manual_enrol_users">manual_enrol_users</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.external.External-class.html">external.External</a></code></b>:
+      <code><a href="MoodPyth.external.External-class.html#get_component_strings">get_component_strings</a></code>,
+      <code><a href="MoodPyth.external.External-class.html#get_string">get_string</a></code>,
+      <code><a href="MoodPyth.external.External-class.html#get_strings">get_strings</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.files.Files-class.html">files.Files</a></code></b>:
+      <code><a href="MoodPyth.files.Files-class.html#download_file">download_file</a></code>,
+      <code><a href="MoodPyth.files.Files-class.html#get_files">get_files</a></code>,
+      <code><a href="MoodPyth.files.Files-class.html#upload_file">upload_file</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.forum.Forum-class.html">forum.Forum</a></code></b>:
+      <code><a href="MoodPyth.forum.Forum-class.html#get_forum_discussions">get_forum_discussions</a></code>,
+      <code><a href="MoodPyth.forum.Forum-class.html#get_forums_by_courses">get_forums_by_courses</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.grade.Grade-class.html">grade.Grade</a></code></b>:
+      <code><a href="MoodPyth.grade.Grade-class.html#get_definitions">get_definitions</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.group.Group-class.html">group.Group</a></code></b>:
+      <code><a href="MoodPyth.group.Group-class.html#add_group_members">add_group_members</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#assign_grouping">assign_grouping</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#create_groupings">create_groupings</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#create_groups">create_groups</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#delete_group_members">delete_group_members</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#delete_groupings">delete_groupings</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#delete_groups">delete_groups</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_course_groupings">get_course_groupings</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_course_groups">get_course_groups</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_group_members">get_group_members</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_groupings">get_groupings</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#get_groups">get_groups</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#unassign_grouping">unassign_grouping</a></code>,
+      <code><a href="MoodPyth.group.Group-class.html#update_groupings">update_groupings</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.message.Message-class.html">message.Message</a></code></b>:
+      <code><a href="MoodPyth.message.Message-class.html#block_contacts">block_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#create_contacts">create_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#delete_contacts">delete_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#get_contacts">get_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#search_contacts">search_contacts</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#send_instant_messages">send_instant_messages</a></code>,
+      <code><a href="MoodPyth.message.Message-class.html#unblock_contacts">unblock_contacts</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.notes.Notes-class.html">notes.Notes</a></code></b>:
+      <code><a href="MoodPyth.notes.Notes-class.html#create_notes">create_notes</a></code>,
+      <code><a href="MoodPyth.notes.Notes-class.html#delete_notes">delete_notes</a></code>,
+      <code><a href="MoodPyth.notes.Notes-class.html#get_notes">get_notes</a></code>,
+      <code><a href="MoodPyth.notes.Notes-class.html#update_notes">update_notes</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.role.Role-class.html">role.Role</a></code></b>:
+      <code><a href="MoodPyth.role.Role-class.html#assign_roles">assign_roles</a></code>,
+      <code><a href="MoodPyth.role.Role-class.html#unassign_roles">unassign_roles</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MoodPyth.user.User-class.html">user.User</a></code></b>:
+      <code><a href="MoodPyth.user.User-class.html#create_users">create_users</a></code>,
+      <code><a href="MoodPyth.user.User-class.html#delete_users">delete_users</a></code>,
+      <code><a href="MoodPyth.user.User-class.html#get_course_user_profiles">get_course_user_profiles</a></code>,
+      <code><a href="MoodPyth.user.User-class.html#get_users">get_users</a></code>,
+      <code><a href="MoodPyth.user.User-class.html#get_users_by_field">get_users_by_field</a></code>,
+      <code><a href="MoodPyth.user.User-class.html#update_users">update_users</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="get_site_info"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_site_info</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MoodPyth.MoodLib-pysrc.html#MoodLib.get_site_info">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get general info about Moodle site</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>Dictionary. Moodle site information:
+          <ul>
+            <li>
+              sitename (string)   - site name
+            </li>
+            <li>
+              username (string)   - username
+            </li>
+            <li>
+              firstname (string)   - first name
+            </li>
+            <li>
+              lastname (string)   - last name
+            </li>
+            <li>
+              fullname (string)   - user full name
+            </li>
+            <li>
+              lang (string)   - user language
+            </li>
+            <li>
+              userid (int)   - user id
+            </li>
+            <li>
+              siteurl (string)   - site url
+            </li>
+            <li>
+              userpictureurl (string)   - the user profile picture. 
+              Warning: this url is the public URL that only works when 
+              forcelogin is set to NO and guestaccess is set to YES. In 
+              order to retrieve user profile pictures independently of the 
+              Moodle config, replace &quot;pluginfile.php&quot; by 
+              &quot;webservice/pluginfile.php?token=WSTOKEN&amp;file=&quot;
+              Of course the user can only see profile picture depending on 
+              his/her permissions. Moreover it is recommended to use HTTPS 
+              too. functions (List of Dictionary) - functions that are 
+              available
+              <ul>
+                <li>
+                  name (string)   - function name
+                </li>
+                <li>
+                  version (string)   - The version number of the component 
+                  to which the function belongs
+                </li>
+              </ul>
+            </li>
+            <li>
+              downloadfiles (int)  Optional - 1 if users are allowed to 
+              download files, 0 if not
+            </li>
+            <li>
+              release (string)  Optional - Moodle release number
+            </li>
+            <li>
+              version (string)  Optional - Moodle version number
+            </li>
+            <li>
+              mobilecssurl (string)  Optional - Mobile custom CSS theme
+            </li>
+          </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MoodPyth-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jun 18 20:49:00 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
