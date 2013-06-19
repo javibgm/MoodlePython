@@ -1,0 +1,9 @@
+The contents of this PyDev project are:
+1 - MoodPyth: Moodle Web Services 2.5 Python Library
+2 - requests: Requests v 1.2.2: HTTP for Humans http://docs.python-requests.org/en/latest/
+Supporting library for MoodPyth creation. It is necessary to use the web services library.
+3 - Programs: example scripts for using MoodPyth library
+4 - tests: executable files to test all de MoodPyth web services functions
+Open the module that contains the function to test.
+Uncomment the function to be tested in the main program.
+Input (if is necessary) the number of the test to execute or the necessary function parameters.

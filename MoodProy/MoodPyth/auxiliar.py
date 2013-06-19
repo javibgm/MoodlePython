@@ -1,3 +1,4 @@
+# Copyright 2013 Javier Benito Garcia-Mochales
 ######################## BEGIN LICENSE BLOCK ########################
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
