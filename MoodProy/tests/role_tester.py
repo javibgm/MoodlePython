@@ -1,7 +1,7 @@
 '''
 '''
 from MoodPyth.MoodLib import MoodLib
-from MoodPyth.aux import show
+from MoodPyth.auxiliar import show
 from config import info,users
 
 def test_assign_roles(test):
