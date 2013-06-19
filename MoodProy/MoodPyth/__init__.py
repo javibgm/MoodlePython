@@ -110,10 +110,8 @@ class MoodClass():
          '''
         url = self.conn + '/moodle/webservice/rest/server.php'
         param = urllib.urlencode({'wstoken':self.token,'wsfunction':function,'moodlewsrestformat':'json'}) + '&' + param
-        print param
         headers = {'Content-type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
         response = requests.post(url, data=param, headers=headers).json()
-        print response
         try:
             if ('debuginfo' in response):
                 raise ValueError('Moodle exception:' + response['errorcode'] + '\n Message: ' + response['message'] + '\n Debuginfo: ' + response['debuginfo'])

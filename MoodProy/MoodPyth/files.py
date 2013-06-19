@@ -58,7 +58,6 @@ class Files(MoodClass):
         url = self.conn + '/moodle/webservice/upload.php' + '?' + urllib.urlencode({'token':self.token,'filepath':moodlepath})
         files = {'file': open(path, 'rb')}
         response = requests.post(url, files=files).json()
-        print response
         try:
             raise ValueError('Moodle exception: moodlefilesexception\n Message: ' + response['error'])
         except (TypeError, KeyError):
