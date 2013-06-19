@@ -27,5 +27,7 @@ documentation. This will help to Moodle users that want use this capability with
 time looking for use guides.
 
 This work and the corresponding Memory were made for my thesis.
+
 Author: Javier Benito Garcia-Mochales <javibgm@hotmail.com>
+
 Date: June 19th, 2013
